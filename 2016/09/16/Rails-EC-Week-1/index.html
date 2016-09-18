@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="建立後台列出目前所有的 routeshttp://guides.rubyonrails.org/routing.html
+
+terminal: $ rake routes
+瀏覽器: localhost:3000/rails/info/routes
+瀏覽器: 跟路徑錯誤有關的錯誤訊息中
+
+produc">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Jason Lung">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Rails EC Week 1"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Hello World"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>Rails EC Week 1 - Hello World</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Welcome to Jason's Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/lionlies">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Rails EC Week 1</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2016-09-16
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="建立後台"><a href="#建立後台" class="headerlink" title="建立後台"></a>建立後台</h1><h2 id="列出目前所有的-routes"><a href="#列出目前所有的-routes" class="headerlink" title="列出目前所有的 routes"></a>列出目前所有的 routes</h2><p><a href="http://guides.rubyonrails.org/routing.html" target="_blank" rel="external">http://guides.rubyonrails.org/routing.html</a></p>
+<ol>
+<li>terminal: <code>$ rake routes</code></li>
+<li>瀏覽器: <code>localhost:3000/rails/info/routes</code></li>
+<li>瀏覽器: 跟路徑錯誤有關的錯誤訊息中</li>
+</ol>
+<h2 id="product-params-是某種-rails-的命名慣例嗎？"><a href="#product-params-是某種-rails-的命名慣例嗎？" class="headerlink" title="product_params 是某種 rails 的命名慣例嗎？"></a>product_params 是某種 rails 的命名慣例嗎？</h2><p>No, 這是一個method, 所以可以自由命名，而這邊是命名給 strong parameters.</p>
+<h2 id="routes-rb"><a href="#routes-rb" class="headerlink" title="routes.rb"></a><code>routes.rb</code></h2><figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">namespace <span class="symbol">:admin</span> <span class="keyword">do</span></div><div class="line">  resources <span class="symbol">:products</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<p>是什麼意思？</p>
+<p>這個的意思是，在 admin 下的 products controller 中用 rails 內建的指令<code>resources :products</code>一行設定好 products controller 內七大 CRUD actions, which are new, create, edit, update, show, index, destroy.</p>
+<h2 id="開一個新的-branch-重新練習的時候，db-並不會清空，怎麼辦？"><a href="#開一個新的-branch-重新練習的時候，db-並不會清空，怎麼辦？" class="headerlink" title="開一個新的 branch 重新練習的時候，db 並不會清空，怎麼辦？"></a>開一個新的 branch 重新練習的時候，db 並不會清空，怎麼辦？</h2><p>照下方的順序做</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">＄ rake db:drop      # 把資料庫丟掉</div><div class="line">＄ rake db:create    # 建立資料庫</div><div class="line">＄ rake db:migrate   # migrate資料庫</div><div class="line">＄ rake db:seed      # 把seed內的資料灌進db (不需要再 rake db:migrate 一次)</div></pre></td></tr></table></figure>
+<p>這樣做會把之前建立的資料清除，然後在 db/seeds.rb 裡寫種子檔，重建時將一些基本資料存進去(例如使用者資料, 基本商品資料, 基本文章…etc )。Rails101 第十章則進一步把上述四個指令簡化成一個指令 <code>rake db:rebuild</code></p>
+<h2 id="namespace-是什麼？"><a href="#namespace-是什麼？" class="headerlink" title="namespace 是什麼？"></a>namespace 是什麼？</h2><p>用來做區隔的標籤</p>
+<h2 id="在-form-中輸入資料按下-submit-把資料送出到-DB，如果沒有-throw-exception-那是不是資料成功送進-DB-的步驟就等於-save-了？"><a href="#在-form-中輸入資料按下-submit-把資料送出到-DB，如果沒有-throw-exception-那是不是資料成功送進-DB-的步驟就等於-save-了？" class="headerlink" title="在 form 中輸入資料按下 submit 把資料送出到 DB，如果沒有 throw exception, 那是不是資料成功送進 DB 的步驟就等於 save 了？"></a>在 form 中輸入資料按下 submit 把資料送出到 DB，如果沒有 throw exception, 那是不是資料成功送進 DB 的步驟就等於 save 了？</h2><p>小蟹：<br>不太對。沒有 throw exception 只能說程式沒有出錯<br>比方說 validate 失敗，並不會 throw exception，但也沒有存進 DB<br>如果你忘了寫 save，也不會 throw exception，而且沒有存進 DB</p>
+<p>我：<br>那麼比方說我們寫create action時，<br><figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">create</span></span></div><div class="line">  @xxx = Xxx.new(xxx_params)</div><div class="line">  <span class="keyword">if</span> @xxx.save</div><div class="line">    redirect_to <span class="string">"/"</span></div><div class="line">  <span class="keyword">else</span></div><div class="line">    render <span class="symbol">:new</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure></p>
+<p>是什麼步驟有 save, 我們才會去寫 <code>if @xxx.save</code> ?</p>
+<p>小蟹：<br>最常見是 validate<br>會隨著 save 執行的事件</p>
+<p>我：<br><a href="http://guides.rubyonrails.org/active_record_validations.html" target="_blank" rel="external">http://guides.rubyonrails.org/active_record_validations.html</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&quot;The following methods trigger validations, and will save the object to the database only if the object is valid.&quot;</div><div class="line">create</div><div class="line">create!</div><div class="line">save</div><div class="line">save!</div><div class="line">update</div><div class="line">update!</div></pre></td></tr></table></figure></p>
+<p>整理一下我的理解：</p>
+<ol>
+<li>因為是 create method, 所以會 “trigger validations, and will save the object to the database only if the object is valid.”</li>
+<li>因此有寫 if @xxx.save 的條件的空間</li>
+<li>也就有後續 “redirect_to” 或 “render” 的情形。</li>
+</ol>
+<h1 id="實作使用者功能"><a href="#實作使用者功能" class="headerlink" title="實作使用者功能"></a>實作使用者功能</h1><h2 id="rails-g-devise-install-這個指令是做什麼的？"><a href="#rails-g-devise-install-這個指令是做什麼的？" class="headerlink" title="rails g devise:install 這個指令是做什麼的？"></a>rails g devise:install 這個指令是做什麼的？</h2><p>devise 的一個指令。gem 只把 devise 裝進 rails, 但如果要在這個專案執行，仍然要 devise:install</p>
+<h2 id="rails-g-devise-user-後程式跑的內容代表什麼意思？它和-rails-g-model-user-生出來的-user-有什麼差別？"><a href="#rails-g-devise-user-後程式跑的內容代表什麼意思？它和-rails-g-model-user-生出來的-user-有什麼差別？" class="headerlink" title="rails g devise user 後程式跑的內容代表什麼意思？它和 rails g model user 生出來的 user 有什麼差別？"></a>rails g devise user 後程式跑的內容代表什麼意思？它和 rails g model user 生出來的 user 有什麼差別？</h2><p><code>$ rails g model pie</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">invoke    active_record</div><div class="line">create    db/migrate/20160312075723_create_pies.rb</div><div class="line">create    app/models/pie.rb</div><div class="line">invoke    test_unit</div><div class="line">create    test/models/pie_test.rb</div><div class="line">create    test/fixtures/pies.yml</div></pre></td></tr></table></figure></p>
+<p>pie model內容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">class Pie &lt; ActiveRecord::Base</div><div class="line">end</div></pre></td></tr></table></figure></p>
+<p><code>$ rails g devise cake</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">invoke    active_record</div><div class="line">create    db/migrate/20160312075647_devise_create_cakes.rb</div><div class="line">create    app/models/cake.rb</div><div class="line">invoke    test_unit</div><div class="line">create    test/models/cake_test.rb</div><div class="line">create    test/fixtures/cakes.yml</div><div class="line">insert    app/models/cake.rb</div><div class="line">route     devise_for :cakes</div></pre></td></tr></table></figure></p>
+<p>cake model內容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">class Cake &lt; ActiveRecord::Base</div><div class="line">  # Include default devise modules. Others available are:</div><div class="line">  # :confirmable, :lockable, :timeoutable and :omniauthable</div><div class="line">  devise :database_authenticatable, :registerable,</div><div class="line">         :recoverable, :rememberable, :trackable, :validatable</div><div class="line">end</div></pre></td></tr></table></figure></p>
+<p>routes.rb內容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Rails.application.routes.draw do</div><div class="line">  devise_for :cakes</div><div class="line">end</div></pre></td></tr></table></figure></p>
+<h2 id="如果不小心把-rails-g-devise-user-寫成-rails-g-devise-users，生出的檔案都一樣，不會有影響。"><a href="#如果不小心把-rails-g-devise-user-寫成-rails-g-devise-users，生出的檔案都一樣，不會有影響。" class="headerlink" title="如果不小心把 $ rails g devise user 寫成 $ rails g devise users，生出的檔案都一樣，不會有影響。"></a>如果不小心把 <code>$ rails g devise user</code> 寫成 <code>$ rails g devise users</code>，生出的檔案都一樣，不會有影響。</h2><h1 id="管理者存取後台設定"><a href="#管理者存取後台設定" class="headerlink" title="管理者存取後台設定"></a>管理者存取後台設定</h1><h2 id="current-user-是-rails-內建的嗎？"><a href="#current-user-是-rails-內建的嗎？" class="headerlink" title="current_user 是 rails 內建的嗎？"></a>current_user 是 rails 內建的嗎？</h2><p>No, 是 devise 給的。</p>
+<h2 id="怎麼規劃架構和功能建置的流程？"><a href="#怎麼規劃架構和功能建置的流程？" class="headerlink" title="怎麼規劃架構和功能建置的流程？"></a>怎麼規劃架構和功能建置的流程？</h2><p>就是用 user story 來切，切得適當就能規劃出好的功能及開發流程。這需要經驗就是了。</p>
+<h2 id="slide-3-10中，導向登入頁面是-devise-的功能嗎？那這個登入的-view-是在哪裡？"><a href="#slide-3-10中，導向登入頁面是-devise-的功能嗎？那這個登入的-view-是在哪裡？" class="headerlink" title="slide 3/10中，導向登入頁面是 devise 的功能嗎？那這個登入的 view 是在哪裡？"></a>slide 3/10中，導向登入頁面是 devise 的功能嗎？那這個登入的 view 是在哪裡？</h2><p>是 devise 的功能<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ rails g devise:views</div></pre></td></tr></table></figure></p>
+<p>devise 的 view 就會出現在 app/views/devise 資料夾了</p>
+<h2 id="用-devise-做的登錄畫面要怎麼顯示中文？"><a href="#用-devise-做的登錄畫面要怎麼顯示中文？" class="headerlink" title="用 devise 做的登錄畫面要怎麼顯示中文？"></a>用 devise 做的登錄畫面要怎麼顯示中文？</h2><p><a href="https://github.com/plataformatec/devise/wiki/I18n" target="_blank" rel="external">https://github.com/plataformatec/devise/wiki/I18n</a></p>
+<h2 id="哪些順序有影響？"><a href="#哪些順序有影響？" class="headerlink" title="哪些順序有影響？"></a>哪些順序有影響？</h2><p>gem 的順序                                 =&gt; 沒影響<br>def 的順序                                    =&gt; 沒影響<br>多個 before_action 的順序   =&gt; 有影響<br>method 中 code 順序                =&gt; 有影響<br>yml 的縮排                                    =&gt; 有影響<br>require<br>include</p>
+<h2 id="require-的順序？"><a href="#require-的順序？" class="headerlink" title="require 的順序？"></a>require 的順序？</h2><p>[這段不確定] require xxx, include xxx 一般是放最上面，因為如果有段內容要用到 require xxx, include xxx, 結果 require xxx, include xxx 不在該段內容之前，就會跳出錯誤。</p>
+<h2 id="待解-下面兩題的內容整合一下"><a href="#待解-下面兩題的內容整合一下" class="headerlink" title="[待解] 下面兩題的內容整合一下"></a>[待解] 下面兩題的內容整合一下</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Q1: slide 7/10, User model 不知道什麼是 admin, 為什麼這邊是來到 model? slide 9/10又代表什麼情況呢？</div><div class="line"></div><div class="line">A1: 以這個 MVC 架構而言，controller 跑完去 model 找 admin?, 沒找到所以要新增 def admin?, model 的部份處理好了，再往 database 去找 is_admin 欄位，沒找到所以又跳出錯誤訊息，於是要再新增 is_admin 欄位。在 rails 中，model 欄位直接對應 database 中 form 的欄位。</div><div class="line"></div><div class="line">Q2: 為什麼 User model 中，def admin? 裡的 is_admin 可以直接對應到 db 中 user table 的 is_admin 欄位？是 rails magic嗎？（問題同上一題）</div><div class="line"></div><div class="line">A2: 是rails magic沒錯。這邊rails會先去找同一個model裡面同名的method, 沒找到就再去找DB欄位。</div></pre></td></tr></table></figure>
+<h2 id="add-column-users-is-admin-boolean-default-false"><a href="#add-column-users-is-admin-boolean-default-false" class="headerlink" title="add_column :users, :is_admin, :boolean, default: false"></a><code>add_column :users, :is_admin, :boolean, default: false</code></h2><ol>
+<li>add_column    =&gt; add column</li>
+<li>:users         =&gt; table name</li>
+<li>:is_admin     =&gt; column name</li>
+<li>:boolean     =&gt; column type</li>
+</ol>
+<h1 id="在-console-建立使用者並改為-admin-權限"><a href="#在-console-建立使用者並改為-admin-權限" class="headerlink" title="在 console 建立使用者並改為 admin 權限"></a>在 console 建立使用者並改為 admin 權限</h1><h2 id="為什麼rails-console可以更改權限？"><a href="#為什麼rails-console可以更改權限？" class="headerlink" title="為什麼rails console可以更改權限？"></a>為什麼rails console可以更改權限？</h2><p>rails console有造物主般的權限，所以可以新增管理者、使用者……等，但實務上不會在console手動新增，而是寫個包裹(這邊用詞正確嗎?)自動執行。原因是手動可能會出錯，寫包裹自動執行不會出錯，因為在執行前都可以先在development環境測試包裹內容正不正確。</p>
+<h1 id="解決不能登出的問題"><a href="#解決不能登出的問題" class="headerlink" title="解決不能登出的問題"></a>解決不能登出的問題</h1><h2 id="為什麼登入／登出是寫在-navbar-html-erb-前端-而不是寫在-controller-第二週購物車商品數量更改也寫在-carts-index-html-erb-在-view-改數量，為什麼能影響到後端更動-cart-items-quantity？"><a href="#為什麼登入／登出是寫在-navbar-html-erb-前端-而不是寫在-controller-第二週購物車商品數量更改也寫在-carts-index-html-erb-在-view-改數量，為什麼能影響到後端更動-cart-items-quantity？" class="headerlink" title="為什麼登入／登出是寫在 _navbar.html.erb(前端)而不是寫在 controller? 第二週購物車商品數量更改也寫在 carts/index.html.erb, 在 view 改數量，為什麼能影響到後端更動 cart_items.quantity？"></a>為什麼登入／登出是寫在 <code>_navbar.html.erb</code>(前端)而不是寫在 controller? 第二週購物車商品數量更改也寫在 carts/index.html.erb, 在 view 改數量，為什麼能影響到後端更動 cart_items.quantity？</h2><p>以更改數量為例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;%= form_for item, url: item_path(product) do |f| %&gt;</div><div class="line">  &lt;%= f.select :quantity, 1..product.quantity %&gt;</div><div class="line">  &lt;%= f.submit &quot;更新&quot;, data: &#123;disable_with: &quot;Submitting...&quot;&#125; %&gt;</div><div class="line">&lt;% end %&gt;</div></pre></td></tr></table></figure></p>
+<p>那段內容包在 form_for 裡面，所以按鈕不只是按鈕，實際上也是 form 表單。當我們選定數字後，按下”更新”就會送出到它對應的 item_path(product)，但是在 routes.rb <code>resources :items, controller: &quot;cart_items&quot;</code>，我們已經先定義這個 item 是指向 cart_items controller, 所以前面按下更新後，實際上是對 cart_item 這個資料送出更動的 request, 這個 request 是對應到 cart_items controller 中的 update method, 所以開始跑 update method, 並進而在條件符合的情況下，跑到這一行 <code>@item.update(item_params)</code> 而更動到 cart_items 表單中的 quantity 欄位。</p>
+<h2 id="提問-為什麼這個-request-是-update-method"><a href="#提問-為什麼這個-request-是-update-method" class="headerlink" title="[提問] 為什麼這個 request 是 update method?"></a>[提問] 為什麼這個 request 是 update method?</h2><p>因為在 <code>&lt;%= form_for item, url: item_path(product) do |f| %&gt;</code> 裡面的 product 是一個 model: Product 的物件，該物件如果是空的 (e.g.: Product.new ) 就會幫你設定打到 create action 的 path，如果是有東西 就會幫你設定打到 update action 的 path。這樣的好處是，form 這邊只要判斷變數的內容，即可分辨出是要 create 還是 update, 我們只需要將物件設定好 ( 像是在 controller 裡面定義 ) 一份 view 就可以搞定。( views/admin/products/new 跟 edit 幾乎一模一樣就是這個原理 )</p>
+<h2 id="lt-f-submit-“更新”-data-disable-with-“Submitting…”-gt"><a href="#lt-f-submit-“更新”-data-disable-with-“Submitting…”-gt" class="headerlink" title="&lt;%= f.submit “更新”, data: {disable_with: “Submitting…”} %&gt;"></a>&lt;%= f.submit “更新”, data: {disable_with: “Submitting…”} %&gt;</h2><p><code>disable_with</code> 的動能是避免重複點選按鈕，”Submitting…” 則是按下按鈕觸法 disable_with 後，按鈕上顯示的內容。整個流程是，按下顯示為”更新”的 submit 按鈕後，觸法 disable_with 功能，按鈕進入無法被按(所以不會重複點擊)的狀態，並且 “更新” 字樣轉為 “Submitting…” 字樣。</p>
+<h2 id="lt-link-to-“登出”-destroy-user-session-path-method-delete-gt-拆解。"><a href="#lt-link-to-“登出”-destroy-user-session-path-method-delete-gt-拆解。" class="headerlink" title="&lt;%= link_to(“登出”, destroy_user_session_path, method: :delete) %&gt; 拆解。"></a>&lt;%= link_to(“登出”, destroy_user_session_path, method: :delete) %&gt; 拆解。</h2><p>link_to 後面依序是：</p>
+<ol>
+<li>按鈕上的文字(“登出”)</li>
+<li>路徑(destroy_user_session_path)</li>
+<li>HTTP verbs 每個動詞在 spec 中都有定義使用情況，DELETE 就是 for 刪除的行為。所有的 <code>_path</code> 都只是幫你生出網址， :method 非預設 :get 的話都要自己指定。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">(原本部份觀念錯誤的3，留紀錄供參考對照。)</div><div class="line">一般就是以上兩種，至於第三個(method: :delete)則是指定某個method, 這是devise的功能，也可以改成:get. 但為什麼要指定DELETE呢？因為比如說，今天你收到一個電子郵件好了，有人在電郵中的一張圖片上包一段程式碼是讓你的帳號登出，一旦圖片顯示出來(which is 執行了GET), 你的帳號就被登出了。What if the code is to delete all your files? That would be a big problem. 類似的情況則是bot可以不透過按“登出”鈕就登出，或者看指令是什麼而有對應的行為。今天設定method: :delete, 則是真人按下”登出”鈕時執行登出的動作。</div></pre></td></tr></table></figure>
+<p>圖片的例子不成立，因為圖片屬於 static file，靜態檔案並不會有 GET 以外的行為。正常的網址都要點擊後才會生效，所以不會發生圖片顯示後就觸發某個動作這種事情。</p>
+<h2 id="待解"><a href="#待解" class="headerlink" title="[待解]"></a>[待解]</h2><ol>
+<li>這是devise的功能?????</li>
+</ol>
+<h2 id="設定method-delete-是真人按下”登出”鈕時，還是”確定登出”的對話框時執行登出的動作？"><a href="#設定method-delete-是真人按下”登出”鈕時，還是”確定登出”的對話框時執行登出的動作？" class="headerlink" title="設定method: :delete, 是真人按下”登出”鈕時，還是”確定登出”的對話框時執行登出的動作？"></a>設定method: :delete, 是真人按下”登出”鈕時，還是”確定登出”的對話框時執行登出的動作？</h2><p>只有在按下”確定登出”的 yes 鈕時，才會送出request.</p>
+<h2 id="比如說-lt-link-to-quot-登出-quot-destroy-user-session-path-method-delete-gt-，destroy-user-session-path不就已經代表是用DELETE了？為什麼後面還要一個method-delete-而且從rake-routes也可以得知只有一個-destroy-user-session-path，並且後面標示Verb是DELETE，不就沒有跟其他verbs共用-destroy-user-session-path-的可能嗎？那為什麼還要特別註明是用-method-delete"><a href="#比如說-lt-link-to-quot-登出-quot-destroy-user-session-path-method-delete-gt-，destroy-user-session-path不就已經代表是用DELETE了？為什麼後面還要一個method-delete-而且從rake-routes也可以得知只有一個-destroy-user-session-path，並且後面標示Verb是DELETE，不就沒有跟其他verbs共用-destroy-user-session-path-的可能嗎？那為什麼還要特別註明是用-method-delete" class="headerlink" title="比如說 &lt;%= link_to(&quot;登出&quot;, destroy_user_session_path, method: :delete ) %&gt;，destroy_user_session_path不就已經代表是用DELETE了？為什麼後面還要一個method: :delete? 而且從rake routes也可以得知只有一個 destroy_user_session_path，並且後面標示Verb是DELETE，不就沒有跟其他verbs共用 destroy_user_session_path 的可能嗎？那為什麼還要特別註明是用 method: :delete ?"></a>比如說 <code>&lt;%= link_to(&quot;登出&quot;, destroy_user_session_path, method: :delete ) %&gt;</code>，<code>destroy_user_session_path</code>不就已經代表是用<code>DELETE</code>了？為什麼後面還要一個<code>method: :delete</code>? 而且從rake routes也可以得知只有一個 <code>destroy_user_session_path</code>，並且後面標示Verb是<code>DELETE</code>，不就沒有跟其他verbs共用 <code>destroy_user_session_path</code> 的可能嗎？那為什麼還要特別註明是用 <code>method: :delete</code> ?</h2><ol>
+<li>不對，所有的 <code>_path</code> 都只是幫你生出網址， :method 非預設 :get 的話都要自己指定。</li>
+<li>後面那個問題，現在沒有verbs共用同一個路徑不代表以後沒有，所以還是要寫清楚。</li>
+</ol>
+<h2 id="全域的layout和partial有什麼關係？"><a href="#全域的layout和partial有什麼關係？" class="headerlink" title="全域的layout和partial有什麼關係？"></a>全域的layout和partial有什麼關係？</h2><p>可以把partial想成某個配件，把程式碼整理成partial有三大好處：</p>
+<ol>
+<li>全域的layout（即layout/application.html.erb）會清爽許多。</li>
+<li>每個partial可以分別去設計，利於分工。</li>
+<li>可以重複使用。</li>
+</ol>
+<h2 id="slide-2-of-3-為什麼不作成-partial？"><a href="#slide-2-of-3-為什麼不作成-partial？" class="headerlink" title="slide 2 of 3 為什麼不作成 partial？"></a>slide 2 of 3 為什麼不作成 partial？</h2><h1 id="將頁面用-bootstrap-套版"><a href="#將頁面用-bootstrap-套版" class="headerlink" title="將頁面用 bootstrap 套版"></a>將頁面用 bootstrap 套版</h1><h2 id="拆解下面的內容，bootstrap-sprockets-是做什麼的？"><a href="#拆解下面的內容，bootstrap-sprockets-是做什麼的？" class="headerlink" title="拆解下面的內容，bootstrap-sprockets 是做什麼的？"></a>拆解下面的內容，bootstrap-sprockets 是做什麼的？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">@import &quot;bootstrap-sprockets&quot;;</div><div class="line">@import &quot;bootstrap&quot;;</div></pre></td></tr></table></figure>
+<h1 id="Deploy-到-heroku-投影片"><a href="#Deploy-到-heroku-投影片" class="headerlink" title="Deploy 到 heroku (投影片)"></a>Deploy 到 heroku (投影片)</h1><h2 id="跑完下列指令後"><a href="#跑完下列指令後" class="headerlink" title="跑完下列指令後"></a>跑完下列指令後</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ git add -A</div><div class="line">$ git commit -m &quot;message&quot;</div><div class="line">$ git push heroku store-v1:master</div><div class="line">$ heroku run rake db:migrate</div></pre></td></tr></table></figure>
+<p>接著跑<code>$ heroku run rake db:seed</code>, 不需要再跑一次<code>$ heroku run rake db:migrate</code>就可以生效。</p>
+<h1 id="Misc"><a href="#Misc" class="headerlink" title="Misc."></a>Misc.</h1><h2 id="由於回家作業中，有些新功能不完全照著-user-story-來開發，比如說”解決不能登出的問題”就是-user-story-中沒有明確寫到的，請問是什麼情況？是因為開發時常會遇到-user-story-寫得不夠完整而要隨時調整-user-story-內容嗎？我們要怎麼判斷是不是把初步的功能做齊了呢？又，在-web-developing-的領域，我們是透過快速迭代來解決這樣的問題，還是找一組人對-web-app-做產品測試？還是有其他解法？"><a href="#由於回家作業中，有些新功能不完全照著-user-story-來開發，比如說”解決不能登出的問題”就是-user-story-中沒有明確寫到的，請問是什麼情況？是因為開發時常會遇到-user-story-寫得不夠完整而要隨時調整-user-story-內容嗎？我們要怎麼判斷是不是把初步的功能做齊了呢？又，在-web-developing-的領域，我們是透過快速迭代來解決這樣的問題，還是找一組人對-web-app-做產品測試？還是有其他解法？" class="headerlink" title="由於回家作業中，有些新功能不完全照著 user story 來開發，比如說”解決不能登出的問題”就是 user story 中沒有明確寫到的，請問是什麼情況？是因為開發時常會遇到 user story 寫得不夠完整而要隨時調整 user story 內容嗎？我們要怎麼判斷是不是把初步的功能做齊了呢？又，在 web developing 的領域，我們是透過快速迭代來解決這樣的問題，還是找一組人對 web app 做產品測試？還是有其他解法？"></a>由於回家作業中，有些新功能不完全照著 user story 來開發，比如說”解決不能登出的問題”就是 user story 中沒有明確寫到的，請問是什麼情況？是因為開發時常會遇到 user story 寫得不夠完整而要隨時調整 user story 內容嗎？我們要怎麼判斷是不是把初步的功能做齊了呢？又，在 web developing 的領域，我們是透過快速迭代來解決這樣的問題，還是找一組人對 web app 做產品測試？還是有其他解法？</h2><p>這種情況是user story寫得還不夠細。這份教材的user story大概到V6而已，xdite開發產品時實際上會一口氣寫到V10, 把大致上的流程、目標、要解決的問題、風險儘量抓出來。風險是指比如說要接信用卡，首先你要有公司才能去接第三方支付，第三方支付中，A付寶的審核可能只需2天，B付寶卻可能拖3個月，如果這個風險沒抓出來，就會變成開發時的bottle neck。</p>
+<p>而user story寫詳盡，開發時比較會有大局觀，不至於為了開發一個不重要的小功能，造成重要功能進度delay，因小失大。另外，每個story都可以估大概要做多久，就算估不出來，也可以去估每個小的story大概做多久，並估出這個story大概要花多少的人力。</p>
+<p>user story以專案管理的角度來說，是為了完成有價值的東西，”解決不能登出的問題”實際上是個技術bug, 雖然還是要解決，但沒那麼重要，可以先放在Agile/Scrum概念中的Epic（可以想成是待解決技術清單），等有價值的東西先做完了再解決。這類問題的確是用快速迭代的方式解決，xdite的作法是星期一到星期四focus在寫story上的東西，星期五修Epic。大部分公司不會有錢請另一組人做產品測試，所以一般是產品開發完，自己要去做測試，這也是放星期五。主要是先把大的、小的user story順好、骨架搭起來，最後再驗收。Agile的驗收很頻繁，可能每兩個禮拜一次，驗收這個sprint該完成什麼事情、沒完成的話原因是什麼？（比如小story沒補上？epic沒修好？）</p>
+<h2 id="如果app開發到一半去改Gemfile中的Rails版本然後bundle-install會發生什麼事？"><a href="#如果app開發到一半去改Gemfile中的Rails版本然後bundle-install會發生什麼事？" class="headerlink" title="如果app開發到一半去改Gemfile中的Rails版本然後bundle install會發生什麼事？"></a>如果app開發到一半去改Gemfile中的Rails版本然後bundle install會發生什麼事？</h2><p>google search “semver”（語意上的版本）主要版本、次要版本、小版本。</p>
+<p>小版本更新通常是一些fixes, 不影響專案的架構，比如3.2.1 → 3.2.5，可以放心升，但即便如此，通常還是建議不要這樣做，而是上線前大修一次；而像3.2.1 → 3.2.11，可能中間間隔10個月了，升的時候要小心；如果像是4.0.1 → 4.1.1，有些中等程度的API可能會變更／棄用，升上去Rails可能只會給警告，或是小地方壞掉，但假如是一次跳兩個版本，比如4.0.1 → 4.2.0，不做出相對的修正，app可能就直接炸掉。</p>
+<p>這是Rails的特性，或者說是維護Rails的37Signals團隊的風格，他們覺得不好的寫法就會在升級時改掉，rails developer得要一直追這些寫法、規則。以Rails而言，一個主要版本到下一個主要版本，比如說Rails 3 → Rails 4，大概是18個月。</p>
+<p>另個跟rails版本有關的是gem的支援，版本變動造成的Rails內部的API變動，可能會連帶造成有些gems不支援新版本的Rails。一是等作者更新gem, 一是專案開發者自己修，但junior developer通常不具備這個能力。</p>
+<h2 id="User-story-寫到最後會變成很可怕的量，如何限縮到MVP的範圍？（或，如何從中找出MVP？）"><a href="#User-story-寫到最後會變成很可怕的量，如何限縮到MVP的範圍？（或，如何從中找出MVP？）" class="headerlink" title="User story 寫到最後會變成很可怕的量，如何限縮到MVP的範圍？（或，如何從中找出MVP？）"></a>User story 寫到最後會變成很可怕的量，如何限縮到MVP的範圍？（或，如何從中找出MVP？）</h2><p>分兩個角度看，創業基本上是MVP → product，不會有story太多要去找出MVP的情況。（如果有，那其實創業者沒釐清自己產品的核心，或者誤解了MVP的概念。）</p>
+<p>如果加入公司，實務上老闆常會提出太不合理的要求、或者PM常常會寫出太多沒用的story，而RD確實需要聚焦在值得實作的story上，大家都有自己對要求、story的想法，但是資源有限，這時可以用5 Whys來分析值不值得實作。5 Whys其實就是一種辯證法，透過前後問題的因果關係一層一層問下去，慢慢逼近story的本質，最終讓團隊對story有清楚而一致的理解。這種方法並不局限於5，必要的話也可以問得更多（或更少）。</p>
+<h2 id="namespace能達到的目的，scope似乎也可以做到（除了path不一樣），兩者合適的用法是？"><a href="#namespace能達到的目的，scope似乎也可以做到（除了path不一樣），兩者合適的用法是？" class="headerlink" title="namespace能達到的目的，scope似乎也可以做到（除了path不一樣），兩者合適的用法是？"></a>namespace能達到的目的，scope似乎也可以做到（除了path不一樣），兩者合適的用法是？</h2><p>scope可以寫到很複雜，namespace可以想成是簡單版的scope</p>
+<h2 id="rake-db-migrate-status-可以查-migration-狀態，前面顯示-up-就代表已經-migrate-了。"><a href="#rake-db-migrate-status-可以查-migration-狀態，前面顯示-up-就代表已經-migrate-了。" class="headerlink" title="$ rake db:migrate:status 可以查 migration 狀態，前面顯示 up 就代表已經 migrate 了。"></a><code>$ rake db:migrate:status</code> 可以查 migration 狀態，前面顯示 up 就代表已經 migrate 了。</h2><h2 id="migration-有誤怎麼解？"><a href="#migration-有誤怎麼解？" class="headerlink" title="migration 有誤怎麼解？"></a>migration 有誤怎麼解？</h2><ol>
+<li><code>$ rake db:rollback</code> -&gt; 進 migration 檔更改內容 -&gt; <code>rake db:migrate</code></li>
+<li>如果 migration 已經上線(production階段)，新增一個 migration 檔(rails g migration) -&gt; 寫上要修改的內容 -&gt; <code>$ rake db:migrate</code> 的做法會比較適合。</li>
+<li>補充觀念：Rails 會記錄 migration 檔名中的 timestamps 來判斷你已經對資料庫操作過哪些 migrations, 跑過的 migrations 就不會重複跑（不考慮rake db:rollback的情況）。Rails 透過資料庫中的 schema_migrations 這張 table 來記錄已經跑過哪些 migrations。</li>
+</ol>
+<p><a href="http://edgeguides.rubyonrails.org/active_record_migrations.html" target="_blank" rel="external">http://edgeguides.rubyonrails.org/active_record_migrations.html</a><br><a href="http://guides.rubyonrails.org/v3.2.17/migrations.html" target="_blank" rel="external">http://guides.rubyonrails.org/v3.2.17/migrations.html</a><br><a href="https://gist.github.com/amejiarosario/2950888" target="_blank" rel="external">https://gist.github.com/amejiarosario/2950888</a><br><a href="https://ihower.tw/rails4/basic.html" target="_blank" rel="external">https://ihower.tw/rails4/basic.html</a></p>
+<h2 id="如何-rollback-好幾步？"><a href="#如何-rollback-好幾步？" class="headerlink" title="如何 rollback 好幾步？"></a>如何 rollback 好幾步？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ rake db:rollback STEP=n</div></pre></td></tr></table></figure>
+<p>可搭配</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ rake db:migrate:status</div></pre></td></tr></table></figure>
+<p>可以顯示目前 migrations 執行的情況，會有 Status, Migration ID(timestamp), Migration Name 三組資料。</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/lionlies" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="mailto:lionlies@gmail.com" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
