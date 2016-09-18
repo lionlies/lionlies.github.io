@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="寄信功能app/views/layout/mailer.text.erb 是做什麼的？生成 text 格式。也可以是 mailer.html.erb，如此就是生成 html 格式。
+&amp;lt;%= link_to(“訂單連結”, order_url(@order.token)) %&amp;gt; 的 url">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Jason Lung">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Rails EC Week 3"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Hello World"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>Rails EC Week 3 - Hello World</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Welcome to Jason's Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/lionlies">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Rails EC Week 3</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2016-09-18
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="寄信功能"><a href="#寄信功能" class="headerlink" title="寄信功能"></a>寄信功能</h1><h2 id="app-views-layout-mailer-text-erb-是做什麼的？"><a href="#app-views-layout-mailer-text-erb-是做什麼的？" class="headerlink" title="app/views/layout/mailer.text.erb 是做什麼的？"></a>app/views/layout/mailer.text.erb 是做什麼的？</h2><p>生成 text 格式。也可以是 <code>mailer.html.erb</code>，如此就是生成 html 格式。</p>
+<h2 id="lt-link-to-“訂單連結”-order-url-order-token-gt-的-url-是什麼？"><a href="#lt-link-to-“訂單連結”-order-url-order-token-gt-的-url-是什麼？" class="headerlink" title="&lt;%= link_to(“訂單連結”, order_url(@order.token)) %&gt; 的 url 是什麼？"></a>&lt;%= link_to(“訂單連結”, order_url(@order.token)) %&gt; 的 url 是什麼？</h2><p>這邊代表絕對路徑</p>
+<h2 id="rails-mailer-介紹"><a href="#rails-mailer-介紹" class="headerlink" title="rails mailer 介紹"></a>rails mailer 介紹</h2><p><a href="http://guides.rubyonrails.org/action_mailer_basics.html" target="_blank" rel="external">http://guides.rubyonrails.org/action_mailer_basics.html</a><br><a href="http://api.rubyonrails.org/classes/ActionMailer/Base.html" target="_blank" rel="external">http://api.rubyonrails.org/classes/ActionMailer/Base.html</a><br><a href="https://ihower.tw/rails4/actionmailer.html" target="_blank" rel="external">https://ihower.tw/rails4/actionmailer.html</a></p>
+<h2 id="下面這段"><a href="#下面這段" class="headerlink" title="下面這段"></a>下面這段</h2><p><code>config.action_mailer.default_url_options = { host: &#39;localhost:3000&#39; }</code><br><code>config.action_mailer.delivery_method = :letter_opener</code><br>是怎麼來的？為什麼這樣寫？letter_opener 的 READM.md 沒看到相關內容，要去哪裡找？</p>
+<blockquote>
+<p>tba</p>
+</blockquote>
+<h2 id="拆解-OrderMailer-notify-order-placed-Order-last-deliver"><a href="#拆解-OrderMailer-notify-order-placed-Order-last-deliver" class="headerlink" title="拆解 OrderMailer.notify_order_placed(Order.last).deliver!"></a>拆解 OrderMailer.notify_order_placed(Order.last).deliver!</h2><blockquote>
+<p>tba</p>
+</blockquote>
+<h2 id="做什麼？"><a href="#做什麼？" class="headerlink" title=" 做什麼？"></a><link rel="stylesheet" type="text/css" href="/assets/application.css"> 做什麼？</h2><blockquote>
+<p>tba</p>
+</blockquote>
+<h2 id="find-by-id-session-cart-id-可以寫成-find-by-id-session-cart-id-，那-mail-to-user-email-subject-“blahblahblah”-可不可以寫成-mail-to-user-email-subject-“blahblahblah”"><a href="#find-by-id-session-cart-id-可以寫成-find-by-id-session-cart-id-，那-mail-to-user-email-subject-“blahblahblah”-可不可以寫成-mail-to-user-email-subject-“blahblahblah”" class="headerlink" title="find_by_id(session[:cart_id]) 可以寫成 find_by(id: session[:cart_id])，那 mail(to: @user.email, subject: “blahblahblah”) 可不可以寫成 mail_to(@user.email, subject: “blahblahblah”) ?"></a>find_by_id(session[:cart_id]) 可以寫成 find_by(id: session[:cart_id])，那 mail(to: @user.email, subject: “blahblahblah”) 可不可以寫成 mail_to(@user.email, subject: “blahblahblah”) ?</h2><blockquote>
+<p>tba</p>
+</blockquote>
+<h1 id="金流功能"><a href="#金流功能" class="headerlink" title="金流功能"></a>金流功能</h1><h2 id="‘pay2go’-gem-是做什麼的？"><a href="#‘pay2go’-gem-是做什麼的？" class="headerlink" title="‘pay2go’ gem 是做什麼的？"></a>‘pay2go’ gem 是做什麼的？</h2><blockquote>
+<p>tba</p>
+</blockquote>
+<h2 id="投影片-“Step-2-設定整合模式gem”。什麼是”整合模式”？下面整合模式的寫法，是預先定義在-‘pay2go’-gem-中，還是這是-rails-接-gem-的固定方式？"><a href="#投影片-“Step-2-設定整合模式gem”。什麼是”整合模式”？下面整合模式的寫法，是預先定義在-‘pay2go’-gem-中，還是這是-rails-接-gem-的固定方式？" class="headerlink" title="投影片 “Step 2: 設定整合模式gem”。什麼是”整合模式”？下面整合模式的寫法，是預先定義在 ‘pay2go’ gem 中，還是這是 rails 接 gem 的固定方式？"></a>投影片 “Step 2: 設定整合模式gem”。什麼是”整合模式”？下面整合模式的寫法，是預先定義在 ‘pay2go’ gem 中，還是這是 rails 接 gem 的固定方式？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">config.after_initialize do</div><div class="line">  Pay2go.integration_mode = :development</div><div class="line">end</div><div class="line"></div><div class="line">config.after_initialize do</div><div class="line">  Pay2go.integration_mode = :production</div><div class="line">end</div></pre></td></tr></table></figure>
+<p><a href="http://guides.rubyonrails.org/configuring.html" target="_blank" rel="external">http://guides.rubyonrails.org/configuring.html</a>  3 Configuring Rails Components<br>上面找不到 integration_mode 的內容。</p>
+<h2 id="沒有-Pay2go-class，為什麼可以-Pay2go-integration-mode-或是-Pay2go-setup-do-pay2go-這樣的寫法？"><a href="#沒有-Pay2go-class，為什麼可以-Pay2go-integration-mode-或是-Pay2go-setup-do-pay2go-這樣的寫法？" class="headerlink" title="沒有 Pay2go class，為什麼可以 Pay2go.integration_mode 或是 Pay2go.setup do |pay2go| 這樣的寫法？"></a>沒有 Pay2go class，為什麼可以 Pay2go.integration_mode 或是 Pay2go.setup do |pay2go| 這樣的寫法？</h2><blockquote>
+<p>tba</p>
+</blockquote>
+<h2 id="pay2go-rb-的位置在-config-initializers-pay2go-rb，這跟前面幾題使用-after-initialize-有關嗎？還是這是智付寶指定要放的位置？"><a href="#pay2go-rb-的位置在-config-initializers-pay2go-rb，這跟前面幾題使用-after-initialize-有關嗎？還是這是智付寶指定要放的位置？" class="headerlink" title="pay2go.rb 的位置在 config/initializers/pay2go.rb，這跟前面幾題使用 after_initialize 有關嗎？還是這是智付寶指定要放的位置？"></a>pay2go.rb 的位置在 config/initializers/pay2go.rb，這跟前面幾題使用 after_initialize 有關嗎？還是這是智付寶指定要放的位置？</h2><blockquote>
+<p>tba</p>
+</blockquote>
+<h2 id="為什麼整合模式寫在-config-environments-development-rb-及-config-environments-production-rb"><a href="#為什麼整合模式寫在-config-environments-development-rb-及-config-environments-production-rb" class="headerlink" title="為什麼整合模式寫在 config/environments/development.rb 及 config/environments/production.rb ?"></a>為什麼整合模式寫在 config/environments/development.rb 及 config/environments/production.rb ?</h2><blockquote>
+<p>tba</p>
+</blockquote>
+<h2 id="config-environments-config-initializers-config-locales……等檔案夾，是-rails-有-convention-指定要放什麼類型的檔案？還是說第三方服務的-API-可以指定放哪裡？如果是後者，那第三方-API-可不可以指定放在新增的檔案夾，比如說-config-pay2go-檔案夾裡面？pay2go-service-rb-放在-app-services-pay2go-service-rb-是-pay2go-api-的規定嗎？"><a href="#config-environments-config-initializers-config-locales……等檔案夾，是-rails-有-convention-指定要放什麼類型的檔案？還是說第三方服務的-API-可以指定放哪裡？如果是後者，那第三方-API-可不可以指定放在新增的檔案夾，比如說-config-pay2go-檔案夾裡面？pay2go-service-rb-放在-app-services-pay2go-service-rb-是-pay2go-api-的規定嗎？" class="headerlink" title="config/environments, config/initializers, config/locales……等檔案夾，是 rails 有 convention 指定要放什麼類型的檔案？還是說第三方服務的 API 可以指定放哪裡？如果是後者，那第三方 API 可不可以指定放在新增的檔案夾，比如說 config/pay2go 檔案夾裡面？pay2go_service.rb 放在 app/services/pay2go_service.rb 是 pay2go api 的規定嗎？"></a>config/environments, config/initializers, config/locales……等檔案夾，是 rails 有 convention 指定要放什麼類型的檔案？還是說第三方服務的 API 可以指定放哪裡？如果是後者，那第三方 API 可不可以指定放在新增的檔案夾，比如說 config/pay2go 檔案夾裡面？pay2go_service.rb 放在 app/services/pay2go_service.rb 是 pay2go api 的規定嗎？</h2><p>&gt;</p>
+<h2 id="上述哪些寫法是-Rails-指定的？哪些是-“pay2go”-gem-指定的？哪些是-Pay2go-API-指定的？"><a href="#上述哪些寫法是-Rails-指定的？哪些是-“pay2go”-gem-指定的？哪些是-Pay2go-API-指定的？" class="headerlink" title="上述哪些寫法是 Rails 指定的？哪些是 “pay2go” gem 指定的？哪些是 Pay2go API 指定的？"></a>上述哪些寫法是 Rails 指定的？哪些是 “pay2go” gem 指定的？哪些是 Pay2go API 指定的？</h2><p>&gt;</p>
+<h2 id="有哪些功能來自-pay2go-api-哪些來自-pay2go-gem"><a href="#有哪些功能來自-pay2go-api-哪些來自-pay2go-gem" class="headerlink" title="有哪些功能來自 pay2go api? 哪些來自 pay2go gem?"></a>有哪些功能來自 pay2go api? 哪些來自 pay2go gem?</h2><p>&gt;</p>
+<h2 id="form-tag-hidden-field-tag-submit-tag-各是什麼？"><a href="#form-tag-hidden-field-tag-submit-tag-各是什麼？" class="headerlink" title="form_tag, hidden_field_tag, submit_tag 各是什麼？"></a>form_tag, hidden_field_tag, submit_tag 各是什麼？</h2><p><a href="http://stackoverflow.com/questions/7733085/rails-what-exactly-does-hidden-field-and-hidden-field-tag-do" target="_blank" rel="external">http://stackoverflow.com/questions/7733085/rails-what-exactly-does-hidden-field-and-hidden-field-tag-do</a></p>
+<h2 id="callbacks-有什麼用途？這是來自-pay2go-伺服端的回應，還是就只是個我們寫在程式裡的小提示而已？"><a href="#callbacks-有什麼用途？這是來自-pay2go-伺服端的回應，還是就只是個我們寫在程式裡的小提示而已？" class="headerlink" title="callbacks 有什麼用途？這是來自 pay2go 伺服端的回應，還是就只是個我們寫在程式裡的小提示而已？"></a>callbacks 有什麼用途？這是來自 pay2go 伺服端的回應，還是就只是個我們寫在程式裡的小提示而已？</h2><p>&gt;</p>
+<h2 id="protect-from-forgery"><a href="#protect-from-forgery" class="headerlink" title="protect_from_forgery"></a>protect_from_forgery</h2><p><a href="http://api.rubyonrails.org/classes/ActionController/RequestForgeryProtection/ClassMethods.html" target="_blank" rel="external">http://api.rubyonrails.org/classes/ActionController/RequestForgeryProtection/ClassMethods.html</a><br><a href="http://stackoverflow.com/questions/1177863/how-do-i-ignore-the-authenticity-token-for-specific-actions-in-rails" target="_blank" rel="external">http://stackoverflow.com/questions/1177863/how-do-i-ignore-the-authenticity-token-for-specific-actions-in-rails</a></p>
+<h2 id="下面-initialize-method-是做什麼的？"><a href="#下面-initialize-method-是做什麼的？" class="headerlink" title="下面 initialize method 是做什麼的？"></a>下面 initialize method 是做什麼的？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">class Pay2goService</div><div class="line"></div><div class="line">  def initialize(order)</div><div class="line">    @order = order</div><div class="line">    @timestamp = order.created_at.to_i</div><div class="line">    @merchant_order_no = &quot;#&#123;order.id&#125;s#&#123;Time.now.strftime(&quot;%Y%m%d%H%M%S&quot;)&#125;&quot;</div><div class="line">    @total_price = order.total</div><div class="line">  end</div><div class="line">  ......</div></pre></td></tr></table></figure>
+<p>&gt;</p>
+<h2 id="pay2go-cc-notify-order-url-order-token-怎麼來的？"><a href="#pay2go-cc-notify-order-url-order-token-怎麼來的？" class="headerlink" title="pay2go_cc_notify_order_url(order.token) 怎麼來的？"></a>pay2go_cc_notify_order_url(order.token) 怎麼來的？</h2><p>&gt;</p>
+<h2 id="在寫-pay-with-credit-card-html-erb-時，那些掛在-hidden-field-tag-後面的東西是哪裡來的？"><a href="#在寫-pay-with-credit-card-html-erb-時，那些掛在-hidden-field-tag-後面的東西是哪裡來的？" class="headerlink" title="在寫 _pay_with_credit_card.html.erb 時，那些掛在 hidden _field _tag 後面的東西是哪裡來的？"></a>在寫 <code>_pay_with_credit_card.html.erb</code> 時，那些掛在 hidden <code>_field _tag</code> 後面的東西是哪裡來的？</h2><p>&gt;</p>
+<h2 id="before-action-authenticate-user-except-pay2go-cc-notify-的-except-pay2go-cc-notify"><a href="#before-action-authenticate-user-except-pay2go-cc-notify-的-except-pay2go-cc-notify" class="headerlink" title="before_action :authenticate_user!, except: :pay2go_cc_notify 的 except: :pay2go_cc_notify"></a>before_action :authenticate_user!, except: :pay2go_cc_notify 的 except: :pay2go_cc_notify</h2><p>&gt;</p>
+<h2 id="lt-render-“pay-with-credit-card”-order-order-gt-的-order-order"><a href="#lt-render-“pay-with-credit-card”-order-order-gt-的-order-order" class="headerlink" title="&lt;%= render “pay_with_credit_card”, order: @order %&gt; 的 order: @order"></a>&lt;%= render “pay_with_credit_card”, order: @order %&gt; 的 order: @order</h2><p>&gt;</p>
+<h2 id="為什麼-pay-with-credit-card-這個-partial-在按下按鈕時能產生用信用卡付款的效果？"><a href="#為什麼-pay-with-credit-card-這個-partial-在按下按鈕時能產生用信用卡付款的效果？" class="headerlink" title="為什麼 _pay_with_credit_card 這個 partial 在按下按鈕時能產生用信用卡付款的效果？"></a>為什麼 <code>_pay_with_credit_card</code> 這個 partial 在按下按鈕時能產生用信用卡付款的效果？</h2><p>&gt;</p>
+<h2 id="pay2go-cc-notify-method-是什麼時候被執行而能產生-callback-的效果？"><a href="#pay2go-cc-notify-method-是什麼時候被執行而能產生-callback-的效果？" class="headerlink" title="pay2go_cc_notify method 是什麼時候被執行而能產生 callback 的效果？"></a>pay2go_cc_notify method 是什麼時候被執行而能產生 callback 的效果？</h2><p>&gt;</p>
+<h2 id="lt-hidden-field-tag-“ReturnURL”-pay2go-cc-notify-order-url-order-token-gt"><a href="#lt-hidden-field-tag-“ReturnURL”-pay2go-cc-notify-order-url-order-token-gt" class="headerlink" title="&lt;%= hidden_field_tag “ReturnURL”, pay2go_cc_notify_order_url(order.token) %&gt;"></a>&lt;%= hidden_field_tag “ReturnURL”, pay2go_cc_notify_order_url(order.token) %&gt;</h2><p>為什麼 pay2go_cc_notify_order_url 後面要套入 order.token 這個參數？</p>
+<p>&gt;</p>
+<h2 id="if-params-“Status”-“SUCCESS”-是-Pay2go-API-回傳的資訊嗎？"><a href="#if-params-“Status”-“SUCCESS”-是-Pay2go-API-回傳的資訊嗎？" class="headerlink" title="if params[“Status”] == “SUCCESS” 是 Pay2go API 回傳的資訊嗎？"></a>if params[“Status”] == “SUCCESS” 是 Pay2go API 回傳的資訊嗎？</h2><p>params[“status”] 似乎是 hash 結構，這 hash 來自哪裡？怎麼存？</p>
+<p>是的，來自Pay2go API，所以沒什麼 local 端怎麼存的問題。</p>
+<ul>
+<li>下面這段：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">class OrdersController &lt; ApplicationController</div><div class="line">......</div><div class="line">  def create</div><div class="line">  ......</div><div class="line">      current_cart.clean!</div><div class="line">      OrderMailer.notify_order_placed(Order.last).deliver!</div><div class="line">      ......</div></pre></td></tr></table></figure>
+<p>其中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">current_cart.clean!</div><div class="line">OrderMailer.notify_order_placed(Order.last).deliver!</div></pre></td></tr></table></figure>
+<p>這兩行的先後順序有沒有影響到什麼東西？比如說使用者體驗、效能之類的？</p>
+<p>&gt;</p>
+<h2 id="local-git-和-heroku-git-不同，要改的話，用下面的連結。"><a href="#local-git-和-heroku-git-不同，要改的話，用下面的連結。" class="headerlink" title="local git 和 heroku git 不同，要改的話，用下面的連結。"></a>local git 和 heroku git 不同，要改的話，用下面的連結。</h2><p><a href="http://stackoverflow.com/questions/28749771/cant-push-to-heroku-after-accidentally-deleting-app-on-heroku" target="_blank" rel="external">http://stackoverflow.com/questions/28749771/cant-push-to-heroku-after-accidentally-deleting-app-on-heroku</a><br><a href="http://stackoverflow.com/questions/20263321/git-push-heroku-master-not-working" target="_blank" rel="external">http://stackoverflow.com/questions/20263321/git-push-heroku-master-not-working</a></p>
+<h1 id="Deploy-到-Heroku"><a href="#Deploy-到-Heroku" class="headerlink" title="Deploy 到 Heroku"></a>Deploy 到 Heroku</h1><h2 id="gem-“pg”-是-heroku-指定的-database，並且必須限定在-production-下使用。"><a href="#gem-“pg”-是-heroku-指定的-database，並且必須限定在-production-下使用。" class="headerlink" title="gem “pg” 是 heroku 指定的 database，並且必須限定在 production 下使用。"></a>gem “pg” 是 heroku 指定的 database，並且必須限定在 production 下使用。</h2><ul>
+<li>4 of 9</li>
+</ul>
+<p>Gemfile中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gem &apos;sqlite3&apos;, group: :development</div></pre></td></tr></table></figure></p>
+<p>也可以寫成<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">group: :development do</div><div class="line">  gem &apos;sqlite3&apos;</div><div class="line">end</div></pre></td></tr></table></figure></p>
+<p>就像該slide下方production的寫法</p>
+<p>[補充] 在 Rails 5 中，如果不把 gem “sqlite” 放在 development 及 test 中，只放在 development mode, 好像會造成 deploy 到 heroku 時出問題。</p>
+<h2 id="Gemfile-中，production-包在-development-test-這層-scope-內也能運作，但會有什麼影響呢？"><a href="#Gemfile-中，production-包在-development-test-這層-scope-內也能運作，但會有什麼影響呢？" class="headerlink" title="Gemfile 中，production 包在 development, test 這層 scope 內也能運作，但會有什麼影響呢？"></a>Gemfile 中，production 包在 development, test 這層 scope 內也能運作，但會有什麼影響呢？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">group :development, :test do</div><div class="line">  gem &apos;byebug&apos;</div><div class="line">  gem &apos;web-console&apos;, &apos;~&gt; 2.0&apos;</div><div class="line">  gem &apos;spring&apos;</div><div class="line"></div><div class="line">  group :production do</div><div class="line">    gem &quot;pg&quot;</div><div class="line">    gem &quot;rails_12factor&quot;</div><div class="line">  end</div><div class="line">end</div></pre></td></tr></table></figure>
+<p>&gt;</p>
+<h2 id="“因為我們還要測試在-heroku-的刷卡機制，所以先暫時把-production-裡的-pay2go-環境設定改成開發用”。這個修改對於-heroku-端有什麼影響？因為不是說程式部署到-heroku-會自動變成-production-模式嗎？"><a href="#“因為我們還要測試在-heroku-的刷卡機制，所以先暫時把-production-裡的-pay2go-環境設定改成開發用”。這個修改對於-heroku-端有什麼影響？因為不是說程式部署到-heroku-會自動變成-production-模式嗎？" class="headerlink" title="“因為我們還要測試在 heroku 的刷卡機制，所以先暫時把 production 裡的 pay2go 環境設定改成開發用”。這個修改對於 heroku 端有什麼影響？因為不是說程式部署到 heroku 會自動變成 production 模式嗎？"></a>“因為我們還要測試在 heroku 的刷卡機制，所以先暫時把 production 裡的 pay2go 環境設定改成開發用”。這個修改對於 heroku 端有什麼影響？因為不是說程式部署到 heroku 會自動變成 production 模式嗎？</h2><p>&gt;</p>
+<h2 id="Deploying-with-git-https-devcenter-heroku-com-articles-git"><a href="#Deploying-with-git-https-devcenter-heroku-com-articles-git" class="headerlink" title="Deploying with git https://devcenter.heroku.com/articles/git"></a>Deploying with git <a href="https://devcenter.heroku.com/articles/git" target="_blank" rel="external">https://devcenter.heroku.com/articles/git</a></h2><p><br><br><br></p>
+<h1 id="Deploy-補充-環境架構解說"><a href="#Deploy-補充-環境架構解說" class="headerlink" title="Deploy 補充 - 環境架構解說"></a>Deploy 補充 - 環境架構解說</h1><p>n/a<br><br><br><br></p>
+<h1 id="用-figaro-管理機密資訊"><a href="#用-figaro-管理機密資訊" class="headerlink" title="用 figaro 管理機密資訊"></a>用 figaro 管理機密資訊</h1><h2 id="拆解下面這段"><a href="#拆解下面這段" class="headerlink" title="拆解下面這段"></a>拆解下面這段</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">＄ figaro install</div><div class="line">create  config/application.yml</div><div class="line">append  .gitignore</div></pre></td></tr></table></figure>
+<p>下了指令後，產生config/application.yml檔，接著把這個檔案加到.gitignore的名單裡面。我們把要用figaro上傳並設定的使用者資料存在config/application.yml檔，因為它已經被加到.gitignore的名單中，所以這些使用者資料不會上傳而被別人看到。接著再透過figaro來把這些使用者資料自動灌上去。</p>
+<h2 id="只要有新增、修改帳號密碼，就要跑-figaro-heroku-set-e-production-將最新的帳號密碼資訊傳到-heroku-去。"><a href="#只要有新增、修改帳號密碼，就要跑-figaro-heroku-set-e-production-將最新的帳號密碼資訊傳到-heroku-去。" class="headerlink" title="只要有新增、修改帳號密碼，就要跑 figaro heroku:set -e production 將最新的帳號密碼資訊傳到 heroku 去。"></a>只要有新增、修改帳號密碼，就要跑 <code>figaro heroku:set -e production</code> 將最新的帳號密碼資訊傳到 heroku 去。</h2><h2 id="什麼是環境變數？"><a href="#什麼是環境變數？" class="headerlink" title="什麼是環境變數？"></a>什麼是環境變數？</h2><p>&gt;</p>
+<h2 id="application-yml-中的-pay2go-merchant-id-quot-197-quot-VS-pay2go-rb-中的-pay2go-merchant-id-ENV-39-pay2go-merchant-id-39-，這兩種寫法是-conventions-還是-figaro-要求的？"><a href="#application-yml-中的-pay2go-merchant-id-quot-197-quot-VS-pay2go-rb-中的-pay2go-merchant-id-ENV-39-pay2go-merchant-id-39-，這兩種寫法是-conventions-還是-figaro-要求的？" class="headerlink" title="application.yml 中的 pay2go_merchant_id: &quot;197----&quot; VS pay2go.rb 中的 pay2go.merchant_id = ENV[&#39;pay2go_merchant_id&#39;]，這兩種寫法是 conventions 還是 figaro 要求的？"></a>application.yml 中的 <code>pay2go_merchant_id: &quot;197----&quot;</code> VS pay2go.rb 中的 <code>pay2go.merchant_id = ENV[&#39;pay2go_merchant_id&#39;]</code>，這兩種寫法是 conventions 還是 figaro 要求的？</h2><p>&gt;</p>
+<h1 id="更多開發技巧"><a href="#更多開發技巧" class="headerlink" title="更多開發技巧"></a>更多開發技巧</h1><h2 id="為什麼-rake-T-列出的清單中沒有-rake-db-reset"><a href="#為什麼-rake-T-列出的清單中沒有-rake-db-reset" class="headerlink" title="為什麼 rake -T 列出的清單中沒有 rake db:reset?"></a>為什麼 <code>rake -T</code> 列出的清單中沒有 <code>rake db:reset</code>?</h2><p>&gt;</p>
+<h1 id="基本收納術"><a href="#基本收納術" class="headerlink" title="基本收納術"></a>基本收納術</h1><p><a href="https://rocodev.gitbooks.io/rails-102/content/chapter3-ruby/mixin_extend_inheritance.html" target="_blank" rel="external">https://rocodev.gitbooks.io/rails-102/content/chapter3-ruby/mixin_extend_inheritance.html</a></p>
+<h2 id="為什麼-tokenable-rb-是放在-app-models-concerns-A-K-A-How-to-use-concerns-in-Rails-4"><a href="#為什麼-tokenable-rb-是放在-app-models-concerns-A-K-A-How-to-use-concerns-in-Rails-4" class="headerlink" title="為什麼 tokenable.rb 是放在 app/models/concerns?  A.K.A. How to use concerns in Rails 4 ?"></a>為什麼 <code>tokenable.rb</code> 是放在 <code>app/models/concerns</code>?  A.K.A. How to use concerns in Rails 4 ?</h2><p><a href="https://signalvnoise.com/posts/3372-put-chubby-models-on-a-diet-with-concerns" target="_blank" rel="external">https://signalvnoise.com/posts/3372-put-chubby-models-on-a-diet-with-concerns</a><br><a href="https://richonrails.com/articles/rails-4-code-concerns-in-active-record-models" target="_blank" rel="external">https://richonrails.com/articles/rails-4-code-concerns-in-active-record-models</a><br><a href="http://codefol.io/posts/Where-Do-I-Put-My-Code" target="_blank" rel="external">http://codefol.io/posts/Where-Do-I-Put-My-Code</a><br><a href="http://stackoverflow.com/questions/14541823/how-to-use-concerns-in-rails-4" target="_blank" rel="external">http://stackoverflow.com/questions/14541823/how-to-use-concerns-in-rails-4</a></p>
+<h2 id="“一般-module-不認識-before-create，用-Rails-Model-Concern”。為什麼一般-module-不認識-before-create-concerns-分多少種？"><a href="#“一般-module-不認識-before-create，用-Rails-Model-Concern”。為什麼一般-module-不認識-before-create-concerns-分多少種？" class="headerlink" title="“一般 module 不認識 before_create，用 Rails : Model Concern”。為什麼一般 module 不認識 before_create ? concerns 分多少種？"></a>“一般 module 不認識 before_create，用 Rails : Model Concern”。為什麼一般 module 不認識 before_create ? concerns 分多少種？</h2><p>&gt;</p>
+<h2 id="拆解下方："><a href="#拆解下方：" class="headerlink" title="拆解下方："></a>拆解下方：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">module Tokenable</div><div class="line">  extend ActiveRecord::Concern</div><div class="line"></div><div class="line">  included do</div><div class="line">    before_create :generate_token</div><div class="line">  end</div><div class="line"></div><div class="line">  def generate_token</div><div class="line">    self.token = SecureRandom.uuid</div><div class="line">  end</div><div class="line">end</div></pre></td></tr></table></figure>
+<h1 id="View-收納術"><a href="#View-收納術" class="headerlink" title="View 收納術"></a>View 收納術</h1><p>通篇看不懂Orz</p>
+<h1 id="ServiceObject"><a href="#ServiceObject" class="headerlink" title="ServiceObject"></a>ServiceObject</h1><h2 id="各個檔案裡的-method-是怎麼被找到的？比如說我們在-app-services-order-placing-service-rb-有一個-OrderPlacingService-class，底下有一個叫-place-order-的-method，然後我們在-app-controllers-orders-controller-rb-裡面用到-OrderPlacingService-new-current-cart-order-place-order-，請問是怎麼找到的？"><a href="#各個檔案裡的-method-是怎麼被找到的？比如說我們在-app-services-order-placing-service-rb-有一個-OrderPlacingService-class，底下有一個叫-place-order-的-method，然後我們在-app-controllers-orders-controller-rb-裡面用到-OrderPlacingService-new-current-cart-order-place-order-，請問是怎麼找到的？" class="headerlink" title="各個檔案裡的 method 是怎麼被找到的？比如說我們在 app/services/order_placing_service.rb 有一個 OrderPlacingService class，底下有一個叫 place_order! 的 method，然後我們在 app/controllers/orders_controller.rb 裡面用到 OrderPlacingService.new(current_cart, @order).place_order!，請問是怎麼找到的？"></a>各個檔案裡的 method 是怎麼被找到的？比如說我們在 app/services/order_placing_service.rb 有一個 OrderPlacingService class，底下有一個叫 place_order! 的 method，然後我們在 app/controllers/orders_controller.rb 裡面用到 <code>OrderPlacingService.new(current_cart, @order).place_order!</code>，請問是怎麼找到的？</h2><p>&gt;</p>
+<h2 id="可不可以說，service-objects-給-controller-用、concerns-給-model-用-partial-給-view-用？helper-在-MVC-三個都可以用？"><a href="#可不可以說，service-objects-給-controller-用、concerns-給-model-用-partial-給-view-用？helper-在-MVC-三個都可以用？" class="headerlink" title="可不可以說，service objects 給 controller 用、concerns 給 model 用 partial 給 view 用？helper 在 MVC 三個都可以用？"></a>可不可以說，service objects 給 controller 用、concerns 給 model 用 partial 給 view 用？helper 在 MVC 三個都可以用？</h2><p>&gt;</p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="放-gem-進去-Gemfile-時，實務上會加上版本號嗎？"><a href="#放-gem-進去-Gemfile-時，實務上會加上版本號嗎？" class="headerlink" title="放 gem 進去 Gemfile 時，實務上會加上版本號嗎？"></a>放 gem 進去 Gemfile 時，實務上會加上版本號嗎？</h2><p>不一定，看 gem 的 README.md 怎麼寫。但是 ruby 和 rails 的版本好通常是會寫的，因為要讓整個 project 每個人的 ruby 及 rails 版本號是相同的。</p>
+<h2 id="golden-circle-why-how-what"><a href="#golden-circle-why-how-what" class="headerlink" title="golden circle: why, how ,what?"></a>golden circle: why, how ,what?</h2><p>&gt;</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/lionlies" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="mailto:lionlies@gmail.com" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
