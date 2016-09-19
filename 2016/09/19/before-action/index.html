@@ -10,6 +10,9 @@
 
     <!--Description-->
     
+        <meta name="description" content="before_action 是什麼？Filter 的一種, 定義執行 action 前要跑什麼 method. 另兩種常見的 filters 則是 after_action 以及 around_action.
+為什麼要用 before_action？一方面可以將每個 action 中最前面的重複代碼">
+    
 
     <!--Author-->
     
@@ -18,7 +21,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Hello World"/>
+        <meta property="og:title" content="before_action"/>
     
 
     <!--Open Graph Description-->
@@ -29,7 +32,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -40,7 +43,7 @@
 
     <!-- Title -->
     
-    <title>Archives - Hello World</title>
+    <title>before_action - Hello World</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -123,169 +126,61 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>Archives</h1>
+                <div class="post-heading">
+                    <h1>before_action</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2016-09-19
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2016/09/19/RESTful-和-MVC-好用的原因/">
-        <h1 class="post-title archive">
-            RESTful 和 MVC 好用的原因
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-09-19
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="before-action-是什麼？"><a href="#before-action-是什麼？" class="headerlink" title="before_action 是什麼？"></a>before_action 是什麼？</h1><p>Filter 的一種, 定義執行 action 前要跑什麼 method. 另兩種常見的 filters 則是 after_action 以及 around_action.</p>
+<h1 id="為什麼要用-before-action？"><a href="#為什麼要用-before-action？" class="headerlink" title="為什麼要用 before_action？"></a>為什麼要用 before_action？</h1><p>一方面可以將每個 action 中最前面的重複代碼抽出，寫成一個 method, 用 before_action 執行。<br>另一方面，因為身分驗證往往是做在 action 前，所以也常被用來做身分驗證。</p>
+<h1 id="如何使用-before-action？"><a href="#如何使用-before-action？" class="headerlink" title="如何使用 before_action？"></a>如何使用 before_action？</h1><figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ProductsController</span> &lt; ApplicationController</span></div><div class="line">  before_action <span class="symbol">:authenticate_user!</span>, <span class="symbol">only:</span> [<span class="symbol">:create</span>, <span class="symbol">:destroy</span>]</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">index</span></span></div><div class="line">  <span class="keyword">end</span></div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">new</span></span></div><div class="line">  <span class="keyword">end</span></div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">create</span></span></div><div class="line">  <span class="keyword">end</span></div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">destroy</span></span></div><div class="line">  <span class="keyword">end</span></div><div class="line"></div><div class="line">  private</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">authenticate_user!</span></span></div><div class="line">  <span class="keyword">end</span></div><div class="line"></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<p>除了 :only, 也可以搭配 :except, 比如：</p>
+<p><code>before_action :authenticate_user!, except: [:index, :new]</code></p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
             
-                <div class="post-preview">
-    <a href="/2016/09/19/Set-up-iTerm-2-with-oh-my-zsh/">
-        <h1 class="post-title archive">
-            Set up iTerm 2 with oh-my-zsh
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-09-19
-    </p>
-</div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
             
-                <div class="post-preview">
-    <a href="/2016/09/19/讓-simple-form-顯示中文-title-i18n-related/">
-        <h1 class="post-title archive">
-            讓 simple_form 顯示中文 title (i18n-related)
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-09-19
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2016/09/19/Session-Cookie/">
-        <h1 class="post-title archive">
-            Session & Cookie
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-09-19
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2016/09/19/before-action/">
-        <h1 class="post-title archive">
-            before_action
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-09-19
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2016/09/19/Strong-Parameters-in-Rails/">
-        <h1 class="post-title archive">
-            Strong Parameters in Rails
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-09-19
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2016/09/19/routing-時使用-namespace/">
-        <h1 class="post-title archive">
-            routing 時使用 namespace
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-09-19
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2016/09/19/User-Story-筆記/">
-        <h1 class="post-title archive">
-            User Story 筆記
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-09-19
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2016/09/18/Front-end-of-Rails-app/">
-        <h1 class="post-title archive">
-            Front end of Rails app
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-09-18
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2016/09/18/Rails-misc/">
-        <h1 class="post-title archive">
-            Rails misc.
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-09-18
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
-        <li class="next"><a href="/archives/page/2/">Older Posts  &rarr;</a></li>
-    
-</ul>
         </div>
     </div>
-</div>
-
-
+</article>
 
     <!-- Footer -->
     <hr />

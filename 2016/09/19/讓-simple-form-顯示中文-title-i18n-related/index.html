@@ -10,6 +10,9 @@
 
     <!--Description-->
     
+        <meta name="description" content="調整資料顯示時間為 UTC +8 (台灣)https://ihower.tw/rails4/i18n.html  Time Zone 的部分
+如何讓 simple_form 顯示中文 title ?https://github.com/plataformatec/simple_formhttp://">
+    
 
     <!--Author-->
     
@@ -18,7 +21,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Hello World"/>
+        <meta property="og:title" content="讓 simple_form 顯示中文 title (i18n-related)"/>
     
 
     <!--Open Graph Description-->
@@ -29,7 +32,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -40,7 +43,7 @@
 
     <!-- Title -->
     
-    <title>Archives - Hello World</title>
+    <title>讓 simple_form 顯示中文 title (i18n-related) - Hello World</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -123,169 +126,70 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>Archives</h1>
+                <div class="post-heading">
+                    <h1>讓 simple_form 顯示中文 title (i18n-related)</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2016-09-19
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2016/09/19/RESTful-和-MVC-好用的原因/">
-        <h1 class="post-title archive">
-            RESTful 和 MVC 好用的原因
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-09-19
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2 id="調整資料顯示時間為-UTC-8-台灣"><a href="#調整資料顯示時間為-UTC-8-台灣" class="headerlink" title="調整資料顯示時間為 UTC +8 (台灣)"></a>調整資料顯示時間為 UTC +8 (台灣)</h2><p><a href="https://ihower.tw/rails4/i18n.html" target="_blank" rel="external">https://ihower.tw/rails4/i18n.html</a>  Time Zone 的部分</p>
+<h2 id="如何讓-simple-form-顯示中文-title"><a href="#如何讓-simple-form-顯示中文-title" class="headerlink" title="如何讓 simple_form 顯示中文 title ?"></a>如何讓 simple_form 顯示中文 title ?</h2><p><a href="https://github.com/plataformatec/simple_form" target="_blank" rel="external">https://github.com/plataformatec/simple_form</a><br><a href="http://juanitofatas.com/2014/06/25/rails-i18n-intro/" target="_blank" rel="external">http://juanitofatas.com/2014/06/25/rails-i18n-intro/</a></p>
+<p>Carlos:</p>
+<p><a href="http://wildjcrt.pixnet.net/blog/post/28194551-%5Bgem%5D-simple_form" target="_blank" rel="external">http://wildjcrt.pixnet.net/blog/post/28194551-%5Bgem%5D-simple_form</a><br>多加這個 <code>config/locales/simple_form.zh-TW.yml</code><br>時區處理方法 裡面有寫到可以轉換 <code>TimeWithZone</code><br>Rails中的時間類別使用的是 <code>ActiveSupport::TimeWithZone</code><br><a href="https://ihower.tw/rails4/i18n.html" target="_blank" rel="external">https://ihower.tw/rails4/i18n.html</a></p>
+<p>kimberley:</p>
+<p>剛試出來了 先在你要自定名稱的欄位加上:label =&gt; I18n.t(:Title)<br><img src="http://user-image.logdown.io/user/8651/blog/8555/post/728992/sQThQVrTpSzPel0eUtsA_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-04-28%20%E4%B8%8B%E5%8D%8810.33.12.png" alt="螢幕快照 2016-04-28 下午10.33.12.png"><br><img src="http://user-image.logdown.io/user/8651/blog/8555/post/728992/ADNeAFzxTqKaptsjKmSX_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-04-28%20%E4%B8%8B%E5%8D%8810.34.08.png" alt="螢幕快照 2016-04-28 下午10.34.08.png"><br>再新增語言檔 好像就是小蟹助教這篇的內容</p>
+<p>kimberley:</p>
+<p>我終於搞清楚 simple_form 的 i18n 了<br>只要在 simple_form.zh-TW.yml 裡</p>
+<p><code>simple_form.zh-TW.yml</code></p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="attr">zh-TW:</span></div><div class="line"><span class="attr"> simple_form:</span></div><div class="line"><span class="attr">   labels:</span></div><div class="line"><span class="attr">     product:</span></div><div class="line"><span class="attr">       description:</span> <span class="string">"描述"</span></div><div class="line"><span class="attr">       title:</span> <span class="string">"抬頭"</span></div></pre></td></tr></table></figure>
+<p>product 就是 simple_form_for @product 的物件<br>如果想知道 yml 結構怎麼對應 可以裝 i18n-debug 這個 gem<br><a href="https://www.youtube.com/watch?v=XNzgvog5sfY" target="_blank" rel="external">https://www.youtube.com/watch?v=XNzgvog5sfY</a><br><a href="https://github.com/fphilipe/i18n-debug" target="_blank" rel="external">https://github.com/fphilipe/i18n-debug</a></p>
+<blockquote>
+<p>上面提到的範圍做出來之後，還有照IP認語言要實作，這也是multi-language / internationalization (也就是i 18個字母 n i18n的由來) 的範疇。這邊做完後，下一步就是讓使用者自己選擇顯示語言，我猜這個相對好做。</p>
+</blockquote>
+
+
+                
+            </div>
+
+            <!-- Comments -->
             
-                <div class="post-preview">
-    <a href="/2016/09/19/Set-up-iTerm-2-with-oh-my-zsh/">
-        <h1 class="post-title archive">
-            Set up iTerm 2 with oh-my-zsh
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-09-19
-    </p>
-</div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
             
-                <div class="post-preview">
-    <a href="/2016/09/19/讓-simple-form-顯示中文-title-i18n-related/">
-        <h1 class="post-title archive">
-            讓 simple_form 顯示中文 title (i18n-related)
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-09-19
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2016/09/19/Session-Cookie/">
-        <h1 class="post-title archive">
-            Session & Cookie
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-09-19
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2016/09/19/before-action/">
-        <h1 class="post-title archive">
-            before_action
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-09-19
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2016/09/19/Strong-Parameters-in-Rails/">
-        <h1 class="post-title archive">
-            Strong Parameters in Rails
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-09-19
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2016/09/19/routing-時使用-namespace/">
-        <h1 class="post-title archive">
-            routing 時使用 namespace
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-09-19
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2016/09/19/User-Story-筆記/">
-        <h1 class="post-title archive">
-            User Story 筆記
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-09-19
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2016/09/18/Front-end-of-Rails-app/">
-        <h1 class="post-title archive">
-            Front end of Rails app
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-09-18
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2016/09/18/Rails-misc/">
-        <h1 class="post-title archive">
-            Rails misc.
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-09-18
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
-        <li class="next"><a href="/archives/page/2/">Older Posts  &rarr;</a></li>
-    
-</ul>
         </div>
     </div>
-</div>
-
-
+</article>
 
     <!-- Footer -->
     <hr />

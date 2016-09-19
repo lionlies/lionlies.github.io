@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="什麼是 session 和 cookies?為什麼要用 session 跟 cookies?http://wiki.jikexueyuan.com/project/node-lessons/cookie-session.htmlhttp://www.justinweiss.com/articles/">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Jason Lung">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Session &amp; Cookie"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Hello World"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>Session &amp; Cookie - Hello World</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Welcome to Jason's Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/lionlies">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Session & Cookie</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2016-09-19
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="什麼是-session-和-cookies"><a href="#什麼是-session-和-cookies" class="headerlink" title="什麼是 session 和 cookies?"></a>什麼是 session 和 cookies?</h1><h1 id="為什麼要用-session-跟-cookies"><a href="#為什麼要用-session-跟-cookies" class="headerlink" title="為什麼要用 session 跟 cookies?"></a>為什麼要用 session 跟 cookies?</h1><p><a href="http://wiki.jikexueyuan.com/project/node-lessons/cookie-session.html" target="_blank" rel="external">http://wiki.jikexueyuan.com/project/node-lessons/cookie-session.html</a><br><a href="http://www.justinweiss.com/articles/how-rails-sessions-work/" target="_blank" rel="external">http://www.justinweiss.com/articles/how-rails-sessions-work/</a><br><a href="http://www.theodinproject.com/ruby-on-rails/sessions-cookies-and-authentication" target="_blank" rel="external">http://www.theodinproject.com/ruby-on-rails/sessions-cookies-and-authentication</a></p>
+<h1 id="Rails-內如何操作-session"><a href="#Rails-內如何操作-session" class="headerlink" title="Rails 內如何操作 session?"></a>Rails 內如何操作 session?</h1><p>Rails 操作 session 和 cookies 非常簡單，可以在 controller 與 view 中直接訪問，model 除外，極大地方便了開發。</p>
+<p>Session<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">#存信息</div><div class="line">session[:current_user_id] = user.id</div><div class="line">#取信息</div><div class="line">session[:current_user_id]</div><div class="line">#刪除信息</div><div class="line">session[:current_user_id] = nil</div><div class="line">#清空信息</div><div class="line">reset_session</div></pre></td></tr></table></figure></p>
+<p>Cookies<br>cookies 操作稍微有點多，因為關係到明文/加密，過期時長<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">1、默認為關閉瀏覽器，自動過期；明文存儲。</div><div class="line">#存信息</div><div class="line">cookies[:id] = &quot;rubyer.me&quot;</div><div class="line">#取信息</div><div class="line">cookies[:id] #輸出&quot;rubyer.me&quot;</div><div class="line">#刪除信息</div><div class="line">cookies.delete (:key) #與 session 不同</div><div class="line">#清空信息（不能直接刪除，置過期即可）</div><div class="line">&lt;% cookies[:id] = &#123;:expires =&gt; 2.weeks.ago.utc&#125; %&gt;</div><div class="line"></div><div class="line">2、指定2周後過期</div><div class="line">cookies[:user_preference] = &#123;</div><div class="line">  :value =&gt; @current_user.preferences,</div><div class="line">  :expires =&gt; 2.weeks.from_now.utc</div><div class="line">&#125;</div><div class="line"></div><div class="line">3、永久存儲。實際為20年後過期，非永久</div><div class="line">cookies.permanent[:user_preference] = @current_user.preferences</div><div class="line"></div><div class="line">4、加密存儲，key 即為 config/initializers/secret_token.rb 中的 Application.config.secret_token</div><div class="line">cookies.signed[:id] = &quot;45&quot;</div><div class="line">#存儲結果類似</div><div class="line">cookies[:id] #返回「BAhJIgc0NQY6BkVU--a07249e5ce4374f62b7af628c70c679caa11c10b」</div><div class="line">#讀取值</div><div class="line">cookies.signed[:id] #返回&quot;45&quot;</div><div class="line"></div><div class="line">5、加密並永久存儲</div><div class="line">cookies.permanent.signed[:id] = &quot;45&quot;</div><div class="line">cookies.signed[:id]</div></pre></td></tr></table></figure></p>
+<h1 id="個人心得"><a href="#個人心得" class="headerlink" title="個人心得"></a>個人心得</h1><p>雖然自己仍然是個 Rails 偽新手，但漸漸看得出一些學習上的問題點。網路上很多 Rails 初學者寫關於 session 和 cookies 的文章，參考的其實可能是其它初學者的文章，但由於還沒有能力判斷內容對錯，所以可能一開始的觀念就錯了。或許可以考慮直接看官方文件，或是參考有口碑的技術網站，比如 MDN, 再不然至少也還有知名的 Rails 大神寫的技術文可以參考。不能否認有那種有口碑但是錯誤不少的技術網站（比如W3School), 只能同一個主題多方參考了。</p>
+<p>另外，名詞定義或版本上的混淆也是個問題。名詞定義來說，因為初學者懂的還太少，比如 Rails 的 session 是 cookie-based session, 必須和 cookie 一起使用，如果初學者看了一篇文章，說 session 其實可以單獨存在及使用，就可能搞錯 Rails session 的觀念。版本的部分，比如說 Rails 3 和 Rails 4 在 CookieStore 預設的做法有些微不同，而初學者未必會注意到不同版本有可能有巨大差異，如果查閱文件或文章時沒注意到版本號，甚至參考到同樣是初學者的文章，而對方同樣不知道版本號的影響，就有可能學到過時的、甚至被淘汰的觀念或實做方法。</p>
+<h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><p><a href="http://wiki.jikexueyuan.com/project/node-lessons/cookie-session.html" target="_blank" rel="external">http://wiki.jikexueyuan.com/project/node-lessons/cookie-session.html</a></p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/lionlies" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="mailto:lionlies@gmail.com" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

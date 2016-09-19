@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="counter cache 用法http://yerb.net/blog/2014/03/13/three-easy-steps-to-using-counter-caches-in-rails/
+$ rake statsrails method .find_or_create_byhttp://a">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Jason Lung">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Rails misc."/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Hello World"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>Rails misc. - Hello World</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Welcome to Jason's Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/lionlies">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Rails misc.</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2016-09-18
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2 id="counter-cache-用法"><a href="#counter-cache-用法" class="headerlink" title="counter cache 用法"></a>counter cache 用法</h2><p><a href="http://yerb.net/blog/2014/03/13/three-easy-steps-to-using-counter-caches-in-rails/" target="_blank" rel="external">http://yerb.net/blog/2014/03/13/three-easy-steps-to-using-counter-caches-in-rails/</a></p>
+<h2 id="rake-stats"><a href="#rake-stats" class="headerlink" title="$ rake stats"></a><code>$ rake stats</code></h2><h2 id="rails-method-find-or-create-by"><a href="#rails-method-find-or-create-by" class="headerlink" title="rails method .find_or_create_by"></a>rails method <code>.find_or_create_by</code></h2><p><a href="http://apidock.com/rails/v4.0.2/ActiveRecord/Relation/find_or_create_by" target="_blank" rel="external">http://apidock.com/rails/v4.0.2/ActiveRecord/Relation/find_or_create_by</a><br>讓 event index 可以依照參數排序</p>
+<h2 id="Rails-預設使用了-Cookie-來儲存-Session-訊息。它會用上述的-key"><a href="#Rails-預設使用了-Cookie-來儲存-Session-訊息。它會用上述的-key" class="headerlink" title="Rails 預設使用了 Cookie 來儲存 Session 訊息。它會用上述的 key"></a>Rails 預設使用了 Cookie 來儲存 Session 訊息。它會用上述的 key</h2><p>編碼之後，直接存放在使用者瀏覽器 Cookie 上。<br><a href="https://ihower.tw/rails4/environments-and-bundler.html" target="_blank" rel="external">https://ihower.tw/rails4/environments-and-bundler.html</a></p>
+<h2 id="Rails預設針對notice和alert這兩個類型可以直接塞進redirect-to當作參數"><a href="#Rails預設針對notice和alert這兩個類型可以直接塞進redirect-to當作參數" class="headerlink" title="Rails預設針對notice和alert這兩個類型可以直接塞進redirect_to當作參數"></a>Rails預設針對notice和alert這兩個類型可以直接塞進redirect_to當作參數</h2><p><code>redirect_to event_url(@event), :notice =&gt; &quot;成功建立&quot;</code></p>
+<p><a href="https://ihower.tw/rails4/actioncontroller.html" target="_blank" rel="external">https://ihower.tw/rails4/actioncontroller.html</a></p>
+<h2 id="create和create-就等於new完就save和save-，有無驚嘆號的差別在於validate資料驗證不正確的動作，無驚嘆號版本會回傳布林值-true或false-，有驚嘆號版本則是驗證錯誤會丟出例外。"><a href="#create和create-就等於new完就save和save-，有無驚嘆號的差別在於validate資料驗證不正確的動作，無驚嘆號版本會回傳布林值-true或false-，有驚嘆號版本則是驗證錯誤會丟出例外。" class="headerlink" title="create和create!就等於new完就save和save!，有無驚嘆號的差別在於validate資料驗證不正確的動作，無驚嘆號版本會回傳布林值(true或false)，有驚嘆號版本則是驗證錯誤會丟出例外。"></a>create和create!就等於new完就save和save!，有無驚嘆號的差別在於validate資料驗證不正確的動作，無驚嘆號版本會回傳布林值(true或false)，有驚嘆號版本則是驗證錯誤會丟出例外。</h2><p><a href="https://ihower.tw/rails4/activerecord-query.html" target="_blank" rel="external">https://ihower.tw/rails4/activerecord-query.html</a></p>
+<h2 id="Rails轉出來的複數不一定是正確的英文單字，這時候你可以修改config-initializers-inflections-rb進行訂正。"><a href="#Rails轉出來的複數不一定是正確的英文單字，這時候你可以修改config-initializers-inflections-rb進行訂正。" class="headerlink" title="Rails轉出來的複數不一定是正確的英文單字，這時候你可以修改config/initializers/inflections.rb進行訂正。"></a>Rails轉出來的複數不一定是正確的英文單字，這時候你可以修改config/initializers/inflections.rb進行訂正。</h2><h2 id="Migration-可用的方法"><a href="#Migration-可用的方法" class="headerlink" title="Migration 可用的方法"></a>Migration 可用的方法</h2><p><a href="https://ihower.tw/rails4/migrations.html" target="_blank" rel="external">https://ihower.tw/rails4/migrations.html</a></p>
+<h2 id="https-ihower-tw-rails4-activerecord-relationships-html"><a href="#https-ihower-tw-rails4-activerecord-relationships-html" class="headerlink" title="https://ihower.tw/rails4/activerecord-relationships.html"></a><a href="https://ihower.tw/rails4/activerecord-relationships.html" target="_blank" rel="external">https://ihower.tw/rails4/activerecord-relationships.html</a></h2><h3 id="has-many-的設定："><a href="#has-many-的設定：" class="headerlink" title="has_many 的設定："></a>has_many 的設定：</h3><h3 id="可以變更Foreign-Key的欄位名稱，例如改成-paid-user-id："><a href="#可以變更Foreign-Key的欄位名稱，例如改成-paid-user-id：" class="headerlink" title="可以變更Foreign Key的欄位名稱，例如改成 paid_user_id："></a>可以變更Foreign Key的欄位名稱，例如改成 paid_user_id：</h3><figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Event</span> &lt; ActiveRecord::Base</span></div><div class="line">  belongs_to <span class="symbol">:paid_user</span>, <span class="symbol">:class_name</span> =&gt; <span class="string">"User"</span>, <span class="symbol">:foreign_key</span> =&gt; <span class="string">"paid_user_id"</span></div><div class="line">  <span class="comment">#...</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<h3 id="through-透過關聯來建立另一個關聯集合，用於建立多對多的關係。"><a href="#through-透過關聯來建立另一個關聯集合，用於建立多對多的關係。" class="headerlink" title="through: 透過關聯來建立另一個關聯集合，用於建立多對多的關係。"></a>through: 透過關聯來建立另一個關聯集合，用於建立多對多的關係。</h3><figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Event</span> &lt; ActiveRecord::Base</span></div><div class="line">	has_many <span class="symbol">:event_groupships</span></div><div class="line">   has_many <span class="symbol">:groups</span>, <span class="symbol">:through</span> =&gt; <span class="symbol">:event_groupships</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<h3 id="source-搭配through設定使用，當關聯的名稱不一致的時候，需要加上source指名是哪一種物件。"><a href="#source-搭配through設定使用，當關聯的名稱不一致的時候，需要加上source指名是哪一種物件。" class="headerlink" title="source: 搭配through設定使用，當關聯的名稱不一致的時候，需要加上source指名是哪一種物件。"></a>source: 搭配through設定使用，當關聯的名稱不一致的時候，需要加上source指名是哪一種物件。</h3><figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Event</span> &lt; ActiveRecord::Base</span></div><div class="line">	has_many <span class="symbol">:event_groupships</span></div><div class="line">   has_many <span class="symbol">:classifications</span>, <span class="symbol">:through</span> =&gt; <span class="symbol">:event_groupships</span>, <span class="symbol">:source</span> =&gt; <span class="symbol">:group</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<h3 id="belongs-to-的設定："><a href="#belongs-to-的設定：" class="headerlink" title="belongs_to 的設定："></a>belongs_to 的設定：</h3><p>可以變更關聯的 class name，例如：<br><figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Event</span> &lt; ActiveRecord::Base</span></div><div class="line">  belongs_to <span class="symbol">:manager</span>, <span class="symbol">:class_name</span> =&gt; <span class="string">"User"</span> <span class="comment"># 預設的外部鍵叫做 manager_id</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure></p>
+<h3 id="可以變更-foreign-key-的欄位名稱，例如改成-user-id："><a href="#可以變更-foreign-key-的欄位名稱，例如改成-user-id：" class="headerlink" title="可以變更 foreign key 的欄位名稱，例如改成 user_id："></a>可以變更 foreign key 的欄位名稱，例如改成 user_id：</h3><figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Event</span> &lt; ActiveRecord::Base</span></div><div class="line">  belongs_to <span class="symbol">:manager</span>, <span class="symbol">:class_name</span> =&gt; <span class="string">"User"</span>, <span class="symbol">:foreign_key</span> =&gt; <span class="string">"user_id"</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<h2 id="確保格式正確：透過正規表示法檢查資料的格式是否正確，例如可以用來檢查-Email、URL-網址、郵遞區號、手機號碼等等格式的正確性。"><a href="#確保格式正確：透過正規表示法檢查資料的格式是否正確，例如可以用來檢查-Email、URL-網址、郵遞區號、手機號碼等等格式的正確性。" class="headerlink" title="確保格式正確：透過正規表示法檢查資料的格式是否正確，例如可以用來檢查 Email、URL 網址、郵遞區號、手機號碼等等格式的正確性。"></a>確保格式正確：透過正規表示法檢查資料的格式是否正確，例如可以用來檢查 Email、URL 網址、郵遞區號、手機號碼等等格式的正確性。</h2><p><a href="https://ihower.tw/rails4/activerecord-lifecycle.html" target="_blank" rel="external">https://ihower.tw/rails4/activerecord-lifecycle.html</a><br><figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span> &lt; ActiveRecord::Base</span></div><div class="line">    validates_format_of <span class="symbol">:email</span>, <span class="symbol">:with</span> =&gt; <span class="regexp">/\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]&#123;2,&#125;)\z/i</span></div><div class="line">    validates_format_of <span class="symbol">:url</span>, <span class="symbol">:with</span> =&gt;  <span class="regexp">/(^$)|(^(http|https):\/\/[a-z0-9]+([\-\.]&#123;1&#125;[a-z0-9]+)*\.[a-z]&#123;2,5&#125;(([0-9]&#123;1,5&#125;)?\/.*)?$)/ix</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure></p>
+<h2 id="雖然序列化很方便可以讓你儲存任意的物件，但是缺點是序列化資料就失去了透過資料庫查詢索引的功效，你無法在SQL的where條件中指定序列化後的資料。"><a href="#雖然序列化很方便可以讓你儲存任意的物件，但是缺點是序列化資料就失去了透過資料庫查詢索引的功效，你無法在SQL的where條件中指定序列化後的資料。" class="headerlink" title="雖然序列化很方便可以讓你儲存任意的物件，但是缺點是序列化資料就失去了透過資料庫查詢索引的功效，你無法在SQL的where條件中指定序列化後的資料。"></a>雖然序列化很方便可以讓你儲存任意的物件，但是缺點是序列化資料就失去了透過資料庫查詢索引的功效，你無法在SQL的where條件中指定序列化後的資料。</h2><p><a href="https://ihower.tw/rails4/activerecord-others.html" target="_blank" rel="external">https://ihower.tw/rails4/activerecord-others.html</a></p>
+<h2 id="Template-Handler"><a href="#Template-Handler" class="headerlink" title="Template Handler"></a>Template Handler</h2><p><a href="https://ihower.tw/rails4/actionview.html" target="_blank" rel="external">https://ihower.tw/rails4/actionview.html</a><br>用 HAML 寫：<br><figure class="highlight haml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">%<span class="selector-tag">section</span><span class="selector-class">.container</span></span></div><div class="line"><span class="tag">    %<span class="selector-tag">h1</span></span>= post.title</div><div class="line"><span class="tag">    %<span class="selector-tag">h2</span></span>= post.subtitle</div><div class="line">    .content</div><div class="line">        =<span class="ruby"> post.content</span></div></pre></td></tr></table></figure></p>
+<p>等同於以下的ERB：<br><figure class="highlight erb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;section class=”container”&gt;</div><div class="line">    &lt;h1&gt;&lt;%=<span class="ruby"> post.title </span>%&gt;&lt;/h1&gt;</div><div class="line">    &lt;h2&gt;&lt;%=<span class="ruby"> post.subtitle </span>%&gt;&lt;/h2&gt;</div><div class="line">    &lt;div class=”content”&gt;</div><div class="line">        &lt;%=<span class="ruby"> post.content </span>%&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/section&gt;</div></pre></td></tr></table></figure></p>
+<h2 id="form-helper"><a href="#form-helper" class="headerlink" title="form helper"></a>form helper</h2><p><a href="https://ihower.tw/rails4/actionview-helpers.html" target="_blank" rel="external">https://ihower.tw/rails4/actionview-helpers.html</a></p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/lionlies" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="mailto:lionlies@gmail.com" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
