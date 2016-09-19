@@ -10,8 +10,9 @@
 
     <!--Description-->
     
-        <meta name="description" content="調整資料顯示時間為 UTC +8 (台灣)https://ihower.tw/rails4/i18n.html  Time Zone 的部分
-如何讓 simple_form 顯示中文 title ?https://github.com/plataformatec/simple_formhttp://">
+        <meta name="description" content="如何讓 simple_form 顯示中文 title ?https://github.com/plataformatec/simple_formhttp://juanitofatas.com/2014/06/25/rails-i18n-intro/
+Carlos:
+http://wildjcrt.p">
     
 
     <!--Author-->
@@ -160,8 +161,7 @@
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <h2 id="調整資料顯示時間為-UTC-8-台灣"><a href="#調整資料顯示時間為-UTC-8-台灣" class="headerlink" title="調整資料顯示時間為 UTC +8 (台灣)"></a>調整資料顯示時間為 UTC +8 (台灣)</h2><p><a href="https://ihower.tw/rails4/i18n.html" target="_blank" rel="external">https://ihower.tw/rails4/i18n.html</a>  Time Zone 的部分</p>
-<h2 id="如何讓-simple-form-顯示中文-title"><a href="#如何讓-simple-form-顯示中文-title" class="headerlink" title="如何讓 simple_form 顯示中文 title ?"></a>如何讓 simple_form 顯示中文 title ?</h2><p><a href="https://github.com/plataformatec/simple_form" target="_blank" rel="external">https://github.com/plataformatec/simple_form</a><br><a href="http://juanitofatas.com/2014/06/25/rails-i18n-intro/" target="_blank" rel="external">http://juanitofatas.com/2014/06/25/rails-i18n-intro/</a></p>
+                <h2 id="如何讓-simple-form-顯示中文-title"><a href="#如何讓-simple-form-顯示中文-title" class="headerlink" title="如何讓 simple_form 顯示中文 title ?"></a>如何讓 simple_form 顯示中文 title ?</h2><p><a href="https://github.com/plataformatec/simple_form" target="_blank" rel="external">https://github.com/plataformatec/simple_form</a><br><a href="http://juanitofatas.com/2014/06/25/rails-i18n-intro/" target="_blank" rel="external">http://juanitofatas.com/2014/06/25/rails-i18n-intro/</a></p>
 <p>Carlos:</p>
 <p><a href="http://wildjcrt.pixnet.net/blog/post/28194551-%5Bgem%5D-simple_form" target="_blank" rel="external">http://wildjcrt.pixnet.net/blog/post/28194551-%5Bgem%5D-simple_form</a><br>多加這個 <code>config/locales/simple_form.zh-TW.yml</code><br>時區處理方法 裡面有寫到可以轉換 <code>TimeWithZone</code><br>Rails中的時間類別使用的是 <code>ActiveSupport::TimeWithZone</code><br><a href="https://ihower.tw/rails4/i18n.html" target="_blank" rel="external">https://ihower.tw/rails4/i18n.html</a></p>
 <p>kimberley:</p>
@@ -174,6 +174,7 @@
 <blockquote>
 <p>上面提到的範圍做出來之後，還有照IP認語言要實作，這也是multi-language / internationalization (也就是i 18個字母 n i18n的由來) 的範疇。這邊做完後，下一步就是讓使用者自己選擇顯示語言，我猜這個相對好做。</p>
 </blockquote>
+<h2 id="延伸閱讀"><a href="#延伸閱讀" class="headerlink" title="延伸閱讀"></a>延伸閱讀</h2><p>Change label display name when using simple form in Rails<br><a href="http://stackoverflow.com/questions/13665997/can-you-change-label-display-names-when-using-simple-form-in-rails" target="_blank" rel="external">http://stackoverflow.com/questions/13665997/can-you-change-label-display-names-when-using-simple-form-in-rails</a></p>
 
 
                 
