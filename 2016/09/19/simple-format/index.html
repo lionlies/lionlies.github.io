@@ -10,6 +10,9 @@
 
     <!--Description-->
     
+        <meta name="description" content="simple_format(text, html_options = {}, options = {})
+Returns text transformed into HTML using simple formatting rules. Two or more consecutive newline">
+    
 
     <!--Author-->
     
@@ -18,7 +21,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Hello World"/>
+        <meta property="og:title" content="simple_format"/>
     
 
     <!--Open Graph Description-->
@@ -29,7 +32,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -40,7 +43,7 @@
 
     <!-- Title -->
     
-    <title>Archiv: 2016/8 - Hello World</title>
+    <title>simple_format - Hello World</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -123,63 +126,69 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>2016/8</h1>
+                <div class="post-heading">
+                    <h1>simple_format</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2016-09-19
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2016/08/16/Using-Hexo-with-Github-Pages/">
-        <h1 class="post-title archive">
-            Using Hexo with Github Pages
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-08-16
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>simple_format(text, html_options = {}, options = {})</p>
+<p>Returns text transformed into HTML using simple formatting rules. Two or more consecutive newlines(\n\n) are considered as a paragraph and wrapped in </p><p> tags. One newline (\n) is considered as a linebreak and a <br> tag is appended. This method does not remove the newlines from the text.</p>
+<p>比如說我們在表單欄位中輸入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">1st line of 1st post</div><div class="line">2nd line</div><div class="line">3rd line</div><div class="line"></div><div class="line">2nd paragraph</div></pre></td></tr></table></figure>
+<p>代碼是 <code>&lt;%= post.content %&gt;</code></p>
+<p>結果是</p>
+<p><img src="http://user-image.logdown.io/user/8651/blog/8555/post/746113/PyT9qbB9RbWtaA132UEj_Rails111%202016-06-29%2019-24-55.png" alt="Rails111 2016-06-29 19-24-55.png"></p>
+<p><img src="http://user-image.logdown.io/user/8651/blog/8555/post/746113/Mu8DPNVwQOyan5xuLYoQ_Rails111%202016-06-29%2019-25-40.png" alt="Rails111 2016-06-29 19-25-40.png"></p>
+<p>代碼是 <code>&lt;%= simple_format(post.content) %&gt;</code></p>
+<p>結果是</p>
+<p><img src="http://user-image.logdown.io/user/8651/blog/8555/post/746113/sIf4ieg0SxaiGSgPCm49_Rails111%202016-06-29%2019-23-26.png" alt="Rails111 2016-06-29 19-23-26.png"></p>
+<p><img src="http://user-image.logdown.io/user/8651/blog/8555/post/746113/3QtbOOGJTrCWynLIuwRf_Rails111%202016-06-29%2019-23-51.png" alt="Rails111 2016-06-29 19-23-51.png"></p>
+<p>很明顯能看出差別</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
             
-                <div class="post-preview">
-    <a href="/2016/08/16/hello-world/">
-        <h1 class="post-title archive">
-            Hello World
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-08-16
-    </p>
-</div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
             
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
-</ul>
         </div>
     </div>
-</div>
-
-
+</article>
 
     <!-- Footer -->
     <hr />

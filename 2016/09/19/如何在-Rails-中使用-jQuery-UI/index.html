@@ -10,6 +10,10 @@
 
     <!--Description-->
     
+        <meta name="description" content="用 “jquery-ui-rails” gem在介紹 jquery-ui-rails 前，我們先來了解什麼是 jQuery UI, 以及它能做到什麼。最簡單的理解方式其實是點進去下方連結，點選左側欄位自己試試看：
+https://jqueryui.com/
+而 jquery-ui-rails 就是一">
+    
 
     <!--Author-->
     
@@ -18,7 +22,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Hello World"/>
+        <meta property="og:title" content="如何在 Rails 中使用 jQuery UI?"/>
     
 
     <!--Open Graph Description-->
@@ -29,7 +33,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -40,7 +44,7 @@
 
     <!-- Title -->
     
-    <title>Archiv: 2016/8 - Hello World</title>
+    <title>如何在 Rails 中使用 jQuery UI? - Hello World</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -123,63 +127,66 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>2016/8</h1>
+                <div class="post-heading">
+                    <h1>如何在 Rails 中使用 jQuery UI?</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2016-09-19
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2016/08/16/Using-Hexo-with-Github-Pages/">
-        <h1 class="post-title archive">
-            Using Hexo with Github Pages
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-08-16
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2 id="用-“jquery-ui-rails”-gem"><a href="#用-“jquery-ui-rails”-gem" class="headerlink" title="用 “jquery-ui-rails” gem"></a>用 “jquery-ui-rails” gem</h2><p>在介紹 jquery-ui-rails 前，我們先來了解什麼是 <code>jQuery UI</code>, 以及它能做到什麼。最簡單的理解方式其實是點進去下方連結，點選左側欄位自己試試看：</p>
+<p><a href="https://jqueryui.com/" target="_blank" rel="external">https://jqueryui.com/</a></p>
+<p>而 jquery-ui-rails 就是一個讓 rails 能跑 jquery ui 的 gem 了。</p>
+<p><a href="https://github.com/joliss/jquery-ui-rails" target="_blank" rel="external">https://github.com/joliss/jquery-ui-rails</a></p>
+<p><code>Gemfile</code><br><figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gem <span class="string">'jquery-ui-rails'</span></div></pre></td></tr></table></figure></p>
+<h2 id="Require-Everything"><a href="#Require-Everything" class="headerlink" title="Require Everything"></a>Require Everything</h2><p><code>application.css</code><br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line"> *= require jquery-ui</div><div class="line"> */</div></pre></td></tr></table></figure></p>
+<p><code>application.js</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//= require jquery-ui</span></div></pre></td></tr></table></figure></p>
+<h2 id="Require-Specific-Modules"><a href="#Require-Specific-Modules" class="headerlink" title="Require Specific Modules"></a>Require Specific Modules</h2><p>The jQuery UI code weighs 51KB (minified + gzipped) and takes a while to execute, so for production apps it’s recommended to only include the modules that your application actually uses. Dependencies are automatically resolved. Simply pick one or more modules from the asset list below.</p>
+<p><code>application.css</code><br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line"> *= require jquery-ui</div><div class="line"> */</div></pre></td></tr></table></figure></p>
+<p><code>application.js</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//= require jquery-ui</span></div></pre></td></tr></table></figure></p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
             
-                <div class="post-preview">
-    <a href="/2016/08/16/hello-world/">
-        <h1 class="post-title archive">
-            Hello World
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-08-16
-    </p>
-</div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
             
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
-</ul>
         </div>
     </div>
-</div>
-
-
+</article>
 
     <!-- Footer -->
     <hr />

@@ -10,6 +10,10 @@
 
     <!--Description-->
     
+        <meta name="description" content="1$ git checkout -b new-branch `git rev-list --max-parents=0 HEAD`
+切回第一個 commit，再開一個新的 branch (new-branch)
+$ git checkout branch-1切換到叫做 branch-1 的 bran">
+    
 
     <!--Author-->
     
@@ -18,7 +22,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Hello World"/>
+        <meta property="og:title" content="Basic Git Branching &amp; Merging"/>
     
 
     <!--Open Graph Description-->
@@ -29,7 +33,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -40,7 +44,7 @@
 
     <!-- Title -->
     
-    <title>Archiv: 2016/8 - Hello World</title>
+    <title>Basic Git Branching &amp; Merging - Hello World</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -123,63 +127,87 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>2016/8</h1>
+                <div class="post-heading">
+                    <h1>Basic Git Branching & Merging</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2016-09-19
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2016/08/16/Using-Hexo-with-Github-Pages/">
-        <h1 class="post-title archive">
-            Using Hexo with Github Pages
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-08-16
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git checkout -b new-branch `git rev-list --max-parents=0 HEAD`</div></pre></td></tr></table></figure>
+<p>切回第一個 commit，再開一個新的 branch (new-branch)</p>
+<p><code>$ git checkout branch-1</code><br>切換到叫做 branch-1 的 branch</p>
+<p><code>$ git branch -D branch-2</code><br>在其他 branch 砍掉一個叫做 branch-2 的 branch<br><a href="http://stackoverflow.com/questions/2003505/delete-a-git-branch-both-locally-and-remotely" target="_blank" rel="external">http://stackoverflow.com/questions/2003505/delete-a-git-branch-both-locally-and-remotely</a></p>
+<p><code>$ git log</code><br>進入commit清單，每個commit後面有獨一無二的commit hash key, 按 q 跳出。</p>
+<p><code>$ git reset --hard &lt;commit hash key&gt;</code><br>回到指定的 git commit, 並讓你的 local code 和 local history 跟那個 commit 一模一樣…</p>
+<p>如果要避免下面的問題</p>
+<blockquote>
+<p>“It will make your local code and local history be just like it was at that commit. But then if you wanted to push this to someone else who has the new history, it would fail.”</p>
+</blockquote>
+<p>我們可以用…<br><code>$ git reset --soft &lt;commit hash key&gt;</code></p>
+<blockquote>
+<p>“It will make your local files changed to be like they were then, but leave your history etc. the same.”</p>
+</blockquote>
+<p><a href="http://stackoverflow.com/questions/3639115/reverting-to-a-specific-commit-based-on-commit-id-with-git" target="_blank" rel="external">http://stackoverflow.com/questions/3639115/reverting-to-a-specific-commit-based-on-commit-id-with-git</a></p>
+<p><code>$ git checkout &lt;commit hash key&gt;</code><br>只是要切回過去某個 commit, 之後還要切回來…</p>
+<p>如果是 <code>$ git checkout -b new_branch</code> 開一個名為 <code>new_branch</code> 的新 branch 來做功能開發，開發完要 merge, 流程如下：</p>
+<ol>
+<li><code>$ git checkout master</code></li>
+<li><code>$ git merge new_branch</code></li>
+</ol>
+<p>在 github 上設 repo 後，在 terminal 中輸入 $ git clone [git repo 網址]，就可以把 github repo 傳回 local, 兩邊的 repo 從此連在一起。</p>
+<p>假設我們目前所處的 DIR 路徑位置是 /app，有一個 git repo 是 <code>https://github.com/example/example.git</code>, 我們可以透過</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git clone https://github.com/example/example.git anotherfolder/yetanotherfolder</div></pre></td></tr></table></figure>
+<p>在 <code>/app</code> 底下生成 <code>anotherfolder</code> 資料夾，在 <code>anotherfolder</code> 資料夾中再生成 <code>yetanotherfolder</code> 資料夾，然後把從 <code>https://github.com/example/example.git</code> clone 過來的內容放在 <code>yetanotherfolder</code> 資料夾中。</p>
+<p>local repo 要換位置的話，直接 ctrl-x/ctrl-v 貼到目標檔案夾即可。原因是該 local repo 中有隱藏檔 <code>.git</code> 標示連接的 git repo</p>
+<p>要 undo <code>git add</code> 就用 <code>git reset</code></p>
+<p>參考資料：<br><a href="http://stackoverflow.com/questions/4114095/revert-git-repo-to-a-previous-commit" target="_blank" rel="external">http://stackoverflow.com/questions/4114095/revert-git-repo-to-a-previous-commit</a></p>
+<p>這是 Git 官方文檔，寫得非常簡明易懂<br><a href="https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging" target="_blank" rel="external">https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging</a></p>
+<p>Atlassian( 出品 GitBucket, JIRA 等服務的公司) 的文檔，也可以參考看看<br><a href="https://www.atlassian.com/git/tutorials/using-branches" target="_blank" rel="external">https://www.atlassian.com/git/tutorials/using-branches</a></p>
+<p><a href="http://gogojimmy.net/2012/02/29/git-scenario/" target="_blank" rel="external">http://gogojimmy.net/2012/02/29/git-scenario/</a></p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
             
-                <div class="post-preview">
-    <a href="/2016/08/16/hello-world/">
-        <h1 class="post-title archive">
-            Hello World
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-08-16
-    </p>
-</div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
             
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
-</ul>
         </div>
     </div>
-</div>
-
-
+</article>
 
     <!-- Footer -->
     <hr />
