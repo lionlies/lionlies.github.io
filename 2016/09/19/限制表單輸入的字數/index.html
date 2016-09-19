@@ -10,6 +10,14 @@
 
     <!--Description-->
     
+        <meta name="description" content="可以從兩個方面去設定：
+
+HTML
+Model validation
+
+HTML 的部分，在 posts/new.html.erb 中
+12345&amp;lt;%= simple_form_for @todo_list do |f| %&amp;gt;  &amp;lt;%= f.input :title, input_">
+    
 
     <!--Author-->
     
@@ -18,7 +26,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Hello World"/>
+        <meta property="og:title" content="限制表單輸入的字數"/>
     
 
     <!--Open Graph Description-->
@@ -29,7 +37,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -40,7 +48,7 @@
 
     <!-- Title -->
     
-    <title>page - Archives: 2016 - Hello World</title>
+    <title>限制表單輸入的字數 - Hello World</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -123,145 +131,65 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>2016</h1>
+                <div class="post-heading">
+                    <h1>限制表單輸入的字數</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2016-09-19
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2016/09/19/Ruby-gem-simple-form/">
-        <h1 class="post-title archive">
-            Ruby gem 'simple_form'
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-09-19
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>可以從兩個方面去設定：</p>
+<ol>
+<li>HTML</li>
+<li>Model validation</li>
+</ol>
+<p>HTML 的部分，在 <code>posts/new.html.erb</code> 中</p>
+<figure class="highlight erb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;%=<span class="ruby"> simple_form_for @todo_list <span class="keyword">do</span> <span class="params">|f|</span> </span>%&gt;</div><div class="line">  &lt;%=<span class="ruby"> f.input <span class="symbol">:title</span>, <span class="symbol">input_html:</span> &#123;<span class="symbol">maxlength:</span> <span class="number">30</span>, <span class="symbol">size:</span> <span class="number">40</span>&#125; </span>%&gt;</div><div class="line">  &lt;%=<span class="ruby"> f.input <span class="symbol">:description</span>, <span class="symbol">input_html:</span> &#123;<span class="symbol">maxlength:</span> <span class="number">60</span>, <span class="symbol">size:</span> <span class="number">60</span>&#125; </span>%&gt;</div><div class="line">  &lt;%=<span class="ruby"> f.submit <span class="string">"Submit"</span>, <span class="symbol">data:</span> &#123;<span class="symbol">disable_with:</span> <span class="string">"Submitting"</span>&#125; </span>%&gt;</div><div class="line">&lt;%<span class="ruby"> <span class="keyword">end</span> </span>%&gt;</div></pre></td></tr></table></figure>
+<p>我們可以透過 <code>input_html: {maxlength: 30}</code> 限制只能輸入30個字，多的沒辦法再輸進表單。</p>
+<p>Model validation 的部份，顧名思義就是在 Post model 設一個 validation 限制輸入多少個字，比如 30, 表單內輸入的長度可以超過30個字，但是會無法儲存。</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
             
-                <div class="post-preview">
-    <a href="/2016/09/19/Ruby-gem-guard-livereload/">
-        <h1 class="post-title archive">
-            Ruby gem 'guard-livereload'
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-09-19
-    </p>
-</div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
             
-                <div class="post-preview">
-    <a href="/2016/09/19/simple-format/">
-        <h1 class="post-title archive">
-            simple_format
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-09-19
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2016/09/19/RESTful-和-MVC-好用的原因/">
-        <h1 class="post-title archive">
-            RESTful 和 MVC 好用的原因
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-09-19
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2016/09/19/Set-up-iTerm-2-with-oh-my-zsh/">
-        <h1 class="post-title archive">
-            Set up iTerm 2 with oh-my-zsh
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-09-19
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2016/09/19/讓-simple-form-顯示中文-title-i18n-related/">
-        <h1 class="post-title archive">
-            讓 simple_form 顯示中文 title (i18n-related)
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-09-19
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2016/09/19/Session-Cookie/">
-        <h1 class="post-title archive">
-            Session & Cookie
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-09-19
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2016/09/19/before-action/">
-        <h1 class="post-title archive">
-            before_action
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-09-19
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-        <li class="previous"><a href="/archives/2016/">&larr;  Newer Posts</a></li>
-    
-    
-        <li class="next"><a href="/archives/2016/page/3/">Older Posts  &rarr;</a></li>
-    
-</ul>
         </div>
     </div>
-</div>
-
-
+</article>
 
     <!-- Footer -->
     <hr />
