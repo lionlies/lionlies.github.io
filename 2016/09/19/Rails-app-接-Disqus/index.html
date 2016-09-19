@@ -10,6 +10,12 @@
 
     <!--Description-->
     
+        <meta name="description" content="Rails 要接 Disqus 很簡單，因為它是透過內嵌一段 JS 碼，而不是直接做在 Rails 上：
+以一般常見的 blog 系統為例，有 posts, comments:
+
+在 Disqus 註冊一個 Disqus 帳號
+從 Disqus 的 Admin Panel 那邊選 Installin">
+    
 
     <!--Author-->
     
@@ -18,7 +24,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Hello World"/>
+        <meta property="og:title" content="Rails app 接 Disqus"/>
     
 
     <!--Open Graph Description-->
@@ -29,7 +35,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -40,7 +46,7 @@
 
     <!-- Title -->
     
-    <title>page - Archives: 2016 - Hello World</title>
+    <title>Rails app 接 Disqus - Hello World</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -123,145 +129,66 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>2016</h1>
+                <div class="post-heading">
+                    <h1>Rails app 接 Disqus</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2016-09-19
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2016/09/19/Session-Cookie/">
-        <h1 class="post-title archive">
-            Session & Cookie
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-09-19
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>Rails 要接 Disqus 很簡單，因為它是透過內嵌一段 JS 碼，而不是直接做在 Rails 上：</p>
+<p>以一般常見的 blog 系統為例，有 posts, comments:</p>
+<ol>
+<li>在 Disqus 註冊一個 Disqus 帳號</li>
+<li>從 Disqus 的 Admin Panel 那邊選 Installing</li>
+<li>在 Installation 頁面，選 Universal Code.</li>
+<li>在 app/views/posts 底下新增一個 <code>_disqus.html.erb</code> partial</li>
+<li>把 Disqus 留言板的 universal code 貼到 disqus partial 中，並 render 在你的 app 中想產生留言板的地方。我只有 posts#show 的地方會在該 post 底下有留言版，所以在 posts/show.html.erb 的最下方 render disqus partial.</li>
+<li>刷新網頁就會看到該 post 底下已經出現 Disqus 留言板了。</li>
+</ol>
+
+
+                
+            </div>
+
+            <!-- Comments -->
             
-                <div class="post-preview">
-    <a href="/2016/09/19/before-action/">
-        <h1 class="post-title archive">
-            before_action
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-09-19
-    </p>
-</div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
             
-                <div class="post-preview">
-    <a href="/2016/09/19/Strong-Parameters-in-Rails/">
-        <h1 class="post-title archive">
-            Strong Parameters in Rails
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-09-19
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2016/09/19/routing-時使用-namespace/">
-        <h1 class="post-title archive">
-            routing 時使用 namespace
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-09-19
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2016/09/19/User-Story-筆記/">
-        <h1 class="post-title archive">
-            User Story 筆記
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-09-19
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2016/09/18/Front-end-of-Rails-app/">
-        <h1 class="post-title archive">
-            Front end of Rails app
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-09-18
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2016/09/18/Rails-misc/">
-        <h1 class="post-title archive">
-            Rails misc.
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-09-18
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2016/09/18/Rails-EC-Week-3-Homework/">
-        <h1 class="post-title archive">
-            Rails EC Week 3 Homework
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-09-18
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-        <li class="previous"><a href="/archives/2016/page/3/">&larr;  Newer Posts</a></li>
-    
-    
-        <li class="next"><a href="/archives/2016/page/5/">Older Posts  &rarr;</a></li>
-    
-</ul>
         </div>
     </div>
-</div>
-
-
+</article>
 
     <!-- Footer -->
     <hr />
