@@ -97,6 +97,14 @@ tba
             <ul class="nav navbar-nav navbar-right">
                 
                     <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
                         <a href="https://github.com/lionlies">
                             
                                 <i class="fa fa-github fa-stack-2x"></i>
@@ -105,9 +113,9 @@ tba
                     </li>
                 
                     <li>
-                        <a href="/archives">
+                        <a href="https://www.linkedin.com/in/lionlies">
                             
-                                Archives
+                                <i class="fa fa-linkedin fa-stack-2x"></i>
                             
                         </a>
                     </li>
@@ -157,7 +165,7 @@ tba
                 <h1 id="⽤-Bootstrap-做⼀個「有-Nav-bar-」的-layout"><a href="#⽤-Bootstrap-做⼀個「有-Nav-bar-」的-layout" class="headerlink" title="⽤ Bootstrap 做⼀個「有 Nav bar 」的 layout"></a>⽤ Bootstrap 做⼀個「有 Nav bar 」的 layout</h1><h2 id="require-bootstrap-dropdown-的-bootstrap-dropdown-從哪來？bootstrap-外還有其他來源可以-require-進來嗎？"><a href="#require-bootstrap-dropdown-的-bootstrap-dropdown-從哪來？bootstrap-外還有其他來源可以-require-進來嗎？" class="headerlink" title="//= require bootstrap/dropdown 的 bootstrap/dropdown 從哪來？bootstrap 外還有其他來源可以 require 進來嗎？"></a>//= require bootstrap/dropdown 的 bootstrap/dropdown 從哪來？bootstrap 外還有其他來源可以 require 進來嗎？</h2><blockquote>
 <p>tba</p>
 </blockquote>
-<h2 id="新增-partial-navbar的部分，有段內容如下，為什麼-lt-yield-gt-包在-lt-div-class-quot-container-quot-gt-裡面？"><a href="#新增-partial-navbar的部分，有段內容如下，為什麼-lt-yield-gt-包在-lt-div-class-quot-container-quot-gt-裡面？" class="headerlink" title="新增 partial: navbar的部分，有段內容如下，為什麼 &lt;%= yield %&gt; 包在 &lt; div class=&quot;container&quot;&gt; 裡面？"></a>新增 partial: navbar的部分，有段內容如下，為什麼 <code>&lt;%= yield %&gt;</code> 包在 <code>&lt; div class=&quot;container&quot;&gt;</code> 裡面？</h2><figure class="highlight erb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">+  &lt; div class="container"&gt;</div><div class="line">+    &lt;%=<span class="ruby"> render <span class="string">"common/navbar"</span> </span>%&gt;</div><div class="line">+    &lt;%=<span class="ruby"> <span class="keyword">yield</span> </span>%&gt;</div><div class="line">+  &lt;/div&gt;</div></pre></td></tr></table></figure>
+<h2 id="新增-partial-navbar的部分，有段內容如下，為什麼-lt-yield-gt-包在-lt-div-class-quot-container-quot-gt-裡面？"><a href="#新增-partial-navbar的部分，有段內容如下，為什麼-lt-yield-gt-包在-lt-div-class-quot-container-quot-gt-裡面？" class="headerlink" title="新增 partial: navbar的部分，有段內容如下，為什麼 &lt;%= yield %&gt; 包在 &lt; div class=&quot;container&quot;&gt; 裡面？"></a>新增 partial: navbar的部分，有段內容如下，為什麼 <code>&lt;%= yield %&gt;</code> 包在 <code>&lt; div class=&quot;container&quot;&gt;</code> 裡面？</h2><figure class="highlight erb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">+  &lt; div class="container"&gt;</div><div class="line">+    &lt;%= render "common/navbar" %&gt;</div><div class="line">+    &lt;%= yield %&gt;</div><div class="line">+  &lt;/div&gt;</div></pre></td></tr></table></figure>
 <blockquote>
 <p>tba</p>
 </blockquote>
@@ -174,8 +182,8 @@ tba
 </blockquote>
 <h1 id="使用-simple-form-換掉-form"><a href="#使用-simple-form-換掉-form" class="headerlink" title="使用 simple_form 換掉 form"></a>使用 simple_form 換掉 form</h1><p><a href="https://github.com/plataformatec/simple_form" target="_blank" rel="external">https://github.com/plataformatec/simple_form</a></p>
 <h2 id="lt-simple-form-for-admin-product-do-f-gt-拆解。"><a href="#lt-simple-form-for-admin-product-do-f-gt-拆解。" class="headerlink" title="&lt;%= simple_form_for [:admin, @product] do |f| %&gt; 拆解。"></a>&lt;%= simple_form_for [:admin, @product] do |f| %&gt; 拆解。</h2><p>:admin 做為 namespace, 指 admin 下的 product。</p>
-<h2 id="simple-form-如何知道-input-屬性？"><a href="#simple-form-如何知道-input-屬性？" class="headerlink" title="simple_form 如何知道 input 屬性？"></a>simple_form 如何知道 input 屬性？</h2><p>rails form helper<br><figure class="highlight erb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;%=<span class="ruby"> form_for [<span class="symbol">:admin</span>, @product] <span class="keyword">do</span> <span class="params">|f|</span> </span>%&gt;</div><div class="line">  &lt;div class="group"&gt;</div><div class="line">    &lt;%=<span class="ruby"> f.label(<span class="string">"標題"</span>) </span>%&gt;</div><div class="line">    &lt;%=<span class="ruby"> f.text_field <span class="symbol">:title</span> </span>%&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;%<span class="ruby"> <span class="keyword">end</span> </span>%&gt;</div></pre></td></tr></table></figure></p>
-<p>simple form<br><figure class="highlight erb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;%=<span class="ruby"> simple_form_for [<span class="symbol">:admin</span>, @product] <span class="keyword">do</span> <span class="params">|f|</span> </span>%&gt;</div><div class="line">  &lt;div class="group"&gt;</div><div class="line">    &lt;%=<span class="ruby"> f.input <span class="symbol">:title</span> </span>%&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;%<span class="ruby"> <span class="keyword">end</span> </span>%&gt;</div></pre></td></tr></table></figure></p>
+<h2 id="simple-form-如何知道-input-屬性？"><a href="#simple-form-如何知道-input-屬性？" class="headerlink" title="simple_form 如何知道 input 屬性？"></a>simple_form 如何知道 input 屬性？</h2><p>rails form helper<br><figure class="highlight erb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;%= form_for [:admin, @product] do |f| %&gt;</div><div class="line">  &lt;div class="group"&gt;</div><div class="line">    &lt;%= f.label("標題") %&gt;</div><div class="line">    &lt;%= f.text_field :title %&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;% end %&gt;</div></pre></td></tr></table></figure></p>
+<p>simple form<br><figure class="highlight erb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;%= simple_form_for [:admin, @product] do |f| %&gt;</div><div class="line">  &lt;div class="group"&gt;</div><div class="line">    &lt;%= f.input :title %&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;% end %&gt;</div></pre></td></tr></table></figure></p>
 <p>直接從 db &gt;&gt; table &gt;&gt; column屬性 來判斷。<br><a href="https://github.com/plataformatec/simple_form" target="_blank" rel="external">https://github.com/plataformatec/simple_form</a></p>
 <h1 id="加入產品修改功能"><a href="#加入產品修改功能" class="headerlink" title="加入產品修改功能"></a>加入產品修改功能</h1><h2 id="product-update-product-params-為什麼是-pass-in-product-params"><a href="#product-update-product-params-為什麼是-pass-in-product-params" class="headerlink" title="@product.update(product_params) 為什麼是 pass in product_params?"></a>@product.update(product_params) 為什麼是 pass in product_params?</h2><p>問錯問題了，create, update 後面本來就可以接參數，如果接的是 strong parameters, 那就是照 strong parameters 的規定去跑。所以該問的是（下方提問）：</p>
 <h2 id="提問-create-和-update-後面可以接什麼？"><a href="#提問-create-和-update-後面可以接什麼？" class="headerlink" title="[提問] .create 和 .update 後面可以接什麼？"></a>[提問] .create 和 .update 後面可以接什麼？</h2><blockquote>
