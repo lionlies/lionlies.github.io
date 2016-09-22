@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="當初是看了這兩篇，想說也來列個自己常用的 gem list, 開發新專案時直接複製貼上就好，非常方便。http://felixclack.com/post/90434933071/what-are-my-goto-set-of-gemshttp://kakas-blog.logdown.com/po">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Jason Lung">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="My Gem Set"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Hello World"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>My Gem Set - Hello World</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Home</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="https://github.com/lionlies">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.linkedin.com/in/lionlies">
+                            
+                                <i class="fa fa-linkedin fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>My Gem Set</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2016-09-22
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>當初是看了這兩篇，想說也來列個自己常用的 gem list, 開發新專案時直接複製貼上就好，非常方便。<br><a href="http://felixclack.com/post/90434933071/what-are-my-goto-set-of-gems" target="_blank" rel="external">http://felixclack.com/post/90434933071/what-are-my-goto-set-of-gems</a><br><a href="http://kakas-blog.logdown.com/posts/364933-gem-finishing" target="_blank" rel="external">http://kakas-blog.logdown.com/posts/364933-gem-finishing</a></p>
+<p>後來在 Ruby China 上看到有人把常用的 gems 裝好後打包成一個 Rails 模板，之後可以來試試看。<br><a href="https://ruby-china.org/topics/30406" target="_blank" rel="external">https://ruby-china.org/topics/30406</a></p>
+<h2 id="必裝"><a href="#必裝" class="headerlink" title="必裝"></a>必裝</h2><p>gem “quiet_assets”<br>gem “better_errors”<br>gem “awesome_rails_console”<br>gem “guard-livereload”, group: :development<br>gem “rails-erd”<br>gem “meta_request”</p>
+<h2 id="差不多是必裝"><a href="#差不多是必裝" class="headerlink" title="差不多是必裝"></a>差不多是必裝</h2><p>gem “font-awesome-rails”<br>gem “simple_form”<br>gem “bootstrap-sass”<br>gem “bullet”<br>gem “devise”</p>
+<p><code>Gemfile</code><br><figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">gem <span class="string">'awesome_rails_console'</span></div><div class="line">gem <span class="string">'devise'</span></div><div class="line">gem <span class="string">'bootstrap-sass'</span></div><div class="line">gem <span class="string">'bootstrap_form'</span></div><div class="line"></div><div class="line">group <span class="symbol">:development</span> <span class="keyword">do</span></div><div class="line">  gem <span class="string">'meta_request'</span>    <span class="comment"># for RailsPanel</span></div><div class="line">  gem <span class="string">'better_errors'</span></div><div class="line">  gem <span class="string">'quiet_assets'</span></div><div class="line">  gem <span class="string">'bullet'</span></div><div class="line">  gem <span class="string">'rails-erd'</span></div><div class="line">  gem <span class="string">'pry-rails'</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure></p>
+<h2 id="需要上傳圖片"><a href="#需要上傳圖片" class="headerlink" title="需要上傳圖片"></a>需要上傳圖片</h2><p>gem “carrierwave”<br>gem “mini_magick”</p>
+<p>brew install imagemagick   # 另外有一個 “image_magick” gem, 但不是我們要的。<br><a href="http://git.imagemagick.org/repos/ImageMagick" target="_blank" rel="external">http://git.imagemagick.org/repos/ImageMagick</a></p>
+<h2 id="需要-deploy-到-heroku"><a href="#需要-deploy-到-heroku" class="headerlink" title="需要 deploy 到 heroku"></a>需要 deploy 到 heroku</h2><figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">group <span class="symbol">:development</span> <span class="keyword">do</span></div><div class="line">  gem <span class="string">'sqlite3'</span> <span class="comment"># 把 "sqlite3" gem 移到 development</span></div><div class="line"><span class="keyword">end</span></div><div class="line"></div><div class="line">group <span class="symbol">:production</span> <span class="keyword">do</span></div><div class="line">  gem <span class="string">"pg"</span></div><div class="line">  gem <span class="string">"rails_12factor"</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<h1 id="gem-介紹"><a href="#gem-介紹" class="headerlink" title="gem 介紹"></a>gem 介紹</h1><h3 id="rails-bootstrap-forms"><a href="#rails-bootstrap-forms" class="headerlink" title="rails-bootstrap-forms"></a>rails-bootstrap-forms</h3><p><a href="https://github.com/bootstrap-ruby/rails-bootstrap-forms" target="_blank" rel="external">https://github.com/bootstrap-ruby/rails-bootstrap-forms</a></p>
+<h3 id="bullet"><a href="#bullet" class="headerlink" title="bullet"></a>bullet</h3><p>help to kill N+1 queries and unused eager loading<br><a href="https://github.com/flyerhzm/bullet" target="_blank" rel="external">https://github.com/flyerhzm/bullet</a></p>
+<h3 id="friendly-id"><a href="#friendly-id" class="headerlink" title="friendly_id"></a>friendly_id</h3><p><a href="https://github.com/norman/friendly_id" target="_blank" rel="external">https://github.com/norman/friendly_id</a></p>
+<h3 id="devise"><a href="#devise" class="headerlink" title="devise"></a>devise</h3><p><a href="https://github.com/plataformatec/devise" target="_blank" rel="external">https://github.com/plataformatec/devise</a><br><a href="https://github.com/plataformatec/devise#controller-filters-and-helpers" target="_blank" rel="external">https://github.com/plataformatec/devise#controller-filters-and-helpers</a></p>
+<p><code>$ rails generate devise:install</code><br><code>$ rails generate devise model_name</code></p>
+<h3 id="figaro"><a href="#figaro" class="headerlink" title="figaro"></a>figaro</h3><h3 id="nokogiri"><a href="#nokogiri" class="headerlink" title="nokogiri"></a>nokogiri</h3><p><a href="http://www.nokogiri.org/" target="_blank" rel="external">http://www.nokogiri.org/</a></p>
+<h3 id="mechanize"><a href="#mechanize" class="headerlink" title="mechanize"></a>mechanize</h3><p><a href="https://github.com/sparklemotion/mechanize" target="_blank" rel="external">https://github.com/sparklemotion/mechanize</a></p>
+<h3 id="pry"><a href="#pry" class="headerlink" title="pry"></a>pry</h3><p>debug用</p>
+<h3 id="aasm"><a href="#aasm" class="headerlink" title="aasm"></a>aasm</h3><h3 id="letter-opener"><a href="#letter-opener" class="headerlink" title="letter_opener"></a>letter_opener</h3><h3 id="roadie"><a href="#roadie" class="headerlink" title="roadie"></a>roadie</h3><h3 id="country-select"><a href="#country-select" class="headerlink" title="country_select"></a>country_select</h3><p><a href="https://github.com/stefanpenner/country_select" target="_blank" rel="external">https://github.com/stefanpenner/country_select</a></p>
+<h3 id="kaminari"><a href="#kaminari" class="headerlink" title="kaminari"></a>kaminari</h3><p>做 index 分頁（每個分頁有 N 筆資料）<br><a href="https://github.com/amatsuda/kaminari" target="_blank" rel="external">https://github.com/amatsuda/kaminari</a><br><a href="https://ihower.tw/rails4/basic.html#section-7" target="_blank" rel="external">https://ihower.tw/rails4/basic.html#section-7</a></p>
+<h3 id="haml-rails"><a href="#haml-rails" class="headerlink" title="haml-rails"></a>haml-rails</h3><p>以 haml 取代 erb<br>相較於ERB，使用 HAML 雖然可以更為有效率地撰寫 HTML 樣板，但是還是需要考量團隊中的網頁設計師是否能夠配合使用。<br><a href="http://haml.info/" target="_blank" rel="external">http://haml.info/</a></p>
+<h1 id="jQuery-plugin"><a href="#jQuery-plugin" class="headerlink" title="jQuery plugin"></a>jQuery plugin</h1><h3 id="gridalicious"><a href="#gridalicious" class="headerlink" title="gridalicious"></a>gridalicious</h3><p><a href="http://suprb.com/apps/gridalicious/" target="_blank" rel="external">http://suprb.com/apps/gridalicious/</a><br><a href="https://github.com/suprb/Grid-A-Licious" target="_blank" rel="external">https://github.com/suprb/Grid-A-Licious</a><br>要去 github 下載它的 .js 檔 jquery.grid-a-licious.js 或 jquery.grid-a-licious.min.js</p>
+<p>類似的有 Masonry</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+    <hr />
+    <h3>Comments:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/lionlies" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="mailto:lionlies@gmail.com" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'hexo-git-hubpages-lionlies';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+
+</html>

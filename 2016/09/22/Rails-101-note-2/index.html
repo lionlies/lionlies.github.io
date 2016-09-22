@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="保持一個原則： 動到除了 app 資料夾以外的檔案，都要重跑 $ rails s
+
+在 MVC 架構下要做什麼東西出來，是瀏覽器端跟網站的 server 之前存取資料的動作，每當我們輸入網址，點擊某個連結，都是代表
+
+我們從瀏覽器端發出請求(request)指令到網站 server 端，後者再以 r">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Jason Lung">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Rails 101 note 2"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Hello World"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>Rails 101 note 2 - Hello World</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Home</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="https://github.com/lionlies">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.linkedin.com/in/lionlies">
+                            
+                                <i class="fa fa-linkedin fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Rails 101 note 2</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2016-09-22
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul>
+<li><p>保持一個原則： 動到除了 app 資料夾以外的檔案，都要重跑 <code>$ rails s</code></p>
+</li>
+<li><p>在 MVC 架構下要做什麼東西出來，是瀏覽器端跟網站的 server 之前存取資料的動作，每當我們輸入網址，點擊某個連結，都是代表</p>
+</li>
+<li><p>我們從瀏覽器端發出請求(request)指令到網站 server 端，後者再以 request 的內容來回應資料給前者，也就是網頁資料的呈現。</p>
+</li>
+<li><p>絕大多數 HTTP request 都是 GET，也就是跟 Server 端請求讀取某個網址的資料。<br>有要更動到 server 裡資料庫的資料，就會用到另外的三個動作。<br>當我們要用 Rails 做一個有 CRUD 功能(Create, Read, Update, Destroy)的討論版，正好就對應到 HTTP Verb 上的四個動詞。</p>
+</li>
+<li><p>『網頁』跟『網站』製作最大的差別，在於前者只有 純讀取 資訊的功能<br>後者可以運作 CRUD 功能，讓系統功能強大<br>但從前者走向後者，整個系統的規劃與運作就會變得非常龐大與複雜<br>為了方便可以區分功能與團隊分工合作將一個網站專案建立起來<br>近代的網站開發走向了 MVC 架構：<br>優點是什麼？<br>可以把整個專案(Project)拆分<br>負責做前端的人只做 Views<br>寫流程控制的專心寫 Controllers<br>所有資料相關集中在 Models<br>三者之間不互相打架，出問題與狀況也容易追出問題的位置<br>Ruby on Rails 就是用 Ruby 這個程式語言寫出來的網站 MVC 框架(Framework)</p>
+</li>
+<li><p>我們可以任意設定 Action 的命名，只要 Request 正確，就有相對應的動作<br>但太過自由的設計，會導致專案開發的災難</p>
+<ul>
+<li>若無對 Request 動作分類做統一的規範，一樣的 index action，可能會有不一樣的內容<br>導致團隊夥伴在開發時必須花時間閱讀程式碼的內容，也許這個 action 僅需花 1 分鐘<br>可是 10 個夥伴，就會花費整個團隊 10 分鐘的時間在這件事上面</li>
+<li>若夥伴或你本人剛做好一個新的 action ，卻發現這個功能之前就做過一個類似的…<br>未來若又要沿用這個 action 做延伸功能，要嘛再重讀一次之前的程式碼，不然又要再重做一個新的 action …</li>
+<li>資訊安全問題，在新增，更新，刪除某筆資料時，必須要有驗證使用者權限的機制<br>延續 2nd ，要怎麼知道之前的夥伴是否有做？(花時間重讀) 還是乾脆做一個新的(重複動作)<br>又要怎麼讓資訊安全機制不會變成龐大工程，讓團隊精力專心在專案開發上？</li>
+</ul>
+</li>
+<li><p>結論：<br>最佳解決方案： RESTful</p>
+</li>
+</ul>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+    <hr />
+    <h3>Comments:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/lionlies" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="mailto:lionlies@gmail.com" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'hexo-git-hubpages-lionlies';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+
+</html>

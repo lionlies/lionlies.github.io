@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="Misc.Controller, model各會放入什麼邏輯的methods, 這部分常常會搞混。初學沒經驗的時候，先把所有的methods都寫在controller沒關係，要多噁心就多噁心，之後整理code的時候再分解到model去。
+有沒有什麼比較固定的開發流程？整套教材到目前為止，有時候先做c">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Jason Lung">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Rails EC misc. questions"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Hello World"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>Rails EC misc. questions - Hello World</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Home</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="https://github.com/lionlies">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.linkedin.com/in/lionlies">
+                            
+                                <i class="fa fa-linkedin fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Rails EC misc. questions</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2016-09-22
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="Misc"><a href="#Misc" class="headerlink" title="Misc."></a>Misc.</h1><h2 id="Controller-model各會放入什麼邏輯的methods-這部分常常會搞混。"><a href="#Controller-model各會放入什麼邏輯的methods-這部分常常會搞混。" class="headerlink" title="Controller, model各會放入什麼邏輯的methods, 這部分常常會搞混。"></a>Controller, model各會放入什麼邏輯的methods, 這部分常常會搞混。</h2><p>初學沒經驗的時候，先把所有的methods都寫在controller沒關係，要多噁心就多噁心，之後整理code的時候再分解到model去。</p>
+<h2 id="有沒有什麼比較固定的開發流程？整套教材到目前為止，有時候先做controller-routing-model-view-有時候先model-routing-controller-view-有時候又再不一樣，都搞混了。"><a href="#有沒有什麼比較固定的開發流程？整套教材到目前為止，有時候先做controller-routing-model-view-有時候先model-routing-controller-view-有時候又再不一樣，都搞混了。" class="headerlink" title="有沒有什麼比較固定的開發流程？整套教材到目前為止，有時候先做controller, routing, model, view, 有時候先model, routing, controller, view, 有時候又再不一樣，都搞混了。"></a>有沒有什麼比較固定的開發流程？整套教材到目前為止，有時候先做controller, routing, model, view, 有時候先model, routing, controller, view, 有時候又再不一樣，都搞混了。</h2><p>xdite 寫 code 流程：routing -&gt; controller -&gt; view -&gt; model -&gt; partial -&gt; helper<br>每個人的做法不同，xdite 習慣先讓 view 可以讀，那先設好 routing 之後，controller 和 view 就能動了，這時再去寫 controller 看要操作什麼東西，以及寫 view 看要寫什麼東西。如果 controller 變得肥了一點，xdite 就把裡面的東西 refactor 到 model；如果 view 變肥了，就把它切成 partial；如果 partial 裡面有些醜醜的 ruby logic code, 就再把它 refactor 到 helper.</p>
+<h2 id="warnings是怎麼顯示的？"><a href="#warnings是怎麼顯示的？" class="headerlink" title="warnings是怎麼顯示的？"></a>warnings是怎麼顯示的？</h2><p>flash[:warning] = “message”  (controller)<br>notice: “message”  (controller)<br>alert_types = { notice: :success, alert: :danger }  (application helper)<br>確切怎麼使用？</p>
+<p>orders_controller 中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">def pay_with_credit_card</div><div class="line">  @order = Order.find_by_token(params[:id])</div><div class="line">  @order.set_payment_with! &quot;credit card&quot;</div><div class="line">  @order.make_payment!</div><div class="line"></div><div class="line">  redirect_to account_orders_path, notice: &quot;成功完成付款&quot;      # notice 寫法 1</div><div class="line"></div><div class="line">end</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">def pay2go_cc_notify</div><div class="line">  @order = Order.find_by_token(params[:id])</div><div class="line">  if params[&quot;Status&quot;] == &quot;SUCCESS&quot;</div><div class="line">    @order.make_payment!</div><div class="line">    if @order.is_paid?</div><div class="line"></div><div class="line">			flash[:notice] = &quot;信用卡付款成功&quot;												# notice 寫法 2</div><div class="line"></div><div class="line">      redirect_to account_orders_path												 # 兩種寫法一樣嗎？</div><div class="line">    else</div><div class="line">      render text: &quot;信用卡失敗&quot;</div><div class="line">    end</div><div class="line">  else</div><div class="line">    render text: &quot;交易失敗&quot;</div><div class="line">  end</div><div class="line">end</div></pre></td></tr></table></figure>
+<h2 id="如果是直接-bundle-install-會優先安裝-“你電腦裡現有”-的版本，需要-bundle-update-才會更新到最新版。可以看-Gemfile-lock-這個檔案，就會把所有安裝的-gem-的版本都列出來了。"><a href="#如果是直接-bundle-install-會優先安裝-“你電腦裡現有”-的版本，需要-bundle-update-才會更新到最新版。可以看-Gemfile-lock-這個檔案，就會把所有安裝的-gem-的版本都列出來了。" class="headerlink" title="如果是直接 bundle install, 會優先安裝 “你電腦裡現有” 的版本，需要 bundle update 才會更新到最新版。可以看 Gemfile.lock 這個檔案，就會把所有安裝的 gem 的版本都列出來了。"></a>如果是直接 bundle install, 會優先安裝 “你電腦裡現有” 的版本，需要 bundle update 才會更新到最新版。可以看 Gemfile.lock 這個檔案，就會把所有安裝的 gem 的版本都列出來了。</h2><h2 id="為什麼database不能放在github上？"><a href="#為什麼database不能放在github上？" class="headerlink" title="為什麼database不能放在github上？"></a>為什麼database不能放在github上？</h2><ol>
+<li>DB 檔案通常很大</li>
+<li>DB 需要帳密，有安全性問題</li>
+<li>DB 的內容可能有私人資料</li>
+</ol>
+<h2 id="如果我要做-mobile-app-而非在手機瀏覽器執行的-web-app-學-Rails-能夠如何輔助達成這個目標？-聽說可以用-Rails-寫-API-然後用-mobile-app-去接這個-API，是嗎？"><a href="#如果我要做-mobile-app-而非在手機瀏覽器執行的-web-app-學-Rails-能夠如何輔助達成這個目標？-聽說可以用-Rails-寫-API-然後用-mobile-app-去接這個-API，是嗎？" class="headerlink" title="如果我要做 mobile app 而非在手機瀏覽器執行的 web app, 學 Rails 能夠如何輔助達成這個目標？(聽說可以用 Rails 寫 API 然後用 mobile app 去接這個 API，是嗎？)"></a>如果我要做 mobile app 而非在手機瀏覽器執行的 web app, 學 Rails 能夠如何輔助達成這個目標？(聽說可以用 Rails 寫 API 然後用 mobile app 去接這個 API，是嗎？)</h2><h2 id="能否以-Pay2go-這個-gem-為例，說明怎麼寫-gem"><a href="#能否以-Pay2go-這個-gem-為例，說明怎麼寫-gem" class="headerlink" title="能否以 Pay2go 這個 gem 為例，說明怎麼寫 gem?"></a>能否以 Pay2go 這個 gem 為例，說明怎麼寫 gem?</h2><h2 id="能不能講解物件導向的概念？"><a href="#能不能講解物件導向的概念？" class="headerlink" title="能不能講解物件導向的概念？"></a>能不能講解物件導向的概念？</h2><h2 id="如何把整個-git-repo-刪掉，重新再從-git-init-開始做？"><a href="#如何把整個-git-repo-刪掉，重新再從-git-init-開始做？" class="headerlink" title="如何把整個 git repo 刪掉，重新再從 git init 開始做？"></a>如何把整個 git repo 刪掉，重新再從 git init 開始做？</h2><p><a href="http://stackoverflow.com/questions/1213430/how-to-fully-delete-a-git-repository-created-with-init" target="_blank" rel="external">http://stackoverflow.com/questions/1213430/how-to-fully-delete-a-git-repository-created-with-init</a></p>
+<h2 id="OOP-是-programming-language-設計時的基本概念，MVC-是-design-pattern，大部分的語言都可以按照-pattern-來寫程式。"><a href="#OOP-是-programming-language-設計時的基本概念，MVC-是-design-pattern，大部分的語言都可以按照-pattern-來寫程式。" class="headerlink" title="OOP 是 programming language 設計時的基本概念，MVC 是 design pattern，大部分的語言都可以按照 pattern 來寫程式。"></a>OOP 是 programming language 設計時的基本概念，MVC 是 design pattern，大部分的語言都可以按照 pattern 來寫程式。</h2><h2 id="哪些類型的-methods-放-model-和放-controller-會有不同的作用？"><a href="#哪些類型的-methods-放-model-和放-controller-會有不同的作用？" class="headerlink" title="哪些類型的 methods 放 model 和放 controller 會有不同的作用？"></a>哪些類型的 methods 放 model 和放 controller 會有不同的作用？</h2><h2 id="rake-T-grep-db-以及-vim-dev-rake-指令是做什麼的？"><a href="#rake-T-grep-db-以及-vim-dev-rake-指令是做什麼的？" class="headerlink" title="$ rake -T |grep db 以及 $ vim dev.rake 指令是做什麼的？"></a><code>$ rake -T |grep db</code> 以及 <code>$ vim dev.rake</code> 指令是做什麼的？</h2><h2 id="如果不小心把-heroku-app-砍了，local-repo-找不到-heroku-app-用以下方法："><a href="#如果不小心把-heroku-app-砍了，local-repo-找不到-heroku-app-用以下方法：" class="headerlink" title="如果不小心把 heroku app 砍了，local repo 找不到 heroku app, 用以下方法："></a>如果不小心把 heroku app 砍了，local repo 找不到 heroku app, 用以下方法：</h2><p><a href="http://stackoverflow.com/questions/2947190/pushing-app-to-heroku-problem" target="_blank" rel="external">http://stackoverflow.com/questions/2947190/pushing-app-to-heroku-problem</a></p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+    <hr />
+    <h3>Comments:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/lionlies" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="mailto:lionlies@gmail.com" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'hexo-git-hubpages-lionlies';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+
+</html>
