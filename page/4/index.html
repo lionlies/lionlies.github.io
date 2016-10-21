@@ -233,670 +233,6 @@
             
               
                 
-                <a class="post-title-link" href="/2016/09/19/調整資料顯示時間為-UTC-8-台灣/" itemprop="url">
-                  調整資料顯示時間為 UTC +8 (台灣)
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-09-19T16:47:10+08:00" content="2016-09-19">
-              2016-09-19
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/19/調整資料顯示時間為-UTC-8-台灣/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/09/19/調整資料顯示時間為-UTC-8-台灣/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><a href="https://ihower.tw/rails4/i18n.html" target="_blank" rel="external">https://ihower.tw/rails4/i18n.html</a>  Time Zone 的部分</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/19/Font-Awesome-實作-改顏色/" itemprop="url">
-                  Font Awesome 實作 + 改顏色
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-09-19T16:41:27+08:00" content="2016-09-19">
-              2016-09-19
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/19/Font-Awesome-實作-改顏色/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/09/19/Font-Awesome-實作-改顏色/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="實作"><a href="#實作" class="headerlink" title="實作"></a>實作</h1><p><code>Gemfile</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gem &quot;font-awesome-rails&quot;</div></pre></td></tr></table></figure></p>
-<p><code>application.css.scss</code><br><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">import</span> <span class="string">"font-awesome"</span></div></pre></td></tr></table></figure></p>
-<p><code>index.html.erb</code><br><figure class="highlight erb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;%= link_to cancel_upvote_post_path(post), method: :delete do %&gt;</div><div class="line">  &lt;i class="fa fa-heart fa-lg" aria-hidden="true"&gt;&lt;/i&gt;</div><div class="line">&lt;% end %&gt;</div></pre></td></tr></table></figure></p>
-<p><code>&lt;i class=&quot;fa fa-heart&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;</code> 可以叫出預設版本的實心愛心<br><code>&lt;i class=&quot;fa fa-heart fa-lg&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;</code> 可以讓愛心變大 33%<br>其他關於大小的參數還有 <code>fa-2x</code>, <code>fa-3x</code>……等</p>
-<h1 id="改顏色"><a href="#改顏色" class="headerlink" title="改顏色"></a>改顏色</h1><p><code>posts.scss</code> 因為上一步 class=”fa fa-heart fa-lg”, 我們取 <code>fa-heart</code> 來改 CSS<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.fa-heart</span> &#123;</div><div class="line">  <span class="attribute">color</span>: <span class="number">#ff4d4d</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>我們就得到一顆紅色的實心愛心了 &lt;3</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/19/如何在-Rails-中使用-jQuery-UI/" itemprop="url">
-                  如何在 Rails 中使用 jQuery UI?
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-09-19T16:40:09+08:00" content="2016-09-19">
-              2016-09-19
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/19/如何在-Rails-中使用-jQuery-UI/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/09/19/如何在-Rails-中使用-jQuery-UI/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="用-“jquery-ui-rails”-gem"><a href="#用-“jquery-ui-rails”-gem" class="headerlink" title="用 “jquery-ui-rails” gem"></a>用 “jquery-ui-rails” gem</h2><p>在介紹 jquery-ui-rails 前，我們先來了解什麼是 <code>jQuery UI</code>, 以及它能做到什麼。最簡單的理解方式其實是點進去下方連結，點選左側欄位自己試試看：</p>
-<p><a href="https://jqueryui.com/" target="_blank" rel="external">https://jqueryui.com/</a></p>
-<p>而 jquery-ui-rails 就是一個讓 rails 能跑 jquery ui 的 gem 了。</p>
-<p><a href="https://github.com/joliss/jquery-ui-rails" target="_blank" rel="external">https://github.com/joliss/jquery-ui-rails</a></p>
-<p><code>Gemfile</code><br><figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gem <span class="string">'jquery-ui-rails'</span></div></pre></td></tr></table></figure></p>
-<h2 id="Require-Everything"><a href="#Require-Everything" class="headerlink" title="Require Everything"></a>Require Everything</h2><p><code>application.css</code><br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line"> *= require jquery-ui</div><div class="line"> */</div></pre></td></tr></table></figure></p>
-<p><code>application.js</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//= require jquery-ui</span></div></pre></td></tr></table></figure></p>
-<h2 id="Require-Specific-Modules"><a href="#Require-Specific-Modules" class="headerlink" title="Require Specific Modules"></a>Require Specific Modules</h2><p>The jQuery UI code weighs 51KB (minified + gzipped) and takes a while to execute, so for production apps it’s recommended to only include the modules that your application actually uses. Dependencies are automatically resolved. Simply pick one or more modules from the asset list below.</p>
-<p><code>application.css</code><br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line"> *= require jquery-ui</div><div class="line"> */</div></pre></td></tr></table></figure></p>
-<p><code>application.js</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//= require jquery-ui</span></div></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/19/Heroku-app-改名字後怎麼連-git/" itemprop="url">
-                  Heroku app 改名字後怎麼連 git?
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-09-19T16:39:15+08:00" content="2016-09-19">
-              2016-09-19
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/19/Heroku-app-改名字後怎麼連-git/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/09/19/Heroku-app-改名字後怎麼連-git/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><a href="http://stackoverflow.com/questions/21941015/git-push-failing-after-heroku-app-name-change" target="_blank" rel="external">http://stackoverflow.com/questions/21941015/git-push-failing-after-heroku-app-name-change</a></p>
-<p>如果是把 heroku app 刪掉，則用下面方法：<br><a href="http://stackoverflow.com/questions/28749771/cant-push-to-heroku-after-accidentally-deleting-app-on-heroku" target="_blank" rel="external">http://stackoverflow.com/questions/28749771/cant-push-to-heroku-after-accidentally-deleting-app-on-heroku</a></p>
-<p>補充<br><a href="https://devcenter.heroku.com/articles/renaming-apps" target="_blank" rel="external">https://devcenter.heroku.com/articles/renaming-apps</a><br><a href="https://devcenter.heroku.com/articles/git" target="_blank" rel="external">https://devcenter.heroku.com/articles/git</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/19/Basic-Git-Branching-Merging/" itemprop="url">
-                  Basic Git Branching & Merging
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-09-19T16:37:35+08:00" content="2016-09-19">
-              2016-09-19
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/19/Basic-Git-Branching-Merging/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/09/19/Basic-Git-Branching-Merging/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git checkout -b new-branch `git rev-list --max-parents=0 HEAD`</div></pre></td></tr></table></figure>
-<p>切回第一個 commit，再開一個新的 branch (new-branch)</p>
-<p><code>$ git checkout branch-1</code><br>切換到叫做 branch-1 的 branch</p>
-<p><code>$ git branch -D branch-2</code><br>在其他 branch 砍掉一個叫做 branch-2 的 branch<br><a href="http://stackoverflow.com/questions/2003505/delete-a-git-branch-both-locally-and-remotely" target="_blank" rel="external">http://stackoverflow.com/questions/2003505/delete-a-git-branch-both-locally-and-remotely</a></p>
-<p><code>$ git log</code><br>進入commit清單，每個commit後面有獨一無二的commit hash key, 按 q 跳出。</p>
-<p><code>$ git reset --hard &lt;commit hash key&gt;</code><br>回到指定的 git commit, 並讓你的 local code 和 local history 跟那個 commit 一模一樣…</p>
-<p>如果要避免下面的問題</p>
-<blockquote>
-<p>“It will make your local code and local history be just like it was at that commit. But then if you wanted to push this to someone else who has the new history, it would fail.”</p>
-</blockquote>
-<p>我們可以用…<br><code>$ git reset --soft &lt;commit hash key&gt;</code></p>
-<blockquote>
-<p>“It will make your local files changed to be like they were then, but leave your history etc. the same.”</p>
-</blockquote>
-<p><a href="http://stackoverflow.com/questions/3639115/reverting-to-a-specific-commit-based-on-commit-id-with-git" target="_blank" rel="external">http://stackoverflow.com/questions/3639115/reverting-to-a-specific-commit-based-on-commit-id-with-git</a></p>
-<p><code>$ git checkout &lt;commit hash key&gt;</code><br>只是要切回過去某個 commit, 之後還要切回來…</p>
-<p>如果是 <code>$ git checkout -b new_branch</code> 開一個名為 <code>new_branch</code> 的新 branch 來做功能開發，開發完要 merge, 流程如下：</p>
-<ol>
-<li><code>$ git checkout master</code></li>
-<li><code>$ git merge new_branch</code></li>
-</ol>
-<p>在 github 上設 repo 後，在 terminal 中輸入 $ git clone [git repo 網址]，就可以把 github repo 傳回 local, 兩邊的 repo 從此連在一起。</p>
-<p>假設我們目前所處的 DIR 路徑位置是 /app，有一個 git repo 是 <code>https://github.com/example/example.git</code>, 我們可以透過</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git clone https://github.com/example/example.git anotherfolder/yetanotherfolder</div></pre></td></tr></table></figure>
-<p>在 <code>/app</code> 底下生成 <code>anotherfolder</code> 資料夾，在 <code>anotherfolder</code> 資料夾中再生成 <code>yetanotherfolder</code> 資料夾，然後把從 <code>https://github.com/example/example.git</code> clone 過來的內容放在 <code>yetanotherfolder</code> 資料夾中。</p>
-<p>local repo 要換位置的話，直接 ctrl-x/ctrl-v 貼到目標檔案夾即可。原因是該 local repo 中有隱藏檔 <code>.git</code> 標示連接的 git repo</p>
-<p>要 undo <code>git add</code> 就用 <code>git reset</code></p>
-<p>參考資料：<br><a href="http://stackoverflow.com/questions/4114095/revert-git-repo-to-a-previous-commit" target="_blank" rel="external">http://stackoverflow.com/questions/4114095/revert-git-repo-to-a-previous-commit</a></p>
-<p>這是 Git 官方文檔，寫得非常簡明易懂<br><a href="https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging" target="_blank" rel="external">https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging</a></p>
-<p>Atlassian( 出品 GitBucket, JIRA 等服務的公司) 的文檔，也可以參考看看<br><a href="https://www.atlassian.com/git/tutorials/using-branches" target="_blank" rel="external">https://www.atlassian.com/git/tutorials/using-branches</a></p>
-<p><a href="http://gogojimmy.net/2012/02/29/git-scenario/" target="_blank" rel="external">http://gogojimmy.net/2012/02/29/git-scenario/</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/19/Ruby-gem-simple-form/" itemprop="url">
-                  Ruby gem 'simple_form'
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-09-19T16:36:35+08:00" content="2016-09-19">
-              2016-09-19
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/19/Ruby-gem-simple-form/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/09/19/Ruby-gem-simple-form/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><a href="https://github.com/plataformatec/simple_form" target="_blank" rel="external">https://github.com/plataformatec/simple_form</a></p>
-<figure class="highlight rb"><figcaption><span>Gemfile</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gem <span class="string">'simple_form'</span></div></pre></td></tr></table></figure>
-<p><code>$ bundle install</code></p>
-<p>不整合 bootstrap:<br><code>$ rails generate simple_form:install</code></p>
-<p>整合 bootstrap:<br><code>$ rails generate simple_form:install --bootstrap</code></p>
-<p>記得 application 中要先有 bootstrap assets</p>
-<p>上面三步驟安裝好 simple_form 後，原本很繁瑣的 rails form 寫法，就可以簡化成像下面的寫法。</p>
-<figure class="highlight erb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;%=<span class="ruby"> simple_form_for @user <span class="keyword">do</span> <span class="params">|f|</span> </span>%&gt;</div><div class="line">  &lt;%=<span class="ruby"> f.input <span class="symbol">:username</span> </span>%&gt;</div><div class="line">  &lt;%=<span class="ruby"> f.input <span class="symbol">:password</span> </span>%&gt;</div><div class="line">  &lt;%=<span class="ruby"> f.button <span class="symbol">:submit</span> </span>%&gt;</div><div class="line">&lt;%<span class="ruby"> <span class="keyword">end</span> </span>%&gt;</div></pre></td></tr></table></figure>
-<p>要注意兩點：</p>
-<ol>
-<li>:username, :password 等早在新建 model 時就定義屬性了，所以不用像 rails form 那樣再定義一次。</li>
-<li>顯示在前端的欄位名稱就直接是 Username, Password, 這對英文網站方便，對其它語言的網站開發則未必，如果改欄位名稱，必須額外設定。</li>
-</ol>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
                 <a class="post-title-link" href="/2016/09/19/Ruby-gem-guard-livereload/" itemprop="url">
                   Ruby gem 'guard-livereload'
                 </a>
@@ -1094,11 +430,912 @@
 
 
     
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/09/19/RESTful-和-MVC-好用的原因/" itemprop="url">
+                  RESTful 和 MVC 好用的原因
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-09-19T16:31:08+08:00" content="2016-09-19">
+              2016-09-19
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/19/RESTful-和-MVC-好用的原因/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/09/19/RESTful-和-MVC-好用的原因/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>程式新手在一開始學Rails會被告知要用REST和MVC的概念來設計網站結構，聽歸聽、做歸做，往往不知道原因。我剛開始學寫程式也是如此，而我是怎麼了解到用REST和MVC來設計網站架構的好處呢？其實就只是Railsbridge/Suggestotron <a href="http://docs.railsbridge.org/intro-to-rails/credits_and_next_steps" target="_blank" rel="external">http://docs.railsbridge.org/intro-to-rails/credits_and_next_steps</a>  這個入門教材的一道加分題：”Add an ‘about’ page, linked from the bottom of the Suggestotron topics list. Link back to the Topics list from the About page so users don’t get stranded.”</p>
+<p>這一道習題是要加一個”about” page, 按照傳統靜態網頁簡單直覺的做法，直接在A網頁上設一個超連結連往B網頁就好了。但來到現在比較多互動並且非靜態的網站的時代（抱歉我沒辦法很精準地使用術語），這樣做不利於後續的網站管理。我在寫這道習題的過程中，</p>
+<ul>
+<li>先創一個pages controller</li>
+<li>設定routing <code>get &quot;pages/about&quot;</code></li>
+<li>在pages controller裡面新增一個”about” action</li>
+<li>在views/pages裡面新增一個about.html.erb</li>
+<li>把連回topics index的link設在這裡</li>
+<li>在views/topics/index.html.erb裡面增加連往”about” page的link</li>
+</ul>
+<p>看似麻煩，但其實很便於管理，原因是：</p>
+<ul>
+<li>我們可以把這些零散的pages集中放在pages controller中管理</li>
+<li>設定完routing後就有路徑可以直接用在view的link_to後面提供路徑</li>
+<li>controller處理流程和actions, view處理網頁顯示的內容，我們要新增、修改什麼功能或內容，就往特定的地方找，分門別類利於管理及開發新功能。</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/09/19/Set-up-iTerm-2-with-oh-my-zsh/" itemprop="url">
+                  Set up iTerm 2 with oh-my-zsh
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-09-19T16:29:11+08:00" content="2016-09-19">
+              2016-09-19
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/19/Set-up-iTerm-2-with-oh-my-zsh/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/09/19/Set-up-iTerm-2-with-oh-my-zsh/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>我基本上是照這篇設定的，講得非常詳細。<br><a href="http://chouandy.logdown.com/posts/255501-let-mac-terminal-be-more-powerful-and-more-beautiful" target="_blank" rel="external">http://chouandy.logdown.com/posts/255501-let-mac-terminal-be-more-powerful-and-more-beautiful</a></p>
+<p>但整個照走一遍後，command line卻會出現亂碼，找了些文件發現是目前這個版本的menlo字體有問題，但已經兩年沒更新了，估計短時間內無法解決，我於是新灌了一套powerline font, 字體改成它做測試，解決了問題。</p>
+<p>參考資料：<br><a href="https://github.com/robbyrussell/oh-my-zsh/issues/3436" target="_blank" rel="external">https://github.com/robbyrussell/oh-my-zsh/issues/3436</a><br><a href="https://github.com/robbyrussell/oh-my-zsh/issues/1906" target="_blank" rel="external">https://github.com/robbyrussell/oh-my-zsh/issues/1906</a><br><a href="https://github.com/robbyrussell/oh-my-zsh/pull/1872" target="_blank" rel="external">https://github.com/robbyrussell/oh-my-zsh/pull/1872</a></p>
+<p><a href="https://gist.github.com/agnoster/3712874" target="_blank" rel="external">https://gist.github.com/agnoster/3712874</a>  oh-my-zsh作者的頁面</p>
+<p><a href="https://github.com/powerline/fonts" target="_blank" rel="external">https://github.com/powerline/fonts</a>  （我灌了這邊一個月內還有更新的字體Cousine)<br><a href="https://github.com/supermarin/powerline-fonts" target="_blank" rel="external">https://github.com/supermarin/powerline-fonts</a>  (Menlo的來源，但是所有字體上一次更新都三年前了)</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/09/19/讓-simple-form-顯示中文-title-i18n-related/" itemprop="url">
+                  讓 simple_form 顯示中文 title (i18n-related)
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-09-19T16:26:05+08:00" content="2016-09-19">
+              2016-09-19
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/19/讓-simple-form-顯示中文-title-i18n-related/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/09/19/讓-simple-form-顯示中文-title-i18n-related/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="如何讓-simple-form-顯示中文-title"><a href="#如何讓-simple-form-顯示中文-title" class="headerlink" title="如何讓 simple_form 顯示中文 title ?"></a>如何讓 simple_form 顯示中文 title ?</h2><p><a href="https://github.com/plataformatec/simple_form" target="_blank" rel="external">https://github.com/plataformatec/simple_form</a><br><a href="http://juanitofatas.com/2014/06/25/rails-i18n-intro/" target="_blank" rel="external">http://juanitofatas.com/2014/06/25/rails-i18n-intro/</a></p>
+<p>Carlos:</p>
+<p><a href="http://wildjcrt.pixnet.net/blog/post/28194551-%5Bgem%5D-simple_form" target="_blank" rel="external">http://wildjcrt.pixnet.net/blog/post/28194551-%5Bgem%5D-simple_form</a><br>多加這個 <code>config/locales/simple_form.zh-TW.yml</code><br>時區處理方法 裡面有寫到可以轉換 <code>TimeWithZone</code><br>Rails中的時間類別使用的是 <code>ActiveSupport::TimeWithZone</code><br><a href="https://ihower.tw/rails4/i18n.html" target="_blank" rel="external">https://ihower.tw/rails4/i18n.html</a></p>
+<p>kimberley:</p>
+<p>剛試出來了 先在你要自定名稱的欄位加上:label =&gt; I18n.t(:Title)<br><img src="http://user-image.logdown.io/user/8651/blog/8555/post/728992/sQThQVrTpSzPel0eUtsA_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-04-28%20%E4%B8%8B%E5%8D%8810.33.12.png" alt="螢幕快照 2016-04-28 下午10.33.12.png"><br><img src="http://user-image.logdown.io/user/8651/blog/8555/post/728992/ADNeAFzxTqKaptsjKmSX_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-04-28%20%E4%B8%8B%E5%8D%8810.34.08.png" alt="螢幕快照 2016-04-28 下午10.34.08.png"><br>再新增語言檔 好像就是小蟹助教這篇的內容</p>
+<p>kimberley:</p>
+<p>我終於搞清楚 simple_form 的 i18n 了<br>只要在 simple_form.zh-TW.yml 裡</p>
+<p><code>simple_form.zh-TW.yml</code></p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="attr">zh-TW:</span></div><div class="line"><span class="attr"> simple_form:</span></div><div class="line"><span class="attr">   labels:</span></div><div class="line"><span class="attr">     product:</span></div><div class="line"><span class="attr">       description:</span> <span class="string">"描述"</span></div><div class="line"><span class="attr">       title:</span> <span class="string">"抬頭"</span></div></pre></td></tr></table></figure>
+<p>product 就是 simple_form_for @product 的物件<br>如果想知道 yml 結構怎麼對應 可以裝 i18n-debug 這個 gem<br><a href="https://www.youtube.com/watch?v=XNzgvog5sfY" target="_blank" rel="external">https://www.youtube.com/watch?v=XNzgvog5sfY</a><br><a href="https://github.com/fphilipe/i18n-debug" target="_blank" rel="external">https://github.com/fphilipe/i18n-debug</a></p>
+<blockquote>
+<p>上面提到的範圍做出來之後，還有照IP認語言要實作，這也是multi-language / internationalization (也就是i 18個字母 n i18n的由來) 的範疇。這邊做完後，下一步就是讓使用者自己選擇顯示語言，我猜這個相對好做。</p>
+</blockquote>
+<h2 id="延伸閱讀"><a href="#延伸閱讀" class="headerlink" title="延伸閱讀"></a>延伸閱讀</h2><p>Change label display name when using simple form in Rails<br><a href="http://stackoverflow.com/questions/13665997/can-you-change-label-display-names-when-using-simple-form-in-rails" target="_blank" rel="external">http://stackoverflow.com/questions/13665997/can-you-change-label-display-names-when-using-simple-form-in-rails</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/09/19/Session-Cookie/" itemprop="url">
+                  Session & Cookie
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-09-19T16:18:10+08:00" content="2016-09-19">
+              2016-09-19
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/19/Session-Cookie/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/09/19/Session-Cookie/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="什麼是-session-和-cookies"><a href="#什麼是-session-和-cookies" class="headerlink" title="什麼是 session 和 cookies?"></a>什麼是 session 和 cookies?</h1><h1 id="為什麼要用-session-跟-cookies"><a href="#為什麼要用-session-跟-cookies" class="headerlink" title="為什麼要用 session 跟 cookies?"></a>為什麼要用 session 跟 cookies?</h1><p><a href="http://wiki.jikexueyuan.com/project/node-lessons/cookie-session.html" target="_blank" rel="external">http://wiki.jikexueyuan.com/project/node-lessons/cookie-session.html</a><br><a href="http://www.justinweiss.com/articles/how-rails-sessions-work/" target="_blank" rel="external">http://www.justinweiss.com/articles/how-rails-sessions-work/</a><br><a href="http://www.theodinproject.com/ruby-on-rails/sessions-cookies-and-authentication" target="_blank" rel="external">http://www.theodinproject.com/ruby-on-rails/sessions-cookies-and-authentication</a></p>
+<h1 id="Rails-內如何操作-session"><a href="#Rails-內如何操作-session" class="headerlink" title="Rails 內如何操作 session?"></a>Rails 內如何操作 session?</h1><p>Rails 操作 session 和 cookies 非常簡單，可以在 controller 與 view 中直接訪問，model 除外，極大地方便了開發。</p>
+<p>Session<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">#存信息</div><div class="line">session[:current_user_id] = user.id</div><div class="line">#取信息</div><div class="line">session[:current_user_id]</div><div class="line">#刪除信息</div><div class="line">session[:current_user_id] = nil</div><div class="line">#清空信息</div><div class="line">reset_session</div></pre></td></tr></table></figure></p>
+<p>Cookies<br>cookies 操作稍微有點多，因為關係到明文/加密，過期時長<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">1、默認為關閉瀏覽器，自動過期；明文存儲。</div><div class="line">#存信息</div><div class="line">cookies[:id] = &quot;rubyer.me&quot;</div><div class="line">#取信息</div><div class="line">cookies[:id] #輸出&quot;rubyer.me&quot;</div><div class="line">#刪除信息</div><div class="line">cookies.delete (:key) #與 session 不同</div><div class="line">#清空信息（不能直接刪除，置過期即可）</div><div class="line">&lt;% cookies[:id] = &#123;:expires =&gt; 2.weeks.ago.utc&#125; %&gt;</div><div class="line"></div><div class="line">2、指定2周後過期</div><div class="line">cookies[:user_preference] = &#123;</div><div class="line">  :value =&gt; @current_user.preferences,</div><div class="line">  :expires =&gt; 2.weeks.from_now.utc</div><div class="line">&#125;</div><div class="line"></div><div class="line">3、永久存儲。實際為20年後過期，非永久</div><div class="line">cookies.permanent[:user_preference] = @current_user.preferences</div><div class="line"></div><div class="line">4、加密存儲，key 即為 config/initializers/secret_token.rb 中的 Application.config.secret_token</div><div class="line">cookies.signed[:id] = &quot;45&quot;</div><div class="line">#存儲結果類似</div><div class="line">cookies[:id] #返回「BAhJIgc0NQY6BkVU--a07249e5ce4374f62b7af628c70c679caa11c10b」</div><div class="line">#讀取值</div><div class="line">cookies.signed[:id] #返回&quot;45&quot;</div><div class="line"></div><div class="line">5、加密並永久存儲</div><div class="line">cookies.permanent.signed[:id] = &quot;45&quot;</div><div class="line">cookies.signed[:id]</div></pre></td></tr></table></figure></p>
+<h1 id="個人心得"><a href="#個人心得" class="headerlink" title="個人心得"></a>個人心得</h1><p>雖然自己仍然是個 Rails 偽新手，但漸漸看得出一些學習上的問題點。網路上很多 Rails 初學者寫關於 session 和 cookies 的文章，參考的其實可能是其它初學者的文章，但由於還沒有能力判斷內容對錯，所以可能一開始的觀念就錯了。或許可以考慮直接看官方文件，或是參考有口碑的技術網站，比如 MDN, 再不然至少也還有知名的 Rails 大神寫的技術文可以參考。不能否認有那種有口碑但是錯誤不少的技術網站（比如W3School), 只能同一個主題多方參考了。</p>
+<p>另外，名詞定義或版本上的混淆也是個問題。名詞定義來說，因為初學者懂的還太少，比如 Rails 的 session 是 cookie-based session, 必須和 cookie 一起使用，如果初學者看了一篇文章，說 session 其實可以單獨存在及使用，就可能搞錯 Rails session 的觀念。版本的部分，比如說 Rails 3 和 Rails 4 在 CookieStore 預設的做法有些微不同，而初學者未必會注意到不同版本有可能有巨大差異，如果查閱文件或文章時沒注意到版本號，甚至參考到同樣是初學者的文章，而對方同樣不知道版本號的影響，就有可能學到過時的、甚至被淘汰的觀念或實做方法。</p>
+<h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><p><a href="http://wiki.jikexueyuan.com/project/node-lessons/cookie-session.html" target="_blank" rel="external">http://wiki.jikexueyuan.com/project/node-lessons/cookie-session.html</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/09/19/before-action/" itemprop="url">
+                  before_action
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-09-19T16:16:52+08:00" content="2016-09-19">
+              2016-09-19
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/19/before-action/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/09/19/before-action/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="before-action-是什麼？"><a href="#before-action-是什麼？" class="headerlink" title="before_action 是什麼？"></a>before_action 是什麼？</h1><p>Filter 的一種, 定義執行 action 前要跑什麼 method. 另兩種常見的 filters 則是 after_action 以及 around_action.</p>
+<h1 id="為什麼要用-before-action？"><a href="#為什麼要用-before-action？" class="headerlink" title="為什麼要用 before_action？"></a>為什麼要用 before_action？</h1><p>一方面可以將每個 action 中最前面的重複代碼抽出，寫成一個 method, 用 before_action 執行。<br>另一方面，因為身分驗證往往是做在 action 前，所以也常被用來做身分驗證。</p>
+<h1 id="如何使用-before-action？"><a href="#如何使用-before-action？" class="headerlink" title="如何使用 before_action？"></a>如何使用 before_action？</h1><figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ProductsController</span> &lt; ApplicationController</span></div><div class="line">  before_action <span class="symbol">:authenticate_user!</span>, <span class="symbol">only:</span> [<span class="symbol">:create</span>, <span class="symbol">:destroy</span>]</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">index</span></span></div><div class="line">  <span class="keyword">end</span></div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">new</span></span></div><div class="line">  <span class="keyword">end</span></div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">create</span></span></div><div class="line">  <span class="keyword">end</span></div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">destroy</span></span></div><div class="line">  <span class="keyword">end</span></div><div class="line"></div><div class="line">  private</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">authenticate_user!</span></span></div><div class="line">  <span class="keyword">end</span></div><div class="line"></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<p>除了 :only, 也可以搭配 :except, 比如：</p>
+<p><code>before_action :authenticate_user!, except: [:index, :new]</code></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/09/19/Strong-Parameters-in-Rails/" itemprop="url">
+                  Strong Parameters in Rails
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-09-19T16:15:53+08:00" content="2016-09-19">
+              2016-09-19
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/19/Strong-Parameters-in-Rails/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/09/19/Strong-Parameters-in-Rails/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="strong-parameters-是什麼"><a href="#strong-parameters-是什麼" class="headerlink" title="strong parameters 是什麼?"></a>strong parameters 是什麼?</h1><p>Rails內建的一個安全機制，限制 parameters 參數寫入 database 中。</p>
+<h1 id="為什麼我們要用-strong-parameters"><a href="#為什麼我們要用-strong-parameters" class="headerlink" title="為什麼我們要用 strong parameters?"></a>為什麼我們要用 strong parameters?</h1><p>由於 Rails 中 model 的欄位直接對應 database 中 form 的欄位，因此容易被猜到關鍵欄位的命名方式而被駭，透過strong parameters 設定白名單，白名單內的欄位才能被寫入值，就能避免被暴力猜出命名方式後被寫參數進 database, 進而避免被駭。</p>
+<h1 id="如何使用-strong-parameters"><a href="#如何使用-strong-parameters" class="headerlink" title="如何使用 strong parameters?"></a>如何使用 strong parameters?</h1><figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Admin::ProductsController</span> &lt; ApplicationController</span></div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">create</span></span></div><div class="line">    @product = Product.new(product_params)</div><div class="line">  <span class="keyword">end</span></div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">update</span></span></div><div class="line">    @product = Product.find(params[<span class="symbol">:id</span>])</div><div class="line"></div><div class="line">    <span class="keyword">if</span> @product.update(product_params)</div><div class="line">      redirect_to admin_products_path</div><div class="line">    <span class="keyword">else</span></div><div class="line">      render <span class="symbol">:edit</span></div><div class="line">    <span class="keyword">end</span>  </div><div class="line">  <span class="keyword">end</span></div><div class="line"></div><div class="line">  private</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">product_params</span></span></div><div class="line">    params.<span class="keyword">require</span>(<span class="symbol">:product</span>).permit(<span class="symbol">:title</span>, <span class="symbol">:description</span>)</div><div class="line">  <span class="keyword">end</span></div><div class="line"></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/09/19/routing-時使用-namespace/" itemprop="url">
+                  routing 時使用 namespace
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-09-19T16:13:46+08:00" content="2016-09-19">
+              2016-09-19
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/19/routing-時使用-namespace/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/09/19/routing-時使用-namespace/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="什麼是-routing"><a href="#什麼是-routing" class="headerlink" title="什麼是 routing?"></a>什麼是 routing?</h1><p>給 Rails 設路徑，讓 Rails 能依著路徑去執行在 controller 中的 action, 而這也就是 MVC 的精神。</p>
+<h1 id="namespace-是什麼"><a href="#namespace-是什麼" class="headerlink" title="namespace 是什麼?"></a>namespace 是什麼?</h1><p>比如今天有好幾個人都叫金城武，我是板橋金城武，你是億載金城武，板橋、億載就是 namespace, 我們透過 namespace 做出區隔，別人不會搞混。</p>
+<h1 id="如何使用-namespace"><a href="#如何使用-namespace" class="headerlink" title="如何使用 namespace?"></a>如何使用 namespace?</h1><figure class="highlight plain"><figcaption><span>terminal</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ rails g controller admin::products</div></pre></td></tr></table></figure>
+<figure class="highlight rb"><figcaption><span>routes.rb</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">namespace <span class="symbol">:admin</span> <span class="keyword">do</span></div><div class="line">  resources <span class="symbol">:products</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<h1 id="個人心得"><a href="#個人心得" class="headerlink" title="個人心得"></a>個人心得</h1><p>即使我們用 <code>$ rails g controller admin::products</code> 產生了 <code>admin/products_controller</code> 了，還是要去 routes.rb 手動做 routing.</p>
+<h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><p><a href="http://guides.rubyonrails.org/routing.html" target="_blank" rel="external">http://guides.rubyonrails.org/routing.html</a> 2.6</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/09/19/User-Story-筆記/" itemprop="url">
+                  User Story 筆記
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-09-19T16:04:48+08:00" content="2016-09-19">
+              2016-09-19
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/19/User-Story-筆記/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/09/19/User-Story-筆記/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="User-Story-是什麼"><a href="#User-Story-是什麼" class="headerlink" title="User Story 是什麼?"></a>User Story 是什麼?</h2><p>User story 是一種敏捷式開發的工具，不直接把 spec 寫死，而是模擬使用者情境，寫出在 who, when, why, what, 使用者是誰、因為什麼因素、在什麼情況下、需要什麼功能。這些都是使用情境，不涉及技術。</p>
+<h2 id="為什麼我們要用-user-story"><a href="#為什麼我們要用-user-story" class="headerlink" title="為什麼我們要用 user story?"></a>為什麼我們要用 user story?</h2><ul>
+<li>幫助釐清要開發的功能</li>
+<li>釐清後方便規劃開發流程</li>
+<li>會做的先做，重要的先做。</li>
+</ul>
+<h2 id="如何使用-user-story-？"><a href="#如何使用-user-story-？" class="headerlink" title="如何使用 user story ？"></a>如何使用 user story ？</h2><p>身為一位 <strong><em>__</em></strong> ， 為了能夠 <strong><em>__</em></strong> ，我需要在 <strong><em>__</em></strong> 的情況下，使用 <strong><strong><em>__</em></strong></strong> 的功能。</p>
+<h2 id="個人心得"><a href="#個人心得" class="headerlink" title="個人心得"></a>個人心得</h2><p>剛開始練習寫 user story 的時候，不知道 user story 要寫多細，常常洋洋灑灑寫了一堆像是 specs 的東西，但又因為經驗不足而漏掉重要的 stories, 導致實作的過程常常為了補充 stories 而在商業邏輯和程式邏輯間不斷切換，干擾思緒。</p>
+<p>我目前的作法是先寫下 user story 大致的架構，接著順著這架構去發展進一步的情境，思考每個情境的合理性，並在大的 story 下進一步發展出較細小的、更接近實作目的的小 stories. 過程中常常會有原本沒想到的 story 浮出來的情況，這是正常的，這時候再加進去就可以了。</p>
+<p>舉例來說，我要做一個結合番茄鐘和待辦清單的 app, 我的 user story 發展的過程可能是這樣：</p>
+<h2 id="V1"><a href="#V1" class="headerlink" title="V1"></a>V1</h2><p>使用者能用蕃茄鐘並記下代辦事項</p>
+<h2 id="V2"><a href="#V2" class="headerlink" title="V2"></a>V2</h2><h4 id="使用者能使用番茄鐘"><a href="#使用者能使用番茄鐘" class="headerlink" title="使用者能使用番茄鐘"></a>使用者能使用番茄鐘</h4><p>使用者能自訂番茄鐘的時間長度<br>使用者能快速記錄干擾<br>使用者能中斷番茄鐘</p>
+<h4 id="使用者能記下待辦事項"><a href="#使用者能記下待辦事項" class="headerlink" title="使用者能記下待辦事項"></a>使用者能記下待辦事項</h4><p>使用者能快速記下待辦事項<br>使用者能給待辦事項分組<br>使用者能給待辦事項標上重要度</p>
+<h2 id="V3"><a href="#V3" class="headerlink" title="V3"></a>V3</h2><h4 id="使用者能使用番茄鐘-1"><a href="#使用者能使用番茄鐘-1" class="headerlink" title="使用者能使用番茄鐘"></a>使用者能使用番茄鐘</h4><p>使用者能自訂番茄鐘的時間長度</p>
+<ul>
+<li>使用者有預設的番茄鐘時間</li>
+<li>使用者能設定每顆番茄時間、短休息時間、長休息時間、長休息頻率。</li>
+</ul>
+<p>使用者能快速記錄干擾</p>
+<ul>
+<li>使用者能快速標註干擾的時間點</li>
+<li>使用者能記錄干擾的原因<ul>
+<li>使用者能設定干擾原因清單</li>
+<li>使用者能從干擾原因清單挑選干擾原因記錄在干擾時間中</li>
+</ul>
+</li>
+</ul>
+<p>使用者能中斷番茄鐘</p>
+<h4 id="使用者能記下待辦事項-1"><a href="#使用者能記下待辦事項-1" class="headerlink" title="使用者能記下待辦事項"></a>使用者能記下待辦事項</h4><p>使用者能快速記下待辦事項</p>
+<ul>
+<li>使用者能按下一個 “+” 的按鈕就開始記錄待辦事項</li>
+</ul>
+<p>使用者能給待辦事項分組</p>
+<ul>
+<li>使用者能給待辦事項設定任務分組</li>
+<li>使用者能給待辦事項加上標籤</li>
+</ul>
+<p>使用者能給待辦事項標上重要度</p>
+<ul>
+<li>使用者能給待辦清單標上0-3的重要度</li>
+</ul>
+<h2 id="V4"><a href="#V4" class="headerlink" title="V4"></a>V4</h2><p>……</p>
+<h2 id="V5"><a href="#V5" class="headerlink" title="V5"></a>V5</h2><p>……</p>
+<p>依此類推</p>
+<p>當整個 user story 寫好後，對於要做哪些事情就有一個很清楚的藍圖，並且每個小 story 背後需要哪些 specs 來完成，也會有比較清晰的輪廓，因為這些在發展 user story 的過程中都思考過至少一遍了。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
