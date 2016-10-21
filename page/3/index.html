@@ -288,11 +288,16 @@
       
         
           
-            <p><a href="https://github.com/mbleigh/acts-as-taggable-on" target="_blank" rel="external">https://github.com/mbleigh/acts-as-taggable-on</a></p>
-<p>這個實作的影片，講得很清楚，我也照著實作出來了。It works.<br><a href="http://railscasts.com/episodes/382-tagging?autoplay=true" target="_blank" rel="external">http://railscasts.com/episodes/382-tagging?autoplay=true</a></p>
-<p><a href="http://stackoverflow.com/questions/5493548/how-to-create-a-tagging-system-like-on-stack-overflow-or-quora" target="_blank" rel="external">http://stackoverflow.com/questions/5493548/how-to-create-a-tagging-system-like-on-stack-overflow-or-quora</a><br><a href="https://www.sitepoint.com/tagging-scratch-rails/" target="_blank" rel="external">https://www.sitepoint.com/tagging-scratch-rails/</a><br><a href="http://stackoverflow.com/questions/32752152/rails-acts-as-taggable-on-multiple-context-tag-filter" target="_blank" rel="external">http://stackoverflow.com/questions/32752152/rails-acts-as-taggable-on-multiple-context-tag-filter</a><br><a href="http://chrisestanol.com/blog/2015/09/15/acts-as-taggable-chosen-plugin/" target="_blank" rel="external">http://chrisestanol.com/blog/2015/09/15/acts-as-taggable-chosen-plugin/</a><br><a href="http://stackoverflow.com/questions/36521141/how-to-use-select2-rails-with-acts-as-taggable-on-simple-form" target="_blank" rel="external">http://stackoverflow.com/questions/36521141/how-to-use-select2-rails-with-acts-as-taggable-on-simple-form</a></p>
+          https://github.com/mbleigh/acts-as-taggable-on
+這個實作的影片，講得很清楚，我也照著實作出來了。It works.http://railscasts.com/episodes/382-tagging?autoplay=true
+http://stacko
+          ...
 
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/19/tagging-system-act-as-taggable-on/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -391,30 +396,23 @@
       
         
           
-            <h1 id="Git-flow"><a href="#Git-flow" class="headerlink" title="Git flow"></a>Git flow</h1><p>適合較大的團隊，主要結構是：</p>
-<ul>
-<li>主要分支<ul>
-<li>master: 永遠處在 production-ready 狀態</li>
-<li>develop: 最新的下次發佈開發狀態</li>
-</ul>
-</li>
-<li>支援性分支<ul>
-<li>“Feature”: 開發新功能都從 develop 分支出來，完成後 merge 回 develop</li>
-<li>“Release”: 準備要 release 的版本，只修 bugs。從 develop 分支出來，完成後 merge 回 master 和 develop</li>
-<li>“Hotfix”: 等不及 release 版本就必須馬上修 master 趕上線的情況。會從 master 分支出來，完成後 merge 回 master 和 develop</li>
-</ul>
-</li>
-</ul>
-<p>( iHower: <a href="https://ihower.tw/blog/archives/5140" target="_blank" rel="external">https://ihower.tw/blog/archives/5140</a> )</p>
-<p>也有一說，Git Flow 是以 Release 為基礎的開發流桯。也列出來供大家參考囉～<br>( <a href="http://www.arthurtoday.com/2015/02/git-flow-vs-github-flow.html" target="_blank" rel="external">http://www.arthurtoday.com/2015/02/git-flow-vs-github-flow.html</a> )</p>
-<h1 id="Github-flow"><a href="#Github-flow" class="headerlink" title="Github flow"></a>Github flow</h1><p>適合較小的團隊<br><a href="https://guides.github.com/introduction/flow/" target="_blank" rel="external">https://guides.github.com/introduction/flow/</a><br><a href="http://gitbeijing.com/flow/" target="_blank" rel="external">http://gitbeijing.com/flow/</a><br>主要結構是：</p>
-<ul>
-<li>只有一條主線 master</li>
-<li>要寫新功能還是更動什麼就開一個 branch 做 pull request, 寫完再 merge 進 master, 並把 branch 砍掉。</li>
-</ul>
-<h1 id="其他補充"><a href="#其他補充" class="headerlink" title="其他補充"></a>其他補充</h1><p><a href="http://www.takobear.tw/2014/02/15/bear-git-flow-sourcetreegit-flow/" target="_blank" rel="external">http://www.takobear.tw/2014/02/15/bear-git-flow-sourcetreegit-flow/</a><br><a href="http://nvie.com/posts/a-successful-git-branching-model/" target="_blank" rel="external">http://nvie.com/posts/a-successful-git-branching-model/</a><br><a href="https://goo.gl/XIThFY" target="_blank" rel="external">https://goo.gl/XIThFY</a><br><a href="http://danielkummer.github.io/git-flow-cheatsheet/index.zh_TW.html" target="_blank" rel="external">http://danielkummer.github.io/git-flow-cheatsheet/index.zh_TW.html</a><br><a href="http://blog.gogojimmy.net/2012/01/17/how-to-use-git-1-git-basic/" target="_blank" rel="external">http://blog.gogojimmy.net/2012/01/17/how-to-use-git-1-git-basic/</a><br><a href="https://zlargon.gitbooks.io/git-tutorial/content/index.html" target="_blank" rel="external">https://zlargon.gitbooks.io/git-tutorial/content/index.html</a></p>
+          Git flow適合較大的團隊，主要結構是：
 
-          
+主要分支
+master: 永遠處在 production-ready 狀態
+develop: 最新的下次發佈開發狀態
+
+
+支援性分支
+“Feature”: 開發新功能都從 develop 分支出來，完成後 merge 回 develop
+“Releas
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/19/Git-flow-vs-Github-flow/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -513,17 +511,20 @@
       
         
           
-            <p>可以從兩個方面去設定：</p>
-<ol>
-<li>HTML</li>
-<li>Model validation</li>
-</ol>
-<p>HTML 的部分，在 <code>posts/new.html.erb</code> 中</p>
-<figure class="highlight erb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;%=<span class="ruby"> simple_form_for @todo_list <span class="keyword">do</span> <span class="params">|f|</span> </span>%&gt;</div><div class="line">  &lt;%=<span class="ruby"> f.input <span class="symbol">:title</span>, <span class="symbol">input_html:</span> &#123;<span class="symbol">maxlength:</span> <span class="number">30</span>, <span class="symbol">size:</span> <span class="number">40</span>&#125; </span>%&gt;</div><div class="line">  &lt;%=<span class="ruby"> f.input <span class="symbol">:description</span>, <span class="symbol">input_html:</span> &#123;<span class="symbol">maxlength:</span> <span class="number">60</span>, <span class="symbol">size:</span> <span class="number">60</span>&#125; </span>%&gt;</div><div class="line">  &lt;%=<span class="ruby"> f.submit <span class="string">"Submit"</span>, <span class="symbol">data:</span> &#123;<span class="symbol">disable_with:</span> <span class="string">"Submitting"</span>&#125; </span>%&gt;</div><div class="line">&lt;%<span class="ruby"> <span class="keyword">end</span> </span>%&gt;</div></pre></td></tr></table></figure>
-<p>我們可以透過 <code>input_html: {maxlength: 30}</code> 限制只能輸入30個字，多的沒辦法再輸進表單。</p>
-<p>Model validation 的部份，顧名思義就是在 Post model 設一個 validation 限制輸入多少個字，比如 30, 表單內輸入的長度可以超過30個字，但是會無法儲存。</p>
+          可以從兩個方面去設定：
 
-          
+HTML
+Model validation
+
+HTML 的部分，在 posts/new.html.erb 中
+12345&lt;%= simple_form_for @todo_list do |f| %&gt;  &lt;%= f.input :title, input_
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/19/限制表單輸入的字數/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -622,18 +623,15 @@
       
         
           
-            <h1 id="常見"><a href="#常見" class="headerlink" title="常見"></a>常見</h1><h2 id="2XX-Success"><a href="#2XX-Success" class="headerlink" title="2XX Success"></a>2XX Success</h2><p><code>200 OK</code><br>The request was handled successfully.</p>
-<h2 id="3XX-Redirection"><a href="#3XX-Redirection" class="headerlink" title="3XX Redirection"></a>3XX Redirection</h2><p><code>302 Found</code><br>The requested resource has changed temporarily. Usually results in a redirect to another URL.</p>
-<h2 id="4XX-Client-Error"><a href="#4XX-Client-Error" class="headerlink" title="4XX Client Error"></a>4XX Client Error</h2><p><code>400 Bad Request</code></p>
-<p><code>403 Forbidden</code></p>
-<p><code>404 Not Found</code><br>The requested resource cannot be found.</p>
-<h2 id="5XX-Server-Error"><a href="#5XX-Server-Error" class="headerlink" title="5XX Server Error"></a>5XX Server Error</h2><p><code>500 Internal Server Error</code><br>The server has encounter a generic error.</p>
-<p><code>502 Bad Gateway</code></p>
-<p><code>503 Service Unavailable</code></p>
-<p><code>504 Gateway Timeout</code></p>
-<h1 id="冷知識"><a href="#冷知識" class="headerlink" title="冷知識"></a>冷知識</h1><p><code>451 Unavailable For Legal Reasons</code><br>《華氏451》的典故，因為法律因素被禁，比如政府進行內容審查。</p>
+          常見2XX Success200 OKThe request was handled successfully.
+3XX Redirection302 FoundThe requested resource has changed temporarily. Usually results in a 
+          ...
 
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/19/List-of-Common-HTTP-Status-Codes/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -732,9 +730,15 @@
       
         
           
-            <p><a href="https://ihower.tw/rails4/i18n.html" target="_blank" rel="external">https://ihower.tw/rails4/i18n.html</a>  Time Zone 的部分</p>
+          https://ihower.tw/rails4/i18n.html  Time Zone 的部分
 
           
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/19/調整資料顯示時間為-UTC-8-台灣/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -833,14 +837,16 @@
       
         
           
-            <h1 id="實作"><a href="#實作" class="headerlink" title="實作"></a>實作</h1><p><code>Gemfile</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gem &quot;font-awesome-rails&quot;</div></pre></td></tr></table></figure></p>
-<p><code>application.css.scss</code><br><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">import</span> <span class="string">"font-awesome"</span></div></pre></td></tr></table></figure></p>
-<p><code>index.html.erb</code><br><figure class="highlight erb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;%= link_to cancel_upvote_post_path(post), method: :delete do %&gt;</div><div class="line">  &lt;i class="fa fa-heart fa-lg" aria-hidden="true"&gt;&lt;/i&gt;</div><div class="line">&lt;% end %&gt;</div></pre></td></tr></table></figure></p>
-<p><code>&lt;i class=&quot;fa fa-heart&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;</code> 可以叫出預設版本的實心愛心<br><code>&lt;i class=&quot;fa fa-heart fa-lg&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;</code> 可以讓愛心變大 33%<br>其他關於大小的參數還有 <code>fa-2x</code>, <code>fa-3x</code>……等</p>
-<h1 id="改顏色"><a href="#改顏色" class="headerlink" title="改顏色"></a>改顏色</h1><p><code>posts.scss</code> 因為上一步 class=”fa fa-heart fa-lg”, 我們取 <code>fa-heart</code> 來改 CSS<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.fa-heart</span> &#123;</div><div class="line">  <span class="attribute">color</span>: <span class="number">#ff4d4d</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>我們就得到一顆紅色的實心愛心了 &lt;3</p>
+          實作Gemfile1gem &quot;font-awesome-rails&quot;
+application.css.scss1@import "font-awesome"
+index.html.erb123&lt;%= link_to cancel_upvote_post_path(post)
+          ...
 
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/19/Font-Awesome-實作-改顏色/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -939,18 +945,16 @@
       
         
           
-            <h2 id="用-“jquery-ui-rails”-gem"><a href="#用-“jquery-ui-rails”-gem" class="headerlink" title="用 “jquery-ui-rails” gem"></a>用 “jquery-ui-rails” gem</h2><p>在介紹 jquery-ui-rails 前，我們先來了解什麼是 <code>jQuery UI</code>, 以及它能做到什麼。最簡單的理解方式其實是點進去下方連結，點選左側欄位自己試試看：</p>
-<p><a href="https://jqueryui.com/" target="_blank" rel="external">https://jqueryui.com/</a></p>
-<p>而 jquery-ui-rails 就是一個讓 rails 能跑 jquery ui 的 gem 了。</p>
-<p><a href="https://github.com/joliss/jquery-ui-rails" target="_blank" rel="external">https://github.com/joliss/jquery-ui-rails</a></p>
-<p><code>Gemfile</code><br><figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gem <span class="string">'jquery-ui-rails'</span></div></pre></td></tr></table></figure></p>
-<h2 id="Require-Everything"><a href="#Require-Everything" class="headerlink" title="Require Everything"></a>Require Everything</h2><p><code>application.css</code><br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line"> *= require jquery-ui</div><div class="line"> */</div></pre></td></tr></table></figure></p>
-<p><code>application.js</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//= require jquery-ui</span></div></pre></td></tr></table></figure></p>
-<h2 id="Require-Specific-Modules"><a href="#Require-Specific-Modules" class="headerlink" title="Require Specific Modules"></a>Require Specific Modules</h2><p>The jQuery UI code weighs 51KB (minified + gzipped) and takes a while to execute, so for production apps it’s recommended to only include the modules that your application actually uses. Dependencies are automatically resolved. Simply pick one or more modules from the asset list below.</p>
-<p><code>application.css</code><br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line"> *= require jquery-ui</div><div class="line"> */</div></pre></td></tr></table></figure></p>
-<p><code>application.js</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//= require jquery-ui</span></div></pre></td></tr></table></figure></p>
+          用 “jquery-ui-rails” gem在介紹 jquery-ui-rails 前，我們先來了解什麼是 jQuery UI, 以及它能做到什麼。最簡單的理解方式其實是點進去下方連結，點選左側欄位自己試試看：
+https://jqueryui.com/
+而 jquery-ui-rails 就是一
+          ...
 
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/19/如何在-Rails-中使用-jQuery-UI/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1049,11 +1053,15 @@
       
         
           
-            <p><a href="http://stackoverflow.com/questions/21941015/git-push-failing-after-heroku-app-name-change" target="_blank" rel="external">http://stackoverflow.com/questions/21941015/git-push-failing-after-heroku-app-name-change</a></p>
-<p>如果是把 heroku app 刪掉，則用下面方法：<br><a href="http://stackoverflow.com/questions/28749771/cant-push-to-heroku-after-accidentally-deleting-app-on-heroku" target="_blank" rel="external">http://stackoverflow.com/questions/28749771/cant-push-to-heroku-after-accidentally-deleting-app-on-heroku</a></p>
-<p>補充<br><a href="https://devcenter.heroku.com/articles/renaming-apps" target="_blank" rel="external">https://devcenter.heroku.com/articles/renaming-apps</a><br><a href="https://devcenter.heroku.com/articles/git" target="_blank" rel="external">https://devcenter.heroku.com/articles/git</a></p>
+          http://stackoverflow.com/questions/21941015/git-push-failing-after-heroku-app-name-change
+如果是把 heroku app 刪掉，則用下面方法：http://stackoverflow.com/questions
+          ...
 
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/19/Heroku-app-改名字後怎麼連-git/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1152,39 +1160,16 @@
       
         
           
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git checkout -b new-branch `git rev-list --max-parents=0 HEAD`</div></pre></td></tr></table></figure>
-<p>切回第一個 commit，再開一個新的 branch (new-branch)</p>
-<p><code>$ git checkout branch-1</code><br>切換到叫做 branch-1 的 branch</p>
-<p><code>$ git branch -D branch-2</code><br>在其他 branch 砍掉一個叫做 branch-2 的 branch<br><a href="http://stackoverflow.com/questions/2003505/delete-a-git-branch-both-locally-and-remotely" target="_blank" rel="external">http://stackoverflow.com/questions/2003505/delete-a-git-branch-both-locally-and-remotely</a></p>
-<p><code>$ git log</code><br>進入commit清單，每個commit後面有獨一無二的commit hash key, 按 q 跳出。</p>
-<p><code>$ git reset --hard &lt;commit hash key&gt;</code><br>回到指定的 git commit, 並讓你的 local code 和 local history 跟那個 commit 一模一樣…</p>
-<p>如果要避免下面的問題</p>
-<blockquote>
-<p>“It will make your local code and local history be just like it was at that commit. But then if you wanted to push this to someone else who has the new history, it would fail.”</p>
-</blockquote>
-<p>我們可以用…<br><code>$ git reset --soft &lt;commit hash key&gt;</code></p>
-<blockquote>
-<p>“It will make your local files changed to be like they were then, but leave your history etc. the same.”</p>
-</blockquote>
-<p><a href="http://stackoverflow.com/questions/3639115/reverting-to-a-specific-commit-based-on-commit-id-with-git" target="_blank" rel="external">http://stackoverflow.com/questions/3639115/reverting-to-a-specific-commit-based-on-commit-id-with-git</a></p>
-<p><code>$ git checkout &lt;commit hash key&gt;</code><br>只是要切回過去某個 commit, 之後還要切回來…</p>
-<p>如果是 <code>$ git checkout -b new_branch</code> 開一個名為 <code>new_branch</code> 的新 branch 來做功能開發，開發完要 merge, 流程如下：</p>
-<ol>
-<li><code>$ git checkout master</code></li>
-<li><code>$ git merge new_branch</code></li>
-</ol>
-<p>在 github 上設 repo 後，在 terminal 中輸入 $ git clone [git repo 網址]，就可以把 github repo 傳回 local, 兩邊的 repo 從此連在一起。</p>
-<p>假設我們目前所處的 DIR 路徑位置是 /app，有一個 git repo 是 <code>https://github.com/example/example.git</code>, 我們可以透過</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git clone https://github.com/example/example.git anotherfolder/yetanotherfolder</div></pre></td></tr></table></figure>
-<p>在 <code>/app</code> 底下生成 <code>anotherfolder</code> 資料夾，在 <code>anotherfolder</code> 資料夾中再生成 <code>yetanotherfolder</code> 資料夾，然後把從 <code>https://github.com/example/example.git</code> clone 過來的內容放在 <code>yetanotherfolder</code> 資料夾中。</p>
-<p>local repo 要換位置的話，直接 ctrl-x/ctrl-v 貼到目標檔案夾即可。原因是該 local repo 中有隱藏檔 <code>.git</code> 標示連接的 git repo</p>
-<p>要 undo <code>git add</code> 就用 <code>git reset</code></p>
-<p>參考資料：<br><a href="http://stackoverflow.com/questions/4114095/revert-git-repo-to-a-previous-commit" target="_blank" rel="external">http://stackoverflow.com/questions/4114095/revert-git-repo-to-a-previous-commit</a></p>
-<p>這是 Git 官方文檔，寫得非常簡明易懂<br><a href="https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging" target="_blank" rel="external">https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging</a></p>
-<p>Atlassian( 出品 GitBucket, JIRA 等服務的公司) 的文檔，也可以參考看看<br><a href="https://www.atlassian.com/git/tutorials/using-branches" target="_blank" rel="external">https://www.atlassian.com/git/tutorials/using-branches</a></p>
-<p><a href="http://gogojimmy.net/2012/02/29/git-scenario/" target="_blank" rel="external">http://gogojimmy.net/2012/02/29/git-scenario/</a></p>
+          1$ git checkout -b new-branch `git rev-list --max-parents=0 HEAD`
+切回第一個 commit，再開一個新的 branch (new-branch)
+$ git checkout branch-1切換到叫做 branch-1 的 bran
+          ...
 
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/19/Basic-Git-Branching-Merging/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1283,21 +1268,18 @@
       
         
           
-            <p><a href="https://github.com/plataformatec/simple_form" target="_blank" rel="external">https://github.com/plataformatec/simple_form</a></p>
-<figure class="highlight rb"><figcaption><span>Gemfile</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gem <span class="string">'simple_form'</span></div></pre></td></tr></table></figure>
-<p><code>$ bundle install</code></p>
-<p>不整合 bootstrap:<br><code>$ rails generate simple_form:install</code></p>
-<p>整合 bootstrap:<br><code>$ rails generate simple_form:install --bootstrap</code></p>
-<p>記得 application 中要先有 bootstrap assets</p>
-<p>上面三步驟安裝好 simple_form 後，原本很繁瑣的 rails form 寫法，就可以簡化成像下面的寫法。</p>
-<figure class="highlight erb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;%=<span class="ruby"> simple_form_for @user <span class="keyword">do</span> <span class="params">|f|</span> </span>%&gt;</div><div class="line">  &lt;%=<span class="ruby"> f.input <span class="symbol">:username</span> </span>%&gt;</div><div class="line">  &lt;%=<span class="ruby"> f.input <span class="symbol">:password</span> </span>%&gt;</div><div class="line">  &lt;%=<span class="ruby"> f.button <span class="symbol">:submit</span> </span>%&gt;</div><div class="line">&lt;%<span class="ruby"> <span class="keyword">end</span> </span>%&gt;</div></pre></td></tr></table></figure>
-<p>要注意兩點：</p>
-<ol>
-<li>:username, :password 等早在新建 model 時就定義屬性了，所以不用像 rails form 那樣再定義一次。</li>
-<li>顯示在前端的欄位名稱就直接是 Username, Password, 這對英文網站方便，對其它語言的網站開發則未必，如果改欄位名稱，必須額外設定。</li>
-</ol>
+          https://github.com/plataformatec/simple_form
+Gemfile1gem 'simple_form'
+$ bundle install
+不整合 bootstrap:$ rails generate simple_form:install
+整合 bootstra
+          ...
 
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/19/Ruby-gem-simple-form/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
         
       
     </div>

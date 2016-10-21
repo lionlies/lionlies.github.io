@@ -288,10 +288,15 @@
       
         
           
-            <p><a href="https://help.disqus.com/customer/portal/articles/565624-adding-comment-count-links-to-your-home-page" target="_blank" rel="external">https://help.disqus.com/customer/portal/articles/565624-adding-comment-count-links-to-your-home-page</a></p>
-<figure class="highlight erb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;span class="button"&gt;</div><div class="line">  &lt;i class="fa fa-comment-o" aria-hidden="true"&gt;&lt;/i&gt;</div><div class="line">  &lt;a href="&lt;%=<span class="ruby"> url_for([idea, &#123;<span class="symbol">only_path:</span> <span class="literal">false</span>&#125;]) </span>%&gt;#disqus_thread"&gt;&lt;/a&gt;</div><div class="line">&lt;/span&gt;</div></pre></td></tr></table></figure>
+          https://help.disqus.com/customer/portal/articles/565624-adding-comment-count-links-to-your-home-page
+1234&lt;span class="button"&gt;  &lt;i class="fa 
+          ...
 
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/20/如何顯示-Disqus-的-Comment-Count/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -390,18 +395,16 @@
       
         
           
-            <h3 id="Offsetting-columns"><a href="#Offsetting-columns" class="headerlink" title="Offsetting columns"></a>Offsetting columns</h3><p><a href="http://getbootstrap.com/css/#grid-offsetting" target="_blank" rel="external">http://getbootstrap.com/css/#grid-offsetting</a></p>
-<blockquote>
-<p>Move columns to the right using .col-md-offset-<em> classes. These classes increase the left margin of a column by </em> columns. For example, .col-md-offset-4 moves .col-md-4 over four columns.</p>
-</blockquote>
-<p>這是一個 view template 中常見的 Bootstrap Grid System 起手式</p>
-<figure class="highlight erb"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div class="container col-md-8 col-md-offset-2"&gt;</div></pre></td></tr></table></figure>
-<p>使用 Bootstrap Grid 要給一個 container 標籤，所以我們下 <code>class=&quot;container&quot;</code>; Grid system 總共 12 columns, <code>col-md-8</code> 佔了 8 columns, <code>col-md-offset-2</code> 則是將 <code>col-md</code> 往右推 2 columns.</p>
-<p>所以如果要將內容置中，也就是左右對稱，就用簡單的數學算一下，12 - 8 = 4, 4/2 = 2, 所以加上 <code>col-md-offset-2</code> 就能讓內容置中了。</p>
-<p>如果是 <code>col-xs-8</code>, 就要用 <code>col-xs-offset-*</code> 來推，所以也可能有 <code>col-md-6 col-xs-8 col-md-offset-3 col-xs-offset-2</code> 的設定。</p>
-<p><a href="http://stackoverflow.com/questions/18153234/center-a-column-using-twitter-bootstrap-3" target="_blank" rel="external">http://stackoverflow.com/questions/18153234/center-a-column-using-twitter-bootstrap-3</a><br><a href="http://getbootstrap.com/css/#grid-offsetting" target="_blank" rel="external">http://getbootstrap.com/css/#grid-offsetting</a><br><a href="https://getbootstrap.com/examples/grid/" target="_blank" rel="external">https://getbootstrap.com/examples/grid/</a></p>
+          Offsetting columnshttp://getbootstrap.com/css/#grid-offsetting
 
-          
+Move columns to the right using .col-md-offset- classes. These classes increase the le
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/19/如何把-Bootstrap-內容置中？/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -500,13 +503,16 @@
       
         
           
-            <p>先加入 bootstrap 資源</p>
-<p>接著在 <code>_navbar.html.erb</code> 仿造下方的結構：</p>
-<figure class="highlight erb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">&lt;nav class="navbar navbar-default navbar-fixed-top"&gt;</div><div class="line">  &lt;div class="container-fluid"&gt;</div><div class="line"></div><div class="line">    &lt;div class="navbar-brand" href = "/"&gt;&lt;/div&gt;</div><div class="line"></div><div class="line">    &lt;button class = "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse"&gt;</div><div class="line">      &lt;span class="icon-bar"&gt;&lt;/span&gt;</div><div class="line">      &lt;span class="icon-bar"&gt;&lt;/span&gt;</div><div class="line">      &lt;span class="icon-bar"&gt;&lt;/span&gt;</div><div class="line">    &lt;/button&gt;</div><div class="line"></div><div class="line">    &lt;!--</div><div class="line">    1. 一行 &lt;span class="icon-bar"&gt;&lt;/span&gt; 就是一條橫槓，三行就是三條</div><div class="line">    2. 上面 &lt;button&gt; 中的 data-target=".navHeaderCollapse" 指向下面 &lt;div&gt; 中的 navHeaderCollapse</div><div class="line"></div><div class="line">    --&gt;</div><div class="line"></div><div class="line">    &lt;div class = "collapse navbar-collapse navHeaderCollapse"&gt;</div><div class="line"></div><div class="line">      &lt;ul class="nav navbar-nav"&gt;</div><div class="line">        &lt;li&gt;&lt;/li&gt;</div><div class="line">        &lt;li&gt;&lt;/li&gt;</div><div class="line">      &lt;/ul&gt;</div><div class="line"></div><div class="line">      &lt;ul class="nav navbar-nav navbar-right"&gt;</div><div class="line">        &lt;li&gt;&lt;/li&gt;</div><div class="line">        &lt;li&gt;&lt;/li&gt;</div><div class="line">      &lt;/ul&gt;</div><div class="line"></div><div class="line">    &lt;/div&gt;</div><div class="line"></div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;/nav&gt;</div></pre></td></tr></table></figure>
-<p>參考資料：<br><a href="https://www.youtube.com/watch?v=qpWlaOeGZ_4" target="_blank" rel="external">https://www.youtube.com/watch?v=qpWlaOeGZ_4</a></p>
-<p>延伸閱讀：<br><a href="http://v4-alpha.getbootstrap.com/components/navbar/#collapsible-content" target="_blank" rel="external">http://v4-alpha.getbootstrap.com/components/navbar/#collapsible-content</a><br><a href="http://www.w3schools.com/bootstrap/bootstrap_collapse.asp" target="_blank" rel="external">http://www.w3schools.com/bootstrap/bootstrap_collapse.asp</a></p>
+          先加入 bootstrap 資源
+接著在 _navbar.html.erb 仿造下方的結構：
+123456789101112131415161718192021222324252627282930313233&lt;nav class="navbar navbar-default navbar-fi
+          ...
 
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/19/Add-Icon-Bars-for-Responsive-Collapsing-Navbar-Using-Bootstrap-3/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -605,16 +611,15 @@
       
         
           
-            <p>常見的一種網站設計是在 navbar 或是 sidebar 會有連結或按鈕，點了就跳到頁面中的特定位置，這個特定位置就是 anchor point, 網址通常會長成 <code>www.example.com/#anchor_point</code></p>
-<p>通常我們會把 anchor point 設在某個內容區塊的標題，比如 <code>&lt;h5 id=&quot;my_work&quot;&gt;My Work&lt;/h5&gt;</code>, 這樣跳過去特定位置時就直接從標題開始看。</p>
-<p>但這樣的設計假如搭配 fixed navbar, 標題就可能在跳到特定位置時被 navbar 遮住。</p>
-<p>要怎麼解決呢？很簡單，只要透過 CSS 給 anchor point 一個 padding-top 的值產生推擠效果就可以了。</p>
-<p><code>&lt;h5 id=&quot;my_work&quot; class=&quot;anchor&quot;&gt;My Work&lt;/h5&gt;</code></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.anchor</span> &#123; <span class="attribute">padding-top</span>: <span class="number">65px</span>; &#125;</div></pre></td></tr></table></figure>
-<p>關於本文的解法：<br><a href="https://css-tricks.com/forums/topic/using-an-anchor-tag-on-a-web-page-with-a-navigation-bar-set-as-positon-fixed/" target="_blank" rel="external">https://css-tricks.com/forums/topic/using-an-anchor-tag-on-a-web-page-with-a-navigation-bar-set-as-positon-fixed/</a><br><a href="http://stackoverflow.com/questions/4086107/html-positionfixed-page-header-and-in-page-anchors" target="_blank" rel="external">http://stackoverflow.com/questions/4086107/html-positionfixed-page-header-and-in-page-anchors</a></p>
-<p>一個 tag 可以同時有一個 id 和多個 classes<br><a href="http://stackoverflow.com/questions/2813653/can-an-element-have-both-an-id-and-a-class" target="_blank" rel="external">http://stackoverflow.com/questions/2813653/can-an-element-have-both-an-id-and-a-class</a><br><a href="http://stackoverflow.com/questions/4371733/can-i-use-div-class-and-id-together-in-css" target="_blank" rel="external">http://stackoverflow.com/questions/4371733/can-i-use-div-class-and-id-together-in-css</a></p>
+          常見的一種網站設計是在 navbar 或是 sidebar 會有連結或按鈕，點了就跳到頁面中的特定位置，這個特定位置就是 anchor point, 網址通常會長成 www.example.com/#anchor_point
+通常我們會把 anchor point 設在某個內容區塊的標題，比如 &l
+          ...
 
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/19/避免-fixed-navbar-遮住-anchor-point/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -713,24 +718,15 @@
       
         
           
-            <p>假設我們今天有一個網站，上面有 pins, 有 users, users 可以對 pins 投票，但每個 user 只能對每個 pin 投一個 upvote, 並且可以取消 upvote, 這個機制要怎麼設計呢？</p>
-<p>首先，我們需要一個 Vote model, 而它是做為 join model 來連結 users 和 pins, 或者說，紀錄哪一位 user 投過哪一個 pin.</p>
-<p><code>$ rails g model vote user_id: integer pin_id: integer</code><br><code>$ rake db:migrate</code></p>
-<p>接著，我們要來建立各個資料庫之間的關聯：</p>
-<p><code>models/pin.rb</code></p>
-<figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Pin</span> &lt; ActiveRecord::Base</span></div><div class="line"></div><div class="line">  has_many <span class="symbol">:votes</span>, <span class="symbol">dependent:</span> <span class="symbol">:destroy</span></div><div class="line">  has_many <span class="symbol">:upvoted_users</span>, <span class="symbol">through:</span> <span class="symbol">:votes</span>, <span class="symbol">source:</span> <span class="symbol">:user</span></div><div class="line"></div><div class="line">  ...</div><div class="line"></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<p><code>models/user.rb</code></p>
-<figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span> &lt; ActiveRecord::Base</span></div><div class="line"></div><div class="line">  has_many <span class="symbol">:votes</span>, <span class="symbol">dependent:</span> <span class="symbol">:destroy</span></div><div class="line">  has_many <span class="symbol">:upvoted_pins</span>, <span class="symbol">through:</span> <span class="symbol">:votes</span>, <span class="symbol">source:</span> <span class="symbol">:pin</span></div><div class="line"></div><div class="line">  ...</div><div class="line"></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<p><code>model/vote.rb</code></p>
-<figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Vote</span> &lt; ActiveRecord::Base</span></div><div class="line"></div><div class="line">  belongs_to <span class="symbol">:user</span></div><div class="line">  belongs_to <span class="symbol">:pin</span></div><div class="line">  validates_uniqueness_of <span class="symbol">:pin_id</span>, <span class="symbol">scope:</span> <span class="symbol">:user_id</span></div><div class="line"></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<p>最後，我們在 controller 裡面寫上 actions.</p>
-<p><code>controllers/ideas_controller.rb</code></p>
-<figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">upvote</span></span></div><div class="line">  @pin = Pin.find(params[<span class="symbol">:id</span>])</div><div class="line">  @pin.votes.create(<span class="symbol">user_id:</span> current_user.id)</div><div class="line"></div><div class="line">  <span class="keyword">if</span> @pin.save</div><div class="line">    flash[<span class="symbol">:notice</span>] =  <span class="string">"Thank you for upvoting!"</span></div><div class="line">    redirect_to <span class="symbol">:back</span></div><div class="line">  <span class="keyword">else</span></div><div class="line">    flash[<span class="symbol">:notice</span>] =  <span class="string">"You have already upvoted this!"</span></div><div class="line">    redirect_to <span class="symbol">:back</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">cancel_upvote</span></span></div><div class="line">  @pin = Pin.find(params[<span class="symbol">:id</span>])</div><div class="line">  @vote = Vote.find_by(<span class="symbol">user_id:</span> current_user.id, <span class="symbol">pin_id:</span> @pin.id)</div><div class="line"></div><div class="line">  <span class="keyword">if</span> @vote</div><div class="line">    @vote.destroy</div><div class="line">    flash[<span class="symbol">:notice</span>] = <span class="string">"You've cancelled your upvote."</span></div><div class="line">    redirect_to <span class="symbol">:back</span></div><div class="line">  <span class="keyword">else</span></div><div class="line">    flash[<span class="symbol">:warning</span>] = <span class="string">"You have no upvotes to cancel."</span></div><div class="line">    redirect_to <span class="symbol">:back</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<p>這樣，我們就完成了這個投票機制。</p>
-<p>也可以用同樣的概念讓每一個 user 可以對每一個 pin 投下一個 downvote, 並且也可以取消 downvote.</p>
-<p><a href="http://stackoverflow.com/questions/24596651/rails-allow-users-to-upvote-only-once-a-pin" target="_blank" rel="external">http://stackoverflow.com/questions/24596651/rails-allow-users-to-upvote-only-once-a-pin</a></p>
+          假設我們今天有一個網站，上面有 pins, 有 users, users 可以對 pins 投票，但每個 user 只能對每個 pin 投一個 upvote, 並且可以取消 upvote, 這個機制要怎麼設計呢？
+首先，我們需要一個 Vote model, 而它是做為 join model 來連結 
+          ...
 
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/19/Voting-System/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -829,14 +825,15 @@
       
         
           
-            <p>接完 Disqus 後，官方建議編輯 Recommended Configuration Variables 來讓 Disqus 認得出各則留言分別是在哪個網站的哪個頁面底下留的言，將來 Disqus 要傳 comments 過來才不會出錯。</p>
-<p>首先，我們看這篇：<br><a href="https://help.disqus.com/customer/en/portal/articles/2158629" target="_blank" rel="external">https://help.disqus.com/customer/en/portal/articles/2158629</a></p>
-<p>細部設定則看這篇：<br><a href="https://help.disqus.com/customer/en/portal/articles/472098-javascript-configuration-variables" target="_blank" rel="external">https://help.disqus.com/customer/en/portal/articles/472098-javascript-configuration-variables</a></p>
-<p>以下是我的設定</p>
-<p><code>_disqus.html.erb</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">......</div><div class="line"></div><div class="line">var disqus_config = function () &#123;</div><div class="line">    this.page.url = &quot;&lt;%= url_for([@post, &#123;only_path: false&#125;]) %&gt;&quot;;</div><div class="line">    this.page.identifier = &quot;&lt;%= @post.id %&gt;&quot;;</div><div class="line">    this.page.title = &quot;&lt;%= @post.title %&gt;&quot;;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">......</div></pre></td></tr></table></figure>
+          接完 Disqus 後，官方建議編輯 Recommended Configuration Variables 來讓 Disqus 認得出各則留言分別是在哪個網站的哪個頁面底下留的言，將來 Disqus 要傳 comments 過來才不會出錯。
+首先，我們看這篇：https://help.disqus
+          ...
 
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/19/Rails-app-編輯-Disqus-Recommended-Configuration-Variables/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -935,18 +932,18 @@
       
         
           
-            <p>Rails 要接 Disqus 很簡單，因為它是透過內嵌一段 JS 碼，而不是直接做在 Rails 上：</p>
-<p>以一般常見的 blog 系統為例，有 posts, comments:</p>
-<ol>
-<li>在 Disqus 註冊一個 Disqus 帳號</li>
-<li>從 Disqus 的 Admin Panel 那邊選 Installing</li>
-<li>在 Installation 頁面，選 Universal Code.</li>
-<li>在 app/views/posts 底下新增一個 <code>_disqus.html.erb</code> partial</li>
-<li>把 Disqus 留言板的 universal code 貼到 disqus partial 中，並 render 在你的 app 中想產生留言板的地方。我只有 posts#show 的地方會在該 post 底下有留言版，所以在 posts/show.html.erb 的最下方 render disqus partial.</li>
-<li>刷新網頁就會看到該 post 底下已經出現 Disqus 留言板了。</li>
-</ol>
+          Rails 要接 Disqus 很簡單，因為它是透過內嵌一段 JS 碼，而不是直接做在 Rails 上：
+以一般常見的 blog 系統為例，有 posts, comments:
 
-          
+在 Disqus 註冊一個 Disqus 帳號
+從 Disqus 的 Admin Panel 那邊選 Installin
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/19/Rails-app-接-Disqus/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1045,14 +1042,17 @@
       
         
           
-            <figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">check_in</span><span class="params">(word)</span></span></div><div class="line">  <span class="keyword">if</span> /lab/ =~ word</div><div class="line">    puts word</div><div class="line">  <span class="keyword">else</span></div><div class="line">    puts <span class="string">"No match"</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<ul>
-<li>上面這method可找出包含 “lab” 的 word</li>
-<li>/lab/ =~ word 可寫成 word =~ /lab/</li>
-<li>/lab/i 的 i 代表 case-insensitive, 所以包含 “Lab”, “laB” ……等的 word 也會找出來。</li>
-</ul>
+          1234567def check_in(word)  if /lab/ =~ word    puts word  else    puts "No match"  endend
 
-          
+上面這method可找出包含 “lab” 的 word
+/lab/ =~ word 可寫成 word =~ /lab/
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/19/用-Regexp-找出包含的字串/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1151,32 +1151,19 @@
       
         
           
-            <h1 id="基本的可以參考這篇"><a href="#基本的可以參考這篇" class="headerlink" title="基本的可以參考這篇"></a>基本的可以參考這篇</h1><p><a href="https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html" target="_blank" rel="external">https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html</a></p>
-<p><br></p>
-<h1 id="我常用的"><a href="#我常用的" class="headerlink" title="我常用的"></a>我常用的</h1><p>git init</p>
-<p>git add</p>
-<p>git commit -m “message”</p>
-<p>git commit -am “message”</p>
-<p>git commit -a -m “message”</p>
-<p>git push origin master</p>
-<p>git push heroku master</p>
-<p>git remote add origin <code>&lt;server&gt;</code></p>
-<p>git remote -v</p>
-<p>git branch</p>
-<p>git checkout -b <code>&lt;branchname&gt;</code></p>
-<p>git branch -d</p>
-<p>git merge <code>&lt;branchname&gt;</code></p>
-<p>git status</p>
-<p>git reset –soft</p>
-<p>git reset –hard</p>
-<p>git log</p>
-<p>git log –graph –oneline</p>
-<h1 id="有待了解"><a href="#有待了解" class="headerlink" title="有待了解"></a>有待了解</h1><p>git commiit –amend</p>
-<p>git clone</p>
-<p>git pull</p>
-<h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><p><a href="https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html" target="_blank" rel="external">https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html</a><br><a href="https://gist.github.com/hofmannsven/6814451" target="_blank" rel="external">https://gist.github.com/hofmannsven/6814451</a><br><a href="http://zeroturnaround.com/rebellabs/git-commands-and-best-practices-cheat-sheet/" target="_blank" rel="external">http://zeroturnaround.com/rebellabs/git-commands-and-best-practices-cheat-sheet/</a></p>
+          基本的可以參考這篇https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html
 
-          
+我常用的git init
+git add
+git commit -m “message”
+git commit -
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/19/Common-Git-Commands/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1275,19 +1262,14 @@
       
         
           
-            <p>這一篇講得很清楚<br><a href="http://schmidt-happens.com/articles/2014/06/04/favoriting-system-in-rails.html" target="_blank" rel="external">http://schmidt-happens.com/articles/2014/06/04/favoriting-system-in-rails.html</a><br>這一篇是上面那篇文章底下留言提到的 gist<br><a href="https://gist.github.com/tschmidt/3c869f17f4f23ab14fe1" target="_blank" rel="external">https://gist.github.com/tschmidt/3c869f17f4f23ab14fe1</a></p>
-<p>launchschool 的教材也寫得很清楚<br><a href="https://launchschool.com/blog/understanding-polymorphic-associations-in-rails" target="_blank" rel="external">https://launchschool.com/blog/understanding-polymorphic-associations-in-rails</a></p>
-<p><a href="http://railscasts.com/episodes/154-polymorphic-association" target="_blank" rel="external">http://railscasts.com/episodes/154-polymorphic-association</a></p>
-<p><a href="https://www.railstutorial.org/book/following_users" target="_blank" rel="external">https://www.railstutorial.org/book/following_users</a></p>
-<p><a href="http://6ftdan.com/allyourdev/2015/02/10/rails-polymorphic-models/" target="_blank" rel="external">http://6ftdan.com/allyourdev/2015/02/10/rails-polymorphic-models/</a></p>
-<p><a href="http://karimbutt.github.io/blog/2015/01/03/step-by-step-guide-to-polymorphic-associations-in-rails/" target="_blank" rel="external">http://karimbutt.github.io/blog/2015/01/03/step-by-step-guide-to-polymorphic-associations-in-rails/</a></p>
-<p><a href="http://stackoverflow.com/questions/24596651/rails-allow-users-to-upvote-only-once-a-pin" target="_blank" rel="external">http://stackoverflow.com/questions/24596651/rails-allow-users-to-upvote-only-once-a-pin</a></p>
-<p><a href="http://stackoverflow.com/questions/15866572/rails-implementing-voting-system-that-only-allows-1-upvote-downvote-per-user" target="_blank" rel="external">http://stackoverflow.com/questions/15866572/rails-implementing-voting-system-that-only-allows-1-upvote-downvote-per-user</a></p>
-<p><a href="http://codereview.stackexchange.com/questions/8312/refactoring-to-a-polymorphic-association" target="_blank" rel="external">http://codereview.stackexchange.com/questions/8312/refactoring-to-a-polymorphic-association</a></p>
-<p><a href="http://stackoverflow.com/questions/21817019/rails-polymorphic-favorites-user-can-favorite-different-models" target="_blank" rel="external">http://stackoverflow.com/questions/21817019/rails-polymorphic-favorites-user-can-favorite-different-models</a></p>
-<p><a href="http://www.trevordjones.com/creating-favorites-in-rails/" target="_blank" rel="external">http://www.trevordjones.com/creating-favorites-in-rails/</a></p>
+          這一篇講得很清楚http://schmidt-happens.com/articles/2014/06/04/favoriting-system-in-rails.html這一篇是上面那篇文章底下留言提到的 gisthttps://gist.github.com/tschmidt/3c869f17f
+          ...
 
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/19/Build-a-Favoriting-System-with-Rails-Polymorphic-Associations/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
         
       
     </div>
