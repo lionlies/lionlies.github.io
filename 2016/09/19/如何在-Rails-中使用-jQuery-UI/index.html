@@ -114,16 +114,20 @@ https://github.com/">
     fancybox: true,
     motion: true,
     duoshuo: {
-      userId: 0,
+      userId: '0',
       author: 'Author'
     }
   };
 </script>
 
+
+
+
+
   <title> 如何在 Rails 中使用 jQuery UI? | jason's blog </title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+<body itemscope itemtype="//schema.org/WebPage" lang="en">
 
   
 
@@ -144,7 +148,7 @@ https://github.com/">
   <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
       <div class="header-inner"><div class="site-meta ">
   
 
@@ -229,7 +233,7 @@ https://github.com/">
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
 
     
       <header class="post-header">
@@ -304,6 +308,7 @@ https://github.com/">
     <div>
       
         
+
       
     </div>
 
@@ -396,7 +401,7 @@ https://github.com/">
       
 
       <section class="site-overview sidebar-panel ">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
                alt="Jason Lung" />
@@ -492,7 +497,7 @@ https://github.com/">
 </div>
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
@@ -593,7 +598,7 @@ https://github.com/">
     <script type="text/javascript">
       var disqus_shortname = 'hexo-github-pages-lionlies';
       var disqus_identifier = '2016/09/19/如何在-Rails-中使用-jQuery-UI/';
-      var disqus_title = '如何在 Rails 中使用 jQuery UI?';
+      var disqus_title = "如何在 Rails 中使用 jQuery UI?";
       var disqus_url = 'http://yoursite.com/2016/09/19/如何在-Rails-中使用-jQuery-UI/';
 
       function run_disqus_script(disqus_script){
@@ -606,6 +611,11 @@ https://github.com/">
 
       run_disqus_script('count.js');
       
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
         run_disqus_script('embed.js');
       
     </script>
@@ -613,13 +623,18 @@ https://github.com/">
 
 
 
-  
+
   
   
 
   
 
   
+
+  
+
+  
+
 
 </body>
 </html>
