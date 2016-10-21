@@ -1,163 +1,302 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
 
-<!-- Head tag -->
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
 <head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!--Description-->
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
     
-        <meta name="description" content="建立後台列出目前所有的 routeshttp://guides.rubyonrails.org/routing.html
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="建立後台列出目前所有的 routeshttp://guides.rubyonrails.org/routing.html
 
 terminal: $ rake routes
 瀏覽器: localhost:3000/rails/info/routes
 瀏覽器: 跟路徑錯誤有關的錯誤訊息中
 
-produc">
-    
+product_params 是某種 rails 的命名慣例嗎？No, 這是一個method, 所以可以自由命名">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Rails EC Week 1">
+<meta property="og:url" content="http://yoursite.com/2016/09/16/Rails-EC-Week-1/index.html">
+<meta property="og:site_name" content="jason's blog">
+<meta property="og:description" content="建立後台列出目前所有的 routeshttp://guides.rubyonrails.org/routing.html
 
-    <!--Author-->
-    
-        <meta name="author" content="Jason Lung">
-    
+terminal: $ rake routes
+瀏覽器: localhost:3000/rails/info/routes
+瀏覽器: 跟路徑錯誤有關的錯誤訊息中
 
-    <!--Open Graph Title-->
-    
-        <meta property="og:title" content="Rails EC Week 1"/>
-    
+product_params 是某種 rails 的命名慣例嗎？No, 這是一個method, 所以可以自由命名">
+<meta property="og:updated_time" content="2016-09-18T08:39:10.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Rails EC Week 1">
+<meta name="twitter:description" content="建立後台列出目前所有的 routeshttp://guides.rubyonrails.org/routing.html
 
-    <!--Open Graph Description-->
-    
+terminal: $ rake routes
+瀏覽器: localhost:3000/rails/info/routes
+瀏覽器: 跟路徑錯誤有關的錯誤訊息中
 
-    <!--Open Graph Site Name-->
-    <meta property="og:site_name" content="Hello World"/>
-
-    <!--Type page-->
-    
-        <meta property="og:type" content="article" />
-    
-
-    <!--Page Cover-->
-    
-
-        <meta name="twitter:card" content="summary" />
-    
-
-    <!-- Title -->
-    
-    <title>Rails EC Week 1 - Hello World</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/style.css">
-
-    <!-- Custom Fonts -->
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- Gallery -->
-    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
-
-    <!-- Google Analytics -->
-    
+product_params 是某種 rails 的命名慣例嗎？No, 這是一個method, 所以可以自由命名">
 
 
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> Rails EC Week 1 | jason's blog </title>
 </head>
 
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
 
-<body>
+  
 
-    <!-- Menu -->
-    <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">Home</a>
-        </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                
-                    <li>
-                        <a href="https://github.com/lionlies">
-                            
-                                <i class="fa fa-github fa-stack-2x"></i>
-                            
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="https://www.linkedin.com/in/lionlies">
-                            
-                                <i class="fa fa-linkedin fa-stack-2x"></i>
-                            
-                        </a>
-                    </li>
-                
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container -->
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">jason's blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">rails and js notes</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
 </nav>
 
-    <!-- Main Content -->
-    <!-- Page Header -->
-<!-- Set your background image for this header in your post front-matter: cover -->
+ </div>
+    </header>
 
-<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-heading">
-                    <h1>Rails EC Week 1</h1>
-                    
-                    <span class="meta">
-                        <!-- Date and Author -->
-                        
-                        2016-09-16
-                    </span>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-
-<!-- Post Content -->
-<article>
-    <div class="container">
-        <div class="row">
-
-            <!-- Tags and categories -->
-           
-
-            <!-- Gallery -->
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
             
 
-            <!-- Post Main Content -->
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <h1 id="建立後台"><a href="#建立後台" class="headerlink" title="建立後台"></a>建立後台</h1><h2 id="列出目前所有的-routes"><a href="#列出目前所有的-routes" class="headerlink" title="列出目前所有的 routes"></a>列出目前所有的 routes</h2><p><a href="http://guides.rubyonrails.org/routing.html" target="_blank" rel="external">http://guides.rubyonrails.org/routing.html</a></p>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Rails EC Week 1
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-09-16T21:29:29+08:00" content="2016-09-16">
+              2016-09-16
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/16/Rails-EC-Week-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/09/16/Rails-EC-Week-1/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="建立後台"><a href="#建立後台" class="headerlink" title="建立後台"></a>建立後台</h1><h2 id="列出目前所有的-routes"><a href="#列出目前所有的-routes" class="headerlink" title="列出目前所有的 routes"></a>列出目前所有的 routes</h2><p><a href="http://guides.rubyonrails.org/routing.html" target="_blank" rel="external">http://guides.rubyonrails.org/routing.html</a></p>
 <ol>
 <li>terminal: <code>$ rake routes</code></li>
 <li>瀏覽器: <code>localhost:3000/rails/info/routes</code></li>
@@ -253,102 +392,328 @@ produc">
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ rake db:migrate:status</div></pre></td></tr></table></figure>
 <p>可以顯示目前 migrations 執行的情況，會有 Status, Migration ID(timestamp), Migration Name 三組資料。</p>
 
+      
+    </div>
 
-                
-            </div>
+    <div>
+      
+        
+      
+    </div>
 
-            <!-- Comments -->
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    
-    <hr />
-    <h3>Comments:</h3>
-    <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
-
-
-
-                </div>
+              <a href="/2016/08/16/Using-Hexo-with-Github-Pages/" rel="next" title="Using Hexo with Github Pages">
+                <i class="fa fa-chevron-left"></i> Using Hexo with Github Pages
+              </a>
             
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/09/17/Rails-EC-Week-1-Homework/" rel="prev" title="Rails EC Week 1 Homework">
+                Rails EC Week 1 Homework <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
         </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
     </div>
-</article>
-
-    <!-- Footer -->
-    <hr />
-
-<!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <ul class="list-inline text-center">
-                    
-
-                    
-
-                    
-                        <li>
-                            <a href="https://github.com/lionlies" target="_blank">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                    
-
-                    
-
-                    
-                        <li>
-                            <a href="mailto:lionlies@gmail.com" target="_blank">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                    
-
-                    
-                </ul>
-                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
-                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
-            </div>
-        </div>
-    </div>
-</footer>
+  </div>
 
 
-    <!-- After footer scripts -->
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
     
-<!-- jQuery -->
-<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
 
-<!-- Bootstrap -->
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-<!-- Gallery -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
 
-<!-- Disqus Comments -->
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Jason Lung" />
+          <p class="site-author-name" itemprop="name">Jason Lung</p>
+          <p class="site-description motion-element" itemprop="description">rails developer, entrepreneur</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">50</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/lionlies" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://facebook.com/lionlies" target="_blank" title="Facebook">
+                  
+                    <i class="fa fa-fw fa-facebook"></i>
+                  
+                  Facebook
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#建立後台"><span class="nav-number">1.</span> <span class="nav-text">建立後台</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#列出目前所有的-routes"><span class="nav-number">1.1.</span> <span class="nav-text">列出目前所有的 routes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#product-params-是某種-rails-的命名慣例嗎？"><span class="nav-number">1.2.</span> <span class="nav-text">product_params 是某種 rails 的命名慣例嗎？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#routes-rb"><span class="nav-number">1.3.</span> <span class="nav-text">routes.rb</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#開一個新的-branch-重新練習的時候，db-並不會清空，怎麼辦？"><span class="nav-number">1.4.</span> <span class="nav-text">開一個新的 branch 重新練習的時候，db 並不會清空，怎麼辦？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#namespace-是什麼？"><span class="nav-number">1.5.</span> <span class="nav-text">namespace 是什麼？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在-form-中輸入資料按下-submit-把資料送出到-DB，如果沒有-throw-exception-那是不是資料成功送進-DB-的步驟就等於-save-了？"><span class="nav-number">1.6.</span> <span class="nav-text">在 form 中輸入資料按下 submit 把資料送出到 DB，如果沒有 throw exception, 那是不是資料成功送進 DB 的步驟就等於 save 了？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#實作使用者功能"><span class="nav-number">2.</span> <span class="nav-text">實作使用者功能</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#rails-g-devise-install-這個指令是做什麼的？"><span class="nav-number">2.1.</span> <span class="nav-text">rails g devise:install 這個指令是做什麼的？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rails-g-devise-user-後程式跑的內容代表什麼意思？它和-rails-g-model-user-生出來的-user-有什麼差別？"><span class="nav-number">2.2.</span> <span class="nav-text">rails g devise user 後程式跑的內容代表什麼意思？它和 rails g model user 生出來的 user 有什麼差別？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如果不小心把-rails-g-devise-user-寫成-rails-g-devise-users，生出的檔案都一樣，不會有影響。"><span class="nav-number">2.3.</span> <span class="nav-text">如果不小心把 $ rails g devise user 寫成 $ rails g devise users，生出的檔案都一樣，不會有影響。</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#管理者存取後台設定"><span class="nav-number">3.</span> <span class="nav-text">管理者存取後台設定</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#current-user-是-rails-內建的嗎？"><span class="nav-number">3.1.</span> <span class="nav-text">current_user 是 rails 內建的嗎？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#怎麼規劃架構和功能建置的流程？"><span class="nav-number">3.2.</span> <span class="nav-text">怎麼規劃架構和功能建置的流程？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#slide-3-10中，導向登入頁面是-devise-的功能嗎？那這個登入的-view-是在哪裡？"><span class="nav-number">3.3.</span> <span class="nav-text">slide 3/10中，導向登入頁面是 devise 的功能嗎？那這個登入的 view 是在哪裡？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用-devise-做的登錄畫面要怎麼顯示中文？"><span class="nav-number">3.4.</span> <span class="nav-text">用 devise 做的登錄畫面要怎麼顯示中文？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#哪些順序有影響？"><span class="nav-number">3.5.</span> <span class="nav-text">哪些順序有影響？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#require-的順序？"><span class="nav-number">3.6.</span> <span class="nav-text">require 的順序？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#待解-下面兩題的內容整合一下"><span class="nav-number">3.7.</span> <span class="nav-text">[待解] 下面兩題的內容整合一下</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#add-column-users-is-admin-boolean-default-false"><span class="nav-number">3.8.</span> <span class="nav-text">add_column :users, :is_admin, :boolean, default: false</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#在-console-建立使用者並改為-admin-權限"><span class="nav-number">4.</span> <span class="nav-text">在 console 建立使用者並改為 admin 權限</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#為什麼rails-console可以更改權限？"><span class="nav-number">4.1.</span> <span class="nav-text">為什麼rails console可以更改權限？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解決不能登出的問題"><span class="nav-number">5.</span> <span class="nav-text">解決不能登出的問題</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#為什麼登入／登出是寫在-navbar-html-erb-前端-而不是寫在-controller-第二週購物車商品數量更改也寫在-carts-index-html-erb-在-view-改數量，為什麼能影響到後端更動-cart-items-quantity？"><span class="nav-number">5.1.</span> <span class="nav-text">為什麼登入／登出是寫在 _navbar.html.erb(前端)而不是寫在 controller? 第二週購物車商品數量更改也寫在 carts/index.html.erb, 在 view 改數量，為什麼能影響到後端更動 cart_items.quantity？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提問-為什麼這個-request-是-update-method"><span class="nav-number">5.2.</span> <span class="nav-text">[提問] 為什麼這個 request 是 update method?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-f-submit-“更新”-data-disable-with-“Submitting…”-gt"><span class="nav-number">5.3.</span> <span class="nav-text"><%= f.submit “更新”, data: {disable_with: “Submitting…”} %></span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-link-to-“登出”-destroy-user-session-path-method-delete-gt-拆解。"><span class="nav-number">5.4.</span> <span class="nav-text"><%= link_to(“登出”, destroy_user_session_path, method: :delete) %> 拆解。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#待解"><span class="nav-number">5.5.</span> <span class="nav-text">[待解]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#設定method-delete-是真人按下”登出”鈕時，還是”確定登出”的對話框時執行登出的動作？"><span class="nav-number">5.6.</span> <span class="nav-text">設定method: :delete, 是真人按下”登出”鈕時，還是”確定登出”的對話框時執行登出的動作？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#比如說-lt-link-to-quot-登出-quot-destroy-user-session-path-method-delete-gt-，destroy-user-session-path不就已經代表是用DELETE了？為什麼後面還要一個method-delete-而且從rake-routes也可以得知只有一個-destroy-user-session-path，並且後面標示Verb是DELETE，不就沒有跟其他verbs共用-destroy-user-session-path-的可能嗎？那為什麼還要特別註明是用-method-delete"><span class="nav-number">5.7.</span> <span class="nav-text">比如說 <%= link_to("登出", destroy_user_session_path, method: :delete ) %>，destroy_user_session_path不就已經代表是用DELETE了？為什麼後面還要一個method: :delete? 而且從rake routes也可以得知只有一個 destroy_user_session_path，並且後面標示Verb是DELETE，不就沒有跟其他verbs共用 destroy_user_session_path 的可能嗎？那為什麼還要特別註明是用 method: :delete ?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#全域的layout和partial有什麼關係？"><span class="nav-number">5.8.</span> <span class="nav-text">全域的layout和partial有什麼關係？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#slide-2-of-3-為什麼不作成-partial？"><span class="nav-number">5.9.</span> <span class="nav-text">slide 2 of 3 為什麼不作成 partial？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#將頁面用-bootstrap-套版"><span class="nav-number">6.</span> <span class="nav-text">將頁面用 bootstrap 套版</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#拆解下面的內容，bootstrap-sprockets-是做什麼的？"><span class="nav-number">6.1.</span> <span class="nav-text">拆解下面的內容，bootstrap-sprockets 是做什麼的？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Deploy-到-heroku-投影片"><span class="nav-number">7.</span> <span class="nav-text">Deploy 到 heroku (投影片)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#跑完下列指令後"><span class="nav-number">7.1.</span> <span class="nav-text">跑完下列指令後</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Misc"><span class="nav-number">8.</span> <span class="nav-text">Misc.</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#由於回家作業中，有些新功能不完全照著-user-story-來開發，比如說”解決不能登出的問題”就是-user-story-中沒有明確寫到的，請問是什麼情況？是因為開發時常會遇到-user-story-寫得不夠完整而要隨時調整-user-story-內容嗎？我們要怎麼判斷是不是把初步的功能做齊了呢？又，在-web-developing-的領域，我們是透過快速迭代來解決這樣的問題，還是找一組人對-web-app-做產品測試？還是有其他解法？"><span class="nav-number">8.1.</span> <span class="nav-text">由於回家作業中，有些新功能不完全照著 user story 來開發，比如說”解決不能登出的問題”就是 user story 中沒有明確寫到的，請問是什麼情況？是因為開發時常會遇到 user story 寫得不夠完整而要隨時調整 user story 內容嗎？我們要怎麼判斷是不是把初步的功能做齊了呢？又，在 web developing 的領域，我們是透過快速迭代來解決這樣的問題，還是找一組人對 web app 做產品測試？還是有其他解法？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如果app開發到一半去改Gemfile中的Rails版本然後bundle-install會發生什麼事？"><span class="nav-number">8.2.</span> <span class="nav-text">如果app開發到一半去改Gemfile中的Rails版本然後bundle install會發生什麼事？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#User-story-寫到最後會變成很可怕的量，如何限縮到MVP的範圍？（或，如何從中找出MVP？）"><span class="nav-number">8.3.</span> <span class="nav-text">User story 寫到最後會變成很可怕的量，如何限縮到MVP的範圍？（或，如何從中找出MVP？）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#namespace能達到的目的，scope似乎也可以做到（除了path不一樣），兩者合適的用法是？"><span class="nav-number">8.4.</span> <span class="nav-text">namespace能達到的目的，scope似乎也可以做到（除了path不一樣），兩者合適的用法是？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rake-db-migrate-status-可以查-migration-狀態，前面顯示-up-就代表已經-migrate-了。"><span class="nav-number">8.5.</span> <span class="nav-text">$ rake db:migrate:status 可以查 migration 狀態，前面顯示 up 就代表已經 migrate 了。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#migration-有誤怎麼解？"><span class="nav-number">8.6.</span> <span class="nav-text">migration 有誤怎麼解？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何-rollback-好幾步？"><span class="nav-number">8.7.</span> <span class="nav-text">如何 rollback 好幾步？</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jason Lung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
 
 <script type="text/javascript">
-    var disqus_shortname = 'hexo-git-hubpages-lionlies';
-
-    (function(){
-        var dsq = document.createElement('script');
-        dsq.type = 'text/javascript';
-        dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    }());
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
 
 
 
-</body>
 
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-github-pages-lionlies';
+      var disqus_identifier = '2016/09/16/Rails-EC-Week-1/';
+      var disqus_title = 'Rails EC Week 1';
+      var disqus_url = 'http://yoursite.com/2016/09/16/Rails-EC-Week-1/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
 </html>

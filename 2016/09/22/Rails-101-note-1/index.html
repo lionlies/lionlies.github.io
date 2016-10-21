@@ -1,159 +1,290 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
 
-<!-- Head tag -->
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
 <head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!--Description-->
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
     
-        <meta name="description" content="P.S. 最大的標題代表Rails101中的章節名稱，第二大的標題代表章節中的主題名稱，列表的部份則是筆記。
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="P.S. 最大的標題代表Rails101中的章節名稱，第二大的標題代表章節中的主題名稱，列表的部份則是筆記。
 延伸閱讀：CRUDCRUD in Rails
-CRUD(Create/Read/Update/Destroy)是網站最基礎的結構，Rails中建立CRUD結構的規範是 MVC 和 RESTf">
-    
-
-    <!--Author-->
-    
-        <meta name="author" content="Jason Lung">
-    
-
-    <!--Open Graph Title-->
-    
-        <meta property="og:title" content="Rails 101 note 1"/>
-    
-
-    <!--Open Graph Description-->
-    
-
-    <!--Open Graph Site Name-->
-    <meta property="og:site_name" content="Hello World"/>
-
-    <!--Type page-->
-    
-        <meta property="og:type" content="article" />
-    
-
-    <!--Page Cover-->
-    
-
-        <meta name="twitter:card" content="summary" />
-    
-
-    <!-- Title -->
-    
-    <title>Rails 101 note 1 - Hello World</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/style.css">
-
-    <!-- Custom Fonts -->
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- Gallery -->
-    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
-
-    <!-- Google Analytics -->
-    
+CRUD(Create/Read/Update/Destroy)是網站最基礎的結構，Rails中建立CRUD結構的規範是 MVC 和 RESTful。MVC是Model, View, Controller, 這樣的架構可以把前後端和資料庫的工作">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Rails 101 note 1">
+<meta property="og:url" content="http://yoursite.com/2016/09/22/Rails-101-note-1/index.html">
+<meta property="og:site_name" content="jason's blog">
+<meta property="og:description" content="P.S. 最大的標題代表Rails101中的章節名稱，第二大的標題代表章節中的主題名稱，列表的部份則是筆記。
+延伸閱讀：CRUDCRUD in Rails
+CRUD(Create/Read/Update/Destroy)是網站最基礎的結構，Rails中建立CRUD結構的規範是 MVC 和 RESTful。MVC是Model, View, Controller, 這樣的架構可以把前後端和資料庫的工作">
+<meta property="og:updated_time" content="2016-09-22T11:49:47.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Rails 101 note 1">
+<meta name="twitter:description" content="P.S. 最大的標題代表Rails101中的章節名稱，第二大的標題代表章節中的主題名稱，列表的部份則是筆記。
+延伸閱讀：CRUDCRUD in Rails
+CRUD(Create/Read/Update/Destroy)是網站最基礎的結構，Rails中建立CRUD結構的規範是 MVC 和 RESTful。MVC是Model, View, Controller, 這樣的架構可以把前後端和資料庫的工作">
 
 
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> Rails 101 note 1 | jason's blog </title>
 </head>
 
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
 
-<body>
+  
 
-    <!-- Menu -->
-    <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">Home</a>
-        </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                
-                    <li>
-                        <a href="https://github.com/lionlies">
-                            
-                                <i class="fa fa-github fa-stack-2x"></i>
-                            
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="https://www.linkedin.com/in/lionlies">
-                            
-                                <i class="fa fa-linkedin fa-stack-2x"></i>
-                            
-                        </a>
-                    </li>
-                
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container -->
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">jason's blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">rails and js notes</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
 </nav>
 
-    <!-- Main Content -->
-    <!-- Page Header -->
-<!-- Set your background image for this header in your post front-matter: cover -->
+ </div>
+    </header>
 
-<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-heading">
-                    <h1>Rails 101 note 1</h1>
-                    
-                    <span class="meta">
-                        <!-- Date and Author -->
-                        
-                        2016-09-22
-                    </span>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-
-<!-- Post Content -->
-<article>
-    <div class="container">
-        <div class="row">
-
-            <!-- Tags and categories -->
-           
-
-            <!-- Gallery -->
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
             
 
-            <!-- Post Main Content -->
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p>P.S. 最大的標題代表Rails101中的章節名稱，第二大的標題代表章節中的主題名稱，列表的部份則是筆記。</p>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Rails 101 note 1
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-09-22T19:49:24+08:00" content="2016-09-22">
+              2016-09-22
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/22/Rails-101-note-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/09/22/Rails-101-note-1/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>P.S. 最大的標題代表Rails101中的章節名稱，第二大的標題代表章節中的主題名稱，列表的部份則是筆記。</p>
 <h1 id="延伸閱讀：CRUD"><a href="#延伸閱讀：CRUD" class="headerlink" title="延伸閱讀：CRUD"></a>延伸閱讀：CRUD</h1><h3 id="CRUD-in-Rails"><a href="#CRUD-in-Rails" class="headerlink" title="CRUD in Rails"></a>CRUD in Rails</h3><ul>
 <li><p>CRUD(Create/Read/Update/Destroy)是網站最基礎的結構，Rails中建立CRUD結構的規範是 MVC 和 RESTful。MVC是Model, View, Controller, 這樣的架構可以把前後端和資料庫的工作切開，各做各的，比較好開發和管理。RESTful則是透過一種HTTP verb搭配一種helper對應到特定的action,</p>
 <ol>
@@ -274,102 +405,328 @@ CRUD(Create/Read/Update/Destroy)是網站最基礎的結構，Rails中建立CRUD
 <p>看情況，可能會也可能不會。如果要把 div col 設定包進去，那基本上 render partial 的地方就會都包起來。最主要的問題在於你會有很多地方去讀 partial，那是否那些地方都是 col-md-4 col-md-offset-4？如果都是就可以包，有的地方是、有的不是，那就無法包進去。</p>
 </blockquote>
 
+      
+    </div>
 
-                
-            </div>
+    <div>
+      
+        
+      
+    </div>
 
-            <!-- Comments -->
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    
-    <hr />
-    <h3>Comments:</h3>
-    <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
-
-
-
-                </div>
+              <a href="/2016/09/20/如何顯示-Disqus-的-Comment-Count/" rel="next" title="如何顯示 Disqus 的 Comment Count?">
+                <i class="fa fa-chevron-left"></i> 如何顯示 Disqus 的 Comment Count?
+              </a>
             
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/09/22/Rails-101-note-2/" rel="prev" title="Rails 101 note 2">
+                Rails 101 note 2 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
         </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
     </div>
-</article>
-
-    <!-- Footer -->
-    <hr />
-
-<!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <ul class="list-inline text-center">
-                    
-
-                    
-
-                    
-                        <li>
-                            <a href="https://github.com/lionlies" target="_blank">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                    
-
-                    
-
-                    
-                        <li>
-                            <a href="mailto:lionlies@gmail.com" target="_blank">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                    
-
-                    
-                </ul>
-                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
-                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
-            </div>
-        </div>
-    </div>
-</footer>
+  </div>
 
 
-    <!-- After footer scripts -->
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
     
-<!-- jQuery -->
-<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
 
-<!-- Bootstrap -->
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-<!-- Gallery -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
 
-<!-- Disqus Comments -->
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Jason Lung" />
+          <p class="site-author-name" itemprop="name">Jason Lung</p>
+          <p class="site-description motion-element" itemprop="description">rails developer, entrepreneur</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">50</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/lionlies" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://facebook.com/lionlies" target="_blank" title="Facebook">
+                  
+                    <i class="fa fa-fw fa-facebook"></i>
+                  
+                  Facebook
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#延伸閱讀：CRUD"><span class="nav-number">1.</span> <span class="nav-text">延伸閱讀：CRUD</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CRUD-in-Rails"><span class="nav-number">1.0.1.</span> <span class="nav-text">CRUD in Rails</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二章：創建一個-Rails-專案"><span class="nav-number">2.</span> <span class="nav-text">第二章：創建一個 Rails 專案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#建立新專案"><span class="nav-number">2.0.1.</span> <span class="nav-text">建立新專案</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第三章：手動架構出討論版功能的基礎網站"><span class="nav-number">3.</span> <span class="nav-text">第三章：手動架構出討論版功能的基礎網站</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#建立一個討論版-group"><span class="nav-number">3.0.1.</span> <span class="nav-text">建立一個討論版(group)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#建立-notice-mesage"><span class="nav-number">3.0.2.</span> <span class="nav-text">建立 notice_mesage</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第四章：手動實作出討論版的-CRUD-功能"><span class="nav-number">4.</span> <span class="nav-text">第四章：手動實作出討論版的 CRUD 功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#可以新增討論版-建立-action-new-create"><span class="nav-number">4.0.1.</span> <span class="nav-text">可以新增討論版 ( 建立 action new, create )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rails-的運作原理與流程"><span class="nav-number">4.0.2.</span> <span class="nav-text">Rails 的運作原理與流程</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第六章：建立使用者功能"><span class="nav-number">5.</span> <span class="nav-text">第六章：建立使用者功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#加入-strong-parameters-與-devise-整合的-hack"><span class="nav-number">5.0.1.</span> <span class="nav-text">加入 strong_parameters 與 devise 整合的 hack</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用者功能-整合進-group-post-裡面-作者機制"><span class="nav-number">6.</span> <span class="nav-text">使用者功能 整合進 group / post 裡面 (作者機制)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#設定-user-跟-group-之間的資料庫關聯-database-relationship"><span class="nav-number">6.0.1.</span> <span class="nav-text">設定 user 跟 group 之間的資料庫關聯(database relationship)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第七章：user-可以加入、退出-group"><span class="nav-number">7.</span> <span class="nav-text">第七章：user 可以加入、退出 group</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#建立-討論版成員-group-user-設定"><span class="nav-number">7.0.1.</span> <span class="nav-text">建立 討論版成員 ( group_user ) 設定</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#只有作者才能有-group-post-的修改-刪除權限"><span class="nav-number">8.</span> <span class="nav-text">只有作者才能有 group / post 的修改/刪除權限</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#只有作者才能有-post-的修改-刪除權限"><span class="nav-number">8.0.1.</span> <span class="nav-text">只有作者才能有 post 的修改/刪除權限</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第八章：實做簡單的後台機制"><span class="nav-number">9.</span> <span class="nav-text">第八章：實做簡單的後台機制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用者可以在後台看到自己發表的-post"><span class="nav-number">9.0.1.</span> <span class="nav-text">使用者可以在後台看到自己發表的 post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#group-的排列要以-文章數量-當熱門度排列"><span class="nav-number">9.0.2.</span> <span class="nav-text">group 的排列要以 文章數量 當熱門度排列</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第九章：Refactor-Code-整理你的程式碼"><span class="nav-number">10.</span> <span class="nav-text">第九章：Refactor Code 整理你的程式碼</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#翻修-View"><span class="nav-number">11.</span> <span class="nav-text">翻修 View</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#自己撰寫的-helper-包裝-html"><span class="nav-number">11.0.1.</span> <span class="nav-text">自己撰寫的 helper 包裝 html</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jason Lung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
 
 <script type="text/javascript">
-    var disqus_shortname = 'hexo-git-hubpages-lionlies';
-
-    (function(){
-        var dsq = document.createElement('script');
-        dsq.type = 'text/javascript';
-        dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    }());
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
 
 
 
-</body>
 
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-github-pages-lionlies';
+      var disqus_identifier = '2016/09/22/Rails-101-note-1/';
+      var disqus_title = 'Rails 101 note 1';
+      var disqus_url = 'http://yoursite.com/2016/09/22/Rails-101-note-1/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
 </html>

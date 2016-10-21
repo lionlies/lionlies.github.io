@@ -1,157 +1,293 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
 
-<!-- Head tag -->
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
 <head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!--Description-->
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
     
-        <meta name="description" content="商品加到購物車為什麼要有購物車的設計？不能直接把商品跟使用者做連結嗎(用使用者當container)？是為了session還是為了將來在shopping cart之外，還能實作出 buy later, wish list……等分類做準備？[不確定] 可以把商品掛 user 身上結帳，但有幾個特性提一">
     
+  
 
-    <!--Author-->
+  
+
+  
+
+  
+
+  
+
+  
     
-        <meta name="author" content="Jason Lung">
     
-
-    <!--Open Graph Title-->
-    
-        <meta property="og:title" content="Rails EC Week 2"/>
-    
-
-    <!--Open Graph Description-->
-    
-
-    <!--Open Graph Site Name-->
-    <meta property="og:site_name" content="Hello World"/>
-
-    <!--Type page-->
-    
-        <meta property="og:type" content="article" />
-    
-
-    <!--Page Cover-->
-    
-
-        <meta name="twitter:card" content="summary" />
-    
-
-    <!-- Title -->
-    
-    <title>Rails EC Week 2 - Hello World</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/style.css">
-
-    <!-- Custom Fonts -->
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- Gallery -->
-    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
-
-    <!-- Google Analytics -->
-    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
 
 
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="商品加到購物車為什麼要有購物車的設計？不能直接把商品跟使用者做連結嗎(用使用者當container)？是為了session還是為了將來在shopping cart之外，還能實作出 buy later, wish list……等分類做準備？[不確定] 可以把商品掛 user 身上結帳，但有幾個特性提一下：
+
+這樣無法記錄購物車資訊，也就無法做後續的數據分析及利用。
+理論上可以把 user 購物欄位做">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Rails EC Week 2">
+<meta property="og:url" content="http://yoursite.com/2016/09/18/Rails-EC-Week-2/index.html">
+<meta property="og:site_name" content="jason's blog">
+<meta property="og:description" content="商品加到購物車為什麼要有購物車的設計？不能直接把商品跟使用者做連結嗎(用使用者當container)？是為了session還是為了將來在shopping cart之外，還能實作出 buy later, wish list……等分類做準備？[不確定] 可以把商品掛 user 身上結帳，但有幾個特性提一下：
+
+這樣無法記錄購物車資訊，也就無法做後續的數據分析及利用。
+理論上可以把 user 購物欄位做">
+<meta property="og:updated_time" content="2016-09-18T08:57:25.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Rails EC Week 2">
+<meta name="twitter:description" content="商品加到購物車為什麼要有購物車的設計？不能直接把商品跟使用者做連結嗎(用使用者當container)？是為了session還是為了將來在shopping cart之外，還能實作出 buy later, wish list……等分類做準備？[不確定] 可以把商品掛 user 身上結帳，但有幾個特性提一下：
+
+這樣無法記錄購物車資訊，也就無法做後續的數據分析及利用。
+理論上可以把 user 購物欄位做">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> Rails EC Week 2 | jason's blog </title>
 </head>
 
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
 
-<body>
+  
 
-    <!-- Menu -->
-    <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">Home</a>
-        </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                
-                    <li>
-                        <a href="https://github.com/lionlies">
-                            
-                                <i class="fa fa-github fa-stack-2x"></i>
-                            
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="https://www.linkedin.com/in/lionlies">
-                            
-                                <i class="fa fa-linkedin fa-stack-2x"></i>
-                            
-                        </a>
-                    </li>
-                
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container -->
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">jason's blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">rails and js notes</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
 </nav>
 
-    <!-- Main Content -->
-    <!-- Page Header -->
-<!-- Set your background image for this header in your post front-matter: cover -->
+ </div>
+    </header>
 
-<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-heading">
-                    <h1>Rails EC Week 2</h1>
-                    
-                    <span class="meta">
-                        <!-- Date and Author -->
-                        
-                        2016-09-18
-                    </span>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-
-<!-- Post Content -->
-<article>
-    <div class="container">
-        <div class="row">
-
-            <!-- Tags and categories -->
-           
-
-            <!-- Gallery -->
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
             
 
-            <!-- Post Main Content -->
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <h1 id="商品加到購物車"><a href="#商品加到購物車" class="headerlink" title="商品加到購物車"></a>商品加到購物車</h1><h2 id="為什麼要有購物車的設計？不能直接把商品跟使用者做連結嗎-用使用者當container-？是為了session還是為了將來在shopping-cart之外，還能實作出-buy-later-wish-list……等分類做準備？"><a href="#為什麼要有購物車的設計？不能直接把商品跟使用者做連結嗎-用使用者當container-？是為了session還是為了將來在shopping-cart之外，還能實作出-buy-later-wish-list……等分類做準備？" class="headerlink" title="為什麼要有購物車的設計？不能直接把商品跟使用者做連結嗎(用使用者當container)？是為了session還是為了將來在shopping cart之外，還能實作出 buy later, wish list……等分類做準備？"></a>為什麼要有購物車的設計？不能直接把商品跟使用者做連結嗎(用使用者當container)？是為了session還是為了將來在shopping cart之外，還能實作出 buy later, wish list……等分類做準備？</h2><p>[不確定] 可以把商品掛 user 身上結帳，但有幾個特性提一下：</p>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Rails EC Week 2
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-09-18T16:57:13+08:00" content="2016-09-18">
+              2016-09-18
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/18/Rails-EC-Week-2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/09/18/Rails-EC-Week-2/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="商品加到購物車"><a href="#商品加到購物車" class="headerlink" title="商品加到購物車"></a>商品加到購物車</h1><h2 id="為什麼要有購物車的設計？不能直接把商品跟使用者做連結嗎-用使用者當container-？是為了session還是為了將來在shopping-cart之外，還能實作出-buy-later-wish-list……等分類做準備？"><a href="#為什麼要有購物車的設計？不能直接把商品跟使用者做連結嗎-用使用者當container-？是為了session還是為了將來在shopping-cart之外，還能實作出-buy-later-wish-list……等分類做準備？" class="headerlink" title="為什麼要有購物車的設計？不能直接把商品跟使用者做連結嗎(用使用者當container)？是為了session還是為了將來在shopping cart之外，還能實作出 buy later, wish list……等分類做準備？"></a>為什麼要有購物車的設計？不能直接把商品跟使用者做連結嗎(用使用者當container)？是為了session還是為了將來在shopping cart之外，還能實作出 buy later, wish list……等分類做準備？</h2><p>[不確定] 可以把商品掛 user 身上結帳，但有幾個特性提一下：</p>
 <ol>
 <li>這樣無法記錄購物車資訊，也就無法做後續的數據分析及利用。</li>
 <li>理論上可以把 user 購物欄位做在 user model ，但實務上不這麼做，因為 user model 會變得很複雜。你有一台用 hash 的形式裝要買的商品和數量的購物車，比如 { xxx: 2, aaa: 1 }，就要生一個欄位，不現實。</li>
@@ -279,102 +415,328 @@
 <p>If the migration name is of the form “AddXXXToYYY” or “RemoveXXXFromYYY” and is followed by a list of column names and types then a migration containing the appropriate add_column and remove_column statements will be created.</p>
 </blockquote>
 
+      
+    </div>
 
-                
-            </div>
+    <div>
+      
+        
+      
+    </div>
 
-            <!-- Comments -->
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    
-    <hr />
-    <h3>Comments:</h3>
-    <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
-
-
-
-                </div>
+              <a href="/2016/09/17/Rails-EC-Week-1-Homework/" rel="next" title="Rails EC Week 1 Homework">
+                <i class="fa fa-chevron-left"></i> Rails EC Week 1 Homework
+              </a>
             
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/09/18/Rails-EC-Week-2-Homework/" rel="prev" title="Rails EC Week 2 Homework">
+                Rails EC Week 2 Homework <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
         </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
     </div>
-</article>
-
-    <!-- Footer -->
-    <hr />
-
-<!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <ul class="list-inline text-center">
-                    
-
-                    
-
-                    
-                        <li>
-                            <a href="https://github.com/lionlies" target="_blank">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                    
-
-                    
-
-                    
-                        <li>
-                            <a href="mailto:lionlies@gmail.com" target="_blank">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                    
-
-                    
-                </ul>
-                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
-                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
-            </div>
-        </div>
-    </div>
-</footer>
+  </div>
 
 
-    <!-- After footer scripts -->
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
     
-<!-- jQuery -->
-<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
 
-<!-- Bootstrap -->
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-<!-- Gallery -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
 
-<!-- Disqus Comments -->
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Jason Lung" />
+          <p class="site-author-name" itemprop="name">Jason Lung</p>
+          <p class="site-description motion-element" itemprop="description">rails developer, entrepreneur</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">50</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/lionlies" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://facebook.com/lionlies" target="_blank" title="Facebook">
+                  
+                    <i class="fa fa-fw fa-facebook"></i>
+                  
+                  Facebook
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#商品加到購物車"><span class="nav-number">1.</span> <span class="nav-text">商品加到購物車</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#為什麼要有購物車的設計？不能直接把商品跟使用者做連結嗎-用使用者當container-？是為了session還是為了將來在shopping-cart之外，還能實作出-buy-later-wish-list……等分類做準備？"><span class="nav-number">1.1.</span> <span class="nav-text">為什麼要有購物車的設計？不能直接把商品跟使用者做連結嗎(用使用者當container)？是為了session還是為了將來在shopping cart之外，還能實作出 buy later, wish list……等分類做準備？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提問-實務上，要有購物車才能產生類似訂單記錄／訂單快照的功能？"><span class="nav-number">1.2.</span> <span class="nav-text">[提問] 實務上，要有購物車才能產生類似訂單記錄／訂單快照的功能？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提問-假如每個人只能有一台購物車，每一次結帳完就把購物車清空，那似乎也不會多出什麼欄位，而且-hash-一樣可以做出訂單快照，不是嗎？"><span class="nav-number">1.3.</span> <span class="nav-text">[提問] 假如每個人只能有一台購物車，每一次結帳完就把購物車清空，那似乎也不會多出什麼欄位，而且 hash 一樣可以做出訂單快照，不是嗎？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下面-code-block-中，是不是一定要有-has-many-items-through-cart-items-source-product-能不能直接-has-many-products"><span class="nav-number">1.4.</span> <span class="nav-text">下面 code block 中，是不是一定要有 has_many :items, through: :cart_items, source: :product? 能不能直接 has_many :products?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#def-current-cart-中的-current-cart-是什麼？哪裡來的？"><span class="nav-number">1.5.</span> <span class="nav-text">def current_cart 中的 @current_cart 是什麼？哪裡來的？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ans"><span class="nav-number">1.6.</span> <span class="nav-text">Ans:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#def-add-to-cart-中的-current-cart-是個-method，為什麼可以直接被當成物件來使用，後面接上-add-product-to-cart-product-變成-current-cart-add-product-to-cart-product-？"><span class="nav-number">1.7.</span> <span class="nav-text">def add_to_cart 中的 current_cart 是個 method，為什麼可以直接被當成物件來使用，後面接上 .add_product_to_cart(@product) 變成 current_cart.add_product_to_cart(@product)？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#session-cart-id-cart-id，究竟-session-hash-有哪些-keys-呢？"><span class="nav-number">1.8.</span> <span class="nav-text">session[:cart_id] = cart.id，究竟 session hash 有哪些 keys 呢？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下面這段-code-如果-cart-Cart-find-by-id-session-cart-id-找不到，不會直接-throw-exception-導致接下來的-unless-不會跑下去嗎？"><span class="nav-number">1.9.</span> <span class="nav-text">下面這段 code, 如果 cart = Cart.find_by(id: session[:cart_id] 找不到，不會直接 throw exception 導致接下來的 unless 不會跑下去嗎？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#為什麼-product-controller-有一個-def-add-to-cart-後，還要在-cart-model-有一個-def-add-product-to-cart-product-？"><span class="nav-number">1.10.</span> <span class="nav-text">為什麼 product controller 有一個 def add_to_cart 後，還要在 cart model 有一個 def add_product_to_cart(product)？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ci-product-product-是筆誤？還是-ci-product-id-product-id-的另一種寫法，屬於-Rails-convention-還是說這兩種是不同的兩件事，但殊途同歸？"><span class="nav-number">1.11.</span> <span class="nav-text">ci.product = product 是筆誤？還是 ci.product_id = product.id 的另一種寫法，屬於 Rails convention? 還是說這兩種是不同的兩件事，但殊途同歸？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提問-ci-product-product-時，是不是就把購物車內商品-ci-的價格給定下來，之後改-product-的-title-description-price-quantity-（除非重新-assign-也不會連動到-ci-的這四個值了？"><span class="nav-number">1.12.</span> <span class="nav-text">[提問] ci.product = product 時，是不是就把購物車內商品(ci)的價格給定下來，之後改 product 的 title, description, price, quantity （除非重新 assign) 也不會連動到 ci 的這四個值了？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提問-上面的第一種寫法是把-product-存進-cart-item-的一個-local-variable-ci-之中，為什麼第二種寫法卻是把-product-存進-items"><span class="nav-number">1.13.</span> <span class="nav-text">[提問] 上面的第一種寫法是把 product 存進 cart_item 的一個 local variable ci 之中，為什麼第二種寫法卻是把 product 存進 items?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cart-id-跟-user-是什麼時候建立起關聯的？"><span class="nav-number">1.14.</span> <span class="nav-text">cart_id 跟 user 是什麼時候建立起關聯的？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如果-user-拿到一台-cart-id-1-的-cart-後來可能清掉-cookies-還是-session-之類的，總之，破壞掉-user-跟-cart-id-的關聯，後來再去找一台-cart-給-user-請問一樣是找來-cart-id-1-的-cart-還是給一台新的-cart-如果是重新給一台，那-cart-id-1-的-cart-到哪去了？"><span class="nav-number">1.15.</span> <span class="nav-text">如果 user 拿到一台 cart.id = 1 的 cart, 後來可能清掉 cookies 還是 session 之類的，總之，破壞掉 user 跟 cart_id 的關聯，後來再去找一台 cart 給 user, 請問一樣是找來 cart.id = 1 的 cart, 還是給一台新的 cart? 如果是重新給一台，那 cart.id = 1 的 cart 到哪去了？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#session-是專門用來存暫時性、非永久性（比如-cart-id-login-log-out……等-的值嗎？"><span class="nav-number">1.16.</span> <span class="nav-text">session 是專門用來存暫時性、非永久性（比如 cart_id, login, log out……等)的值嗎？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#session-cart-id-amp-跟-user-有關聯的-cart-id-有什麼差別？"><span class="nav-number">1.17.</span> <span class="nav-text">session[:cart_id] & 跟 user 有關聯的 cart_id 有什麼差別？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提問-到底-user-跟-session-cart-id-有什麼關係？或者說，user-跟-session-有什麼關係？有關係的話是-devise-自動建立起關係的嗎？可不可以說，使用到-session-的-user-必然是-current-user"><span class="nav-number">1.18.</span> <span class="nav-text">[提問] 到底 user 跟 session[:cart_id] 有什麼關係？或者說，user 跟 session 有什麼關係？有關係的話是 devise 自動建立起關係的嗎？可不可以說，使用到 session 的 user 必然是 current_user?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#item-跟-cart-item-的差別在哪？比如說-def-add-to-cart-中，if-current-cart-items-include-product-我會認為是要寫成-if-current-cart-cart-items-include-product-，有什麼地方理解錯了？"><span class="nav-number">1.19.</span> <span class="nav-text">item 跟 cart_item 的差別在哪？比如說 def add_to_cart 中，if !current_cart.items.include?(@product) 我會認為是要寫成 if !current_cart.cart_items.include?(@product)，有什麼地方理解錯了？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#為什麼要這樣分呢？"><span class="nav-number">1.20.</span> <span class="nav-text">為什麼要這樣分呢？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cart-model-中，"><span class="nav-number">1.21.</span> <span class="nav-text">Cart model 中，</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拆解-has-many-items-through-cart-items-source-product"><span class="nav-number">1.22.</span> <span class="nav-text">拆解 has_many :items, through: :cart_items, source: :product</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#routes-rb-裡面有-post-add-to-cart"><span class="nav-number">1.23.</span> <span class="nav-text">routes.rb 裡面有 post :add_to_cart</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#post-to-admin-為什麼不是用-put"><span class="nav-number">1.24.</span> <span class="nav-text">post :to_admin 為什麼不是用 put?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sean-的提問："><span class="nav-number">1.25.</span> <span class="nav-text">sean 的提問：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#current-user-是-devise-gem-提供的-helper"><span class="nav-number">1.26.</span> <span class="nav-text">current_user 是 devise gem 提供的 helper</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#current-cart-find-cart"><span class="nav-number">1.27.</span> <span class="nav-text">@current_cart ||= find_cart</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#convention-比如某個物件-item，如果單數，可以寫作-build-item，但如果是複數，得寫成-items-build。"><span class="nav-number">1.28.</span> <span class="nav-text">convention: 比如某個物件 item，如果單數，可以寫作 build_item，但如果是複數，得寫成 items.build。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#錄音-1-51-30"><span class="nav-number">1.29.</span> <span class="nav-text">錄音 1:51:30</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#17-48-不要在-view-裡面撈-count-而是用-helper-的原因"><span class="nav-number">1.30.</span> <span class="nav-text">17:48 不要在 view 裡面撈 count, 而是用 helper 的原因</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#購物車的商品明細"><span class="nav-number">2.</span> <span class="nav-text">購物車的商品明細</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#算數字的都寫成-helper-幫助維護。"><span class="nav-number">2.1.</span> <span class="nav-text">算數字的都寫成 helper 幫助維護。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下方是一個寫成-helper-的例子"><span class="nav-number">2.2.</span> <span class="nav-text">下方是一個寫成 helper 的例子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下面這兩段是購物車商品明細，為什麼是用-item-而不是-cart-item-來取像-price-之類的值？如果-product-price-變了，不就影響到購物車內商品的-price-還是說購物車內商品的-price-本來就是跟-product-price-連動？"><span class="nav-number">2.3.</span> <span class="nav-text">下面這兩段是購物車商品明細，為什麼是用 item 而不是 cart_item 來取像 price 之類的值？如果 @product.price 變了，不就影響到購物車內商品的 price? 還是說購物車內商品的 price 本來就是跟 @product.price 連動？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#建立訂單-寄送資訊"><span class="nav-number">3.</span> <span class="nav-text">建立訂單 ( 寄送資訊 )</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#為什麼-model-是建這兩個欄位？rails-g-model-order-user-id-integer-total-integer"><span class="nav-number">3.1.</span> <span class="nav-text">為什麼 model 是建這兩個欄位？rails g model order user_id:integer total:integer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#為什麼要寫-class-name"><span class="nav-number">3.2.</span> <span class="nav-text">為什麼要寫 class_name?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提問-那為什麼不直接寫-has-many-orderinfo-就好了？如果-info-撞名了怎麼辦？"><span class="nav-number">3.3.</span> <span class="nav-text">[提問] 那為什麼不直接寫 has_many :orderinfo 就好了？如果 info 撞名了怎麼辦？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下面這樣是否就可以避免前面的命名撞名？"><span class="nav-number">3.4.</span> <span class="nav-text">下面這樣是否就可以避免前面的命名撞名？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#build-和-new-的差異"><span class="nav-number">3.5.</span> <span class="nav-text">.build 和 .new 的差異</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#建立訂單-生成訂單"><span class="nav-number">4.</span> <span class="nav-text">建立訂單 ( 生成訂單 )</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#app-models-order-rb-中"><span class="nav-number">4.1.</span> <span class="nav-text">app/models/order.rb 中</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#建立訂單-顯示訂單內容"><span class="nav-number">5.</span> <span class="nav-text">建立訂單 ( 顯示訂單內容 )</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#add-index-加索引，好處是方便查找，效率高。但如果什麼東西都加索引，會導致索引肥大而降低效率。"><span class="nav-number">5.1.</span> <span class="nav-text">add_index 加索引，好處是方便查找，效率高。但如果什麼東西都加索引，會導致索引肥大而降低效率。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下面這段透過-SecureRandom-uuid-產生的亂數，為什麼透過-order-path-order-token-就直接變網址的一部份？"><span class="nav-number">5.2.</span> <span class="nav-text">下面這段透過 SecureRandom.uuid 產生的亂數，為什麼透過 order_path(@order.token) 就直接變網址的一部份？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下面這邊-order-Order-find-by-token-params-id-要怎麼解釋呢？"><span class="nav-number">5.3.</span> <span class="nav-text">下面這邊 @order = Order.find_by(token: params[:id]) 要怎麼解釋呢？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提問-這樣就可以直接讓-token-變成網址後面那部分？"><span class="nav-number">5.4.</span> <span class="nav-text">[提問] 這樣就可以直接讓 token 變成網址後面那部分？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#將訂單結帳"><span class="nav-number">6.</span> <span class="nav-text">將訂單結帳</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#為什麼-pay-with-credit-card-是用-get-不是-post"><span class="nav-number">6.1.</span> <span class="nav-text">為什麼 pay_with_credit_card 是用 get 不是 post?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-if-order-is-paid-gt-中-is-paid-怎麼來的？"><span class="nav-number">6.2.</span> <span class="nav-text"><% if !@order.is_paid? %> 中 .is_paid? 怎麼來的？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#訂單狀態"><span class="nav-number">7.</span> <span class="nav-text">訂單狀態</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#is-paid-gt-true-為什麼還要有一個-aasm-state-gt-“paid”？"><span class="nav-number">7.1.</span> <span class="nav-text">:is_paid => true, 為什麼還要有一個:aasm_state => “paid”？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提問-所以，更該問的是，可不可以將結帳鈕和-aasm-做結合，結帳時直接把-aasm-state-改成-paid-然後拿掉-is-paid-欄位？"><span class="nav-number">7.2.</span> <span class="nav-text">[提問] 所以，更該問的是，可不可以將結帳鈕和 aasm 做結合，結帳時直接把 aasm_state 改成 paid, 然後拿掉 :is_paid 欄位？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#關於-state-machine-aasm"><span class="nav-number">7.3.</span> <span class="nav-text">關於 state machine / aasm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拆解-event-make-payment-after-commit-pay-do"><span class="nav-number">7.4.</span> <span class="nav-text">拆解 event :make_payment, after_commit: :pay! do</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提問-所以-before-action-是指在跑-actions-之前，先執行-XXX-嗎？"><span class="nav-number">7.5.</span> <span class="nav-text">[提問] 所以 before_action 是指在跑 actions 之前，先執行 XXX 嗎？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什麼是-ActiveRecord-Callbacks"><span class="nav-number">7.6.</span> <span class="nav-text">什麼是 ActiveRecord Callbacks?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#待整理-了解rails-g-migration-的-rails-magic-比如什麼寫法會在-migration-檔自動產生欄位……等。"><span class="nav-number">7.7.</span> <span class="nav-text">[待整理] 了解rails g migration 的 rails magic, 比如什麼寫法會在 migration 檔自動產生欄位……等。</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jason Lung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
 
 <script type="text/javascript">
-    var disqus_shortname = 'hexo-git-hubpages-lionlies';
-
-    (function(){
-        var dsq = document.createElement('script');
-        dsq.type = 'text/javascript';
-        dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    }());
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
 
 
 
-</body>
 
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-github-pages-lionlies';
+      var disqus_identifier = '2016/09/18/Rails-EC-Week-2/';
+      var disqus_title = 'Rails EC Week 2';
+      var disqus_url = 'http://yoursite.com/2016/09/18/Rails-EC-Week-2/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
 </html>

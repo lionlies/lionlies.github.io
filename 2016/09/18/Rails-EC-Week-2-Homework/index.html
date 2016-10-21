@@ -1,158 +1,287 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
 
-<!-- Head tag -->
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
 <head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!--Description-->
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
     
-        <meta name="description" content="消費者可用「清空購物車功能」來手動清空購物車如果是用砸爛購物車的方式來清空購物車，是否是砸爛之後再找一台購物車給user的概念？是的！sudo code 是 destroy cart。如果是用移除購物車內的商品的方式，sudo code 是 destroy_all cart items
-為什麼是 c">
     
+  
 
-    <!--Author-->
+  
+
+  
+
+  
+
+  
+
+  
     
-        <meta name="author" content="Jason Lung">
     
-
-    <!--Open Graph Title-->
-    
-        <meta property="og:title" content="Rails EC Week 2 Homework"/>
-    
-
-    <!--Open Graph Description-->
-    
-
-    <!--Open Graph Site Name-->
-    <meta property="og:site_name" content="Hello World"/>
-
-    <!--Type page-->
-    
-        <meta property="og:type" content="article" />
-    
-
-    <!--Page Cover-->
-    
-
-        <meta name="twitter:card" content="summary" />
-    
-
-    <!-- Title -->
-    
-    <title>Rails EC Week 2 Homework - Hello World</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/style.css">
-
-    <!-- Custom Fonts -->
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- Gallery -->
-    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
-
-    <!-- Google Analytics -->
-    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
 
 
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="消費者可用「清空購物車功能」來手動清空購物車如果是用砸爛購物車的方式來清空購物車，是否是砸爛之後再找一台購物車給user的概念？是的！sudo code 是 destroy cart。如果是用移除購物車內的商品的方式，sudo code 是 destroy_all cart items
+為什麼是 cart_items.destroy_all ?cart.rb123def clean!  cart_">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Rails EC Week 2 Homework">
+<meta property="og:url" content="http://yoursite.com/2016/09/18/Rails-EC-Week-2-Homework/index.html">
+<meta property="og:site_name" content="jason's blog">
+<meta property="og:description" content="消費者可用「清空購物車功能」來手動清空購物車如果是用砸爛購物車的方式來清空購物車，是否是砸爛之後再找一台購物車給user的概念？是的！sudo code 是 destroy cart。如果是用移除購物車內的商品的方式，sudo code 是 destroy_all cart items
+為什麼是 cart_items.destroy_all ?cart.rb123def clean!  cart_">
+<meta property="og:updated_time" content="2016-09-18T09:18:10.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Rails EC Week 2 Homework">
+<meta name="twitter:description" content="消費者可用「清空購物車功能」來手動清空購物車如果是用砸爛購物車的方式來清空購物車，是否是砸爛之後再找一台購物車給user的概念？是的！sudo code 是 destroy cart。如果是用移除購物車內的商品的方式，sudo code 是 destroy_all cart items
+為什麼是 cart_items.destroy_all ?cart.rb123def clean!  cart_">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> Rails EC Week 2 Homework | jason's blog </title>
 </head>
 
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
 
-<body>
+  
 
-    <!-- Menu -->
-    <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">Home</a>
-        </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                
-                    <li>
-                        <a href="https://github.com/lionlies">
-                            
-                                <i class="fa fa-github fa-stack-2x"></i>
-                            
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="https://www.linkedin.com/in/lionlies">
-                            
-                                <i class="fa fa-linkedin fa-stack-2x"></i>
-                            
-                        </a>
-                    </li>
-                
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container -->
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">jason's blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">rails and js notes</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
 </nav>
 
-    <!-- Main Content -->
-    <!-- Page Header -->
-<!-- Set your background image for this header in your post front-matter: cover -->
+ </div>
+    </header>
 
-<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-heading">
-                    <h1>Rails EC Week 2 Homework</h1>
-                    
-                    <span class="meta">
-                        <!-- Date and Author -->
-                        
-                        2016-09-18
-                    </span>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-
-<!-- Post Content -->
-<article>
-    <div class="container">
-        <div class="row">
-
-            <!-- Tags and categories -->
-           
-
-            <!-- Gallery -->
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
             
 
-            <!-- Post Main Content -->
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <h1 id="消費者可用「清空購物車功能」來手動清空購物車"><a href="#消費者可用「清空購物車功能」來手動清空購物車" class="headerlink" title="消費者可用「清空購物車功能」來手動清空購物車"></a>消費者可用「清空購物車功能」來手動清空購物車</h1><h2 id="如果是用砸爛購物車的方式來清空購物車，是否是砸爛之後再找一台購物車給user的概念？"><a href="#如果是用砸爛購物車的方式來清空購物車，是否是砸爛之後再找一台購物車給user的概念？" class="headerlink" title="如果是用砸爛購物車的方式來清空購物車，是否是砸爛之後再找一台購物車給user的概念？"></a>如果是用砸爛購物車的方式來清空購物車，是否是砸爛之後再找一台購物車給user的概念？</h2><p>是的！sudo code 是 destroy cart。如果是用移除購物車內的商品的方式，sudo code 是 destroy_all cart items</p>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Rails EC Week 2 Homework
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-09-18T17:17:49+08:00" content="2016-09-18">
+              2016-09-18
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/18/Rails-EC-Week-2-Homework/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/09/18/Rails-EC-Week-2-Homework/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="消費者可用「清空購物車功能」來手動清空購物車"><a href="#消費者可用「清空購物車功能」來手動清空購物車" class="headerlink" title="消費者可用「清空購物車功能」來手動清空購物車"></a>消費者可用「清空購物車功能」來手動清空購物車</h1><h2 id="如果是用砸爛購物車的方式來清空購物車，是否是砸爛之後再找一台購物車給user的概念？"><a href="#如果是用砸爛購物車的方式來清空購物車，是否是砸爛之後再找一台購物車給user的概念？" class="headerlink" title="如果是用砸爛購物車的方式來清空購物車，是否是砸爛之後再找一台購物車給user的概念？"></a>如果是用砸爛購物車的方式來清空購物車，是否是砸爛之後再找一台購物車給user的概念？</h2><p>是的！sudo code 是 destroy cart。如果是用移除購物車內的商品的方式，sudo code 是 destroy_all cart items</p>
 <h2 id="為什麼是-cart-items-destroy-all"><a href="#為什麼是-cart-items-destroy-all" class="headerlink" title="為什麼是 cart_items.destroy_all ?"></a>為什麼是 <code>cart_items</code>.destroy_all ?</h2><p>cart.rb<br><figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">clean!</span></span></div><div class="line">  cart_items.destroy_all</div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure></p>
 <blockquote>
 <p>tba</p>
@@ -243,102 +372,328 @@
 </li>
 </ul>
 
+      
+    </div>
 
-                
-            </div>
+    <div>
+      
+        
+      
+    </div>
 
-            <!-- Comments -->
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    
-    <hr />
-    <h3>Comments:</h3>
-    <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
-
-
-
-                </div>
+              <a href="/2016/09/18/Rails-EC-Week-2/" rel="next" title="Rails EC Week 2">
+                <i class="fa fa-chevron-left"></i> Rails EC Week 2
+              </a>
             
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/09/18/Rails-EC-Week-3/" rel="prev" title="Rails EC Week 3">
+                Rails EC Week 3 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
         </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
     </div>
-</article>
-
-    <!-- Footer -->
-    <hr />
-
-<!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <ul class="list-inline text-center">
-                    
-
-                    
-
-                    
-                        <li>
-                            <a href="https://github.com/lionlies" target="_blank">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                    
-
-                    
-
-                    
-                        <li>
-                            <a href="mailto:lionlies@gmail.com" target="_blank">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                    
-
-                    
-                </ul>
-                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
-                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
-            </div>
-        </div>
-    </div>
-</footer>
+  </div>
 
 
-    <!-- After footer scripts -->
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
     
-<!-- jQuery -->
-<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
 
-<!-- Bootstrap -->
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-<!-- Gallery -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
 
-<!-- Disqus Comments -->
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Jason Lung" />
+          <p class="site-author-name" itemprop="name">Jason Lung</p>
+          <p class="site-description motion-element" itemprop="description">rails developer, entrepreneur</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">50</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/lionlies" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://facebook.com/lionlies" target="_blank" title="Facebook">
+                  
+                    <i class="fa fa-fw fa-facebook"></i>
+                  
+                  Facebook
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#消費者可用「清空購物車功能」來手動清空購物車"><span class="nav-number">1.</span> <span class="nav-text">消費者可用「清空購物車功能」來手動清空購物車</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#如果是用砸爛購物車的方式來清空購物車，是否是砸爛之後再找一台購物車給user的概念？"><span class="nav-number">1.1.</span> <span class="nav-text">如果是用砸爛購物車的方式來清空購物車，是否是砸爛之後再找一台購物車給user的概念？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#為什麼是-cart-items-destroy-all"><span class="nav-number">1.2.</span> <span class="nav-text">為什麼是 cart_items.destroy_all ?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拆解-if-item-product-quantity-gt-item-params-quantity-to-i"><span class="nav-number">1.3.</span> <span class="nav-text">拆解 if @item.product.quantity >= item_params[:quantity].to_i</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#消費者可以「手動」從購物車內刪掉某些物品"><span class="nav-number">2.</span> <span class="nav-text">消費者可以「手動」從購物車內刪掉某些物品</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#拆解-resources-items-controller-“cart-items”"><span class="nav-number">2.1.</span> <span class="nav-text">拆解 resources :items, controller: “cart_items”</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提問-為什麼是指定-controller-一定要指定-cart-items-controller-嗎？"><span class="nav-number">2.2.</span> <span class="nav-text">[提問] 為什麼是指定 controller? 一定要指定 cart_items controller 嗎？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#之前就有-cart-item-model-了，到這裡才補上-cart-items-controller-可以這樣嗎？"><span class="nav-number">2.3.</span> <span class="nav-text">之前就有 cart_item model 了，到這裡才補上 cart_items controller, 可以這樣嗎？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下方何解？"><span class="nav-number">2.4.</span> <span class="nav-text">下方何解？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#“點下去就是對-item-path-product-執行-delete-的動作，也就是把-product-給刪除了。”-這句話是對的嗎？"><span class="nav-number">2.5.</span> <span class="nav-text">“點下去就是對 item_path(product) 執行 delete 的動作，也就是把 product 給刪除了。” 這句話是對的嗎？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-i-class-quot-fa-fa-trash-quot-gt-lt-i-gt-為什麼使用-lt-i-gt-tag"><span class="nav-number">2.6.</span> <span class="nav-text"><i class="fa fa-trash"></i> 為什麼使用 <i> tag?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在這個例子中，是宣告一個垃圾桶-icon-那如果要宣告其他的東西，比如說一張圖片，要怎麼做？"><span class="nav-number">2.7.</span> <span class="nav-text">在這個例子中，是宣告一個垃圾桶 icon, 那如果要宣告其他的東西，比如說一張圖片，要怎麼做？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拆解下面-code-block-中的-item-cart-cart-items-find-by-product-id-params-id-以及-product-item-product。"><span class="nav-number">2.8.</span> <span class="nav-text">拆解下面 code block 中的 @item = @cart.cart_items.find_by(product_id: params[:id]) 以及 @product = @item.product。</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#購物車加入「數量」設計-基礎設定"><span class="nav-number">3.</span> <span class="nav-text">購物車加入「數量」設計 ( 基礎設定 )</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#下面的-item-cart-item-product-搞不清楚它們之間的關係。另外，-lt-form-for-item-url-item-path-product-do-f-gt-中為什麼要寫-url"><span class="nav-number">3.1.</span> <span class="nav-text">下面的 item, cart_item, product 搞不清楚它們之間的關係。另外，<%= form_for item, url: item_path(product) do |f| %> 中為什麼要寫 url?</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#購物車加入「數量」設計-總價-gt-小計-x-數量"><span class="nav-number">4.</span> <span class="nav-text">購物車加入「數量」設計 ( 總價 => 小計 x 數量 )</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#為什麼要把-items-改成-cart-items"><span class="nav-number">4.1.</span> <span class="nav-text">為什麼要把 items 改成 cart_items?</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#購物車加入「數量」設計-數量為-0-的貨物不能「購買」"><span class="nav-number">5.</span> <span class="nav-text">購物車加入「數量」設計 ( 數量為 0 的貨物不能「購買」)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#下方-item-params-quantity-to-i-是什麼？為什麼要用它？"><span class="nav-number">5.1.</span> <span class="nav-text">下方 item_params[:quantity].to_i 是什麼？為什麼要用它？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#購物車加入「數量」設計-購物車不能手動更新超過庫存的數量"><span class="nav-number">5.1.0.1.</span> <span class="nav-text">購物車加入「數量」設計 ( 購物車不能手動更新超過庫存的數量 )</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#訂單產生時，要把購物車的商品數量存進去"><span class="nav-number">6.</span> <span class="nav-text">訂單產生時，要把購物車的商品數量存進去</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#下方的-item-quantity-cart-cart-items-find-by-product-id-cart-item-quantity-何解？"><span class="nav-number">6.1.</span> <span class="nav-text">下方的 item.quantity = cart.cart_items.find_by(product_id: cart_item).quantity 何解？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#產生訂單後，購物車應該被清空"><span class="nav-number">6.1.0.1.</span> <span class="nav-text">產生訂單後，購物車應該被清空</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改訂單頁面-增加數量欄位"><span class="nav-number">6.1.0.2.</span> <span class="nav-text">修改訂單頁面 ( 增加數量欄位 )</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#建立-account-orders-可以看到該使用者過去所有訂單"><span class="nav-number">7.</span> <span class="nav-text">建立 account/orders 可以看到該使用者過去所有訂單</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#order-created-at-是-UTC-0-的時間，所以我們在訂單列表看到的時間會比-UTC-8-的台灣慢-8-小時。"><span class="nav-number">7.1.</span> <span class="nav-text">order.created_at 是 UTC 0 的時間，所以我們在訂單列表看到的時間會比 UTC+8 的台灣慢 8 小時。</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#結賬後跳轉到-account-orders-index"><span class="nav-number">7.1.0.1.</span> <span class="nav-text">結賬後跳轉到 account/orders#index</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#建立-admin-orders-可以看到系統內所有訂單"><span class="nav-number">8.</span> <span class="nav-text">建立 admin/orders 可以看到系統內所有訂單</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#拆解-orders-Order-order-“id-DESC”-為什麼不是-orders-Order-all-order-“id-DESC”"><span class="nav-number">8.1.</span> <span class="nav-text">拆解 @orders = Order.order(“id DESC”) 為什麼不是@orders = Order.all.order(“id DESC”)?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-th-gt-link-to-order-id-admin-order-path-order-lt-th-gt-為什麼不用吃-order-token-當參數？如果今天不是EC網站，這樣會不會有隱私問題？"><span class="nav-number">8.2.</span> <span class="nav-text"><th>link_to order.id, admin_order_path(order) </th> 為什麼不用吃 order.token 當參數？如果今天不是EC網站，這樣會不會有隱私問題？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#admin-的-order-列表應要能顯示訂單狀態"><span class="nav-number">9.</span> <span class="nav-text">admin 的 order 列表應要能顯示訂單狀態</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#拆解-t-“orders-order-state-order-aasm-state-”"><span class="nav-number">9.1.</span> <span class="nav-text">拆解 t(“orders.order_state.#{order.aasm_state}”)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#怎麼使用-i18n-及-yml-檔來轉換語言？"><span class="nav-number">9.2.</span> <span class="nav-text">怎麼使用 i18n 及 yml 檔來轉換語言？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#上題的-i18n-設定檔，就是指-zh-TW-yml-這種嗎？還是在-config-locales-裡面的檔案都算？"><span class="nav-number">9.3.</span> <span class="nav-text">上題的 i18n 設定檔，就是指 zh-TW.yml 這種嗎？還是在 config/locales 裡面的檔案都算？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#message-的邏輯要怎麼查？"><span class="nav-number">9.4.</span> <span class="nav-text">message 的邏輯要怎麼查？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提問-有沒有其他方式，比如在-terminal-的指令，能夠列出這樣的邏輯？"><span class="nav-number">9.5.</span> <span class="nav-text">[提問] 有沒有其他方式，比如在 terminal 的指令，能夠列出這樣的邏輯？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#怎麼依照-IP-或是地理位置來轉換語言？"><span class="nav-number">9.6.</span> <span class="nav-text">怎麼依照 IP 或是地理位置來轉換語言？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#怎麼依照系統語言來選擇網站顯示的語言？"><span class="nav-number">9.7.</span> <span class="nav-text">怎麼依照系統語言來選擇網站顯示的語言？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#單張-order-應要可以依「按照狀態圖」改變狀態"><span class="nav-number">10.</span> <span class="nav-text">單張 order 應要可以依「按照狀態圖」改變狀態</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ship-deliver-cancel-order-return-goods-這些有-bang-的-methods-是-aasm-自動產生的嗎？"><span class="nav-number">10.1.</span> <span class="nav-text">.ship! .deliver! .cancel_order! .return_goods! 這些有 bang 的 methods 是 aasm 自動產生的嗎？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下面這段中，-order-Order-find-params-id-在調整為使用-token-後，是不是應該改成-order-Order-find-by-token-params-id"><span class="nav-number">10.2.</span> <span class="nav-text">下面這段中，@order = Order.find(params[:id] 在調整為使用 token 後，是不是應該改成 @order = Order.find_by_token(params[:id])?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#承上，-order-items-的部分，-order-怎麼和-items-產生關聯的？是因為-Order-model-中的-has-many-items-class-name-quot-OrderItem-quot-dependent-destroy-嗎？"><span class="nav-number">10.3.</span> <span class="nav-text">承上，@order.items 的部分，@order 怎麼和 items 產生關聯的？是因為 Order model 中的 has_many :items, class_name: "OrderItem", dependent: :destroy 嗎？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拆解-lt-render-“admin-orders-state-option”-order-order-gt"><span class="nav-number">10.4.</span> <span class="nav-text">拆解 <%= render “admin/orders/state_option”, order: @order %></span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下面是-CSS-的屬性"><span class="nav-number">10.5.</span> <span class="nav-text">下面是 CSS 的屬性</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#EPIC"><span class="nav-number">11.</span> <span class="nav-text">EPIC</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jason Lung</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
 
 <script type="text/javascript">
-    var disqus_shortname = 'hexo-git-hubpages-lionlies';
-
-    (function(){
-        var dsq = document.createElement('script');
-        dsq.type = 'text/javascript';
-        dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    }());
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
 
 
 
-</body>
 
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'hexo-github-pages-lionlies';
+      var disqus_identifier = '2016/09/18/Rails-EC-Week-2-Homework/';
+      var disqus_title = 'Rails EC Week 2 Homework';
+      var disqus_url = 'http://yoursite.com/2016/09/18/Rails-EC-Week-2-Homework/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
 </html>
