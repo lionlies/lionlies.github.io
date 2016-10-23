@@ -290,7 +290,7 @@
           
           我對 Rails 前端的部分了解不深，試著寫寫看目前的理解，有錯請多多指教，謝謝。
 前端基本上就是 HTML, CSS, JavaScript.
-HTML 的部分，Rails 內建的 template engine 是 erb, 副檔名是 .html.erb, 另外兩個 template engin
+HTML 的部分，Rails 內建的 template engine 是 erb, 副檔名是 .html.erb, 另外兩個 template engines 是 slim 和 haml. 孰優孰劣可以參考下面兩篇：http://stackoverflow.com/questions/11390512/erb-haml-or-slim-which-one-do-you-suggest-and-whyhttps://speakerdeck.com/lv
           ...
 
           <div class="post-more-link text-center">
@@ -397,7 +397,8 @@ HTML 的部分，Rails 內建的 template engine 是 erb, 副檔名是 .html.erb
         
           
           counter cache 用法http://yerb.net/blog/2014/03/13/three-easy-steps-to-using-counter-caches-in-rails/
-$ rake statsrails method .find_or_create_byhttp://a
+$ rake statsrails method .find_or_create_byhttp://apidock.com/rails/v4.0.2/ActiveRecord/Relation/find_or_create_by讓 event index 可以依照參數排序
+Rails 預設使用了 Cookie 來儲存 Session 訊息。它會用上述的 key編碼之後，直接存放在使用者瀏覽器 Coo
           ...
 
           <div class="post-more-link text-center">
@@ -504,7 +505,8 @@ $ rake statsrails method .find_or_create_byhttp://a
         
           
           gem 和 API 的差別？pay2go gem 和 pay2go API 的差別？哪個比較難寫？&gt;
-Production 寄信用 mailgunSMTP &amp; HTTP 寄信的差別？https://documentation.mailgun.com/quickstart-sending
+Production 寄信用 mailgunSMTP &amp; HTTP 寄信的差別？https://documentation.mailgun.com/quickstart-sending.html#how-to-start-sending-emailHTTP 不能寄信
+出現下面這種狀況，http://stackoverflow.com/questions/15737296/heroku-push-rejected-failed-to-compile-ruby-rails-appht
           ...
 
           <div class="post-more-link text-center">
@@ -611,7 +613,8 @@ Production 寄信用 mailgunSMTP &amp; HTTP 寄信的差別？https://documentat
         
           
           寄信功能app/views/layout/mailer.text.erb 是做什麼的？生成 text 格式。也可以是 mailer.html.erb，如此就是生成 html 格式。
-&lt;%= link_to(“訂單連結”, order_url(@order.token)) %&gt; 的 url
+&lt;%= link_to(“訂單連結”, order_url(@order.token)) %&gt; 的 url 是什麼？這邊代表絕對路徑
+rails mailer 介紹http://guides.rubyonrails.org/action_mailer_basics.htmlhttp://api.rubyonrails.org/classes/ActionMailer/Base.htmlhttps://i
           ...
 
           <div class="post-more-link text-center">
@@ -718,7 +721,11 @@ Production 寄信用 mailgunSMTP &amp; HTTP 寄信的差別？https://documentat
         
           
           消費者可用「清空購物車功能」來手動清空購物車如果是用砸爛購物車的方式來清空購物車，是否是砸爛之後再找一台購物車給user的概念？是的！sudo code 是 destroy cart。如果是用移除購物車內的商品的方式，sudo code 是 destroy_all cart items
-為什麼是 c
+為什麼是 cart_items.destroy_all ?cart.rb123def clean!  cart_items.destroy_allend
+
+tba
+
+拆解 if @item.product.quantity &gt;= item_params[:quantity].to_iitem_params
           ...
 
           <div class="post-more-link text-center">
@@ -824,7 +831,10 @@ Production 寄信用 mailgunSMTP &amp; HTTP 寄信的差別？https://documentat
       
         
           
-          商品加到購物車為什麼要有購物車的設計？不能直接把商品跟使用者做連結嗎(用使用者當container)？是為了session還是為了將來在shopping cart之外，還能實作出 buy later, wish list……等分類做準備？[不確定] 可以把商品掛 user 身上結帳，但有幾個特性提一
+          商品加到購物車為什麼要有購物車的設計？不能直接把商品跟使用者做連結嗎(用使用者當container)？是為了session還是為了將來在shopping cart之外，還能實作出 buy later, wish list……等分類做準備？[不確定] 可以把商品掛 user 身上結帳，但有幾個特性提一下：
+
+這樣無法記錄購物車資訊，也就無法做後續的數據分析及利用。
+理論上可以把 user 購物欄位做在 user model ，但實務上不這麼做，因為 user model 會變得很複雜。你有一台用 hash 的形式裝要買的商品和數量的購物車，比如 { xxx: 2, aaa: 1 }，就要生一個欄
           ...
 
           <div class="post-more-link text-center">
@@ -933,7 +943,7 @@ Production 寄信用 mailgunSMTP &amp; HTTP 寄信的差別？https://documentat
           ⽤ Bootstrap 做⼀個「有 Nav bar 」的 layout//= require bootstrap/dropdown 的 bootstrap/dropdown 從哪來？bootstrap 外還有其他來源可以 require 進來嗎？
 tba
 
-新增 partial: navbar的部分
+新增 partial: navbar的部分，有段內容如下，為什麼 &lt;%= yield %&gt; 包在 &lt; div class=&quot;container&quot;&gt; 裡面？1234+  &lt; div class="container"&gt;+    &lt;%= render "common/navbar" 
           ...
 
           <div class="post-more-link text-center">
@@ -1045,7 +1055,10 @@ terminal: $ rake routes
 瀏覽器: localhost:3000/rails/info/routes
 瀏覽器: 跟路徑錯誤有關的錯誤訊息中
 
-produc
+product_params 是某種 rails 的命名慣例嗎？No, 這是一個method, 所以可以自由命名，而這邊是命名給 strong parameters.
+routes.rb123namespace :admin do  resources :productsend
+是什麼意思？
+這個的意思是，在 
           ...
 
           <div class="post-more-link text-center">
@@ -1153,7 +1166,15 @@ produc
           
           安裝 Hexo
 安裝 node.js 和 git
-去 Github 新增一個名為 github_id.github.io 的 repo. 比如我的 username 是 lionlies，用來架 blog 的這個 repo 名稱必須是 lionlies.github.io, 這是 Github Pa
+去 Github 新增一個名為 github_id.github.io 的 repo. 比如我的 username 是 lionlies，用來架 blog 的這個 repo 名稱必須是 lionlies.github.io, 這是 Github Pages 規定的。
+$ sudo npm install hexo-cli -g
+$ hexo init myblog (myblog 是你在 local 新增的 Hexo 資料夾名稱)
+$ cd myblog
+$ npm install
+
+這樣就安裝完了。如果要在本機跑看看，可以：
+
+$ hexo 
           ...
 
           <div class="post-more-link text-center">
@@ -1259,7 +1280,11 @@ produc
       
         
           
-          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
+          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick StartCreate a new post1$ hexo new "My New Post"
+More info: Writing
+Run server1$ hexo server
+More in
           ...
 
           <div class="post-more-link text-center">

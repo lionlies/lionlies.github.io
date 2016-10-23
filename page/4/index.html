@@ -289,7 +289,8 @@
         
           
           LiveReload 是一個很好用的 gem, 當 view 的內容有更動，LiveReload 會立刻自動刷新瀏覽器頁面，不需要切到瀏覽器按 cmd+r。如果你有夠大或是夠多的螢幕可以顯示瀏覽器畫面，就可以在編輯器這端按下 cmd+s 直接看 view 更動後的畫面，非常方便。
-對新手來說還有一個
+對新手來說還有一個好處，如果畫面跳出錯誤，立刻就知道有問題產生，不用等到寫了一段時間後重整畫面，才發現錯誤，這時要再找出哪個步驟出錯，就很煩人了。
+Install  https://github.com/guard/guard-livereloadUsage  https://github.com/guard/gua
           ...
 
           <div class="post-more-link text-center">
@@ -396,7 +397,7 @@
         
           
           simple_format(text, html_options = {}, options = {})
-Returns text transformed into HTML using simple formatting rules. Two or more consecutive newline
+Returns text transformed into HTML using simple formatting rules. Two or more consecutive newlines(\n\n) are considered as a paragraph and wrapped in  tags. One newline (\n) is considered as a linebreak and a  tag is appended. This method does not
           ...
 
           <div class="post-more-link text-center">
@@ -502,7 +503,7 @@ Returns text transformed into HTML using simple formatting rules. Two or more co
       
         
           
-          程式新手在一開始學Rails會被告知要用REST和MVC的概念來設計網站結構，聽歸聽、做歸做，往往不知道原因。我剛開始學寫程式也是如此，而我是怎麼了解到用REST和MVC來設計網站架構的好處呢？其實就只是Railsbridge/Suggestotron http://docs.railsbridge
+          程式新手在一開始學Rails會被告知要用REST和MVC的概念來設計網站結構，聽歸聽、做歸做，往往不知道原因。我剛開始學寫程式也是如此，而我是怎麼了解到用REST和MVC來設計網站架構的好處呢？其實就只是Railsbridge/Suggestotron http://docs.railsbridge.org/intro-to-rails/credits_and_next_steps  這個入門教材的一道加分題：”Add an ‘about’ page, linked from the bottom of the Suggestotron topics list. Link back to th
           ...
 
           <div class="post-more-link text-center">
@@ -609,7 +610,8 @@ Returns text transformed into HTML using simple formatting rules. Two or more co
         
           
           我基本上是照這篇設定的，講得非常詳細。http://chouandy.logdown.com/posts/255501-let-mac-terminal-be-more-powerful-and-more-beautiful
-但整個照走一遍後，command line卻會出現亂碼，找了些文件發現是目
+但整個照走一遍後，command line卻會出現亂碼，找了些文件發現是目前這個版本的menlo字體有問題，但已經兩年沒更新了，估計短時間內無法解決，我於是新灌了一套powerline font, 字體改成它做測試，解決了問題。
+參考資料：https://github.com/robbyrussell/oh-my-zsh/issues/3436https://github
           ...
 
           <div class="post-more-link text-center">
@@ -717,7 +719,7 @@ Returns text transformed into HTML using simple formatting rules. Two or more co
           
           如何讓 simple_form 顯示中文 title ?https://github.com/plataformatec/simple_formhttp://juanitofatas.com/2014/06/25/rails-i18n-intro/
 Carlos:
-http://wildjcrt.p
+http://wildjcrt.pixnet.net/blog/post/28194551-%5Bgem%5D-simple_form多加這個 config/locales/simple_form.zh-TW.yml時區處理方法 裡面有寫到可以轉換 TimeWithZoneRails中的時間類別使用的是 ActiveSupport:
           ...
 
           <div class="post-more-link text-center">
@@ -823,7 +825,8 @@ http://wildjcrt.p
       
         
           
-          什麼是 session 和 cookies?為什麼要用 session 跟 cookies?http://wiki.jikexueyuan.com/project/node-lessons/cookie-session.htmlhttp://www.justinweiss.com/articles/
+          什麼是 session 和 cookies?為什麼要用 session 跟 cookies?http://wiki.jikexueyuan.com/project/node-lessons/cookie-session.htmlhttp://www.justinweiss.com/articles/how-rails-sessions-work/http://www.theodinproject.com/ruby-on-rails/sessions-cookies-and-authentication
+Rails 內如何操作 session?Rails 操作 session 和 cookies
           ...
 
           <div class="post-more-link text-center">
@@ -930,7 +933,8 @@ http://wildjcrt.p
         
           
           before_action 是什麼？Filter 的一種, 定義執行 action 前要跑什麼 method. 另兩種常見的 filters 則是 after_action 以及 around_action.
-為什麼要用 before_action？一方面可以將每個 action 中最前面的重複代碼
+為什麼要用 before_action？一方面可以將每個 action 中最前面的重複代碼抽出，寫成一個 method, 用 before_action 執行。另一方面，因為身分驗證往往是做在 action 前，所以也常被用來做身分驗證。
+如何使用 before_action？123456789101112131415161718192021class ProductsControlle
           ...
 
           <div class="post-more-link text-center">
@@ -1037,7 +1041,8 @@ http://wildjcrt.p
         
           
           strong parameters 是什麼?Rails內建的一個安全機制，限制 parameters 參數寫入 database 中。
-為什麼我們要用 strong parameters?由於 Rails 中 model 的欄位直接對應 database 中 form 的欄位，因此容易被猜到關鍵欄位
+為什麼我們要用 strong parameters?由於 Rails 中 model 的欄位直接對應 database 中 form 的欄位，因此容易被猜到關鍵欄位的命名方式而被駭，透過strong parameters 設定白名單，白名單內的欄位才能被寫入值，就能避免被暴力猜出命名方式後被寫參數進 database, 進而避免被駭。
+如何使用 strong parameters?1234567891011121314151617181920212223cla
           ...
 
           <div class="post-more-link text-center">
@@ -1144,7 +1149,10 @@ http://wildjcrt.p
         
           
           什麼是 routing?給 Rails 設路徑，讓 Rails 能依著路徑去執行在 controller 中的 action, 而這也就是 MVC 的精神。
-namespace 是什麼?比如今天有好幾個人都叫金城武，我是板橋金城武，你是億載金城武，板橋、億載就是 namespace, 我們透過 na
+namespace 是什麼?比如今天有好幾個人都叫金城武，我是板橋金城武，你是億載金城武，板橋、億載就是 namespace, 我們透過 namespace 做出區隔，別人不會搞混。
+如何使用 namespace?terminal1$ rails g controller admin::products
+routes.rb123namespace :admin do  resources :productsend
+個人心得即使我們用 $ 
           ...
 
           <div class="post-more-link text-center">
@@ -1252,7 +1260,12 @@ namespace 是什麼?比如今天有好幾個人都叫金城武，我是板橋金
           
           User Story 是什麼?User story 是一種敏捷式開發的工具，不直接把 spec 寫死，而是模擬使用者情境，寫出在 who, when, why, what, 使用者是誰、因為什麼因素、在什麼情況下、需要什麼功能。這些都是使用情境，不涉及技術。
 為什麼我們要用 user story?
+幫助釐清要開發的功能
+釐清後方便規劃開發流程
+會做的先做，重要的先做。
 
+如何使用 user story ？身為一位 __ ， 為了能夠 __ ，我需要在 __ 的情況下，使用 __ 的功能。
+個人心得剛開始練習寫 user story 的時候，不知道 user story 要寫多細，常常洋洋灑灑寫
           ...
 
           <div class="post-more-link text-center">

@@ -289,7 +289,7 @@
         
           
           https://help.disqus.com/customer/portal/articles/565624-adding-comment-count-links-to-your-home-page
-1234&lt;span class="button"&gt;  &lt;i class="fa 
+1234&lt;span class="button"&gt;  &lt;i class="fa fa-comment-o" aria-hidden="true"&gt;&lt;/i&gt;  &lt;a href="&lt;%= url_for([idea, &#123;only_path: false&#125;]) %&gt;#disqus_thread"&gt;&lt;/a&gt;&lt
           ...
 
           <div class="post-more-link text-center">
@@ -397,7 +397,9 @@
           
           Offsetting columnshttp://getbootstrap.com/css/#grid-offsetting
 
-Move columns to the right using .col-md-offset- classes. These classes increase the le
+Move columns to the right using .col-md-offset- classes. These classes increase the left margin of a column by  columns. For example, .col-md-offset-4 moves .col-md-4 over four columns.
+
+這是一個 view template 中常見的 Bootstrap Grid System 起手式
           ...
 
           <div class="post-more-link text-center">
@@ -505,7 +507,7 @@ Move columns to the right using .col-md-offset- classes. These classes increase 
           
           先加入 bootstrap 資源
 接著在 _navbar.html.erb 仿造下方的結構：
-123456789101112131415161718192021222324252627282930313233&lt;nav class="navbar navbar-default navbar-fi
+123456789101112131415161718192021222324252627282930313233&lt;nav class="navbar navbar-default navbar-fixed-top"&gt;  &lt;div class="container-fluid"&gt;    &lt;div class="navbar-brand" href = "/"&gt;&lt;/div&gt;    &lt;button class = "navbar-toggle" dat
           ...
 
           <div class="post-more-link text-center">
@@ -612,7 +614,9 @@ Move columns to the right using .col-md-offset- classes. These classes increase 
         
           
           常見的一種網站設計是在 navbar 或是 sidebar 會有連結或按鈕，點了就跳到頁面中的特定位置，這個特定位置就是 anchor point, 網址通常會長成 www.example.com/#anchor_point
-通常我們會把 anchor point 設在某個內容區塊的標題，比如 &l
+通常我們會把 anchor point 設在某個內容區塊的標題，比如 &lt;h5 id=&quot;my_work&quot;&gt;My Work&lt;/h5&gt;, 這樣跳過去特定位置時就直接從標題開始看。
+但這樣的設計假如搭配 fixed navbar, 標題就可能在跳到特定位置時被 navbar 遮住。
+要怎麼解決呢？很簡單，只要透過 CSS 給 ancho
           ...
 
           <div class="post-more-link text-center">
@@ -719,7 +723,11 @@ Move columns to the right using .col-md-offset- classes. These classes increase 
         
           
           假設我們今天有一個網站，上面有 pins, 有 users, users 可以對 pins 投票，但每個 user 只能對每個 pin 投一個 upvote, 並且可以取消 upvote, 這個機制要怎麼設計呢？
-首先，我們需要一個 Vote model, 而它是做為 join model 來連結 
+首先，我們需要一個 Vote model, 而它是做為 join model 來連結 users 和 pins, 或者說，紀錄哪一位 user 投過哪一個 pin.
+$ rails g model vote user_id: integer pin_id: integer$ rake db:migrate
+接著，我們要來建立各個資料庫之間的關聯：
+models/pin.rb
+1234
           ...
 
           <div class="post-more-link text-center">
@@ -826,7 +834,9 @@ Move columns to the right using .col-md-offset- classes. These classes increase 
         
           
           接完 Disqus 後，官方建議編輯 Recommended Configuration Variables 來讓 Disqus 認得出各則留言分別是在哪個網站的哪個頁面底下留的言，將來 Disqus 要傳 comments 過來才不會出錯。
-首先，我們看這篇：https://help.disqus
+首先，我們看這篇：https://help.disqus.com/customer/en/portal/articles/2158629
+細部設定則看這篇：https://help.disqus.com/customer/en/portal/articles/472098-javascript-configuration-variables
+以下是我的設
           ...
 
           <div class="post-more-link text-center">
@@ -936,7 +946,10 @@ Move columns to the right using .col-md-offset- classes. These classes increase 
 以一般常見的 blog 系統為例，有 posts, comments:
 
 在 Disqus 註冊一個 Disqus 帳號
-從 Disqus 的 Admin Panel 那邊選 Installin
+從 Disqus 的 Admin Panel 那邊選 Installing
+在 Installation 頁面，選 Universal Code.
+在 app/views/posts 底下新增一個 _disqus.html.erb partial
+把 Disqus 留言板的 universal code 貼到 disqus partial 中，並 render 在你的 
           ...
 
           <div class="post-more-link text-center">
@@ -1046,7 +1059,10 @@ Move columns to the right using .col-md-offset- classes. These classes increase 
 
 上面這method可找出包含 “lab” 的 word
 /lab/ =~ word 可寫成 word =~ /lab/
-          ...
+/lab/i 的 i 代表 case-insensitive, 所以包含 “Lab”, “laB” ……等的 word 也會找出來。
+
+
+          
 
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/09/19/用-Regexp-找出包含的字串/#more" rel="contents">
@@ -1156,7 +1172,14 @@ Move columns to the right using .col-md-offset- classes. These classes increase 
 我常用的git init
 git add
 git commit -m “message”
-git commit -
+git commit -am “message”
+git commit -a -m “message”
+git push origin master
+git push heroku master
+git remote add origin &lt;server&gt;
+git remote -v
+git branch
+gi
           ...
 
           <div class="post-more-link text-center">
@@ -1262,7 +1285,9 @@ git commit -
       
         
           
-          這一篇講得很清楚http://schmidt-happens.com/articles/2014/06/04/favoriting-system-in-rails.html這一篇是上面那篇文章底下留言提到的 gisthttps://gist.github.com/tschmidt/3c869f17f
+          這一篇講得很清楚http://schmidt-happens.com/articles/2014/06/04/favoriting-system-in-rails.html這一篇是上面那篇文章底下留言提到的 gisthttps://gist.github.com/tschmidt/3c869f17f4f23ab14fe1
+launchschool 的教材也寫得很清楚https://launchschool.com/blog/understanding-polymorphic-associations-in-rails
+http://railscasts.com/episodes/154-pol
           ...
 
           <div class="post-more-link text-center">

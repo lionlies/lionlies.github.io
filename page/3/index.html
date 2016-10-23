@@ -290,7 +290,7 @@
           
           https://github.com/mbleigh/acts-as-taggable-on
 這個實作的影片，講得很清楚，我也照著實作出來了。It works.http://railscasts.com/episodes/382-tagging?autoplay=true
-http://stacko
+http://stackoverflow.com/questions/5493548/how-to-create-a-tagging-system-like-on-stack-overflow-or-quorahttps://www.sitepoint.com/tagging-scratch-rails/http://sta
           ...
 
           <div class="post-more-link text-center">
@@ -405,7 +405,8 @@ develop: 最新的下次發佈開發狀態
 
 支援性分支
 “Feature”: 開發新功能都從 develop 分支出來，完成後 merge 回 develop
-“Releas
+“Release”: 準備要 release 的版本，只修 bugs。從 develop 分支出來，完成後 merge 回 master 和 develop
+“Hotfix”: 等不及 release 版本就必須馬上修 master 趕上線的情況。會從 master 分支出來，完成後 merge 回 master
           ...
 
           <div class="post-more-link text-center">
@@ -517,7 +518,7 @@ HTML
 Model validation
 
 HTML 的部分，在 posts/new.html.erb 中
-12345&lt;%= simple_form_for @todo_list do |f| %&gt;  &lt;%= f.input :title, input_
+12345&lt;%= simple_form_for @todo_list do |f| %&gt;  &lt;%= f.input :title, input_html: &#123;maxlength: 30, size: 40&#125; %&gt;  &lt;%= f.input :description, input_html: &#123;maxlength: 60, size: 60&#125; %&gt;  &lt;%= f.submit "
           ...
 
           <div class="post-more-link text-center">
@@ -624,7 +625,11 @@ HTML 的部分，在 posts/new.html.erb 中
         
           
           常見2XX Success200 OKThe request was handled successfully.
-3XX Redirection302 FoundThe requested resource has changed temporarily. Usually results in a 
+3XX Redirection302 FoundThe requested resource has changed temporarily. Usually results in a redirect to another URL.
+4XX Client Error400 Bad Request
+403 Forbidden
+404 Not FoundThe requested resource cannot be found.
+5XX Server Error500 Intern
           ...
 
           <div class="post-more-link text-center">
@@ -839,7 +844,8 @@ HTML 的部分，在 posts/new.html.erb 中
           
           實作Gemfile1gem &quot;font-awesome-rails&quot;
 application.css.scss1@import "font-awesome"
-index.html.erb123&lt;%= link_to cancel_upvote_post_path(post)
+index.html.erb123&lt;%= link_to cancel_upvote_post_path(post), method: :delete do %&gt;  &lt;i class="fa fa-heart fa-lg" aria-hidden="true"&gt;&lt;/i&gt;&lt;% end %&gt;
+&lt;i class=&quot;fa fa-heart&quot; aria-h
           ...
 
           <div class="post-more-link text-center">
@@ -947,7 +953,10 @@ index.html.erb123&lt;%= link_to cancel_upvote_post_path(post)
           
           用 “jquery-ui-rails” gem在介紹 jquery-ui-rails 前，我們先來了解什麼是 jQuery UI, 以及它能做到什麼。最簡單的理解方式其實是點進去下方連結，點選左側欄位自己試試看：
 https://jqueryui.com/
-而 jquery-ui-rails 就是一
+而 jquery-ui-rails 就是一個讓 rails 能跑 jquery ui 的 gem 了。
+https://github.com/joliss/jquery-ui-rails
+Gemfile1gem 'jquery-ui-rails'
+Require Everythingapplication.css123/* *= requi
           ...
 
           <div class="post-more-link text-center">
@@ -1054,7 +1063,8 @@ https://jqueryui.com/
         
           
           http://stackoverflow.com/questions/21941015/git-push-failing-after-heroku-app-name-change
-如果是把 heroku app 刪掉，則用下面方法：http://stackoverflow.com/questions
+如果是把 heroku app 刪掉，則用下面方法：http://stackoverflow.com/questions/28749771/cant-push-to-heroku-after-accidentally-deleting-app-on-heroku
+補充https://devcenter.heroku.com/articles/renaming-appshttps://devcenter.heroku.
           ...
 
           <div class="post-more-link text-center">
@@ -1162,7 +1172,8 @@ https://jqueryui.com/
           
           1$ git checkout -b new-branch `git rev-list --max-parents=0 HEAD`
 切回第一個 commit，再開一個新的 branch (new-branch)
-$ git checkout branch-1切換到叫做 branch-1 的 bran
+$ git checkout branch-1切換到叫做 branch-1 的 branch
+$ git branch -D branch-2在其他 branch 砍掉一個叫做 branch-2 的 branchhttp://stackoverflow.com/questions/2003505/delete-a-git-branch-both-locally-and-remotely
           ...
 
           <div class="post-more-link text-center">
@@ -1272,7 +1283,10 @@ $ git checkout branch-1切換到叫做 branch-1 的 bran
 Gemfile1gem 'simple_form'
 $ bundle install
 不整合 bootstrap:$ rails generate simple_form:install
-整合 bootstra
+整合 bootstrap:$ rails generate simple_form:install --bootstrap
+記得 application 中要先有 bootstrap assets
+上面三步驟安裝好 simple_form 後，原本很繁瑣的 rails form 寫法，就可以簡化成像下面的寫法。
+1234
           ...
 
           <div class="post-more-link text-center">

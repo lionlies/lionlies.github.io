@@ -519,7 +519,10 @@ Change Directory.
           
           Pure CSShttp://purecss.io/
 Hover.csshttp://ianlunn.github.io/Hover/
-Pure CSS Star-ratinghttps://www.everythingfrontend.com/posts/star-rating-input-pur
+Pure CSS Star-ratinghttps://www.everythingfrontend.com/posts/star-rating-input-pure-css.html
+imagehover.iohttp://imagehover.io/
+jquery file upload + carrierwave + rails 4https://www.youtube.com/watch?v=x23aIQPa-DY
+bootstrap panel 用法
           ...
 
           <div class="post-more-link text-center">
@@ -643,7 +646,23 @@ List files and directories in current directory.
 
 
 ls -a
-List all files and directories (includin
+List all files and directories (including hidden ones), in current directory.
+
+
+pwd
+Display the path of the current directory.
+
+
+touch
+Create a file.
+
+
+mkdir
+Create a directory.
+
+
+rm
+Remove 
           ...
 
           <div class="post-more-link text-center">
@@ -749,7 +768,9 @@ List all files and directories (includin
       
         
           
-          當初是看了這兩篇，想說也來列個自己常用的 gem list, 開發新專案時直接複製貼上就好，非常方便。http://felixclack.com/post/90434933071/what-are-my-goto-set-of-gemshttp://kakas-blog.logdown.com/po
+          當初是看了這兩篇，想說也來列個自己常用的 gem list, 開發新專案時直接複製貼上就好，非常方便。http://felixclack.com/post/90434933071/what-are-my-goto-set-of-gemshttp://kakas-blog.logdown.com/posts/364933-gem-finishing
+後來在 Ruby China 上看到有人把常用的 gems 裝好後打包成一個 Rails 模板，之後可以來試試看。https://ruby-china.org/topics/30406
+必裝gem “quiet_assets”gem “better_
           ...
 
           <div class="post-more-link text-center">
@@ -857,7 +878,8 @@ List all files and directories (includin
           
           protect_from_forgery (ApplicationController)
 https://goo.gl/ooXwVk 先了解 CSRF 是什麼，文章下方則有講到用 token 來避免 CSRF attack, 也就是 Rails 使用的方法。
-http://apidock.com/r
+http://apidock.com/rails/v2.0.0/ActionController/RequestForgeryProtection/ClassMethods/protect_from_forgery
+http://guides.rubyonrails.org/security.html#cross-site-request
           ...
 
           <div class="post-more-link text-center">
@@ -963,8 +985,9 @@ http://apidock.com/r
       
         
           
-          http://stackoverflow.com/questions/16392952/css-to-make-bootstrap-navbar-transparenthttp://stackoverflow.com/questions/21218577/transparent-color-of-b
-          ...
+          http://stackoverflow.com/questions/16392952/css-to-make-bootstrap-navbar-transparenthttp://stackoverflow.com/questions/21218577/transparent-color-of-bootstrap-3-navbar
+
+          
 
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/09/22/Transparent-Bootstrap-Navbar/#more" rel="contents">
@@ -1070,7 +1093,7 @@ http://apidock.com/r
         
           
           Misc.Controller, model各會放入什麼邏輯的methods, 這部分常常會搞混。初學沒經驗的時候，先把所有的methods都寫在controller沒關係，要多噁心就多噁心，之後整理code的時候再分解到model去。
-有沒有什麼比較固定的開發流程？整套教材到目前為止，有時候先做c
+有沒有什麼比較固定的開發流程？整套教材到目前為止，有時候先做controller, routing, model, view, 有時候先model, routing, controller, view, 有時候又再不一樣，都搞混了。xdite 寫 code 流程：routing -&gt; controller -&gt; view -&gt; model -
           ...
 
           <div class="post-more-link text-center">
@@ -1181,7 +1204,9 @@ http://apidock.com/r
 
 在 MVC 架構下要做什麼東西出來，是瀏覽器端跟網站的 server 之前存取資料的動作，每當我們輸入網址，點擊某個連結，都是代表
 
-我們從瀏覽器端發出請求(request)指令到網站 server 端，後者再以 
+我們從瀏覽器端發出請求(request)指令到網站 server 端，後者再以 request 的內容來回應資料給前者，也就是網頁資料的呈現。
+
+絕大多數 HTTP request 都是 GET，也就是跟 Server 端請求讀取某個網址的資料。有要更動到 server 裡資料庫的資料，就會用到另外的三個動作。當我們要用 Rails 做一個有 CRUD 功能(Create, R
           ...
 
           <div class="post-more-link text-center">
@@ -1289,7 +1314,9 @@ http://apidock.com/r
           
           P.S. 最大的標題代表Rails101中的章節名稱，第二大的標題代表章節中的主題名稱，列表的部份則是筆記。
 延伸閱讀：CRUDCRUD in Rails
-CRUD(Create/Read/Update/Destroy)是網站最基礎的結構，Rails中建立CRUD結構的規範是 MVC 和 RESTf
+CRUD(Create/Read/Update/Destroy)是網站最基礎的結構，Rails中建立CRUD結構的規範是 MVC 和 RESTful。MVC是Model, View, Controller, 這樣的架構可以把前後端和資料庫的工作切開，各做各的，比較好開發和管理。RESTful則是透過一種HTTP verb搭配一種helper對應到特定的action,
+
+GET + groups_path =&gt; index action
           ...
 
           <div class="post-more-link text-center">

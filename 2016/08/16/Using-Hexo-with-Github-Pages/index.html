@@ -98,7 +98,7 @@ $ hexo ini">
 去 Github 新增一個名為 github_id.github.io 的 repo. 比如我的 username 是 lionlies，用來架 blog 的這個 repo 名稱必須是 lionlies.github.io, 這是 Github Pages 規定的。
 $ sudo npm install hexo-cli -g
 $ hexo ini">
-<meta property="og:updated_time" content="2016-08-23T02:36:57.000Z">
+<meta property="og:updated_time" content="2016-10-23T02:53:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Using Hexo with Github Pages">
 <meta name="twitter:description" content="安裝 Hexo
@@ -323,6 +323,7 @@ $ hexo ini">
 <li>clone theme</li>
 <li>改 <code>_config/yml</code></li>
 </ol>
+<h5 id="2016-10-23-更新："><a href="#2016-10-23-更新：" class="headerlink" title="2016.10.23 更新："></a>2016.10.23 更新：</h5><p>kakas <a href="https://kakas.github.io" target="_blank" rel="external">https://kakas.github.io</a> 推薦了一個很優秀的 theme - next <a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">https://github.com/iissnan/hexo-theme-next</a>, Github 上有 54xx 顆星，用過之後我也愛上了，大力推薦！！！</p>
 <h2 id="寫文章"><a href="#寫文章" class="headerlink" title="寫文章"></a>寫文章</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new layout title</div></pre></td></tr></table></figure>
 <p>layout 是文章類型，有三種，分別是 post, draft, page.<br>page 我不熟就先不介紹，發文章用 post, 草稿用 draft.</p>
 <p>title 是文章 title<br>title 如果只是單個字，可以這樣下指令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ hexo new layout Win</div><div class="line">或是</div><div class="line">$ hexo new layout &quot;Win&quot;</div></pre></td></tr></table></figure></p>
@@ -350,8 +351,8 @@ $ hexo ini">
 </ol>
 <p>免費的 GFM editors:</p>
 <ul>
-<li>Mou（中國製的優秀產品）</li>
-<li>Macdown（台灣人致敬 Mou 的優秀產品）</li>
+<li>Mou（中國製的優秀產品，不過作者後來有詐騙資金之嫌。）</li>
+<li>Macdown（台灣作者致敬 Mou 的優秀產品）</li>
 <li>Stackedit (每年贊助 $5 鎂或是一次性地贊助 $25 鎂會解開額外功能。)</li>
 <li>……</li>
 </ul>
@@ -360,13 +361,19 @@ $ hexo ini">
 <li>Quiver</li>
 <li>……</li>
 </ul>
+<h5 id="2016-10-23-更新：-1"><a href="#2016-10-23-更新：-1" class="headerlink" title="2016.10.23 更新："></a>2016.10.23 更新：</h5><p>Quiver 的內容管理、手勢、熱鍵……等讓它成為相當優秀的 markdown 編輯及內容管理軟體，我很推薦！不過後來發現 Atom 安裝 markdown-preview 以及 markdown-scroll-sync 兩個套件後，可以做到類似 Quiver 的預覽及同步滾動畫面，就集中用 Atom 管理內容了。這個作法有兩個缺點：</p>
+<ol>
+<li>要手動按 <code>control-shift-m</code> 才能叫出預覽的畫面。</li>
+<li>如果你的文章比較長，比如這篇的長度，開啟預覽畫面後編輯內容會卡卡的，Quiver 以這篇長度而言是沒問題的。</li>
+</ol>
 <h2 id="生成靜態文件、deploy-到-Github"><a href="#生成靜態文件、deploy-到-Github" class="headerlink" title="生成靜態文件、deploy 到 Github"></a>生成靜態文件、deploy 到 Github</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div><div class="line">或是</div><div class="line">$ hexo g</div></pre></td></tr></table></figure>
 <p><code>$ hexo g</code> 會 render 一份靜態文件到 <code>/myblog/public</code> 中，其中有個檔案是 <code>index.html</code>, 標準的 HTML Hierarchy 做法。每次 <code>$ hexo g</code> 就會重新 render 新的 <code>index.html</code> 取代舊的，<code>index.html</code> 裡的內容來自 <code>/source/_post</code> 內的文章、<code>_config/yml</code> 的設定，以及目前的 theme.</p>
 <p>接著把 <code>/myblog/public</code> 中的內容 deploy 到 Github Pages</p>
 <p>先安裝 deployer<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-deployer-git --save</div></pre></td></tr></table></figure></p>
 <p>再 deploy<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div><div class="line">或是</div><div class="line">$ hexo d</div></pre></td></tr></table></figure></p>
 <p><code>$ hexo g</code> + <code>$ hexo d</code> 也可以簡化成<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ hexo g -d</div><div class="line">或是</div><div class="line">$ hexo d -g</div></pre></td></tr></table></figure></p>
-<h2 id="我的-hexo-blog-gt-https-lionlies-github-io"><a href="#我的-hexo-blog-gt-https-lionlies-github-io" class="headerlink" title="我的 hexo blog -&gt; https://lionlies.github.io/"></a>我的 hexo blog -&gt; <a href="https://lionlies.github.io/" target="_blank" rel="external">https://lionlies.github.io/</a></h2><p>Hexo 指令／文件<br><a href="https://hexo.io/docs/configuration.html" target="_blank" rel="external">https://hexo.io/docs/configuration.html</a><br><a href="https://hexo.io/docs/commands.html" target="_blank" rel="external">https://hexo.io/docs/commands.html</a></p>
+<h2 id="我的-hexo-blog-gt-https-lionlies-github-io"><a href="#我的-hexo-blog-gt-https-lionlies-github-io" class="headerlink" title="我的 hexo blog -&gt; https://lionlies.github.io/"></a>我的 hexo blog -&gt; <a href="https://lionlies.github.io/" target="_blank" rel="external">https://lionlies.github.io/</a></h2><h5 id="2016-10-23-更新：-2"><a href="#2016-10-23-更新：-2" class="headerlink" title="2016.10.23 更新："></a>2016.10.23 更新：</h5><p>遇到一個奇怪的情況，無法 <code>$ git clone</code> 也無法 <code>$ hexo deploy</code>, 以為是更新 MacOS 10.11 後 ssh 要重新設定，後來才發現是跟 uid 501 相關的系統問題導致讀不到使用者資訊，自然無法跟 github 那邊做身分認證，重開機之後就好了。</p>
+<h2 id="參考："><a href="#參考：" class="headerlink" title="參考："></a>參考：</h2><p>Hexo 指令／文件<br><a href="https://hexo.io/docs/configuration.html" target="_blank" rel="external">https://hexo.io/docs/configuration.html</a><br><a href="https://hexo.io/docs/commands.html" target="_blank" rel="external">https://hexo.io/docs/commands.html</a></p>
 <p>參考資料<br><a href="http://diao.li/2015/01/13/blog/" target="_blank" rel="external">http://diao.li/2015/01/13/blog/</a><br><a href="http://jakerluo.xyz/2016/07/28/about/" target="_blank" rel="external">http://jakerluo.xyz/2016/07/28/about/</a></p>
 <p>延伸閱讀<br><a href="http://oomusou.io/hexo/hexo-draft/" target="_blank" rel="external">http://oomusou.io/hexo/hexo-draft/</a><br><a href="https://luyi765.github.io/blog/2016/06/24/install-hexo-and-deploy-to-github/" target="_blank" rel="external">https://luyi765.github.io/blog/2016/06/24/install-hexo-and-deploy-to-github/</a></p>
 <p>Theme<br><a href="https://github.com/tufu9441/maupassant-hexo" target="_blank" rel="external">https://github.com/tufu9441/maupassant-hexo</a></p>
@@ -541,7 +548,7 @@ $ hexo ini">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安裝-Hexo"><span class="nav-number">1.</span> <span class="nav-text">安裝 Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#連結-Github"><span class="nav-number">2.</span> <span class="nav-text">連結 Github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#設定-Theme"><span class="nav-number">3.</span> <span class="nav-text">設定 Theme</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#寫文章"><span class="nav-number">4.</span> <span class="nav-text">寫文章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成靜態文件、deploy-到-Github"><span class="nav-number">5.</span> <span class="nav-text">生成靜態文件、deploy 到 Github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我的-hexo-blog-gt-https-lionlies-github-io"><span class="nav-number">6.</span> <span class="nav-text">我的 hexo blog -> https://lionlies.github.io/</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安裝-Hexo"><span class="nav-number">1.</span> <span class="nav-text">安裝 Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#連結-Github"><span class="nav-number">2.</span> <span class="nav-text">連結 Github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#設定-Theme"><span class="nav-number">3.</span> <span class="nav-text">設定 Theme</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2016-10-23-更新："><span class="nav-number">3.0.0.1.</span> <span class="nav-text">2016.10.23 更新：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#寫文章"><span class="nav-number">4.</span> <span class="nav-text">寫文章</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2016-10-23-更新：-1"><span class="nav-number">4.0.0.1.</span> <span class="nav-text">2016.10.23 更新：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成靜態文件、deploy-到-Github"><span class="nav-number">5.</span> <span class="nav-text">生成靜態文件、deploy 到 Github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我的-hexo-blog-gt-https-lionlies-github-io"><span class="nav-number">6.</span> <span class="nav-text">我的 hexo blog -> https://lionlies.github.io/</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2016-10-23-更新：-2"><span class="nav-number">6.0.0.1.</span> <span class="nav-text">2016.10.23 更新：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#參考："><span class="nav-number">7.</span> <span class="nav-text">參考：</span></a></li></ol></div>
             
           </div>
         </section>
