@@ -104,16 +104,20 @@
     fancybox: true,
     motion: true,
     duoshuo: {
-      userId: 0,
+      userId: '0',
       author: 'Author'
     }
   };
 </script>
 
+
+
+
+
   <title> jason's blog </title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+<body itemscope itemtype="//schema.org/WebPage" lang="en">
 
   
 
@@ -136,7 +140,7 @@
  ">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
       <div class="header-inner"><div class="site-meta ">
   
 
@@ -221,7 +225,7 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
 
     
       <header class="post-header">
@@ -233,8 +237,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/09/18/Front-end-of-Rails-app/" itemprop="url">
-                  Front end of Rails app
+                <a class="post-title-link" href="/2016/08/16/hello-world/" itemprop="url">
+                  Hello World
                 </a>
               
             
@@ -247,8 +251,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-09-18T21:52:13+08:00" content="2016-09-18">
-              2016-09-18
+            <time itemprop="dateCreated" datetime="2016-08-16T14:45:01+08:00" content="2016-08-16">
+              2016-08-16
             </time>
           </span>
 
@@ -258,8 +262,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/09/18/Front-end-of-Rails-app/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/09/18/Front-end-of-Rails-app/" itemprop="commentsCount"></span>
+                <a href="/2016/08/16/hello-world/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/08/16/hello-world/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -284,1270 +288,18 @@
       
         
           
-            <p>我對 Rails 前端的部分了解不深，試著寫寫看目前的理解，有錯請多多指教，謝謝。</p>
-<p>前端基本上就是 HTML, CSS, JavaScript.</p>
-<p><strong>HTML</strong> 的部分，Rails 內建的 template engine 是 erb, 副檔名是 <code>.html.erb</code>, 另外兩個 template engines 是 slim 和 haml. 孰優孰劣可以參考下面兩篇：<br><a href="http://stackoverflow.com/questions/11390512/erb-haml-or-slim-which-one-do-you-suggest-and-why" target="_blank" rel="external">http://stackoverflow.com/questions/11390512/erb-haml-or-slim-which-one-do-you-suggest-and-why</a><br><a href="https://speakerdeck.com/lvrug/erb-vs-haml-vs-slim-randy-schifflin" target="_blank" rel="external">https://speakerdeck.com/lvrug/erb-vs-haml-vs-slim-randy-schifflin</a></p>
-<p><strong>CSS</strong> 的部分，開新的 Rails 專案時，Gemfile 裡面已經有 “sass-rails” gem 了，把 CSS 檔案的副檔名 <code>.css</code> 改成 <code>.css.sass</code> 就寫 SASS 語法，改成 <code>.css.scss</code> 就寫 SCSS 語法，Rails 會因為副檔名而自己去認裡面對應的語法。</p>
-<p><strong>JavaScript</strong> 的部分，開新的 Rails 專案時就已經把 jQuery 裝好了，所以 Gemfile 裡面已經有 “jquery-rails” gem, 而在 <code>application.js</code> 中也已經有：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//= require jquery</span></div><div class="line"><span class="comment">//= require jquery_ujs</span></div></pre></td></tr></table></figure>
-<p>所以開好 Rails 專案就可以直接開始寫 jQuery 了。<br>官網 jQuery plugins 的文件整理得相當清楚，可以多加利用。<br><a href="http://plugins.jquery.com/" target="_blank" rel="external">http://plugins.jquery.com/</a></p>
-<p><a href="https://github.com/rails/jquery-rails" target="_blank" rel="external">https://github.com/rails/jquery-rails</a><br><a href="http://stackoverflow.com/questions/13481996/how-can-i-use-jquery-in-rails-3-2-8" target="_blank" rel="external">http://stackoverflow.com/questions/13481996/how-can-i-use-jquery-in-rails-3-2-8</a><br><a href="https://pragmaticstudio.com/blog/2015/3/18/rails-jquery-ajax" target="_blank" rel="external">https://pragmaticstudio.com/blog/2015/3/18/rails-jquery-ajax</a></p>
-<p><strong>Bootstrap</strong> 的部分，如果安裝了 “bootstrap-sass” gem, 因為 Bootstrap 支援 CSS 和 JavaScript, 所以可以在 <code>application.css.scss</code> 裡面加入下面兩行來載入 CSS 會用到的 Bootstrap 元素，比如 Grid.</p>
-<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">import</span> <span class="string">"bootstrap-sprockets"</span>;</div><div class="line">@<span class="keyword">import</span> <span class="string">"bootstrap"</span>;</div></pre></td></tr></table></figure>
-<p><code>要注意的是</code>，<code>@import &quot;bootstrap-sprockets&quot;;</code> 要在 <code>@import &quot;bootstrap&quot;;</code> 之上，bootstrap icon fonts 才能正常顯示。</p>
-<p>接著，在 <code>application.js</code> 中加入</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//= require bootstrap</span></div></pre></td></tr></table></figure>
-<p>或是</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//= require bootstrap-sprockets</span></div></pre></td></tr></table></figure>
-<p>會載入 JavaScript 會用到的 Bootstrap 元素</p>
-<p><code>要注意的是</code>，不要同時 include bootstrap-sprockets 及 bootstrap 進 application.js<br>bootstrap-sprockets provides individual Bootstrap Javascript files (alert.js or dropdown.js, for example), while bootstrap provides a concatenated file containing all Bootstrap Javascripts.</p>
-<p>也就是說，在 <code>application.css.scss</code> 中</p>
-<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">import</span> <span class="string">"bootstrap-sprockets"</span>;</div><div class="line">@<span class="keyword">import</span> <span class="string">"bootstrap"</span>;</div></pre></td></tr></table></figure>
-<p>而在 <code>application.js</code> 中，只需要<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//= require bootstrap</span></div></pre></td></tr></table></figure></p>
-<p>或是<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//= require bootstrap-sprockets</span></div></pre></td></tr></table></figure></p>
-<p>兩者擇一</p>
-<p><a href="https://github.com/twbs/bootstrap-sass" target="_blank" rel="external">https://github.com/twbs/bootstrap-sass</a><br><a href="https://github.com/twbs/bootstrap-sass/issues/829#issuecomment-75153827" target="_blank" rel="external">https://github.com/twbs/bootstrap-sass/issues/829#issuecomment-75153827</a></p>
-<p>如果只要一部分的 Bootstrap 元素，也可以只載入要用到的部分。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//= require bootstrap/dropdown</span></div><div class="line"><span class="comment">//= require bootstrap/alert</span></div></pre></td></tr></table></figure>
-<p>簡單的介紹可以看這篇 <a href="https://launchschool.com/blog/integrating-rails-and-bootstrap-part-1/" target="_blank" rel="external">https://launchschool.com/blog/integrating-rails-and-bootstrap-part-1/</a></p>
-<p><code>要特別注意的是</code>，所有的 JavaScript plugins 都需要先 include jQuery.<br><a href="http://getbootstrap.com/getting-started/" target="_blank" rel="external">http://getbootstrap.com/getting-started/</a></p>
-<p><code>application.css.scss</code> 和 <code>application.js</code> 是 manifest 檔，至於要怎麼寫非 manifest 的 <code>.js</code>，我還不是很清楚，先跳過。</p>
-<p>總結，我對於 Rails 前端的理解是：</p>
-<ol>
-<li>把所有的 layout 都當成一般的 HTML 檔來寫，所以裡面會有 DOCTYPE, head, body …… 等基本的 HTML 結構。</li>
-<li>在 body 中透過 render 來載入 partial, 透過 yield 來載入對應到的其他 <code>.html.erb</code> 頁面。</li>
-<li>在這些其他頁面中寫 HTML, 並用 SCSS 和 JavaScript/jQuery 語法來修飾。</li>
-<li>載入網頁的時候，沒特別在 controller 指定 layout 的網頁就用 <code>application.html.erb</code>, 有指定就用指定的 layout。接著依照 layout 中代碼的先後順序載入。以教材而言，就是先 render partial, 接著透過 yield 載入對應的頁面。</li>
-</ol>
-<p>至於 JS 框架要怎麼和 Rails 做結合呢？等我有時間玩 Vue.js 後再寫文章分享 : )</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/18/Rails-misc/" itemprop="url">
-                  Rails misc.
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-09-18T21:26:24+08:00" content="2016-09-18">
-              2016-09-18
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/18/Rails-misc/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/09/18/Rails-misc/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="counter-cache-用法"><a href="#counter-cache-用法" class="headerlink" title="counter cache 用法"></a>counter cache 用法</h2><p><a href="http://yerb.net/blog/2014/03/13/three-easy-steps-to-using-counter-caches-in-rails/" target="_blank" rel="external">http://yerb.net/blog/2014/03/13/three-easy-steps-to-using-counter-caches-in-rails/</a></p>
-<h2 id="rake-stats"><a href="#rake-stats" class="headerlink" title="$ rake stats"></a><code>$ rake stats</code></h2><h2 id="rails-method-find-or-create-by"><a href="#rails-method-find-or-create-by" class="headerlink" title="rails method .find_or_create_by"></a>rails method <code>.find_or_create_by</code></h2><p><a href="http://apidock.com/rails/v4.0.2/ActiveRecord/Relation/find_or_create_by" target="_blank" rel="external">http://apidock.com/rails/v4.0.2/ActiveRecord/Relation/find_or_create_by</a><br>讓 event index 可以依照參數排序</p>
-<h2 id="Rails-預設使用了-Cookie-來儲存-Session-訊息。它會用上述的-key"><a href="#Rails-預設使用了-Cookie-來儲存-Session-訊息。它會用上述的-key" class="headerlink" title="Rails 預設使用了 Cookie 來儲存 Session 訊息。它會用上述的 key"></a>Rails 預設使用了 Cookie 來儲存 Session 訊息。它會用上述的 key</h2><p>編碼之後，直接存放在使用者瀏覽器 Cookie 上。<br><a href="https://ihower.tw/rails4/environments-and-bundler.html" target="_blank" rel="external">https://ihower.tw/rails4/environments-and-bundler.html</a></p>
-<h2 id="Rails預設針對notice和alert這兩個類型可以直接塞進redirect-to當作參數"><a href="#Rails預設針對notice和alert這兩個類型可以直接塞進redirect-to當作參數" class="headerlink" title="Rails預設針對notice和alert這兩個類型可以直接塞進redirect_to當作參數"></a>Rails預設針對notice和alert這兩個類型可以直接塞進redirect_to當作參數</h2><p><code>redirect_to event_url(@event), :notice =&gt; &quot;成功建立&quot;</code></p>
-<p><a href="https://ihower.tw/rails4/actioncontroller.html" target="_blank" rel="external">https://ihower.tw/rails4/actioncontroller.html</a></p>
-<h2 id="create和create-就等於new完就save和save-，有無驚嘆號的差別在於validate資料驗證不正確的動作，無驚嘆號版本會回傳布林值-true或false-，有驚嘆號版本則是驗證錯誤會丟出例外。"><a href="#create和create-就等於new完就save和save-，有無驚嘆號的差別在於validate資料驗證不正確的動作，無驚嘆號版本會回傳布林值-true或false-，有驚嘆號版本則是驗證錯誤會丟出例外。" class="headerlink" title="create和create!就等於new完就save和save!，有無驚嘆號的差別在於validate資料驗證不正確的動作，無驚嘆號版本會回傳布林值(true或false)，有驚嘆號版本則是驗證錯誤會丟出例外。"></a>create和create!就等於new完就save和save!，有無驚嘆號的差別在於validate資料驗證不正確的動作，無驚嘆號版本會回傳布林值(true或false)，有驚嘆號版本則是驗證錯誤會丟出例外。</h2><p><a href="https://ihower.tw/rails4/activerecord-query.html" target="_blank" rel="external">https://ihower.tw/rails4/activerecord-query.html</a></p>
-<h2 id="Rails轉出來的複數不一定是正確的英文單字，這時候你可以修改config-initializers-inflections-rb進行訂正。"><a href="#Rails轉出來的複數不一定是正確的英文單字，這時候你可以修改config-initializers-inflections-rb進行訂正。" class="headerlink" title="Rails轉出來的複數不一定是正確的英文單字，這時候你可以修改config/initializers/inflections.rb進行訂正。"></a>Rails轉出來的複數不一定是正確的英文單字，這時候你可以修改config/initializers/inflections.rb進行訂正。</h2><h2 id="Migration-可用的方法"><a href="#Migration-可用的方法" class="headerlink" title="Migration 可用的方法"></a>Migration 可用的方法</h2><p><a href="https://ihower.tw/rails4/migrations.html" target="_blank" rel="external">https://ihower.tw/rails4/migrations.html</a></p>
-<h2 id="https-ihower-tw-rails4-activerecord-relationships-html"><a href="#https-ihower-tw-rails4-activerecord-relationships-html" class="headerlink" title="https://ihower.tw/rails4/activerecord-relationships.html"></a><a href="https://ihower.tw/rails4/activerecord-relationships.html" target="_blank" rel="external">https://ihower.tw/rails4/activerecord-relationships.html</a></h2><h3 id="has-many-的設定："><a href="#has-many-的設定：" class="headerlink" title="has_many 的設定："></a>has_many 的設定：</h3><h3 id="可以變更Foreign-Key的欄位名稱，例如改成-paid-user-id："><a href="#可以變更Foreign-Key的欄位名稱，例如改成-paid-user-id：" class="headerlink" title="可以變更Foreign Key的欄位名稱，例如改成 paid_user_id："></a>可以變更Foreign Key的欄位名稱，例如改成 paid_user_id：</h3><figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Event</span> &lt; ActiveRecord::Base</span></div><div class="line">  belongs_to <span class="symbol">:paid_user</span>, <span class="symbol">:class_name</span> =&gt; <span class="string">"User"</span>, <span class="symbol">:foreign_key</span> =&gt; <span class="string">"paid_user_id"</span></div><div class="line">  <span class="comment">#...</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<h3 id="through-透過關聯來建立另一個關聯集合，用於建立多對多的關係。"><a href="#through-透過關聯來建立另一個關聯集合，用於建立多對多的關係。" class="headerlink" title="through: 透過關聯來建立另一個關聯集合，用於建立多對多的關係。"></a>through: 透過關聯來建立另一個關聯集合，用於建立多對多的關係。</h3><figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Event</span> &lt; ActiveRecord::Base</span></div><div class="line">	has_many <span class="symbol">:event_groupships</span></div><div class="line">   has_many <span class="symbol">:groups</span>, <span class="symbol">:through</span> =&gt; <span class="symbol">:event_groupships</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<h3 id="source-搭配through設定使用，當關聯的名稱不一致的時候，需要加上source指名是哪一種物件。"><a href="#source-搭配through設定使用，當關聯的名稱不一致的時候，需要加上source指名是哪一種物件。" class="headerlink" title="source: 搭配through設定使用，當關聯的名稱不一致的時候，需要加上source指名是哪一種物件。"></a>source: 搭配through設定使用，當關聯的名稱不一致的時候，需要加上source指名是哪一種物件。</h3><figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Event</span> &lt; ActiveRecord::Base</span></div><div class="line">	has_many <span class="symbol">:event_groupships</span></div><div class="line">   has_many <span class="symbol">:classifications</span>, <span class="symbol">:through</span> =&gt; <span class="symbol">:event_groupships</span>, <span class="symbol">:source</span> =&gt; <span class="symbol">:group</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<h3 id="belongs-to-的設定："><a href="#belongs-to-的設定：" class="headerlink" title="belongs_to 的設定："></a>belongs_to 的設定：</h3><p>可以變更關聯的 class name，例如：<br><figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Event</span> &lt; ActiveRecord::Base</span></div><div class="line">  belongs_to <span class="symbol">:manager</span>, <span class="symbol">:class_name</span> =&gt; <span class="string">"User"</span> <span class="comment"># 預設的外部鍵叫做 manager_id</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure></p>
-<h3 id="可以變更-foreign-key-的欄位名稱，例如改成-user-id："><a href="#可以變更-foreign-key-的欄位名稱，例如改成-user-id：" class="headerlink" title="可以變更 foreign key 的欄位名稱，例如改成 user_id："></a>可以變更 foreign key 的欄位名稱，例如改成 user_id：</h3><figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Event</span> &lt; ActiveRecord::Base</span></div><div class="line">  belongs_to <span class="symbol">:manager</span>, <span class="symbol">:class_name</span> =&gt; <span class="string">"User"</span>, <span class="symbol">:foreign_key</span> =&gt; <span class="string">"user_id"</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<h2 id="確保格式正確：透過正規表示法檢查資料的格式是否正確，例如可以用來檢查-Email、URL-網址、郵遞區號、手機號碼等等格式的正確性。"><a href="#確保格式正確：透過正規表示法檢查資料的格式是否正確，例如可以用來檢查-Email、URL-網址、郵遞區號、手機號碼等等格式的正確性。" class="headerlink" title="確保格式正確：透過正規表示法檢查資料的格式是否正確，例如可以用來檢查 Email、URL 網址、郵遞區號、手機號碼等等格式的正確性。"></a>確保格式正確：透過正規表示法檢查資料的格式是否正確，例如可以用來檢查 Email、URL 網址、郵遞區號、手機號碼等等格式的正確性。</h2><p><a href="https://ihower.tw/rails4/activerecord-lifecycle.html" target="_blank" rel="external">https://ihower.tw/rails4/activerecord-lifecycle.html</a><br><figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span> &lt; ActiveRecord::Base</span></div><div class="line">    validates_format_of <span class="symbol">:email</span>, <span class="symbol">:with</span> =&gt; <span class="regexp">/\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]&#123;2,&#125;)\z/i</span></div><div class="line">    validates_format_of <span class="symbol">:url</span>, <span class="symbol">:with</span> =&gt;  <span class="regexp">/(^$)|(^(http|https):\/\/[a-z0-9]+([\-\.]&#123;1&#125;[a-z0-9]+)*\.[a-z]&#123;2,5&#125;(([0-9]&#123;1,5&#125;)?\/.*)?$)/ix</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure></p>
-<h2 id="雖然序列化很方便可以讓你儲存任意的物件，但是缺點是序列化資料就失去了透過資料庫查詢索引的功效，你無法在SQL的where條件中指定序列化後的資料。"><a href="#雖然序列化很方便可以讓你儲存任意的物件，但是缺點是序列化資料就失去了透過資料庫查詢索引的功效，你無法在SQL的where條件中指定序列化後的資料。" class="headerlink" title="雖然序列化很方便可以讓你儲存任意的物件，但是缺點是序列化資料就失去了透過資料庫查詢索引的功效，你無法在SQL的where條件中指定序列化後的資料。"></a>雖然序列化很方便可以讓你儲存任意的物件，但是缺點是序列化資料就失去了透過資料庫查詢索引的功效，你無法在SQL的where條件中指定序列化後的資料。</h2><p><a href="https://ihower.tw/rails4/activerecord-others.html" target="_blank" rel="external">https://ihower.tw/rails4/activerecord-others.html</a></p>
-<h2 id="Template-Handler"><a href="#Template-Handler" class="headerlink" title="Template Handler"></a>Template Handler</h2><p><a href="https://ihower.tw/rails4/actionview.html" target="_blank" rel="external">https://ihower.tw/rails4/actionview.html</a><br>用 HAML 寫：<br><figure class="highlight haml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">%<span class="selector-tag">section</span><span class="selector-class">.container</span></span></div><div class="line"><span class="tag">    %<span class="selector-tag">h1</span></span>= post.title</div><div class="line"><span class="tag">    %<span class="selector-tag">h2</span></span>= post.subtitle</div><div class="line">    .content</div><div class="line">        =<span class="ruby"> post.content</span></div></pre></td></tr></table></figure></p>
-<p>等同於以下的ERB：<br><figure class="highlight erb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;section class=”container”&gt;</div><div class="line">    &lt;h1&gt;&lt;%=<span class="ruby"> post.title </span>%&gt;&lt;/h1&gt;</div><div class="line">    &lt;h2&gt;&lt;%=<span class="ruby"> post.subtitle </span>%&gt;&lt;/h2&gt;</div><div class="line">    &lt;div class=”content”&gt;</div><div class="line">        &lt;%=<span class="ruby"> post.content </span>%&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/section&gt;</div></pre></td></tr></table></figure></p>
-<h2 id="form-helper"><a href="#form-helper" class="headerlink" title="form helper"></a>form helper</h2><p><a href="https://ihower.tw/rails4/actionview-helpers.html" target="_blank" rel="external">https://ihower.tw/rails4/actionview-helpers.html</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/18/Rails-EC-Week-3-Homework/" itemprop="url">
-                  Rails EC Week 3 Homework
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-09-18T17:49:54+08:00" content="2016-09-18">
-              2016-09-18
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/18/Rails-EC-Week-3-Homework/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/09/18/Rails-EC-Week-3-Homework/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="gem-和-API-的差別？pay2go-gem-和-pay2go-API-的差別？哪個比較難寫？"><a href="#gem-和-API-的差別？pay2go-gem-和-pay2go-API-的差別？哪個比較難寫？" class="headerlink" title="gem 和 API 的差別？pay2go gem 和 pay2go API 的差別？哪個比較難寫？"></a>gem 和 API 的差別？pay2go gem 和 pay2go API 的差別？哪個比較難寫？</h2><p>&gt;</p>
-<h1 id="Production-寄信用-mailgun"><a href="#Production-寄信用-mailgun" class="headerlink" title="Production 寄信用 mailgun"></a>Production 寄信用 mailgun</h1><h2 id="SMTP-amp-HTTP-寄信的差別？"><a href="#SMTP-amp-HTTP-寄信的差別？" class="headerlink" title="SMTP &amp; HTTP 寄信的差別？"></a>SMTP &amp; HTTP 寄信的差別？</h2><p><a href="https://documentation.mailgun.com/quickstart-sending.html#how-to-start-sending-email" target="_blank" rel="external">https://documentation.mailgun.com/quickstart-sending.html#how-to-start-sending-email</a><br>HTTP 不能寄信</p>
-<h2 id="出現下面這種狀況，"><a href="#出現下面這種狀況，" class="headerlink" title="出現下面這種狀況，"></a>出現下面這種狀況，</h2><p><a href="http://stackoverflow.com/questions/15737296/heroku-push-rejected-failed-to-compile-ruby-rails-app" target="_blank" rel="external">http://stackoverflow.com/questions/15737296/heroku-push-rejected-failed-to-compile-ruby-rails-app</a><br><a href="http://stackoverflow.com/questions/21206991/heroku-push-rejected-failed-to-compile-ruby-app" target="_blank" rel="external">http://stackoverflow.com/questions/21206991/heroku-push-rejected-failed-to-compile-ruby-app</a><br>照著做也沒用，於是我手動把heroku上對應的app給砍了，從<code>heroku create</code>到<code>git push heroku</code>整個重新跑過一遍，結果出現錯誤訊息說找不到該app。不該手動砍掉heroku上的app，是嗎？</p>
-<p>&gt;</p>
-<h1 id="Production-要可以上傳圖片，使用-s3"><a href="#Production-要可以上傳圖片，使用-s3" class="headerlink" title="Production 要可以上傳圖片，使用 s3"></a>Production 要可以上傳圖片，使用 s3</h1><p><a href="http://kakas-blog.logdown.com/posts/379280" target="_blank" rel="external">http://kakas-blog.logdown.com/posts/379280</a></p>
-<h2 id="用-heroku-config-來設-aws-的帳號密碼，指令該怎麼下？"><a href="#用-heroku-config-來設-aws-的帳號密碼，指令該怎麼下？" class="headerlink" title="用 heroku config 來設 aws 的帳號密碼，指令該怎麼下？"></a>用 heroku config 來設 aws 的帳號密碼，指令該怎麼下？</h2><p>&gt;</p>
-<h2 id="不要忘記-figaro-heroku-set-e-production-把-figaro-資訊傳到-heroku-上啊！！！！！！！！！"><a href="#不要忘記-figaro-heroku-set-e-production-把-figaro-資訊傳到-heroku-上啊！！！！！！！！！" class="headerlink" title="不要忘記 figaro heroku:set -e production 把 figaro 資訊傳到 heroku 上啊！！！！！！！！！"></a>不要忘記 figaro heroku:set -e production 把 figaro 資訊傳到 heroku 上啊！！！！！！！！！</h2><p><br><br><br></p>
-<h1 id="設定-Heroku-domain"><a href="#設定-Heroku-domain" class="headerlink" title="設定 Heroku domain"></a>設定 Heroku domain</h1><p><br><br><br></p>
-<h1 id="可以自動建立預設資料-EX-10-筆-User-的執行檔"><a href="#可以自動建立預設資料-EX-10-筆-User-的執行檔" class="headerlink" title="可以自動建立預設資料 ( EX: 10 筆 User ) 的執行檔"></a>可以自動建立預設資料 ( EX: 10 筆 User ) 的執行檔</h1><h2 id="heroku-run-rake-db-seed是在terminal對heroku下rake-db-seed的指令，所以假如修改過app-db-seeds-rb-則一定要再次將seeds-rb-git-push-heroku-master到heroku-跑heroku-run-rake-db-seed時才會有正確的seeds-rb檔跑出正確的內容。"><a href="#heroku-run-rake-db-seed是在terminal對heroku下rake-db-seed的指令，所以假如修改過app-db-seeds-rb-則一定要再次將seeds-rb-git-push-heroku-master到heroku-跑heroku-run-rake-db-seed時才會有正確的seeds-rb檔跑出正確的內容。" class="headerlink" title="heroku run rake db:seed是在terminal對heroku下rake db:seed的指令，所以假如修改過app/db/seeds.rb, 則一定要再次將seeds.rb git push heroku master到heroku, 跑heroku run rake db:seed時才會有正確的seeds.rb檔跑出正確的內容。"></a><code>heroku run rake db:seed</code>是在terminal對heroku下<code>rake db:seed</code>的指令，所以假如修改過app/db/seeds.rb, 則一定要再次將seeds.rb <code>git push heroku master</code>到heroku, 跑<code>heroku run rake db:seed</code>時才會有正確的seeds.rb檔跑出正確的內容。</h2><h1 id="把-mailer-丟到-delay-job-去執行"><a href="#把-mailer-丟到-delay-job-去執行" class="headerlink" title="把 mailer 丟到 delay job 去執行"></a>把 mailer 丟到 delay job 去執行</h1><h2 id="「在開發端即可輸入-rake-jobs-work-來運作-delayed-job"><a href="#「在開發端即可輸入-rake-jobs-work-來運作-delayed-job" class="headerlink" title="「在開發端即可輸入 rake jobs:work 來運作 delayed_job"></a>「在開發端即可輸入 rake jobs:work 來運作 delayed_job</h2><p>( 若沒輸入則會停在 jobs 裏等待執行 )」<br>這是什麼意思？</p>
-<p>&gt;</p>
-<h1 id="可以在-Heroku-上跑-delayed-job"><a href="#可以在-Heroku-上跑-delayed-job" class="headerlink" title="可以在 Heroku 上跑 delayed_job"></a>可以在 Heroku 上跑 delayed_job</h1><h2 id="如何判斷-delayed-job-有設定成功？"><a href="#如何判斷-delayed-job-有設定成功？" class="headerlink" title="如何判斷 delayed_job 有設定成功？"></a>如何判斷 delayed_job 有設定成功？</h2><p>&gt;</p>
-<h2 id="什麼是-dyno"><a href="#什麼是-dyno" class="headerlink" title="什麼是 dyno?"></a>什麼是 dyno?</h2><p><a href="https://www.quora.com/What-is-the-difference-between-a-Heroku-web-dyno-and-a-worker-dyno" target="_blank" rel="external">https://www.quora.com/What-is-the-difference-between-a-Heroku-web-dyno-and-a-worker-dyno</a><br><a href="http://stackoverflow.com/questions/8426244/heroku-web-dyno-vs-worker-dyno-how-many-what-ratio-do-i-need" target="_blank" rel="external">http://stackoverflow.com/questions/8426244/heroku-web-dyno-vs-worker-dyno-how-many-what-ratio-do-i-need</a><br><a href="http://blog.fenghe.org/archives/1124" target="_blank" rel="external">http://blog.fenghe.org/archives/1124</a></p>
-<p>延伸閱讀：<a href="http://arthurpai.logdown.com/posts/2014/07/09/heroku-worker-processes-setting" target="_blank" rel="external">http://arthurpai.logdown.com/posts/2014/07/09/heroku-worker-processes-setting</a></p>
-<h2 id="拆解-heroku-頁面-https-dashboard-heroku-com-apps-artstore-clone-resources"><a href="#拆解-heroku-頁面-https-dashboard-heroku-com-apps-artstore-clone-resources" class="headerlink" title="拆解 heroku 頁面 https://dashboard.heroku.com/apps/artstore-clone/resources"></a>拆解 heroku 頁面 <a href="https://dashboard.heroku.com/apps/artstore-clone/resources" target="_blank" rel="external">https://dashboard.heroku.com/apps/artstore-clone/resources</a></h2><p>&gt;</p>
-<h1 id="用智付寶完成-ATM-結帳"><a href="#用智付寶完成-ATM-結帳" class="headerlink" title="用智付寶完成 ATM 結帳"></a>用智付寶完成 ATM 結帳</h1><h2 id="lt-render-quot-pay-with-atm-quot-order-order-gt-中的-order-order，是不是設定-pay-with-atm-html-erb-中的-order-order"><a href="#lt-render-quot-pay-with-atm-quot-order-order-gt-中的-order-order，是不是設定-pay-with-atm-html-erb-中的-order-order" class="headerlink" title="&lt;%= render &quot;pay_with_atm&quot;, order: @order %&gt; 中的 order: @order，是不是設定 _pay_with_atm.html.erb 中的 order = @order ?"></a><code>&lt;%= render &quot;pay_with_atm&quot;, order: @order %&gt;</code> 中的 <code>order: @order</code>，是不是設定 <code>_pay_with_atm.html.erb</code> 中的 order = @order ?</h2><p>是！</p>
-<h2 id="post-pay2go-atm-complete-這邊-pay2go-atm-complete-是自己命名還是-支付寶-API-規定的？"><a href="#post-pay2go-atm-complete-這邊-pay2go-atm-complete-是自己命名還是-支付寶-API-規定的？" class="headerlink" title="post :pay2go_atm_complete 這邊 pay2go_atm_complete 是自己命名還是 支付寶 API 規定的？"></a>post :pay2go_atm_complete 這邊 pay2go_atm_complete 是自己命名還是 支付寶 API 規定的？</h2><p>&gt;</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/18/Rails-EC-Week-3/" itemprop="url">
-                  Rails EC Week 3
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-09-18T17:49:29+08:00" content="2016-09-18">
-              2016-09-18
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/18/Rails-EC-Week-3/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/09/18/Rails-EC-Week-3/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="寄信功能"><a href="#寄信功能" class="headerlink" title="寄信功能"></a>寄信功能</h1><h2 id="app-views-layout-mailer-text-erb-是做什麼的？"><a href="#app-views-layout-mailer-text-erb-是做什麼的？" class="headerlink" title="app/views/layout/mailer.text.erb 是做什麼的？"></a>app/views/layout/mailer.text.erb 是做什麼的？</h2><p>生成 text 格式。也可以是 <code>mailer.html.erb</code>，如此就是生成 html 格式。</p>
-<h2 id="lt-link-to-“訂單連結”-order-url-order-token-gt-的-url-是什麼？"><a href="#lt-link-to-“訂單連結”-order-url-order-token-gt-的-url-是什麼？" class="headerlink" title="&lt;%= link_to(“訂單連結”, order_url(@order.token)) %&gt; 的 url 是什麼？"></a>&lt;%= link_to(“訂單連結”, order_url(@order.token)) %&gt; 的 url 是什麼？</h2><p>這邊代表絕對路徑</p>
-<h2 id="rails-mailer-介紹"><a href="#rails-mailer-介紹" class="headerlink" title="rails mailer 介紹"></a>rails mailer 介紹</h2><p><a href="http://guides.rubyonrails.org/action_mailer_basics.html" target="_blank" rel="external">http://guides.rubyonrails.org/action_mailer_basics.html</a><br><a href="http://api.rubyonrails.org/classes/ActionMailer/Base.html" target="_blank" rel="external">http://api.rubyonrails.org/classes/ActionMailer/Base.html</a><br><a href="https://ihower.tw/rails4/actionmailer.html" target="_blank" rel="external">https://ihower.tw/rails4/actionmailer.html</a></p>
-<h2 id="下面這段"><a href="#下面這段" class="headerlink" title="下面這段"></a>下面這段</h2><p><code>config.action_mailer.default_url_options = { host: &#39;localhost:3000&#39; }</code><br><code>config.action_mailer.delivery_method = :letter_opener</code><br>是怎麼來的？為什麼這樣寫？letter_opener 的 READM.md 沒看到相關內容，要去哪裡找？</p>
-<blockquote>
-<p>tba</p>
-</blockquote>
-<h2 id="拆解-OrderMailer-notify-order-placed-Order-last-deliver"><a href="#拆解-OrderMailer-notify-order-placed-Order-last-deliver" class="headerlink" title="拆解 OrderMailer.notify_order_placed(Order.last).deliver!"></a>拆解 OrderMailer.notify_order_placed(Order.last).deliver!</h2><blockquote>
-<p>tba</p>
-</blockquote>
-<h2 id="做什麼？"><a href="#做什麼？" class="headerlink" title=" 做什麼？"></a><link rel="stylesheet" type="text/css" href="/assets/application.css"> 做什麼？</h2><blockquote>
-<p>tba</p>
-</blockquote>
-<h2 id="find-by-id-session-cart-id-可以寫成-find-by-id-session-cart-id-，那-mail-to-user-email-subject-“blahblahblah”-可不可以寫成-mail-to-user-email-subject-“blahblahblah”"><a href="#find-by-id-session-cart-id-可以寫成-find-by-id-session-cart-id-，那-mail-to-user-email-subject-“blahblahblah”-可不可以寫成-mail-to-user-email-subject-“blahblahblah”" class="headerlink" title="find_by_id(session[:cart_id]) 可以寫成 find_by(id: session[:cart_id])，那 mail(to: @user.email, subject: “blahblahblah”) 可不可以寫成 mail_to(@user.email, subject: “blahblahblah”) ?"></a>find_by_id(session[:cart_id]) 可以寫成 find_by(id: session[:cart_id])，那 mail(to: @user.email, subject: “blahblahblah”) 可不可以寫成 mail_to(@user.email, subject: “blahblahblah”) ?</h2><blockquote>
-<p>tba</p>
-</blockquote>
-<h1 id="金流功能"><a href="#金流功能" class="headerlink" title="金流功能"></a>金流功能</h1><h2 id="‘pay2go’-gem-是做什麼的？"><a href="#‘pay2go’-gem-是做什麼的？" class="headerlink" title="‘pay2go’ gem 是做什麼的？"></a>‘pay2go’ gem 是做什麼的？</h2><blockquote>
-<p>tba</p>
-</blockquote>
-<h2 id="投影片-“Step-2-設定整合模式gem”。什麼是”整合模式”？下面整合模式的寫法，是預先定義在-‘pay2go’-gem-中，還是這是-rails-接-gem-的固定方式？"><a href="#投影片-“Step-2-設定整合模式gem”。什麼是”整合模式”？下面整合模式的寫法，是預先定義在-‘pay2go’-gem-中，還是這是-rails-接-gem-的固定方式？" class="headerlink" title="投影片 “Step 2: 設定整合模式gem”。什麼是”整合模式”？下面整合模式的寫法，是預先定義在 ‘pay2go’ gem 中，還是這是 rails 接 gem 的固定方式？"></a>投影片 “Step 2: 設定整合模式gem”。什麼是”整合模式”？下面整合模式的寫法，是預先定義在 ‘pay2go’ gem 中，還是這是 rails 接 gem 的固定方式？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">config.after_initialize do</div><div class="line">  Pay2go.integration_mode = :development</div><div class="line">end</div><div class="line"></div><div class="line">config.after_initialize do</div><div class="line">  Pay2go.integration_mode = :production</div><div class="line">end</div></pre></td></tr></table></figure>
-<p><a href="http://guides.rubyonrails.org/configuring.html" target="_blank" rel="external">http://guides.rubyonrails.org/configuring.html</a>  3 Configuring Rails Components<br>上面找不到 integration_mode 的內容。</p>
-<h2 id="沒有-Pay2go-class，為什麼可以-Pay2go-integration-mode-或是-Pay2go-setup-do-pay2go-這樣的寫法？"><a href="#沒有-Pay2go-class，為什麼可以-Pay2go-integration-mode-或是-Pay2go-setup-do-pay2go-這樣的寫法？" class="headerlink" title="沒有 Pay2go class，為什麼可以 Pay2go.integration_mode 或是 Pay2go.setup do |pay2go| 這樣的寫法？"></a>沒有 Pay2go class，為什麼可以 Pay2go.integration_mode 或是 Pay2go.setup do |pay2go| 這樣的寫法？</h2><blockquote>
-<p>tba</p>
-</blockquote>
-<h2 id="pay2go-rb-的位置在-config-initializers-pay2go-rb，這跟前面幾題使用-after-initialize-有關嗎？還是這是智付寶指定要放的位置？"><a href="#pay2go-rb-的位置在-config-initializers-pay2go-rb，這跟前面幾題使用-after-initialize-有關嗎？還是這是智付寶指定要放的位置？" class="headerlink" title="pay2go.rb 的位置在 config/initializers/pay2go.rb，這跟前面幾題使用 after_initialize 有關嗎？還是這是智付寶指定要放的位置？"></a>pay2go.rb 的位置在 config/initializers/pay2go.rb，這跟前面幾題使用 after_initialize 有關嗎？還是這是智付寶指定要放的位置？</h2><blockquote>
-<p>tba</p>
-</blockquote>
-<h2 id="為什麼整合模式寫在-config-environments-development-rb-及-config-environments-production-rb"><a href="#為什麼整合模式寫在-config-environments-development-rb-及-config-environments-production-rb" class="headerlink" title="為什麼整合模式寫在 config/environments/development.rb 及 config/environments/production.rb ?"></a>為什麼整合模式寫在 config/environments/development.rb 及 config/environments/production.rb ?</h2><blockquote>
-<p>tba</p>
-</blockquote>
-<h2 id="config-environments-config-initializers-config-locales……等檔案夾，是-rails-有-convention-指定要放什麼類型的檔案？還是說第三方服務的-API-可以指定放哪裡？如果是後者，那第三方-API-可不可以指定放在新增的檔案夾，比如說-config-pay2go-檔案夾裡面？pay2go-service-rb-放在-app-services-pay2go-service-rb-是-pay2go-api-的規定嗎？"><a href="#config-environments-config-initializers-config-locales……等檔案夾，是-rails-有-convention-指定要放什麼類型的檔案？還是說第三方服務的-API-可以指定放哪裡？如果是後者，那第三方-API-可不可以指定放在新增的檔案夾，比如說-config-pay2go-檔案夾裡面？pay2go-service-rb-放在-app-services-pay2go-service-rb-是-pay2go-api-的規定嗎？" class="headerlink" title="config/environments, config/initializers, config/locales……等檔案夾，是 rails 有 convention 指定要放什麼類型的檔案？還是說第三方服務的 API 可以指定放哪裡？如果是後者，那第三方 API 可不可以指定放在新增的檔案夾，比如說 config/pay2go 檔案夾裡面？pay2go_service.rb 放在 app/services/pay2go_service.rb 是 pay2go api 的規定嗎？"></a>config/environments, config/initializers, config/locales……等檔案夾，是 rails 有 convention 指定要放什麼類型的檔案？還是說第三方服務的 API 可以指定放哪裡？如果是後者，那第三方 API 可不可以指定放在新增的檔案夾，比如說 config/pay2go 檔案夾裡面？pay2go_service.rb 放在 app/services/pay2go_service.rb 是 pay2go api 的規定嗎？</h2><p>&gt;</p>
-<h2 id="上述哪些寫法是-Rails-指定的？哪些是-“pay2go”-gem-指定的？哪些是-Pay2go-API-指定的？"><a href="#上述哪些寫法是-Rails-指定的？哪些是-“pay2go”-gem-指定的？哪些是-Pay2go-API-指定的？" class="headerlink" title="上述哪些寫法是 Rails 指定的？哪些是 “pay2go” gem 指定的？哪些是 Pay2go API 指定的？"></a>上述哪些寫法是 Rails 指定的？哪些是 “pay2go” gem 指定的？哪些是 Pay2go API 指定的？</h2><p>&gt;</p>
-<h2 id="有哪些功能來自-pay2go-api-哪些來自-pay2go-gem"><a href="#有哪些功能來自-pay2go-api-哪些來自-pay2go-gem" class="headerlink" title="有哪些功能來自 pay2go api? 哪些來自 pay2go gem?"></a>有哪些功能來自 pay2go api? 哪些來自 pay2go gem?</h2><p>&gt;</p>
-<h2 id="form-tag-hidden-field-tag-submit-tag-各是什麼？"><a href="#form-tag-hidden-field-tag-submit-tag-各是什麼？" class="headerlink" title="form_tag, hidden_field_tag, submit_tag 各是什麼？"></a>form_tag, hidden_field_tag, submit_tag 各是什麼？</h2><p><a href="http://stackoverflow.com/questions/7733085/rails-what-exactly-does-hidden-field-and-hidden-field-tag-do" target="_blank" rel="external">http://stackoverflow.com/questions/7733085/rails-what-exactly-does-hidden-field-and-hidden-field-tag-do</a></p>
-<h2 id="callbacks-有什麼用途？這是來自-pay2go-伺服端的回應，還是就只是個我們寫在程式裡的小提示而已？"><a href="#callbacks-有什麼用途？這是來自-pay2go-伺服端的回應，還是就只是個我們寫在程式裡的小提示而已？" class="headerlink" title="callbacks 有什麼用途？這是來自 pay2go 伺服端的回應，還是就只是個我們寫在程式裡的小提示而已？"></a>callbacks 有什麼用途？這是來自 pay2go 伺服端的回應，還是就只是個我們寫在程式裡的小提示而已？</h2><p>&gt;</p>
-<h2 id="protect-from-forgery"><a href="#protect-from-forgery" class="headerlink" title="protect_from_forgery"></a>protect_from_forgery</h2><p><a href="http://api.rubyonrails.org/classes/ActionController/RequestForgeryProtection/ClassMethods.html" target="_blank" rel="external">http://api.rubyonrails.org/classes/ActionController/RequestForgeryProtection/ClassMethods.html</a><br><a href="http://stackoverflow.com/questions/1177863/how-do-i-ignore-the-authenticity-token-for-specific-actions-in-rails" target="_blank" rel="external">http://stackoverflow.com/questions/1177863/how-do-i-ignore-the-authenticity-token-for-specific-actions-in-rails</a></p>
-<h2 id="下面-initialize-method-是做什麼的？"><a href="#下面-initialize-method-是做什麼的？" class="headerlink" title="下面 initialize method 是做什麼的？"></a>下面 initialize method 是做什麼的？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">class Pay2goService</div><div class="line"></div><div class="line">  def initialize(order)</div><div class="line">    @order = order</div><div class="line">    @timestamp = order.created_at.to_i</div><div class="line">    @merchant_order_no = &quot;#&#123;order.id&#125;s#&#123;Time.now.strftime(&quot;%Y%m%d%H%M%S&quot;)&#125;&quot;</div><div class="line">    @total_price = order.total</div><div class="line">  end</div><div class="line">  ......</div></pre></td></tr></table></figure>
-<p>&gt;</p>
-<h2 id="pay2go-cc-notify-order-url-order-token-怎麼來的？"><a href="#pay2go-cc-notify-order-url-order-token-怎麼來的？" class="headerlink" title="pay2go_cc_notify_order_url(order.token) 怎麼來的？"></a>pay2go_cc_notify_order_url(order.token) 怎麼來的？</h2><p>&gt;</p>
-<h2 id="在寫-pay-with-credit-card-html-erb-時，那些掛在-hidden-field-tag-後面的東西是哪裡來的？"><a href="#在寫-pay-with-credit-card-html-erb-時，那些掛在-hidden-field-tag-後面的東西是哪裡來的？" class="headerlink" title="在寫 _pay_with_credit_card.html.erb 時，那些掛在 hidden _field _tag 後面的東西是哪裡來的？"></a>在寫 <code>_pay_with_credit_card.html.erb</code> 時，那些掛在 hidden <code>_field _tag</code> 後面的東西是哪裡來的？</h2><p>&gt;</p>
-<h2 id="before-action-authenticate-user-except-pay2go-cc-notify-的-except-pay2go-cc-notify"><a href="#before-action-authenticate-user-except-pay2go-cc-notify-的-except-pay2go-cc-notify" class="headerlink" title="before_action :authenticate_user!, except: :pay2go_cc_notify 的 except: :pay2go_cc_notify"></a>before_action :authenticate_user!, except: :pay2go_cc_notify 的 except: :pay2go_cc_notify</h2><p>&gt;</p>
-<h2 id="lt-render-“pay-with-credit-card”-order-order-gt-的-order-order"><a href="#lt-render-“pay-with-credit-card”-order-order-gt-的-order-order" class="headerlink" title="&lt;%= render “pay_with_credit_card”, order: @order %&gt; 的 order: @order"></a>&lt;%= render “pay_with_credit_card”, order: @order %&gt; 的 order: @order</h2><p>&gt;</p>
-<h2 id="為什麼-pay-with-credit-card-這個-partial-在按下按鈕時能產生用信用卡付款的效果？"><a href="#為什麼-pay-with-credit-card-這個-partial-在按下按鈕時能產生用信用卡付款的效果？" class="headerlink" title="為什麼 _pay_with_credit_card 這個 partial 在按下按鈕時能產生用信用卡付款的效果？"></a>為什麼 <code>_pay_with_credit_card</code> 這個 partial 在按下按鈕時能產生用信用卡付款的效果？</h2><p>&gt;</p>
-<h2 id="pay2go-cc-notify-method-是什麼時候被執行而能產生-callback-的效果？"><a href="#pay2go-cc-notify-method-是什麼時候被執行而能產生-callback-的效果？" class="headerlink" title="pay2go_cc_notify method 是什麼時候被執行而能產生 callback 的效果？"></a>pay2go_cc_notify method 是什麼時候被執行而能產生 callback 的效果？</h2><p>&gt;</p>
-<h2 id="lt-hidden-field-tag-“ReturnURL”-pay2go-cc-notify-order-url-order-token-gt"><a href="#lt-hidden-field-tag-“ReturnURL”-pay2go-cc-notify-order-url-order-token-gt" class="headerlink" title="&lt;%= hidden_field_tag “ReturnURL”, pay2go_cc_notify_order_url(order.token) %&gt;"></a>&lt;%= hidden_field_tag “ReturnURL”, pay2go_cc_notify_order_url(order.token) %&gt;</h2><p>為什麼 pay2go_cc_notify_order_url 後面要套入 order.token 這個參數？</p>
-<p>&gt;</p>
-<h2 id="if-params-“Status”-“SUCCESS”-是-Pay2go-API-回傳的資訊嗎？"><a href="#if-params-“Status”-“SUCCESS”-是-Pay2go-API-回傳的資訊嗎？" class="headerlink" title="if params[“Status”] == “SUCCESS” 是 Pay2go API 回傳的資訊嗎？"></a>if params[“Status”] == “SUCCESS” 是 Pay2go API 回傳的資訊嗎？</h2><p>params[“status”] 似乎是 hash 結構，這 hash 來自哪裡？怎麼存？</p>
-<p>是的，來自Pay2go API，所以沒什麼 local 端怎麼存的問題。</p>
-<ul>
-<li>下面這段：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">class OrdersController &lt; ApplicationController</div><div class="line">......</div><div class="line">  def create</div><div class="line">  ......</div><div class="line">      current_cart.clean!</div><div class="line">      OrderMailer.notify_order_placed(Order.last).deliver!</div><div class="line">      ......</div></pre></td></tr></table></figure>
-<p>其中</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">current_cart.clean!</div><div class="line">OrderMailer.notify_order_placed(Order.last).deliver!</div></pre></td></tr></table></figure>
-<p>這兩行的先後順序有沒有影響到什麼東西？比如說使用者體驗、效能之類的？</p>
-<p>&gt;</p>
-<h2 id="local-git-和-heroku-git-不同，要改的話，用下面的連結。"><a href="#local-git-和-heroku-git-不同，要改的話，用下面的連結。" class="headerlink" title="local git 和 heroku git 不同，要改的話，用下面的連結。"></a>local git 和 heroku git 不同，要改的話，用下面的連結。</h2><p><a href="http://stackoverflow.com/questions/28749771/cant-push-to-heroku-after-accidentally-deleting-app-on-heroku" target="_blank" rel="external">http://stackoverflow.com/questions/28749771/cant-push-to-heroku-after-accidentally-deleting-app-on-heroku</a><br><a href="http://stackoverflow.com/questions/20263321/git-push-heroku-master-not-working" target="_blank" rel="external">http://stackoverflow.com/questions/20263321/git-push-heroku-master-not-working</a></p>
-<h1 id="Deploy-到-Heroku"><a href="#Deploy-到-Heroku" class="headerlink" title="Deploy 到 Heroku"></a>Deploy 到 Heroku</h1><h2 id="gem-“pg”-是-heroku-指定的-database，並且必須限定在-production-下使用。"><a href="#gem-“pg”-是-heroku-指定的-database，並且必須限定在-production-下使用。" class="headerlink" title="gem “pg” 是 heroku 指定的 database，並且必須限定在 production 下使用。"></a>gem “pg” 是 heroku 指定的 database，並且必須限定在 production 下使用。</h2><ul>
-<li>4 of 9</li>
-</ul>
-<p>Gemfile中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gem &apos;sqlite3&apos;, group: :development</div></pre></td></tr></table></figure></p>
-<p>也可以寫成<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">group: :development do</div><div class="line">  gem &apos;sqlite3&apos;</div><div class="line">end</div></pre></td></tr></table></figure></p>
-<p>就像該slide下方production的寫法</p>
-<p>[補充] 在 Rails 5 中，如果不把 gem “sqlite” 放在 development 及 test 中，只放在 development mode, 好像會造成 deploy 到 heroku 時出問題。</p>
-<h2 id="Gemfile-中，production-包在-development-test-這層-scope-內也能運作，但會有什麼影響呢？"><a href="#Gemfile-中，production-包在-development-test-這層-scope-內也能運作，但會有什麼影響呢？" class="headerlink" title="Gemfile 中，production 包在 development, test 這層 scope 內也能運作，但會有什麼影響呢？"></a>Gemfile 中，production 包在 development, test 這層 scope 內也能運作，但會有什麼影響呢？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">group :development, :test do</div><div class="line">  gem &apos;byebug&apos;</div><div class="line">  gem &apos;web-console&apos;, &apos;~&gt; 2.0&apos;</div><div class="line">  gem &apos;spring&apos;</div><div class="line"></div><div class="line">  group :production do</div><div class="line">    gem &quot;pg&quot;</div><div class="line">    gem &quot;rails_12factor&quot;</div><div class="line">  end</div><div class="line">end</div></pre></td></tr></table></figure>
-<p>&gt;</p>
-<h2 id="“因為我們還要測試在-heroku-的刷卡機制，所以先暫時把-production-裡的-pay2go-環境設定改成開發用”。這個修改對於-heroku-端有什麼影響？因為不是說程式部署到-heroku-會自動變成-production-模式嗎？"><a href="#“因為我們還要測試在-heroku-的刷卡機制，所以先暫時把-production-裡的-pay2go-環境設定改成開發用”。這個修改對於-heroku-端有什麼影響？因為不是說程式部署到-heroku-會自動變成-production-模式嗎？" class="headerlink" title="“因為我們還要測試在 heroku 的刷卡機制，所以先暫時把 production 裡的 pay2go 環境設定改成開發用”。這個修改對於 heroku 端有什麼影響？因為不是說程式部署到 heroku 會自動變成 production 模式嗎？"></a>“因為我們還要測試在 heroku 的刷卡機制，所以先暫時把 production 裡的 pay2go 環境設定改成開發用”。這個修改對於 heroku 端有什麼影響？因為不是說程式部署到 heroku 會自動變成 production 模式嗎？</h2><p>&gt;</p>
-<h2 id="Deploying-with-git-https-devcenter-heroku-com-articles-git"><a href="#Deploying-with-git-https-devcenter-heroku-com-articles-git" class="headerlink" title="Deploying with git https://devcenter.heroku.com/articles/git"></a>Deploying with git <a href="https://devcenter.heroku.com/articles/git" target="_blank" rel="external">https://devcenter.heroku.com/articles/git</a></h2><p><br><br><br></p>
-<h1 id="Deploy-補充-環境架構解說"><a href="#Deploy-補充-環境架構解說" class="headerlink" title="Deploy 補充 - 環境架構解說"></a>Deploy 補充 - 環境架構解說</h1><p>n/a<br><br><br><br></p>
-<h1 id="用-figaro-管理機密資訊"><a href="#用-figaro-管理機密資訊" class="headerlink" title="用 figaro 管理機密資訊"></a>用 figaro 管理機密資訊</h1><h2 id="拆解下面這段"><a href="#拆解下面這段" class="headerlink" title="拆解下面這段"></a>拆解下面這段</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">＄ figaro install</div><div class="line">create  config/application.yml</div><div class="line">append  .gitignore</div></pre></td></tr></table></figure>
-<p>下了指令後，產生config/application.yml檔，接著把這個檔案加到.gitignore的名單裡面。我們把要用figaro上傳並設定的使用者資料存在config/application.yml檔，因為它已經被加到.gitignore的名單中，所以這些使用者資料不會上傳而被別人看到。接著再透過figaro來把這些使用者資料自動灌上去。</p>
-<h2 id="只要有新增、修改帳號密碼，就要跑-figaro-heroku-set-e-production-將最新的帳號密碼資訊傳到-heroku-去。"><a href="#只要有新增、修改帳號密碼，就要跑-figaro-heroku-set-e-production-將最新的帳號密碼資訊傳到-heroku-去。" class="headerlink" title="只要有新增、修改帳號密碼，就要跑 figaro heroku:set -e production 將最新的帳號密碼資訊傳到 heroku 去。"></a>只要有新增、修改帳號密碼，就要跑 <code>figaro heroku:set -e production</code> 將最新的帳號密碼資訊傳到 heroku 去。</h2><h2 id="什麼是環境變數？"><a href="#什麼是環境變數？" class="headerlink" title="什麼是環境變數？"></a>什麼是環境變數？</h2><p>&gt;</p>
-<h2 id="application-yml-中的-pay2go-merchant-id-quot-197-quot-VS-pay2go-rb-中的-pay2go-merchant-id-ENV-39-pay2go-merchant-id-39-，這兩種寫法是-conventions-還是-figaro-要求的？"><a href="#application-yml-中的-pay2go-merchant-id-quot-197-quot-VS-pay2go-rb-中的-pay2go-merchant-id-ENV-39-pay2go-merchant-id-39-，這兩種寫法是-conventions-還是-figaro-要求的？" class="headerlink" title="application.yml 中的 pay2go_merchant_id: &quot;197----&quot; VS pay2go.rb 中的 pay2go.merchant_id = ENV[&#39;pay2go_merchant_id&#39;]，這兩種寫法是 conventions 還是 figaro 要求的？"></a>application.yml 中的 <code>pay2go_merchant_id: &quot;197----&quot;</code> VS pay2go.rb 中的 <code>pay2go.merchant_id = ENV[&#39;pay2go_merchant_id&#39;]</code>，這兩種寫法是 conventions 還是 figaro 要求的？</h2><p>&gt;</p>
-<h1 id="更多開發技巧"><a href="#更多開發技巧" class="headerlink" title="更多開發技巧"></a>更多開發技巧</h1><h2 id="為什麼-rake-T-列出的清單中沒有-rake-db-reset"><a href="#為什麼-rake-T-列出的清單中沒有-rake-db-reset" class="headerlink" title="為什麼 rake -T 列出的清單中沒有 rake db:reset?"></a>為什麼 <code>rake -T</code> 列出的清單中沒有 <code>rake db:reset</code>?</h2><p>&gt;</p>
-<h1 id="基本收納術"><a href="#基本收納術" class="headerlink" title="基本收納術"></a>基本收納術</h1><p><a href="https://rocodev.gitbooks.io/rails-102/content/chapter3-ruby/mixin_extend_inheritance.html" target="_blank" rel="external">https://rocodev.gitbooks.io/rails-102/content/chapter3-ruby/mixin_extend_inheritance.html</a></p>
-<h2 id="為什麼-tokenable-rb-是放在-app-models-concerns-A-K-A-How-to-use-concerns-in-Rails-4"><a href="#為什麼-tokenable-rb-是放在-app-models-concerns-A-K-A-How-to-use-concerns-in-Rails-4" class="headerlink" title="為什麼 tokenable.rb 是放在 app/models/concerns?  A.K.A. How to use concerns in Rails 4 ?"></a>為什麼 <code>tokenable.rb</code> 是放在 <code>app/models/concerns</code>?  A.K.A. How to use concerns in Rails 4 ?</h2><p><a href="https://signalvnoise.com/posts/3372-put-chubby-models-on-a-diet-with-concerns" target="_blank" rel="external">https://signalvnoise.com/posts/3372-put-chubby-models-on-a-diet-with-concerns</a><br><a href="https://richonrails.com/articles/rails-4-code-concerns-in-active-record-models" target="_blank" rel="external">https://richonrails.com/articles/rails-4-code-concerns-in-active-record-models</a><br><a href="http://codefol.io/posts/Where-Do-I-Put-My-Code" target="_blank" rel="external">http://codefol.io/posts/Where-Do-I-Put-My-Code</a><br><a href="http://stackoverflow.com/questions/14541823/how-to-use-concerns-in-rails-4" target="_blank" rel="external">http://stackoverflow.com/questions/14541823/how-to-use-concerns-in-rails-4</a></p>
-<h2 id="“一般-module-不認識-before-create，用-Rails-Model-Concern”。為什麼一般-module-不認識-before-create-concerns-分多少種？"><a href="#“一般-module-不認識-before-create，用-Rails-Model-Concern”。為什麼一般-module-不認識-before-create-concerns-分多少種？" class="headerlink" title="“一般 module 不認識 before_create，用 Rails : Model Concern”。為什麼一般 module 不認識 before_create ? concerns 分多少種？"></a>“一般 module 不認識 before_create，用 Rails : Model Concern”。為什麼一般 module 不認識 before_create ? concerns 分多少種？</h2><p>&gt;</p>
-<h2 id="拆解下方："><a href="#拆解下方：" class="headerlink" title="拆解下方："></a>拆解下方：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">module Tokenable</div><div class="line">  extend ActiveRecord::Concern</div><div class="line"></div><div class="line">  included do</div><div class="line">    before_create :generate_token</div><div class="line">  end</div><div class="line"></div><div class="line">  def generate_token</div><div class="line">    self.token = SecureRandom.uuid</div><div class="line">  end</div><div class="line">end</div></pre></td></tr></table></figure>
-<h1 id="View-收納術"><a href="#View-收納術" class="headerlink" title="View 收納術"></a>View 收納術</h1><p>通篇看不懂Orz</p>
-<h1 id="ServiceObject"><a href="#ServiceObject" class="headerlink" title="ServiceObject"></a>ServiceObject</h1><h2 id="各個檔案裡的-method-是怎麼被找到的？比如說我們在-app-services-order-placing-service-rb-有一個-OrderPlacingService-class，底下有一個叫-place-order-的-method，然後我們在-app-controllers-orders-controller-rb-裡面用到-OrderPlacingService-new-current-cart-order-place-order-，請問是怎麼找到的？"><a href="#各個檔案裡的-method-是怎麼被找到的？比如說我們在-app-services-order-placing-service-rb-有一個-OrderPlacingService-class，底下有一個叫-place-order-的-method，然後我們在-app-controllers-orders-controller-rb-裡面用到-OrderPlacingService-new-current-cart-order-place-order-，請問是怎麼找到的？" class="headerlink" title="各個檔案裡的 method 是怎麼被找到的？比如說我們在 app/services/order_placing_service.rb 有一個 OrderPlacingService class，底下有一個叫 place_order! 的 method，然後我們在 app/controllers/orders_controller.rb 裡面用到 OrderPlacingService.new(current_cart, @order).place_order!，請問是怎麼找到的？"></a>各個檔案裡的 method 是怎麼被找到的？比如說我們在 app/services/order_placing_service.rb 有一個 OrderPlacingService class，底下有一個叫 place_order! 的 method，然後我們在 app/controllers/orders_controller.rb 裡面用到 <code>OrderPlacingService.new(current_cart, @order).place_order!</code>，請問是怎麼找到的？</h2><p>&gt;</p>
-<h2 id="可不可以說，service-objects-給-controller-用、concerns-給-model-用-partial-給-view-用？helper-在-MVC-三個都可以用？"><a href="#可不可以說，service-objects-給-controller-用、concerns-給-model-用-partial-給-view-用？helper-在-MVC-三個都可以用？" class="headerlink" title="可不可以說，service objects 給 controller 用、concerns 給 model 用 partial 給 view 用？helper 在 MVC 三個都可以用？"></a>可不可以說，service objects 給 controller 用、concerns 給 model 用 partial 給 view 用？helper 在 MVC 三個都可以用？</h2><p>&gt;</p>
-<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="放-gem-進去-Gemfile-時，實務上會加上版本號嗎？"><a href="#放-gem-進去-Gemfile-時，實務上會加上版本號嗎？" class="headerlink" title="放 gem 進去 Gemfile 時，實務上會加上版本號嗎？"></a>放 gem 進去 Gemfile 時，實務上會加上版本號嗎？</h2><p>不一定，看 gem 的 README.md 怎麼寫。但是 ruby 和 rails 的版本好通常是會寫的，因為要讓整個 project 每個人的 ruby 及 rails 版本號是相同的。</p>
-<h2 id="golden-circle-why-how-what"><a href="#golden-circle-why-how-what" class="headerlink" title="golden circle: why, how ,what?"></a>golden circle: why, how ,what?</h2><p>&gt;</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/18/Rails-EC-Week-2-Homework/" itemprop="url">
-                  Rails EC Week 2 Homework
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-09-18T17:17:49+08:00" content="2016-09-18">
-              2016-09-18
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/18/Rails-EC-Week-2-Homework/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/09/18/Rails-EC-Week-2-Homework/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="消費者可用「清空購物車功能」來手動清空購物車"><a href="#消費者可用「清空購物車功能」來手動清空購物車" class="headerlink" title="消費者可用「清空購物車功能」來手動清空購物車"></a>消費者可用「清空購物車功能」來手動清空購物車</h1><h2 id="如果是用砸爛購物車的方式來清空購物車，是否是砸爛之後再找一台購物車給user的概念？"><a href="#如果是用砸爛購物車的方式來清空購物車，是否是砸爛之後再找一台購物車給user的概念？" class="headerlink" title="如果是用砸爛購物車的方式來清空購物車，是否是砸爛之後再找一台購物車給user的概念？"></a>如果是用砸爛購物車的方式來清空購物車，是否是砸爛之後再找一台購物車給user的概念？</h2><p>是的！sudo code 是 destroy cart。如果是用移除購物車內的商品的方式，sudo code 是 destroy_all cart items</p>
-<h2 id="為什麼是-cart-items-destroy-all"><a href="#為什麼是-cart-items-destroy-all" class="headerlink" title="為什麼是 cart_items.destroy_all ?"></a>為什麼是 <code>cart_items</code>.destroy_all ?</h2><p>cart.rb<br><figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">clean!</span></span></div><div class="line">  cart_items.destroy_all</div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure></p>
-<blockquote>
-<p>tba</p>
-</blockquote>
-<h2 id="拆解-if-item-product-quantity-gt-item-params-quantity-to-i"><a href="#拆解-if-item-product-quantity-gt-item-params-quantity-to-i" class="headerlink" title="拆解 if @item.product.quantity &gt;= item_params[:quantity].to_i"></a>拆解 if @item.product.quantity &gt;= item_params[:quantity].to_i</h2><p>item_params[:quantity] 是我們選擇好數量、按下”送出”鈕當下的那個數量，:quantity 其實是 hash key, item_params[:quantity] 是要取 hash value, 這個 value 是 string, 後面用 to_i 轉成 integer。</p>
-<h1 id="消費者可以「手動」從購物車內刪掉某些物品"><a href="#消費者可以「手動」從購物車內刪掉某些物品" class="headerlink" title="消費者可以「手動」從購物車內刪掉某些物品"></a>消費者可以「手動」從購物車內刪掉某些物品</h1><h2 id="拆解-resources-items-controller-“cart-items”"><a href="#拆解-resources-items-controller-“cart-items”" class="headerlink" title="拆解 resources :items, controller: “cart_items”"></a>拆解 resources :items, controller: “cart_items”</h2><p>items 是自己定義的，實際上沒 items_controller, 所以後面要指定，而我們指定這是 cart_items controller</p>
-<h2 id="提問-為什麼是指定-controller-一定要指定-cart-items-controller-嗎？"><a href="#提問-為什麼是指定-controller-一定要指定-cart-items-controller-嗎？" class="headerlink" title="[提問] 為什麼是指定 controller? 一定要指定 cart_items controller 嗎？"></a>[提問] 為什麼是指定 controller? 一定要指定 cart_items controller 嗎？</h2><blockquote>
-<p>tba</p>
-</blockquote>
-<h2 id="之前就有-cart-item-model-了，到這裡才補上-cart-items-controller-可以這樣嗎？"><a href="#之前就有-cart-item-model-了，到這裡才補上-cart-items-controller-可以這樣嗎？" class="headerlink" title="之前就有 cart_item model 了，到這裡才補上 cart_items controller, 可以這樣嗎？"></a>之前就有 cart_item model 了，到這裡才補上 cart_items controller, 可以這樣嗎？</h2><p>可以。model 和 controller 不是有一個就非要有另一個。</p>
-<h2 id="下方何解？"><a href="#下方何解？" class="headerlink" title="下方何解？"></a>下方何解？</h2><figure class="highlight erb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;%=<span class="ruby"> link_to item_path(product), <span class="symbol">method:</span> <span class="symbol">:delete</span> <span class="keyword">do</span> </span>%&gt;</div><div class="line">  &lt;i class="fa fa-trash"&gt;&lt;/i&gt;</div><div class="line">&lt;%<span class="ruby"> <span class="keyword">end</span> </span>%&gt;</div></pre></td></tr></table></figure>
-<p>一般我們使用 link_to 是像：<br><figure class="highlight erb"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">link_to "XXX", item_path(product), method: :get</div></pre></td></tr></table></figure></p>
-<p>method: :get 可以省略 (其他 http verbs 不能省)，於是寫成：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">link_to &quot;XXX&quot;, item_path(product)</div></pre></td></tr></table></figure></p>
-<p>我們在網頁上看到的，則是一個顯示為 “XXX” 文字的 link</p>
-<p>而教材上的寫法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">link_to item_path(product), method: :delete do  # 直接接 路徑 和 method</div><div class="line">  something			# 要宣告的內容，比如一段 html code</div><div class="line">end</div></pre></td></tr></table></figure></p>
-<p>我們不想顯示什麼文字 link，而是想要顯示其他 html 的 code，就可以用這種方式去宣告。</p>
-<p>這時，前端網頁上看到的，是一個 垃圾桶 icon, 點下去就是對 item_path(product) 執行 delete 的動作，也就是把 product 給刪除了。</p>
-<h2 id="“點下去就是對-item-path-product-執行-delete-的動作，也就是把-product-給刪除了。”-這句話是對的嗎？"><a href="#“點下去就是對-item-path-product-執行-delete-的動作，也就是把-product-給刪除了。”-這句話是對的嗎？" class="headerlink" title="“點下去就是對 item_path(product) 執行 delete 的動作，也就是把 product 給刪除了。” 這句話是對的嗎？"></a>“點下去就是對 item_path(product) 執行 delete 的動作，也就是把 product 給刪除了。” 這句話是對的嗎？</h2><p>對！</p>
-<h2 id="lt-i-class-quot-fa-fa-trash-quot-gt-lt-i-gt-為什麼使用-lt-i-gt-tag"><a href="#lt-i-class-quot-fa-fa-trash-quot-gt-lt-i-gt-為什麼使用-lt-i-gt-tag" class="headerlink" title="&lt;i class=&quot;fa fa-trash&quot;&gt;&lt;/i&gt; 為什麼使用 &lt;i&gt; tag?"></a><code>&lt;i class=&quot;fa fa-trash&quot;&gt;&lt;/i&gt;</code> 為什麼使用 <code>&lt;i&gt;</code> tag?</h2><blockquote>
-<p>tba</p>
-</blockquote>
-<h2 id="在這個例子中，是宣告一個垃圾桶-icon-那如果要宣告其他的東西，比如說一張圖片，要怎麼做？"><a href="#在這個例子中，是宣告一個垃圾桶-icon-那如果要宣告其他的東西，比如說一張圖片，要怎麼做？" class="headerlink" title="在這個例子中，是宣告一個垃圾桶 icon, 那如果要宣告其他的東西，比如說一張圖片，要怎麼做？"></a>在這個例子中，是宣告一個垃圾桶 icon, 那如果要宣告其他的東西，比如說一張圖片，要怎麼做？</h2><p>都是寫在 <code>&lt;a&gt;</code> tag 裡面，就用 html 的正常寫法寫就好。</p>
-<h2 id="拆解下面-code-block-中的-item-cart-cart-items-find-by-product-id-params-id-以及-product-item-product。"><a href="#拆解下面-code-block-中的-item-cart-cart-items-find-by-product-id-params-id-以及-product-item-product。" class="headerlink" title="拆解下面 code block 中的 @item = @cart.cart_items.find_by(product_id: params[:id]) 以及 @product = @item.product。"></a>拆解下面 code block 中的 <code>@item = @cart.cart_items.find_by(product_id: params[:id])</code> 以及 <code>@product = @item.product</code>。</h2><p>cart_items_controller.rb<br><figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">CartItemsController</span> &lt; ApplicationController</span></div><div class="line">  before_action <span class="symbol">:authenticate_user!</span></div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">destroy</span></span></div><div class="line">    @cart = current_cart</div><div class="line">    @item = @cart.cart_items.find_by(<span class="symbol">product_id:</span> params[<span class="symbol">:id</span>])</div><div class="line">    @product = @item.product</div><div class="line">    @item.destroy</div><div class="line"></div><div class="line">    flash[<span class="symbol">:warning</span>] = <span class="string">"成功將 <span class="subst">#&#123;@product.title&#125;</span> 從購物車刪除!"</span></div><div class="line">    redirect_to <span class="symbol">:back</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure></p>
-<blockquote>
-<p>tba</p>
-</blockquote>
-<h1 id="購物車加入「數量」設計-基礎設定"><a href="#購物車加入「數量」設計-基礎設定" class="headerlink" title="購物車加入「數量」設計 ( 基礎設定 )"></a>購物車加入「數量」設計 ( 基礎設定 )</h1><h2 id="下面的-item-cart-item-product-搞不清楚它們之間的關係。另外，-lt-form-for-item-url-item-path-product-do-f-gt-中為什麼要寫-url"><a href="#下面的-item-cart-item-product-搞不清楚它們之間的關係。另外，-lt-form-for-item-url-item-path-product-do-f-gt-中為什麼要寫-url" class="headerlink" title="下面的 item, cart_item, product 搞不清楚它們之間的關係。另外，&lt;%= form_for item, url: item_path(product) do |f| %&gt; 中為什麼要寫 url?"></a>下面的 item, cart_item, product 搞不清楚它們之間的關係。另外，<code>&lt;%= form_for item, url: item_path(product) do |f| %&gt;</code> 中為什麼要寫 url?</h2><p>app/views/carts/index.html.erb<br><figure class="highlight erb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">+     &lt;td&gt;</div><div class="line">+       &lt;%<span class="ruby"> item = current_cart.cart_items.find_by(<span class="symbol">product_id:</span> product) </span>%&gt;</div><div class="line">+       &lt;%=<span class="ruby"> form_for item, <span class="symbol">url:</span> item_path(product) <span class="keyword">do</span> <span class="params">|f|</span> </span>%&gt;</div><div class="line">+         &lt;%=<span class="ruby"> f.select <span class="symbol">:quantity</span>, [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>] </span>%&gt;</div><div class="line">+         &lt;%=<span class="ruby"> f.submit <span class="string">"更新"</span>, <span class="symbol">data:</span> &#123; <span class="symbol">disable_with:</span> <span class="string">"Submiting..."</span> &#125; </span>%&gt;</div><div class="line">+       &lt;%<span class="ruby"> <span class="keyword">end</span> </span>%&gt;</div><div class="line">+     &lt;/td&gt;</div></pre></td></tr></table></figure></p>
-<blockquote>
-<p>tba</p>
-</blockquote>
-<h1 id="購物車加入「數量」設計-總價-gt-小計-x-數量"><a href="#購物車加入「數量」設計-總價-gt-小計-x-數量" class="headerlink" title="購物車加入「數量」設計 ( 總價 =&gt; 小計 x 數量 )"></a>購物車加入「數量」設計 ( 總價 =&gt; 小計 x 數量 )</h1><h2 id="為什麼要把-items-改成-cart-items"><a href="#為什麼要把-items-改成-cart-items" class="headerlink" title="為什麼要把 items 改成 cart_items?"></a>為什麼要把 <code>items</code> 改成 <code>cart_items</code>?</h2><p>app/models/cart.rb<br><figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">total_price</span></span></div><div class="line">    sum = <span class="number">0</span></div><div class="line"></div><div class="line">-   items.each <span class="keyword">do</span> <span class="params">|item|</span></div><div class="line">-     sum = sum + item.price</div><div class="line">+     cart_items.each <span class="keyword">do</span> <span class="params">|cart_item|</span></div><div class="line">+       sum = sum + (cart_item.product.price * cart_item.quantity)</div><div class="line">      <span class="keyword">end</span></div><div class="line"></div><div class="line">      sum</div><div class="line">    <span class="keyword">end</span></div><div class="line">  <span class="keyword">end</span></div></pre></td></tr></table></figure></p>
-<blockquote>
-<p>tba</p>
-</blockquote>
-<h1 id="購物車加入「數量」設計-數量為-0-的貨物不能「購買」"><a href="#購物車加入「數量」設計-數量為-0-的貨物不能「購買」" class="headerlink" title="購物車加入「數量」設計 ( 數量為 0 的貨物不能「購買」)"></a>購物車加入「數量」設計 ( 數量為 0 的貨物不能「購買」)</h1><h2 id="下方-item-params-quantity-to-i-是什麼？為什麼要用它？"><a href="#下方-item-params-quantity-to-i-是什麼？為什麼要用它？" class="headerlink" title="下方 item_params[:quantity].to_i 是什麼？為什麼要用它？"></a>下方 item_params[:quantity].to_i 是什麼？為什麼要用它？</h2><p>app/controllers/cart_items_controller.rb<br><figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">update</span></span></div><div class="line">    @cart = current_cart</div><div class="line">    @item = @cart.find_cart_item(params[<span class="symbol">:id</span>])</div><div class="line"></div><div class="line">+   <span class="keyword">if</span> @item.product.quantity &gt;= item_params[<span class="symbol">:quantity</span>].to_i</div><div class="line">      @item.update(item_params)</div><div class="line">+     flash[<span class="symbol">:notice</span>] = <span class="string">"成功變更數量"</span></div><div class="line">+   <span class="keyword">else</span></div><div class="line">+     flash[<span class="symbol">:warning</span>] = <span class="string">"數量不足以加入購物車"</span></div><div class="line">+   <span class="keyword">end</span></div><div class="line"></div><div class="line">    redirect_to carts_path</div><div class="line">  <span class="keyword">end</span></div></pre></td></tr></table></figure></p>
-<blockquote>
-<p>tba</p>
-</blockquote>
-<p><br><br><br></p>
-<h4 id="購物車加入「數量」設計-購物車不能手動更新超過庫存的數量"><a href="#購物車加入「數量」設計-購物車不能手動更新超過庫存的數量" class="headerlink" title="購物車加入「數量」設計 ( 購物車不能手動更新超過庫存的數量 )"></a>購物車加入「數量」設計 ( 購物車不能手動更新超過庫存的數量 )</h4><p>n/a<br><br><br><br></p>
-<h1 id="訂單產生時，要把購物車的商品數量存進去"><a href="#訂單產生時，要把購物車的商品數量存進去" class="headerlink" title="訂單產生時，要把購物車的商品數量存進去"></a>訂單產生時，要把購物車的商品數量存進去</h1><h2 id="下方的-item-quantity-cart-cart-items-find-by-product-id-cart-item-quantity-何解？"><a href="#下方的-item-quantity-cart-cart-items-find-by-product-id-cart-item-quantity-何解？" class="headerlink" title="下方的 item.quantity = cart.cart_items.find_by(product_id: cart_item).quantity 何解？"></a>下方的 <code>item.quantity = cart.cart_items.find_by(product_id: cart_item).quantity</code> 何解？</h2><p>app/models/order.rb<br><figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">build_item_cache_from_cart</span><span class="params">(cart)</span></span></div><div class="line">  cart.items.each <span class="keyword">do</span> <span class="params">|cart_item|</span></div><div class="line">    item = items.build</div><div class="line">    item.product_name = cart_item.title</div><div class="line">    item.quantity = cart.cart_items.find_by(<span class="symbol">product_id:</span> cart_item).quantity</div><div class="line">    item.price = cart_item.price</div><div class="line">    item.save</div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure></p>
-<blockquote>
-<p>tba</p>
-</blockquote>
-<p><br><br><br></p>
-<h4 id="產生訂單後，購物車應該被清空"><a href="#產生訂單後，購物車應該被清空" class="headerlink" title="產生訂單後，購物車應該被清空"></a>產生訂單後，購物車應該被清空</h4><h4 id="修改訂單頁面-增加數量欄位"><a href="#修改訂單頁面-增加數量欄位" class="headerlink" title="修改訂單頁面 ( 增加數量欄位 )"></a>修改訂單頁面 ( 增加數量欄位 )</h4><p>n/a<br><br><br><br></p>
-<h1 id="建立-account-orders-可以看到該使用者過去所有訂單"><a href="#建立-account-orders-可以看到該使用者過去所有訂單" class="headerlink" title="建立 account/orders 可以看到該使用者過去所有訂單"></a>建立 account/orders 可以看到該使用者過去所有訂單</h1><h2 id="order-created-at-是-UTC-0-的時間，所以我們在訂單列表看到的時間會比-UTC-8-的台灣慢-8-小時。"><a href="#order-created-at-是-UTC-0-的時間，所以我們在訂單列表看到的時間會比-UTC-8-的台灣慢-8-小時。" class="headerlink" title="order.created_at 是 UTC 0 的時間，所以我們在訂單列表看到的時間會比 UTC+8 的台灣慢 8 小時。"></a>order.created_at 是 UTC 0 的時間，所以我們在訂單列表看到的時間會比 UTC+8 的台灣慢 8 小時。</h2><p><br><br><br></p>
-<h4 id="結賬後跳轉到-account-orders-index"><a href="#結賬後跳轉到-account-orders-index" class="headerlink" title="結賬後跳轉到 account/orders#index"></a>結賬後跳轉到 account/orders#index</h4><p>n/a<br><br><br><br></p>
-<h1 id="建立-admin-orders-可以看到系統內所有訂單"><a href="#建立-admin-orders-可以看到系統內所有訂單" class="headerlink" title="建立 admin/orders 可以看到系統內所有訂單"></a>建立 admin/orders 可以看到系統內所有訂單</h1><h2 id="拆解-orders-Order-order-“id-DESC”-為什麼不是-orders-Order-all-order-“id-DESC”"><a href="#拆解-orders-Order-order-“id-DESC”-為什麼不是-orders-Order-all-order-“id-DESC”" class="headerlink" title="拆解 @orders = Order.order(“id DESC”) 為什麼不是@orders = Order.all.order(“id DESC”)?"></a>拆解 @orders = Order.order(“id DESC”) 為什麼不是@orders = Order.all.order(“id DESC”)?</h2><p>都可以。前面的寫法是 rails model 那邊的 magic</p>
-<h2 id="lt-th-gt-link-to-order-id-admin-order-path-order-lt-th-gt-為什麼不用吃-order-token-當參數？如果今天不是EC網站，這樣會不會有隱私問題？"><a href="#lt-th-gt-link-to-order-id-admin-order-path-order-lt-th-gt-為什麼不用吃-order-token-當參數？如果今天不是EC網站，這樣會不會有隱私問題？" class="headerlink" title="&lt;th&gt;link_to order.id, admin_order_path(order) &lt;/th&gt; 為什麼不用吃 order.token 當參數？如果今天不是EC網站，這樣會不會有隱私問題？"></a><code>&lt;th&gt;link_to order.id, admin_order_path(order) &lt;/th&gt;</code> 為什麼不用吃 order.token 當參數？如果今天不是EC網站，這樣會不會有隱私問題？</h2><blockquote>
-<p>tba</p>
-</blockquote>
-<h1 id="admin-的-order-列表應要能顯示訂單狀態"><a href="#admin-的-order-列表應要能顯示訂單狀態" class="headerlink" title="admin 的 order 列表應要能顯示訂單狀態"></a>admin 的 order 列表應要能顯示訂單狀態</h1><h2 id="拆解-t-“orders-order-state-order-aasm-state-”"><a href="#拆解-t-“orders-order-state-order-aasm-state-”" class="headerlink" title="拆解 t(“orders.order_state.#{order.aasm_state}”)"></a>拆解 t(“orders.order_state.#{order.aasm_state}”)</h2><p>config/locales/zh-TW.yml 中的 orders: 和 order_state: 又是代表什麼？</p>
-<p><a href="https://ihower.tw/rails4/i18n.html" target="_blank" rel="external">https://ihower.tw/rails4/i18n.html</a><br>t 是一個 i18n helper</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">module OrdersHelper</div><div class="line">  def render_order_state(order)</div><div class="line">    t(&quot;orders.order_state.#&#123;order.aasm_state&#125;&quot;)</div><div class="line">  end</div><div class="line">end</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">zh-TW:</div><div class="line">  orders:</div><div class="line">    order_state:</div><div class="line">      order_placed: 已下單</div><div class="line">      paid: 已付款</div><div class="line">      shipping: 出貨中</div><div class="line">      shipped: 已到貨</div><div class="line">      order_cancelled: 取消訂單</div><div class="line">      good_returned: 退貨</div></pre></td></tr></table></figure>
-<p>其實是看 <code>t(&quot;orders.order_state.#{order.aasm_state}&quot;)</code> 的結構<br>最後面的 #{order.aasm_state}  &lt;== 代表該訂單 aasm_state 欄位的資料 , 我們在 order.rb 裡面將該訂單設定了六個狀態，會依照不同狀態，把英文轉成中文。</p>
-<h2 id="怎麼使用-i18n-及-yml-檔來轉換語言？"><a href="#怎麼使用-i18n-及-yml-檔來轉換語言？" class="headerlink" title="怎麼使用 i18n 及 yml 檔來轉換語言？"></a>怎麼使用 i18n 及 yml 檔來轉換語言？</h2><p>兩種作法：</p>
-<p>第一種是直接在 order_info.rb 那邊改 message<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">class OrderInfo &lt; ActiveRecord::Base</div><div class="line">  belongs_to :order</div><div class="line">  validates :billing_name,     presence: &#123; message: I18n.t(&quot;can_not_be_blank&quot;) &#125;</div><div class="line">  validates :billing_address,  presence: &#123; message: &quot;Can not be blank!&quot; &#125;</div><div class="line">  validates :shipping_name,    presence: true</div><div class="line">  validates :shipping_address, presence: true</div><div class="line">end</div></pre></td></tr></table></figure></p>
-<p>或是在 zh-TW.yml 那邊改 message<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">zh-TW:</div><div class="line">  orders:</div><div class="line">    order_state:</div><div class="line">      order_placed: 已下單</div><div class="line">      paid: 已付款</div><div class="line">      shipping: 出貨中</div><div class="line">      shipped: 已到貨</div><div class="line">      order_cancelled: 取消訂單</div><div class="line">      goods_returned: 退貨</div><div class="line">  can_not_be_blank: 不能空白喔！</div></pre></td></tr></table></figure></p>
-<p>第二種是按照他的 message 的邏輯建一個 i18n 設定檔<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">zh-TW:</div><div class="line">  orders:</div><div class="line">    order_state:</div><div class="line">      order_placed: 已下單</div><div class="line">      paid: 已付款</div><div class="line">      shipping: 出貨中</div><div class="line">      shipped: 已到貨</div><div class="line">      order_cancelled: 取消訂單</div><div class="line">      goods_returned: 退貨</div><div class="line">  can_not_be_blank: 不可以空白</div><div class="line">  activerecord:</div><div class="line">    errors:</div><div class="line">      models:</div><div class="line">        order_info:</div><div class="line">          attributes:</div><div class="line">            shipping_address:</div><div class="line">              blank: 不可以空白</div><div class="line">            shipping_name:</div><div class="line">              blank: 不可以空白</div><div class="line">            billing_name:</div><div class="line">              blank: 不可以空白</div><div class="line">            billing_address:</div><div class="line">              blank: 不可以空白</div></pre></td></tr></table></figure></p>
-<p>兩種方法都寫的話，第二種會優先於第一種來顯示。</p>
-<h2 id="上題的-i18n-設定檔，就是指-zh-TW-yml-這種嗎？還是在-config-locales-裡面的檔案都算？"><a href="#上題的-i18n-設定檔，就是指-zh-TW-yml-這種嗎？還是在-config-locales-裡面的檔案都算？" class="headerlink" title="上題的 i18n 設定檔，就是指 zh-TW.yml 這種嗎？還是在 config/locales 裡面的檔案都算？"></a>上題的 i18n 設定檔，就是指 zh-TW.yml 這種嗎？還是在 config/locales 裡面的檔案都算？</h2><p>config/locales 裡面的檔案都算</p>
-<h2 id="message-的邏輯要怎麼查？"><a href="#message-的邏輯要怎麼查？" class="headerlink" title="message 的邏輯要怎麼查？"></a>message 的邏輯要怎麼查？</h2><p>可以從錯誤訊息看到一長串的路徑，這就是 message 的邏輯。</p>
-<h2 id="提問-有沒有其他方式，比如在-terminal-的指令，能夠列出這樣的邏輯？"><a href="#提問-有沒有其他方式，比如在-terminal-的指令，能夠列出這樣的邏輯？" class="headerlink" title="[提問] 有沒有其他方式，比如在 terminal 的指令，能夠列出這樣的邏輯？"></a>[提問] 有沒有其他方式，比如在 terminal 的指令，能夠列出這樣的邏輯？</h2><blockquote>
-<p>tba</p>
-</blockquote>
-<h2 id="怎麼依照-IP-或是地理位置來轉換語言？"><a href="#怎麼依照-IP-或是地理位置來轉換語言？" class="headerlink" title="怎麼依照 IP 或是地理位置來轉換語言？"></a>怎麼依照 IP 或是地理位置來轉換語言？</h2><p><a href="https://github.com/alexreisner/geocoder" target="_blank" rel="external">https://github.com/alexreisner/geocoder</a><br><a href="http://www.sitepoint.com/go-global-rails-i18n/" target="_blank" rel="external">http://www.sitepoint.com/go-global-rails-i18n/</a><br><a href="http://edgeguides.rubyonrails.org/i18n.html" target="_blank" rel="external">http://edgeguides.rubyonrails.org/i18n.html</a><br><a href="http://blog.emiketic.com/web/2015/12/06/using-rails-variants-for-custom-device-templating-and-localisation.html" target="_blank" rel="external">http://blog.emiketic.com/web/2015/12/06/using-rails-variants-for-custom-device-templating-and-localisation.html</a></p>
-<h2 id="怎麼依照系統語言來選擇網站顯示的語言？"><a href="#怎麼依照系統語言來選擇網站顯示的語言？" class="headerlink" title="怎麼依照系統語言來選擇網站顯示的語言？"></a>怎麼依照系統語言來選擇網站顯示的語言？</h2><p><a href="http://guides.rubyonrails.org/i18n.html#setting-the-locale-from-the-client-supplied-information" target="_blank" rel="external">http://guides.rubyonrails.org/i18n.html#setting-the-locale-from-the-client-supplied-information</a></p>
-<h1 id="單張-order-應要可以依「按照狀態圖」改變狀態"><a href="#單張-order-應要可以依「按照狀態圖」改變狀態" class="headerlink" title="單張 order 應要可以依「按照狀態圖」改變狀態"></a>單張 order 應要可以依「按照狀態圖」改變狀態</h1><h2 id="ship-deliver-cancel-order-return-goods-這些有-bang-的-methods-是-aasm-自動產生的嗎？"><a href="#ship-deliver-cancel-order-return-goods-這些有-bang-的-methods-是-aasm-自動產生的嗎？" class="headerlink" title=".ship! .deliver! .cancel_order! .return_goods! 這些有 bang 的 methods 是 aasm 自動產生的嗎？"></a>.ship! .deliver! .cancel_order! .return_goods! 這些有 bang 的 methods 是 aasm 自動產生的嗎？</h2><p>是的</p>
-<h2 id="下面這段中，-order-Order-find-params-id-在調整為使用-token-後，是不是應該改成-order-Order-find-by-token-params-id"><a href="#下面這段中，-order-Order-find-params-id-在調整為使用-token-後，是不是應該改成-order-Order-find-by-token-params-id" class="headerlink" title="下面這段中，@order = Order.find(params[:id] 在調整為使用 token 後，是不是應該改成 @order = Order.find_by_token(params[:id])?"></a>下面這段中，@order = Order.find(params[:id] 在調整為使用 token 後，是不是應該改成 @order = Order.find_by_token(params[:id])?</h2><p>app/controllers/admin/orders_controller.rb<br><figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">show</span></span></div><div class="line">  @order = Order.find(params[<span class="symbol">:id</span>])</div><div class="line">  @order_info = @order.info</div><div class="line">  @order_items = @order.items</div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure></p>
-<p>如果是在 admin 層級，不需要是 Order.find_by(token: params[:id])</p>
-<h2 id="承上，-order-items-的部分，-order-怎麼和-items-產生關聯的？是因為-Order-model-中的-has-many-items-class-name-quot-OrderItem-quot-dependent-destroy-嗎？"><a href="#承上，-order-items-的部分，-order-怎麼和-items-產生關聯的？是因為-Order-model-中的-has-many-items-class-name-quot-OrderItem-quot-dependent-destroy-嗎？" class="headerlink" title="承上，@order.items 的部分，@order 怎麼和 items 產生關聯的？是因為 Order model 中的 has_many :items, class_name: &quot;OrderItem&quot;, dependent: :destroy 嗎？"></a>承上，@order.items 的部分，@order 怎麼和 items 產生關聯的？是因為 Order model 中的 <code>has_many :items, class_name: &quot;OrderItem&quot;, dependent: :destroy</code> 嗎？</h2><blockquote>
-<p>tba</p>
-</blockquote>
-<h2 id="拆解-lt-render-“admin-orders-state-option”-order-order-gt"><a href="#拆解-lt-render-“admin-orders-state-option”-order-order-gt" class="headerlink" title="拆解 &lt;%= render “admin/orders/state_option”, order: @order %&gt;"></a>拆解 &lt;%= render “admin/orders/state_option”, order: @order %&gt;</h2><blockquote>
-<p>tba</p>
-</blockquote>
-<h2 id="下面是-CSS-的屬性"><a href="#下面是-CSS-的屬性" class="headerlink" title="下面是 CSS 的屬性"></a>下面是 CSS 的屬性</h2><figure class="highlight erb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">+  &lt;%=<span class="ruby"> link_to(<span class="string">"清空購物車"</span>, clean_carts_path ,</span></div><div class="line">+              <span class="symbol">method:</span> <span class="symbol">:delete</span> , <span class="class"><span class="keyword">class</span>: "<span class="title">pull</span>-<span class="title">right</span>",</span></div><div class="line">+              <span class="symbol">style:</span> <span class="string">"text-decoration: underline;"</span>,</div><div class="line">+              <span class="symbol">data:</span> &#123; <span class="symbol">confirm:</span> <span class="string">"你確定要清空整個購物車嗎？"</span>&#125; )%&gt;</div></pre></td></tr></table></figure>
-<p><code>style: &quot;text-decoration: underline;&quot;</code> 是 CSS text-decoration Property<br><a href="http://www.w3schools.com/cssref/pr_text_text-decoration.asp" target="_blank" rel="external">http://www.w3schools.com/cssref/pr_text_text-decoration.asp</a></p>
-<p><code>data: { confirm: &quot;你確定要清空整個購物車嗎？&quot;}</code> 之外，還有 <code>data: { disable_with: &quot;Submitting......&quot;}</code><br><a href="http://api.rubyonrails.org/classes/ActionView/Helpers/FormTagHelper.html#method-i-submit_tag" target="_blank" rel="external">http://api.rubyonrails.org/classes/ActionView/Helpers/FormTagHelper.html#method-i-submit_tag</a></p>
-<h1 id="EPIC"><a href="#EPIC" class="headerlink" title="EPIC"></a>EPIC</h1><ul>
-<li><p>購物車內沒東西還是可以結帳</p>
-</li>
-<li><p>出貨後無法自動減少庫存數</p>
-</li>
-<li><p>後台無法刪除產品</p>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/18/Rails-EC-Week-2/" itemprop="url">
-                  Rails EC Week 2
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-09-18T16:57:13+08:00" content="2016-09-18">
-              2016-09-18
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/18/Rails-EC-Week-2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/09/18/Rails-EC-Week-2/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="商品加到購物車"><a href="#商品加到購物車" class="headerlink" title="商品加到購物車"></a>商品加到購物車</h1><h2 id="為什麼要有購物車的設計？不能直接把商品跟使用者做連結嗎-用使用者當container-？是為了session還是為了將來在shopping-cart之外，還能實作出-buy-later-wish-list……等分類做準備？"><a href="#為什麼要有購物車的設計？不能直接把商品跟使用者做連結嗎-用使用者當container-？是為了session還是為了將來在shopping-cart之外，還能實作出-buy-later-wish-list……等分類做準備？" class="headerlink" title="為什麼要有購物車的設計？不能直接把商品跟使用者做連結嗎(用使用者當container)？是為了session還是為了將來在shopping cart之外，還能實作出 buy later, wish list……等分類做準備？"></a>為什麼要有購物車的設計？不能直接把商品跟使用者做連結嗎(用使用者當container)？是為了session還是為了將來在shopping cart之外，還能實作出 buy later, wish list……等分類做準備？</h2><p>[不確定] 可以把商品掛 user 身上結帳，但有幾個特性提一下：</p>
-<ol>
-<li>這樣無法記錄購物車資訊，也就無法做後續的數據分析及利用。</li>
-<li>理論上可以把 user 購物欄位做在 user model ，但實務上不這麼做，因為 user model 會變得很複雜。你有一台用 hash 的形式裝要買的商品和數量的購物車，比如 { xxx: 2, aaa: 1 }，就要生一個欄位，不現實。</li>
-<li>會建議購物車、稍後購買、心願清單……等，有各自的model。</li>
-</ol>
-<h2 id="提問-實務上，要有購物車才能產生類似訂單記錄／訂單快照的功能？"><a href="#提問-實務上，要有購物車才能產生類似訂單記錄／訂單快照的功能？" class="headerlink" title="[提問] 實務上，要有購物車才能產生類似訂單記錄／訂單快照的功能？"></a>[提問] 實務上，要有購物車才能產生類似訂單記錄／訂單快照的功能？</h2><p>pass</p>
-<h2 id="提問-假如每個人只能有一台購物車，每一次結帳完就把購物車清空，那似乎也不會多出什麼欄位，而且-hash-一樣可以做出訂單快照，不是嗎？"><a href="#提問-假如每個人只能有一台購物車，每一次結帳完就把購物車清空，那似乎也不會多出什麼欄位，而且-hash-一樣可以做出訂單快照，不是嗎？" class="headerlink" title="[提問] 假如每個人只能有一台購物車，每一次結帳完就把購物車清空，那似乎也不會多出什麼欄位，而且 hash 一樣可以做出訂單快照，不是嗎？"></a>[提問] 假如每個人只能有一台購物車，每一次結帳完就把購物車清空，那似乎也不會多出什麼欄位，而且 hash 一樣可以做出訂單快照，不是嗎？</h2><p>pass</p>
-<h2 id="下面-code-block-中，是不是一定要有-has-many-items-through-cart-items-source-product-能不能直接-has-many-products"><a href="#下面-code-block-中，是不是一定要有-has-many-items-through-cart-items-source-product-能不能直接-has-many-products" class="headerlink" title="下面 code block 中，是不是一定要有 has_many :items, through: :cart_items, source: :product? 能不能直接 has_many :products?"></a>下面 code block 中，是不是一定要有 <code>has_many :items, through: :cart_items, source: :product</code>? 能不能直接 <code>has_many :products</code>?</h2><figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cart</span> &lt; ActiveRecord::Base</span></div><div class="line">  has_many <span class="symbol">:cart_items</span>, <span class="symbol">depedent:</span> <span class="symbol">:destroy</span></div><div class="line">  has_many <span class="symbol">:items</span>, <span class="symbol">through:</span> <span class="symbol">:cart_items</span>, <span class="symbol">source:</span> <span class="symbol">:product</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<blockquote>
-<p>tba</p>
-</blockquote>
-<h2 id="def-current-cart-中的-current-cart-是什麼？哪裡來的？"><a href="#def-current-cart-中的-current-cart-是什麼？哪裡來的？" class="headerlink" title="def current_cart 中的 @current_cart 是什麼？哪裡來的？"></a><code>def current_cart</code> 中的 <code>@current_cart</code> 是什麼？哪裡來的？</h2><figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ApplicationController</span> &lt; ActionController::Base</span></div><div class="line"></div><div class="line">  ......</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">current_cart</span></span></div><div class="line">    @current_cart <span class="params">||</span>= find_cart</div><div class="line">  <span class="keyword">end</span></div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">find_cart</span></span></div><div class="line">    cart = Cart.find_by(<span class="symbol">id:</span> session[<span class="symbol">:cart_id</span>])</div><div class="line"></div><div class="line">    <span class="keyword">unless</span> cart.present?</div><div class="line">    cart = Cart.create</div><div class="line">  <span class="keyword">end</span></div><div class="line"></div><div class="line">  session[<span class="symbol">:cart_id</span>] = cart.id</div><div class="line">  <span class="keyword">return</span> cart</div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<h2 id="Ans"><a href="#Ans" class="headerlink" title="Ans:"></a>Ans:</h2><p>我們先來拆解各個元素：</p>
-<figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">current_cart</span></span></div><div class="line">  @current_cart</div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<p>把 def current_cart 改寫成這樣來理解，當我們第一次跑 def current_cart 時，因為沒有 @current_cart，所有程式會自動去建立 @current_cart 這個 instance variable。</p>
-<figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">current_cart</span></span></div><div class="line">  @current_cart <span class="params">||</span>= find_cart</div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<p>a ||= b 的意思是，假如 a = nil, 就會先被賦予初始值 b<br>所有上面 @current_cart ||= find_cart 的意思是，假如 @current_cart = nil, 就賦予 find_cart 得到的值。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">......</div><div class="line">  session[:cart_id] = cart.id</div><div class="line">  cart</div><div class="line">end</div></pre></td></tr></table></figure>
-<p>“Ruby methods ALWAYS return the evaluated result of the last line of the expression unless an explicit return comes before it.” 所以 find_cart 最後一行的 cart, 實際上是 return cart 的作用。沒有最後一行的 cart, 就會 return session[:cart_id] = cart.id 給 @current_cart, 程式就會出錯。</p>
-<p>整個流程就是：</p>
-<ol>
-<li>執行 current_cart</li>
-<li>沒有 @current_cart, 所以建立 @current_cart</li>
-<li>建立之後，@current_cart = nil, 所以執行 find_cart</li>
-<li>find_cart 最後 return cart 的值，所以把值吐給 @current_cart</li>
-</ol>
-<h2 id="def-add-to-cart-中的-current-cart-是個-method，為什麼可以直接被當成物件來使用，後面接上-add-product-to-cart-product-變成-current-cart-add-product-to-cart-product-？"><a href="#def-add-to-cart-中的-current-cart-是個-method，為什麼可以直接被當成物件來使用，後面接上-add-product-to-cart-product-變成-current-cart-add-product-to-cart-product-？" class="headerlink" title="def add_to_cart 中的 current_cart 是個 method，為什麼可以直接被當成物件來使用，後面接上 .add_product_to_cart(@product) 變成 current_cart.add_product_to_cart(@product)？"></a><code>def add_to_cart</code> 中的 <code>current_cart</code> 是個 method，為什麼可以直接被當成物件來使用，後面接上 .add_product_to_cart(@product) 變成 current_cart.add_product_to_cart(@product)？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">def add(a, b)</div><div class="line">	sum = a + b</div><div class="line">end</div></pre></td></tr></table></figure>
-<p>add(3, 5) 的值是 8，add(3, 5) + 3 = 11；那我們也可以 assign 給它一個 variable, 比如說 total = add(3, 5), total + 3 一樣是 11。回到原來的問題，current_cart 的值就是 @current_cart, 所以可以直接拿來用。</p>
-<h2 id="session-cart-id-cart-id，究竟-session-hash-有哪些-keys-呢？"><a href="#session-cart-id-cart-id，究竟-session-hash-有哪些-keys-呢？" class="headerlink" title="session[:cart_id] = cart.id，究竟 session hash 有哪些 keys 呢？"></a><code>session[:cart_id] = cart.id</code>，究竟 session hash 有哪些 keys 呢？</h2><p>在檔案裡面插入 byebug，然後在 rails server 中可以看到所有的 session hash 的內容。artstore 的 session 沒有 cart_id 這個 key, 我們直接 session[:cart_id] = cart.id 就可以在 session hash 中新增這組 key-value pair.</p>
-<h2 id="下面這段-code-如果-cart-Cart-find-by-id-session-cart-id-找不到，不會直接-throw-exception-導致接下來的-unless-不會跑下去嗎？"><a href="#下面這段-code-如果-cart-Cart-find-by-id-session-cart-id-找不到，不會直接-throw-exception-導致接下來的-unless-不會跑下去嗎？" class="headerlink" title="下面這段 code, 如果 cart = Cart.find_by(id: session[:cart_id] 找不到，不會直接 throw exception 導致接下來的 unless 不會跑下去嗎？"></a>下面這段 code, 如果 <code>cart = Cart.find_by(id: session[:cart_id]</code> 找不到，不會直接 throw exception 導致接下來的 <code>unless</code> 不會跑下去嗎？</h2><figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_cart</span></span></div><div class="line">  cart = Cart.find_by(<span class="symbol">id:</span> session[<span class="symbol">:cart_id</span>]</div><div class="line"></div><div class="line">  <span class="keyword">unless</span> cart.present?</div><div class="line">    cart = Cart.create</div><div class="line">  <span class="keyword">end</span></div><div class="line"></div><div class="line">  session[<span class="symbol">:cart_id</span>] = cart.id</div><div class="line">  cart</div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<blockquote>
-<p>tba</p>
-</blockquote>
-<h2 id="為什麼-product-controller-有一個-def-add-to-cart-後，還要在-cart-model-有一個-def-add-product-to-cart-product-？"><a href="#為什麼-product-controller-有一個-def-add-to-cart-後，還要在-cart-model-有一個-def-add-product-to-cart-product-？" class="headerlink" title="為什麼 product controller 有一個 def add_to_cart 後，還要在 cart model 有一個 def add_product_to_cart(product)？"></a>為什麼 product controller 有一個 <code>def add_to_cart</code> 後，還要在 cart model 有一個 <code>def add_product_to_cart(product)</code>？</h2><p>可能其他地方還會用到 add_product_to_cart(product) method, 所以拆出來。</p>
-<h2 id="ci-product-product-是筆誤？還是-ci-product-id-product-id-的另一種寫法，屬於-Rails-convention-還是說這兩種是不同的兩件事，但殊途同歸？"><a href="#ci-product-product-是筆誤？還是-ci-product-id-product-id-的另一種寫法，屬於-Rails-convention-還是說這兩種是不同的兩件事，但殊途同歸？" class="headerlink" title="ci.product = product 是筆誤？還是 ci.product_id = product.id 的另一種寫法，屬於 Rails convention? 還是說這兩種是不同的兩件事，但殊途同歸？"></a><code>ci.product = product</code> 是筆誤？還是 <code>ci.product_id = product.id</code> 的另一種寫法，屬於 Rails convention? 還是說這兩種是不同的兩件事，但殊途同歸？</h2><figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">add_product_to_cart</span><span class="params">(product)</span></span></div><div class="line">  ci = cart_items.build</div><div class="line">  ci.product = product</div><div class="line">  ci.save</div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<p>也可以寫成</p>
-<figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span>  <span class="title">add_product_to_cart</span><span class="params">(product)</span></span></div><div class="line">  items &lt;&lt; product</div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<p>不是筆誤，是殊途同歸。ci.product_id = product.id 只會處理 product_id 欄位，ci.product = product, 如果欄位是一樣的，所有的值就都會傳過去，包括product_id。</p>
-<h2 id="提問-ci-product-product-時，是不是就把購物車內商品-ci-的價格給定下來，之後改-product-的-title-description-price-quantity-（除非重新-assign-也不會連動到-ci-的這四個值了？"><a href="#提問-ci-product-product-時，是不是就把購物車內商品-ci-的價格給定下來，之後改-product-的-title-description-price-quantity-（除非重新-assign-也不會連動到-ci-的這四個值了？" class="headerlink" title="[提問] ci.product = product 時，是不是就把購物車內商品(ci)的價格給定下來，之後改 product 的 title, description, price, quantity （除非重新 assign) 也不會連動到 ci 的這四個值了？"></a>[提問] ci.product = product 時，是不是就把購物車內商品(ci)的價格給定下來，之後改 product 的 title, description, price, quantity （除非重新 assign) 也不會連動到 ci 的這四個值了？</h2><h2 id="提問-上面的第一種寫法是把-product-存進-cart-item-的一個-local-variable-ci-之中，為什麼第二種寫法卻是把-product-存進-items"><a href="#提問-上面的第一種寫法是把-product-存進-cart-item-的一個-local-variable-ci-之中，為什麼第二種寫法卻是把-product-存進-items" class="headerlink" title="[提問] 上面的第一種寫法是把 product 存進 cart_item 的一個 local variable ci 之中，為什麼第二種寫法卻是把 product 存進 items?"></a>[提問] 上面的第一種寫法是把 product 存進 cart_item 的一個 local variable ci 之中，為什麼第二種寫法卻是把 product 存進 items?</h2><h2 id="cart-id-跟-user-是什麼時候建立起關聯的？"><a href="#cart-id-跟-user-是什麼時候建立起關聯的？" class="headerlink" title="cart_id 跟 user 是什麼時候建立起關聯的？"></a>cart_id 跟 user 是什麼時候建立起關聯的？</h2><p>======= 原本的思路 =======</p>
-<p>[以下待解]</p>
-<p>先看下面這篇了解 cookies &amp; sessions<br><a href="https://rocodev.gitbooks.io/rails-102/content/chapter2-rails/cookies-and-session.html" target="_blank" rel="external">https://rocodev.gitbooks.io/rails-102/content/chapter2-rails/cookies-and-session.html</a></p>
-<p>開始講解：<code>def add_to_cart</code>中有一段內容是<code>current_cart.add_product_to_cart(@product)</code>。其中，<code>current_cart</code> 是要找出一台 cart 給 user，也就是以 cart_id 和 user 建立關聯為目標。</p>
-<figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">current_cart</span></span></div><div class="line">  @current_cart <span class="params">||</span>= find_cart</div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<p><code>def current_cart</code> 的口語是，去找 @current_cart 的值，如果找不到，代表 user 沒有 cart，那就去找一台給他，也就是進入<code>def find_cart</code>的階段。<code>def find_cart</code> 的口語是，用 session[:cart_id] 來找 user 的 cart，如果沒有找到，代表 user 沒有 cart，沒有就去創一台，最後，把這一台 cart 的 session[:cart_id] 給予 cart.id 的值。</p>
-<p>由上可知，cart_id 跟 user 是在 session[:cart_id] = cart.id 時建立起關聯的。</p>
-<p>[以上不確定，解完下面問題再回去寫好寫滿！]</p>
-<p>======= 助教的說法 =======</p>
-<p>[不確定] cart_id ↔ session[:cart_id] ↔ user 但因為 session 不持久，所以無法用 session 來連接起 cart_id 跟 user 的永久關係。</p>
-<h2 id="如果-user-拿到一台-cart-id-1-的-cart-後來可能清掉-cookies-還是-session-之類的，總之，破壞掉-user-跟-cart-id-的關聯，後來再去找一台-cart-給-user-請問一樣是找來-cart-id-1-的-cart-還是給一台新的-cart-如果是重新給一台，那-cart-id-1-的-cart-到哪去了？"><a href="#如果-user-拿到一台-cart-id-1-的-cart-後來可能清掉-cookies-還是-session-之類的，總之，破壞掉-user-跟-cart-id-的關聯，後來再去找一台-cart-給-user-請問一樣是找來-cart-id-1-的-cart-還是給一台新的-cart-如果是重新給一台，那-cart-id-1-的-cart-到哪去了？" class="headerlink" title="如果 user 拿到一台 cart.id = 1 的 cart, 後來可能清掉 cookies 還是 session 之類的，總之，破壞掉 user 跟 cart_id 的關聯，後來再去找一台 cart 給 user, 請問一樣是找來 cart.id = 1 的 cart, 還是給一台新的 cart? 如果是重新給一台，那 cart.id = 1 的 cart 到哪去了？"></a>如果 user 拿到一台 cart.id = 1 的 cart, 後來可能清掉 cookies 還是 session 之類的，總之，破壞掉 user 跟 cart_id 的關聯，後來再去找一台 cart 給 user, 請問一樣是找來 cart.id = 1 的 cart, 還是給一台新的 cart? 如果是重新給一台，那 cart.id = 1 的 cart 到哪去了？</h2><p>重新給一台新的 cart，原本的 cart 作廢。以消費者的角度來說，這些作廢的 carts 永遠看不到，也沒任何用處；但以管理者的角度來說，留著這些廢棄 carts 可以做資料分析，比如哪些類型的人容易將商品放入 cart 卻沒有結帳。</p>
-<h2 id="session-是專門用來存暫時性、非永久性（比如-cart-id-login-log-out……等-的值嗎？"><a href="#session-是專門用來存暫時性、非永久性（比如-cart-id-login-log-out……等-的值嗎？" class="headerlink" title="session 是專門用來存暫時性、非永久性（比如 cart_id, login, log out……等)的值嗎？"></a>session 是專門用來存暫時性、非永久性（比如 cart_id, login, log out……等)的值嗎？</h2><p>是的</p>
-<h2 id="session-cart-id-amp-跟-user-有關聯的-cart-id-有什麼差別？"><a href="#session-cart-id-amp-跟-user-有關聯的-cart-id-有什麼差別？" class="headerlink" title="session[:cart_id] &amp; 跟 user 有關聯的 cart_id 有什麼差別？"></a>session[:cart_id] &amp; 跟 user 有關聯的 cart_id 有什麼差別？</h2><p>[不確定] user 跟 cart_id 是沒關聯的，[這段開始不確定] 硬要說就是 session[:cart_id] 跟 cart_id 有關，而 user 又跟 session 有關。但 session 會過期，所以用 session 來連接 user 和 cart_id 是不穩固的。</p>
-<h2 id="提問-到底-user-跟-session-cart-id-有什麼關係？或者說，user-跟-session-有什麼關係？有關係的話是-devise-自動建立起關係的嗎？可不可以說，使用到-session-的-user-必然是-current-user"><a href="#提問-到底-user-跟-session-cart-id-有什麼關係？或者說，user-跟-session-有什麼關係？有關係的話是-devise-自動建立起關係的嗎？可不可以說，使用到-session-的-user-必然是-current-user" class="headerlink" title="[提問] 到底 user 跟 session[:cart_id] 有什麼關係？或者說，user 跟 session 有什麼關係？有關係的話是 devise 自動建立起關係的嗎？可不可以說，使用到 session 的 user 必然是 current_user?"></a>[提問] 到底 user 跟 session[:cart_id] 有什麼關係？或者說，user 跟 session 有什麼關係？有關係的話是 devise 自動建立起關係的嗎？可不可以說，使用到 session 的 user 必然是 current_user?</h2><blockquote>
-<p>tba</p>
-</blockquote>
-<h2 id="item-跟-cart-item-的差別在哪？比如說-def-add-to-cart-中，if-current-cart-items-include-product-我會認為是要寫成-if-current-cart-cart-items-include-product-，有什麼地方理解錯了？"><a href="#item-跟-cart-item-的差別在哪？比如說-def-add-to-cart-中，if-current-cart-items-include-product-我會認為是要寫成-if-current-cart-cart-items-include-product-，有什麼地方理解錯了？" class="headerlink" title="item 跟 cart_item 的差別在哪？比如說 def add_to_cart 中，if !current_cart.items.include?(@product) 我會認為是要寫成 if !current_cart.cart_items.include?(@product)，有什麼地方理解錯了？"></a>item 跟 cart_item 的差別在哪？比如說 <code>def add_to_cart</code> 中，<code>if !current_cart.items.include?(@product)</code> 我會認為是要寫成 <code>if !current_cart.cart_items.include?(@product)</code>，有什麼地方理解錯了？</h2><p>item 經過<code>has_many :items, through: :cart_items, source: :product</code>後，是 product 的同義詞，cart_item 則是在 cart 中的那些 items。</p>
-<h2 id="為什麼要這樣分呢？"><a href="#為什麼要這樣分呢？" class="headerlink" title="為什麼要這樣分呢？"></a>為什麼要這樣分呢？</h2><p><a href="http://rails.ruby.tw/association_basics.html" target="_blank" rel="external">http://rails.ruby.tw/association_basics.html</a>  2.4</p>
-<h2 id="Cart-model-中，"><a href="#Cart-model-中，" class="headerlink" title="Cart model 中，"></a>Cart model 中，</h2><figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cart</span> &lt; ActiveRecord::Base</span></div><div class="line">  has_many <span class="symbol">:cart_items</span>, <span class="symbol">dependent:</span> <span class="symbol">:destroy</span></div><div class="line">  has_many <span class="symbol">:items</span>, <span class="symbol">through:</span> <span class="symbol">:cart_items</span>, <span class="symbol">source:</span> <span class="symbol">:product</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<p>為什麼 cart 要有 cart_item 又要有 item(product)? cart_items table 不就已經可以對到 cart 有哪些 items(products) 了嗎？</p>
-<p>這是多對多的寫法，一定要這樣寫。如果沒有 item, cart has_many products 的結果是，每一種 product 只能對到一台 cart.<br><a href="http://guides.rubyonrails.org/association_basics.html" target="_blank" rel="external">http://guides.rubyonrails.org/association_basics.html</a> 2.4</p>
-<h2 id="拆解-has-many-items-through-cart-items-source-product"><a href="#拆解-has-many-items-through-cart-items-source-product" class="headerlink" title="拆解 has_many :items, through: :cart_items, source: :product"></a>拆解 <code>has_many :items, through: :cart_items, source: :product</code></h2><ol>
-<li>items可以自由命名，增加易讀性。</li>
-<li>cart_items table 裡面有 art_id, product_id 兩個欄位，所有可以用它們來連結 cart 或是 product。</li>
-<li>自由命名完，程式不知道 items 是什麼，所以後面補充說明 items 透過 cart_items table 連往 product model。</li>
-<li>因此 items 可以想成是 products 的同義詞，也就是理解為 cart has_many products</li>
-<li>同理，如果改成 <code>has_many :items, through: :cart_items, source: :cart</code>，那 items 就變成了 carts 的同義詞。cart_items 會拿呼叫他的 model 的 id 去 cart 查資料，不過前提是 cart_item 裡面要有 cart_id 欄位。</li>
-</ol>
-<h2 id="routes-rb-裡面有-post-add-to-cart"><a href="#routes-rb-裡面有-post-add-to-cart" class="headerlink" title="routes.rb 裡面有 post :add_to_cart"></a>routes.rb 裡面有 <code>post :add_to_cart</code></h2><figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">resources <span class="symbol">:products</span> <span class="keyword">do</span></div><div class="line">  member <span class="keyword">do</span></div><div class="line">    post <span class="symbol">:add_to_cart</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<p>products/show.html.erb 中有 <code>method: :post</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;%= link_to &quot;加入購物車&quot;, add_to_cart_product_path(@product), method: :post, class: &quot;btn btn-lg btn-danger&quot; %&gt;</div></pre></td></tr></table></figure>
-<p>兩個地方都必須宣告使用說明 http verb 嗎？</p>
-<p>是的。預設是 get</p>
-<h2 id="post-to-admin-為什麼不是用-put"><a href="#post-to-admin-為什麼不是用-put" class="headerlink" title="post :to_admin 為什麼不是用 put?"></a><code>post :to_admin</code> 為什麼不是用 put?</h2><p>post 和 put 在這都可以</p>
-<h2 id="sean-的提問："><a href="#sean-的提問：" class="headerlink" title="sean 的提問："></a>sean 的提問：</h2><p>助教請問一下在結帳按鈕的地方這邊用 post 有什麼特別的用意嗎<br>post :checkout<br>&lt;%= link_to(“確認結賬”, checkout_carts_path, method: :post<br>因為也沒有要特別 post 什麼資料到下一個頁面是否能用 get 就可以了呢？</p>
-<p>小蟹：<br>要用 POST，因為 http method :post 的語意就是要建立新的資料，在這邊會產生訂單。<br>你的疑問是我們沒有 post 資料，那是因為資料都已經記在購物車了，但我們仍然有新增資料的行為。<br>雖然改成 GET 也會動，但是這樣並不好。</p>
-<p>sean 的回應：<br>我以為是要post資料過去才要用post，因為表單是在checkout才會送出去的，所以這樣也算是個慣例嗎？</p>
-<p>小蟹：<br>是的，還有現在沒有不代表以後不會有<br>基本上要建立資料就要送 POST<br>要改變資料就要送 PUT 或 PATCH<br>這跟 RESTful 無關了，這算是 http 的 spec<br>所以是 RESTful 去遵循 http spec 的規範</p>
-<h2 id="current-user-是-devise-gem-提供的-helper"><a href="#current-user-是-devise-gem-提供的-helper" class="headerlink" title="current_user 是 devise gem 提供的 helper"></a>current_user 是 devise gem 提供的 helper</h2><h2 id="current-cart-find-cart"><a href="#current-cart-find-cart" class="headerlink" title="@current_cart ||= find_cart"></a>@current_cart ||= find_cart</h2><p>if @current_cart (= true) -&gt; @current_cart; if @current_cart = false || nil -&gt; find_cart</p>
-<h2 id="convention-比如某個物件-item，如果單數，可以寫作-build-item，但如果是複數，得寫成-items-build。"><a href="#convention-比如某個物件-item，如果單數，可以寫作-build-item，但如果是複數，得寫成-items-build。" class="headerlink" title="convention: 比如某個物件 item，如果單數，可以寫作 build_item，但如果是複數，得寫成 items.build。"></a>convention: 比如某個物件 item，如果單數，可以寫作 build_item，但如果是複數，得寫成 items.build。</h2><h2 id="錄音-1-51-30"><a href="#錄音-1-51-30" class="headerlink" title="錄音 1:51:30"></a>錄音 1:51:30</h2><p>如果 session[:cart_id] 是 nil, 用 find(id: session[:cart_id]) 會出現 ActiveRecord not found, 然後就中斷了，用 find_by(id: session[:cart_id]) 會回傳 nil 或 false, 表示沒這個 cart, 而不會程式中斷。</p>
-<h2 id="17-48-不要在-view-裡面撈-count-而是用-helper-的原因"><a href="#17-48-不要在-view-裡面撈-count-而是用-helper-的原因" class="headerlink" title="17:48 不要在 view 裡面撈 count, 而是用 helper 的原因"></a>17:48 不要在 view 裡面撈 count, 而是用 helper 的原因</h2><p>在 view 裡直接撈 DB 的值，不會被 cache 住，也難以維護，建議用 helper 來做這件事。原因是直接寫在view裡的話，可讀性會比較差，別人要猜這個代碼是做什麼的；但如果是用 helper 包起來，我們可以給 helper 一個清楚表達代碼用意的名稱，放進去 view 時可以直接看懂這段代碼在做什麼，別人不需要用猜的，比較好維護。另外一個好處就是 view 會比較乾淨好讀，也是比較好維護。</p>
-<h1 id="購物車的商品明細"><a href="#購物車的商品明細" class="headerlink" title="購物車的商品明細"></a>購物車的商品明細</h1><h2 id="算數字的都寫成-helper-幫助維護。"><a href="#算數字的都寫成-helper-幫助維護。" class="headerlink" title="算數字的都寫成 helper 幫助維護。"></a>算數字的都寫成 helper 幫助維護。</h2><h2 id="下方是一個寫成-helper-的例子"><a href="#下方是一個寫成-helper-的例子" class="headerlink" title="下方是一個寫成 helper 的例子"></a>下方是一個寫成 helper 的例子</h2><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">render_cart_items_count</span><span class="params">(cart)</span></span></div><div class="line">   cart.cart_items.count</div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<h2 id="下面這兩段是購物車商品明細，為什麼是用-item-而不是-cart-item-來取像-price-之類的值？如果-product-price-變了，不就影響到購物車內商品的-price-還是說購物車內商品的-price-本來就是跟-product-price-連動？"><a href="#下面這兩段是購物車商品明細，為什麼是用-item-而不是-cart-item-來取像-price-之類的值？如果-product-price-變了，不就影響到購物車內商品的-price-還是說購物車內商品的-price-本來就是跟-product-price-連動？" class="headerlink" title="下面這兩段是購物車商品明細，為什麼是用 item 而不是 cart_item 來取像 price 之類的值？如果 @product.price 變了，不就影響到購物車內商品的 price? 還是說購物車內商品的 price 本來就是跟 @product.price 連動？"></a>下面這兩段是購物車商品明細，為什麼是用 item 而不是 cart_item 來取像 price 之類的值？如果 @product.price 變了，不就影響到購物車內商品的 price? 還是說購物車內商品的 price 本來就是跟 @product.price 連動？</h2><p><code>app/views/carts/index.html.erb</code><br><figure class="highlight erb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line">  &lt;tbody&gt;</div><div class="line">    &lt;%<span class="ruby"> current_cart.items.each <span class="keyword">do</span> <span class="params">|product|</span> </span>%&gt;</div><div class="line">          ...</div><div class="line">          &lt;%=<span class="ruby"> product.price </span>%&gt;</div><div class="line">      ...</div><div class="line">  &lt;/tbody&gt;</div></pre></td></tr></table></figure></p>
-<p>app/models/cart.rb<br><figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">total_price</span></span></div><div class="line">  sum = <span class="number">0</span></div><div class="line"></div><div class="line">  items.each <span class="keyword">do</span> <span class="params">|item|</span></div><div class="line">    sum = sum + item.price</div><div class="line">  <span class="keyword">end</span></div><div class="line">  sum</div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure></p>
-<blockquote>
-<p>tba</p>
-</blockquote>
-<h1 id="建立訂單-寄送資訊"><a href="#建立訂單-寄送資訊" class="headerlink" title="建立訂單 ( 寄送資訊 )"></a>建立訂單 ( 寄送資訊 )</h1><h2 id="為什麼-model-是建這兩個欄位？rails-g-model-order-user-id-integer-total-integer"><a href="#為什麼-model-是建這兩個欄位？rails-g-model-order-user-id-integer-total-integer" class="headerlink" title="為什麼 model 是建這兩個欄位？rails g model order user_id:integer total:integer"></a>為什麼 model 是建這兩個欄位？<code>rails g model order user_id:integer total:integer</code></h2><blockquote>
-<p>tba</p>
-</blockquote>
-<h2 id="為什麼要寫-class-name"><a href="#為什麼要寫-class-name" class="headerlink" title="為什麼要寫 class_name?"></a>為什麼要寫 class_name?</h2><p>1:21:00 Rails convention, 比如說 has_one info 時，就會去找有沒有info model(同名的model), 但我們沒這個 model, 所以要註明 class_name 是 OrderInfo. 而前面 has_many :XXX 實際上可以任意命名，後面再指向正確的 class 就好了。</p>
-<h2 id="提問-那為什麼不直接寫-has-many-orderinfo-就好了？如果-info-撞名了怎麼辦？"><a href="#提問-那為什麼不直接寫-has-many-orderinfo-就好了？如果-info-撞名了怎麼辦？" class="headerlink" title="[提問] 那為什麼不直接寫 has_many :orderinfo 就好了？如果 info 撞名了怎麼辦？"></a>[提問] 那為什麼不直接寫 has_many :orderinfo 就好了？如果 info 撞名了怎麼辦？</h2><p>可以直接寫成 has_many :orderinfo。寫成 has_many :info 後面再宣告 class_name 是 OrderInfo 的方法，是為了增加易讀性，order.info 比 order.orderinfo 好讀。</p>
-<h2 id="下面這樣是否就可以避免前面的命名撞名？"><a href="#下面這樣是否就可以避免前面的命名撞名？" class="headerlink" title="下面這樣是否就可以避免前面的命名撞名？"></a>下面這樣是否就可以避免前面的命名撞名？</h2><p>order has_many :info, class_name :OrderInfo        =&gt; order.info<br>user  has_many :info, class_name :UserInfo        =&gt; user.info</p>
-<p>可以用這種方式避免撞名沒錯！比如上方問題中舉的例子，只要我們後面的 class_name 都宣告清楚，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">order has_many :info, class_name :OrderInfo</div><div class="line">user  has_many :info, class_name :UserInfo</div><div class="line">xxx   has_many :info, class_name :XxxInfo</div><div class="line">......</div><div class="line">...</div></pre></td></tr></table></figure></p>
-<p>就可以維持像下面這樣，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">order.info</div><div class="line">user.info</div><div class="line">xxx.info</div><div class="line">......</div><div class="line">...</div></pre></td></tr></table></figure></p>
-<p>風格一致又好讀的寫法</p>
-<h2 id="build-和-new-的差異"><a href="#build-和-new-的差異" class="headerlink" title=".build 和 .new 的差異"></a><code>.build</code> 和 <code>.new</code> 的差異</h2><p>[錯誤] rails 的 <code>.build</code> 是 ruby 的 <code>.new</code> 的 alias, which means <code>.build</code> 在 ruby 中不能用。<br><a href="http://anxgang.logdown.com/posts/712225-note-rails-method-new-build-create-and-save-the-difference" target="_blank" rel="external">http://anxgang.logdown.com/posts/712225-note-rails-method-new-build-create-and-save-the-difference</a><br><a href="http://vinhboy.com/blog/2009/01/15/rails-new-vs-build/" target="_blank" rel="external">http://vinhboy.com/blog/2009/01/15/rails-new-vs-build/</a></p>
-<h1 id="建立訂單-生成訂單"><a href="#建立訂單-生成訂單" class="headerlink" title="建立訂單 ( 生成訂單 )"></a>建立訂單 ( 生成訂單 )</h1><h2 id="app-models-order-rb-中"><a href="#app-models-order-rb-中" class="headerlink" title="app/models/order.rb 中"></a><code>app/models/order.rb</code> 中</h2><figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Order</span> &lt; ActiveRecord::Base</span></div><div class="line">  belongs_to <span class="symbol">:user</span></div><div class="line"></div><div class="line">  has_many <span class="symbol">:items</span>, <span class="symbol">class_name:</span> <span class="string">"OrderItem"</span>, <span class="symbol">dependent:</span> <span class="symbol">:destroy</span></div><div class="line">  has_one  <span class="symbol">:info</span>,  <span class="symbol">class_name:</span> <span class="string">"OrderInfo"</span>, <span class="symbol">dependent:</span> <span class="symbol">:destroy</span></div><div class="line"></div><div class="line">  accepts_nested_attributes_for <span class="symbol">:info</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment"># 第一段</span></div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">build_item_cache_from_cart</span><span class="params">(cart)</span></span></div><div class="line">    cart.items.each <span class="keyword">do</span> <span class="params">|cart_item|</span>								</div><div class="line">      item = items.build                       </div><div class="line">      item.product_name = cart_item.title</div><div class="line">      item.quantity = <span class="number">1</span></div><div class="line">      item.price = cart_item.price</div><div class="line">      item.save</div><div class="line">    <span class="keyword">end</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment"># 第二段</span></div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">calculate_total!</span><span class="params">(cart)</span></span></div><div class="line">    <span class="keyword">self</span>.total = cart.total_price</div><div class="line">    <span class="keyword">self</span>.save</div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<p>第一段：<br>假設 <code>has_many :items, class_name: &quot;OrderItem&quot;</code> 外還有 <code>has_many :items, class_name: &quot;CartItem&quot;</code>，那麼要怎麼判斷 <code>item = items.build</code> 中的 items 是哪一個 items？</p>
-<p>第二段：什麼時候用 self? <code>.total</code> 哪來的？</p>
-<blockquote>
-<p>tba</p>
-</blockquote>
-<h1 id="建立訂單-顯示訂單內容"><a href="#建立訂單-顯示訂單內容" class="headerlink" title="建立訂單 ( 顯示訂單內容 )"></a>建立訂單 ( 顯示訂單內容 )</h1><h2 id="add-index-加索引，好處是方便查找，效率高。但如果什麼東西都加索引，會導致索引肥大而降低效率。"><a href="#add-index-加索引，好處是方便查找，效率高。但如果什麼東西都加索引，會導致索引肥大而降低效率。" class="headerlink" title="add_index 加索引，好處是方便查找，效率高。但如果什麼東西都加索引，會導致索引肥大而降低效率。"></a><code>add_index</code> 加索引，好處是方便查找，效率高。但如果什麼東西都加索引，會導致索引肥大而降低效率。</h2><h2 id="下面這段透過-SecureRandom-uuid-產生的亂數，為什麼透過-order-path-order-token-就直接變網址的一部份？"><a href="#下面這段透過-SecureRandom-uuid-產生的亂數，為什麼透過-order-path-order-token-就直接變網址的一部份？" class="headerlink" title="下面這段透過 SecureRandom.uuid 產生的亂數，為什麼透過 order_path(@order.token) 就直接變網址的一部份？"></a>下面這段透過 SecureRandom.uuid 產生的亂數，為什麼透過 <code>order_path(@order.token)</code> 就直接變網址的一部份？</h2><p>app/models/order.rb<br><figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Order</span> &lt; ActiveRecord::Base</span></div><div class="line">  before_create <span class="symbol">:generate_toke</span></div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">generate_token</span></span></div><div class="line">    <span class="keyword">self</span>.token = SecureRandom.uuid</div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure></p>
-<p>[不確定] 不是直接變網址的一部份，而是在產生 Order 物件時都先產生一組 token, 也就是 <code>before_create :generate_toke</code> 在做的事）。<code>order_path</code> 是個相對路徑，參數是 <code>@order.token</code> 時，就是去找 token 欄位中的 token.</p>
-<h2 id="下面這邊-order-Order-find-by-token-params-id-要怎麼解釋呢？"><a href="#下面這邊-order-Order-find-by-token-params-id-要怎麼解釋呢？" class="headerlink" title="下面這邊 @order = Order.find_by(token: params[:id]) 要怎麼解釋呢？"></a>下面這邊 <code>@order = Order.find_by(token: params[:id])</code> 要怎麼解釋呢？</h2><figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">show</span></span></div><div class="line">  @order = Order.find_by(<span class="symbol">token:</span> params[<span class="symbol">:id</span>])</div><div class="line">  ...</div><div class="line">  ...</div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<blockquote>
-<p>tba</p>
-</blockquote>
-<h2 id="提問-這樣就可以直接讓-token-變成網址後面那部分？"><a href="#提問-這樣就可以直接讓-token-變成網址後面那部分？" class="headerlink" title="[提問] 這樣就可以直接讓 token 變成網址後面那部分？"></a>[提問] 這樣就可以直接讓 token 變成網址後面那部分？</h2><blockquote>
-<p>tba</p>
-</blockquote>
-<h1 id="將訂單結帳"><a href="#將訂單結帳" class="headerlink" title="將訂單結帳"></a>將訂單結帳</h1><h2 id="為什麼-pay-with-credit-card-是用-get-不是-post"><a href="#為什麼-pay-with-credit-card-是用-get-不是-post" class="headerlink" title="為什麼 pay_with_credit_card 是用 get 不是 post?"></a>為什麼 pay_with_credit_card 是用 get 不是 post?</h2><figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">resources <span class="symbol">:orders</span> <span class="keyword">do</span></div><div class="line">  member <span class="keyword">do</span></div><div class="line">    get <span class="symbol">:pay_with_credit_card</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<p>因為晚一點我們會設定 credit card 付款頁面，也就是說這個 get 是指向 credit card 付款頁面，而不是 post 去改動內容。</p>
-<h2 id="lt-if-order-is-paid-gt-中-is-paid-怎麼來的？"><a href="#lt-if-order-is-paid-gt-中-is-paid-怎麼來的？" class="headerlink" title="&lt;% if !@order.is_paid? %&gt; 中 .is_paid? 怎麼來的？"></a>&lt;% if !@order.is_paid? %&gt; 中 .is_paid? 怎麼來的？</h2><p>Rails magic. is_paid 的屬性是 boolean, 所以可以直接後面加 “?” 來增加易讀性。</p>
-<h1 id="訂單狀態"><a href="#訂單狀態" class="headerlink" title="訂單狀態"></a>訂單狀態</h1><h2 id="is-paid-gt-true-為什麼還要有一個-aasm-state-gt-“paid”？"><a href="#is-paid-gt-true-為什麼還要有一個-aasm-state-gt-“paid”？" class="headerlink" title=":is_paid =&gt; true, 為什麼還要有一個:aasm_state =&gt; “paid”？"></a>:is_paid =&gt; true, 為什麼還要有一個:aasm_state =&gt; “paid”？</h2><p>aasm_state 欄位是 aasm state machine 預設會去讀取的欄位，用來判斷現在整個訂購流程在哪個狀態，而讓狀態機能順利運作。</p>
-<h2 id="提問-所以，更該問的是，可不可以將結帳鈕和-aasm-做結合，結帳時直接把-aasm-state-改成-paid-然後拿掉-is-paid-欄位？"><a href="#提問-所以，更該問的是，可不可以將結帳鈕和-aasm-做結合，結帳時直接把-aasm-state-改成-paid-然後拿掉-is-paid-欄位？" class="headerlink" title="[提問] 所以，更該問的是，可不可以將結帳鈕和 aasm 做結合，結帳時直接把 aasm_state 改成 paid, 然後拿掉 :is_paid 欄位？"></a>[提問] 所以，更該問的是，可不可以將結帳鈕和 aasm 做結合，結帳時直接把 aasm_state 改成 paid, 然後拿掉 :is_paid 欄位？</h2><p>xdite：<br>我完全不建議這樣做，這樣你會遇到付款然後退貨的狀況，金流查詢會亂掉。</p>
-<h2 id="關於-state-machine-aasm"><a href="#關於-state-machine-aasm" class="headerlink" title="關於 state machine / aasm"></a>關於 state machine / aasm</h2><p>State machine 三個主要元素是 event, state, transition, 以下表當參考，就很容易理解了。</p>
-<figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Job</span></span></div><div class="line">  <span class="keyword">include</span> AASM</div><div class="line"></div><div class="line">  aasm <span class="keyword">do</span></div><div class="line">    state <span class="symbol">:sleeping</span>, <span class="symbol">:initial</span> =&gt; <span class="literal">true</span></div><div class="line">    state <span class="symbol">:running</span></div><div class="line">    state <span class="symbol">:cleaning</span></div><div class="line"></div><div class="line">    event <span class="symbol">:run</span> <span class="keyword">do</span></div><div class="line">      transitions <span class="symbol">:from</span> =&gt; <span class="symbol">:sleeping</span>, <span class="symbol">:to</span> =&gt; <span class="symbol">:running</span></div><div class="line">    <span class="keyword">end</span></div><div class="line"></div><div class="line">    event <span class="symbol">:clean</span> <span class="keyword">do</span></div><div class="line">      transitions <span class="symbol">:from</span> =&gt; <span class="symbol">:running</span>, <span class="symbol">:to</span> =&gt; <span class="symbol">:cleaning</span></div><div class="line">    <span class="keyword">end</span></div><div class="line"></div><div class="line">    event <span class="symbol">:sleep</span> <span class="keyword">do</span></div><div class="line">      transitions <span class="symbol">:from</span> =&gt; [<span class="symbol">:running</span>, <span class="symbol">:cleaning</span>], <span class="symbol">:to</span> =&gt; <span class="symbol">:sleeping</span></div><div class="line">    <span class="keyword">end</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<p>State machine 本身不內建 states, events, transitions, 但是只要照著它規定好的語法來寫 states, events, transitions, 就能正常運作。aasm 是一種 state machine, <code>aasm_state</code> 欄位是 aasm 預設會抓的欄位，也可以自定義後加上參數指定。</p>
-<h2 id="拆解-event-make-payment-after-commit-pay-do"><a href="#拆解-event-make-payment-after-commit-pay-do" class="headerlink" title="拆解 event :make_payment, after_commit: :pay! do"></a>拆解 <code>event :make_payment, after_commit: :pay! do</code></h2><p>aasm 會把 event 生成 method，這段等於是先跑 make_payment 這個 method, 等 DB 欄位 commit 之後(after_commit)，再跑 pay! 這個 method。</p>
-<h2 id="提問-所以-before-action-是指在跑-actions-之前，先執行-XXX-嗎？"><a href="#提問-所以-before-action-是指在跑-actions-之前，先執行-XXX-嗎？" class="headerlink" title="[提問] 所以 before_action 是指在跑 actions 之前，先執行 XXX 嗎？"></a>[提問] 所以 before_action 是指在跑 actions 之前，先執行 XXX 嗎？</h2><p>是的，但 before_action 是 controller 的操作，而 after_commit 是 model 的操作。</p>
-<h2 id="什麼是-ActiveRecord-Callbacks"><a href="#什麼是-ActiveRecord-Callbacks" class="headerlink" title="什麼是 ActiveRecord Callbacks?"></a>什麼是 ActiveRecord Callbacks?</h2><p><a href="http://guides.rubyonrails.org/active_record_callbacks.html" target="_blank" rel="external">http://guides.rubyonrails.org/active_record_callbacks.html</a></p>
-<h2 id="待整理-了解rails-g-migration-的-rails-magic-比如什麼寫法會在-migration-檔自動產生欄位……等。"><a href="#待整理-了解rails-g-migration-的-rails-magic-比如什麼寫法會在-migration-檔自動產生欄位……等。" class="headerlink" title="[待整理] 了解rails g migration 的 rails magic, 比如什麼寫法會在 migration 檔自動產生欄位……等。"></a>[待整理] 了解rails g migration 的 rails magic, 比如什麼寫法會在 migration 檔自動產生欄位……等。</h2><p><a href="http://edgeguides.rubyonrails.org/active_record_migrations.html" target="_blank" rel="external">http://edgeguides.rubyonrails.org/active_record_migrations.html</a>  </p>
-<p>2 Creating a Migration</p>
-<blockquote>
-<p>If the migration name is of the form “AddXXXToYYY” or “RemoveXXXFromYYY” and is followed by a list of column names and types then a migration containing the appropriate add_column and remove_column statements will be created.</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/17/Rails-EC-Week-1-Homework/" itemprop="url">
-                  Rails EC Week 1 Homework
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-09-17T17:33:52+08:00" content="2016-09-17">
-              2016-09-17
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/17/Rails-EC-Week-1-Homework/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/09/17/Rails-EC-Week-1-Homework/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="⽤-Bootstrap-做⼀個「有-Nav-bar-」的-layout"><a href="#⽤-Bootstrap-做⼀個「有-Nav-bar-」的-layout" class="headerlink" title="⽤ Bootstrap 做⼀個「有 Nav bar 」的 layout"></a>⽤ Bootstrap 做⼀個「有 Nav bar 」的 layout</h1><h2 id="require-bootstrap-dropdown-的-bootstrap-dropdown-從哪來？bootstrap-外還有其他來源可以-require-進來嗎？"><a href="#require-bootstrap-dropdown-的-bootstrap-dropdown-從哪來？bootstrap-外還有其他來源可以-require-進來嗎？" class="headerlink" title="//= require bootstrap/dropdown 的 bootstrap/dropdown 從哪來？bootstrap 外還有其他來源可以 require 進來嗎？"></a>//= require bootstrap/dropdown 的 bootstrap/dropdown 從哪來？bootstrap 外還有其他來源可以 require 進來嗎？</h2><blockquote>
-<p>tba</p>
-</blockquote>
-<h2 id="新增-partial-navbar的部分，有段內容如下，為什麼-lt-yield-gt-包在-lt-div-class-quot-container-quot-gt-裡面？"><a href="#新增-partial-navbar的部分，有段內容如下，為什麼-lt-yield-gt-包在-lt-div-class-quot-container-quot-gt-裡面？" class="headerlink" title="新增 partial: navbar的部分，有段內容如下，為什麼 &lt;%= yield %&gt; 包在 &lt; div class=&quot;container&quot;&gt; 裡面？"></a>新增 partial: navbar的部分，有段內容如下，為什麼 <code>&lt;%= yield %&gt;</code> 包在 <code>&lt; div class=&quot;container&quot;&gt;</code> 裡面？</h2><figure class="highlight erb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">+  &lt; div class="container"&gt;</div><div class="line">+    &lt;%=<span class="ruby"> render <span class="string">"common/navbar"</span> </span>%&gt;</div><div class="line">+    &lt;%=<span class="ruby"> <span class="keyword">yield</span> </span>%&gt;</div><div class="line">+  &lt;/div&gt;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>tba</p>
-</blockquote>
-<h2 id="有些路徑長得像-products-path-但有些則像-”common-navbar”-“groups-index”-之類的-這些是必須記憶起來的慣例嗎？"><a href="#有些路徑長得像-products-path-但有些則像-”common-navbar”-“groups-index”-之類的-這些是必須記憶起來的慣例嗎？" class="headerlink" title="有些路徑長得像 products_path, 但有些則像 ”common/navbar”, “groups#index” 之類的, 這些是必須記憶起來的慣例嗎？"></a>有些路徑長得像 products_path, 但有些則像 ”common/navbar”, “groups#index” 之類的, 這些是必須記憶起來的慣例嗎？</h2><p>是慣例，要記起來。<br>products_path 用在controller(這裡是用在index action) 或是 view, 比如說 link_to 後面<br>“common/navbar” 用在 view<br>“groups#index” 用在 route</p>
-<h2 id="經測試，redirect-to-“-“-可以寫成-redirect-to-root-path-那為什麼-redirect-to-account-orders-path-不可以寫成-redirect-to-“account-orders-index”？"><a href="#經測試，redirect-to-“-“-可以寫成-redirect-to-root-path-那為什麼-redirect-to-account-orders-path-不可以寫成-redirect-to-“account-orders-index”？" class="headerlink" title="經測試，redirect_to “/“ 可以寫成 redirect_to root_path, 那為什麼 redirect_to account_orders_path 不可以寫成 redirect_to “account/orders#index”？"></a>經測試，redirect_to “/“ 可以寫成 redirect_to root_path, 那為什麼 redirect_to account_orders_path 不可以寫成 redirect_to “account/orders#index”？</h2><p>[不確定]<br>就是不可以，不爽不要用。<br>除了寫路徑 helper 外，也可以用相對路徑的方式寫。<br>用 routes helper 的好處是，如果將來 routes 那邊有更動，routes helper 會跟著一起改。</p>
-<h2 id="提問-怎麼個一起改法？"><a href="#提問-怎麼個一起改法？" class="headerlink" title="[提問] 怎麼個一起改法？"></a>[提問] 怎麼個一起改法？</h2><blockquote>
-<p>tba</p>
-</blockquote>
-<h2 id="lt-yield-gt-是什麼？"><a href="#lt-yield-gt-是什麼？" class="headerlink" title="&lt;%= yield %&gt; 是什麼？"></a><code>&lt;%= yield %&gt;</code> 是什麼？</h2><p>像是一個標記，告訴程式該在這裡放進 view, 至於放哪個 view 則看你開了哪個網頁而會自動調整。Rails 很聰明的。<br><a href="http://guides.rubyonrails.org/layouts_and_rendering.html" target="_blank" rel="external">http://guides.rubyonrails.org/layouts_and_rendering.html</a> 3.2 Understanding yield</p>
-<h2 id="跑了以下三行後，"><a href="#跑了以下三行後，" class="headerlink" title="跑了以下三行後，"></a>跑了以下三行後，</h2><p>rails g controller products<br>touch app/views/products/index.html.erb<br>resources :products</p>
-<p>這時跑 localhost:3000/products，如果沒有 products_controller, 是不是會直接去找 products/index.html.erb?</p>
-<blockquote>
-<p>tba</p>
-</blockquote>
-<h1 id="使用-simple-form-換掉-form"><a href="#使用-simple-form-換掉-form" class="headerlink" title="使用 simple_form 換掉 form"></a>使用 simple_form 換掉 form</h1><p><a href="https://github.com/plataformatec/simple_form" target="_blank" rel="external">https://github.com/plataformatec/simple_form</a></p>
-<h2 id="lt-simple-form-for-admin-product-do-f-gt-拆解。"><a href="#lt-simple-form-for-admin-product-do-f-gt-拆解。" class="headerlink" title="&lt;%= simple_form_for [:admin, @product] do |f| %&gt; 拆解。"></a>&lt;%= simple_form_for [:admin, @product] do |f| %&gt; 拆解。</h2><p>:admin 做為 namespace, 指 admin 下的 product。</p>
-<h2 id="simple-form-如何知道-input-屬性？"><a href="#simple-form-如何知道-input-屬性？" class="headerlink" title="simple_form 如何知道 input 屬性？"></a>simple_form 如何知道 input 屬性？</h2><p>rails form helper<br><figure class="highlight erb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;%=<span class="ruby"> form_for [<span class="symbol">:admin</span>, @product] <span class="keyword">do</span> <span class="params">|f|</span> </span>%&gt;</div><div class="line">  &lt;div class="group"&gt;</div><div class="line">    &lt;%=<span class="ruby"> f.label(<span class="string">"標題"</span>) </span>%&gt;</div><div class="line">    &lt;%=<span class="ruby"> f.text_field <span class="symbol">:title</span> </span>%&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;%<span class="ruby"> <span class="keyword">end</span> </span>%&gt;</div></pre></td></tr></table></figure></p>
-<p>simple form<br><figure class="highlight erb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;%=<span class="ruby"> simple_form_for [<span class="symbol">:admin</span>, @product] <span class="keyword">do</span> <span class="params">|f|</span> </span>%&gt;</div><div class="line">  &lt;div class="group"&gt;</div><div class="line">    &lt;%=<span class="ruby"> f.input <span class="symbol">:title</span> </span>%&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;%<span class="ruby"> <span class="keyword">end</span> </span>%&gt;</div></pre></td></tr></table></figure></p>
-<p>直接從 db &gt;&gt; table &gt;&gt; column屬性 來判斷。<br><a href="https://github.com/plataformatec/simple_form" target="_blank" rel="external">https://github.com/plataformatec/simple_form</a></p>
-<h1 id="加入產品修改功能"><a href="#加入產品修改功能" class="headerlink" title="加入產品修改功能"></a>加入產品修改功能</h1><h2 id="product-update-product-params-為什麼是-pass-in-product-params"><a href="#product-update-product-params-為什麼是-pass-in-product-params" class="headerlink" title="@product.update(product_params) 為什麼是 pass in product_params?"></a>@product.update(product_params) 為什麼是 pass in product_params?</h2><p>問錯問題了，create, update 後面本來就可以接參數，如果接的是 strong parameters, 那就是照 strong parameters 的規定去跑。所以該問的是（下方提問）：</p>
-<h2 id="提問-create-和-update-後面可以接什麼？"><a href="#提問-create-和-update-後面可以接什麼？" class="headerlink" title="[提問] .create 和 .update 後面可以接什麼？"></a>[提問] .create 和 .update 後面可以接什麼？</h2><blockquote>
-<p>tba</p>
-</blockquote>
-<h1 id="實作圖片上傳-carrierwave"><a href="#實作圖片上傳-carrierwave" class="headerlink" title="實作圖片上傳 carrierwave"></a>實作圖片上傳 carrierwave</h1><h2 id="rails-g-model-photo-product-id-integer-image-string-中，image-的屬性為什麼是-string"><a href="#rails-g-model-photo-product-id-integer-image-string-中，image-的屬性為什麼是-string" class="headerlink" title="rails g model photo product_id:integer image:string 中，image 的屬性為什麼是 string?"></a><code>rails g model photo product_id:integer image:string</code> 中，image 的屬性為什麼是 string?</h2><blockquote>
-<p>tba</p>
-</blockquote>
-<h2 id="拆解-mount-uploader-image-ImageUploader"><a href="#拆解-mount-uploader-image-ImageUploader" class="headerlink" title="拆解 mount_uploader :image, ImageUploader"></a>拆解 mount_uploader :image, ImageUploader</h2><blockquote>
-<p>tba</p>
-</blockquote>
-<h2 id="uploader是什麼情況？"><a href="#uploader是什麼情況？" class="headerlink" title="uploader是什麼情況？"></a>uploader是什麼情況？</h2><p>carrierwave 自動產生的東西<br><a href="https://github.com/carrierwaveuploader/carrierwave/blob/master/lib/generators/uploader_generator.rb" target="_blank" rel="external">https://github.com/carrierwaveuploader/carrierwave/blob/master/lib/generators/uploader_generator.rb</a></p>
-<h2 id="看-API-也有寫到-mount-uploader-avatar-AvatarUploader-是說-carrierwave-有固定的幾類-uploaders-還是說-avatar-AvatarUploader是自由命名的？"><a href="#看-API-也有寫到-mount-uploader-avatar-AvatarUploader-是說-carrierwave-有固定的幾類-uploaders-還是說-avatar-AvatarUploader是自由命名的？" class="headerlink" title="看 API 也有寫到 mount_uploader :avatar, AvatarUploader, 是說 carrierwave 有固定的幾類 uploaders, 還是說 :avatar, AvatarUploader是自由命名的？"></a>看 API 也有寫到 mount_uploader :avatar, AvatarUploader, 是說 carrierwave 有固定的幾類 uploaders, 還是說 :avatar, AvatarUploader是自由命名的？</h2><p>可以自由命名！另外，carrierwave 什麼檔案都可以傳，不限於圖片，這是我原本誤解的地方。</p>
-<h2 id="accepts-nested-attributes-for-photo-的用法"><a href="#accepts-nested-attributes-for-photo-的用法" class="headerlink" title="accepts_nested_attributes_for :photo 的用法"></a><code>accepts_nested_attributes_for :photo</code> 的用法</h2><p>當你把 photo 的資料跟 product 資料 <strong>一起送出</strong> 時，建立 product 後才會立刻跟著建立關聯的 photo 資料<br><a href="http://api.rubyonrails.org/classes/ActiveRecord/NestedAttributes/ClassMethods.html" target="_blank" rel="external">http://api.rubyonrails.org/classes/ActiveRecord/NestedAttributes/ClassMethods.html</a><br><a href="http://archives.ryandaigle.com/articles/2009/2/1/what-s-new-in-edge-rails-nested-attributes" target="_blank" rel="external">http://archives.ryandaigle.com/articles/2009/2/1/what-s-new-in-edge-rails-nested-attributes</a></p>
-<h2 id="問題：上面-accepts-nested-attributes-for-的用法，和-resources-包在另一個-resources-裡面有什麼差別？"><a href="#問題：上面-accepts-nested-attributes-for-的用法，和-resources-包在另一個-resources-裡面有什麼差別？" class="headerlink" title="問題：上面 accepts_nested_attributes_for 的用法，和 resources 包在另一個 resources 裡面有什麼差別？"></a>問題：上面 <code>accepts_nested_attributes_for</code> 的用法，和 resources 包在另一個 resources 裡面有什麼差別？</h2><p>不一樣。resources 包 resources 是在 routes 的寫法，accepts_nested_attributes_for 是做在表單的部份，要做巢狀表單的設計。order.rb 中有一行 accepts_nested_attributes_for :info，建立起 Order 和 OrderInfo 的關聯，而現在我們希望只要填一次表單，就能把兩個 models 需要 create 或是 update 的資料一次送上去，讓程式可以一次處理兩個 models 的東西。其實也可以宣告 accepts_nested_attributes_for :item, 只是我們這邊用不到所以沒寫。以上是巢狀表單在 model 的宣告。</p>
-<h2 id="resize-to-fit-和-resize-to-fill-的差別？"><a href="#resize-to-fit-和-resize-to-fill-的差別？" class="headerlink" title="resize_to_fit 和 resize_to_fill 的差別？"></a><code>resize_to_fit</code> 和 <code>resize_to_fill</code> 的差別？</h2><p><a href="https://support.cloudinary.com/hc/en-us/articles/202521222-What-is-the-difference-between-Fill-Fit-and-Limit-scaling-modes-" target="_blank" rel="external">https://support.cloudinary.com/hc/en-us/articles/202521222-What-is-the-difference-between-Fill-Fit-and-Limit-scaling-modes-</a></p>
-<h2 id="上傳圖片前，先在上傳頁面看到縮圖而不是連結。（在教材中我們是使用carrierwave來傳圖片）"><a href="#上傳圖片前，先在上傳頁面看到縮圖而不是連結。（在教材中我們是使用carrierwave來傳圖片）" class="headerlink" title="上傳圖片前，先在上傳頁面看到縮圖而不是連結。（在教材中我們是使用carrierwave來傳圖片）"></a>上傳圖片前，先在上傳頁面看到縮圖而不是連結。（在教材中我們是使用carrierwave來傳圖片）</h2><p><a href="http://stackoverflow.com/questions/4459379/preview-an-image-before-it-is-uploaded" target="_blank" rel="external">http://stackoverflow.com/questions/4459379/preview-an-image-before-it-is-uploaded</a></p>
-<h2 id="拆解-lt-c-input-image-as-file-gt"><a href="#拆解-lt-c-input-image-as-file-gt" class="headerlink" title="拆解 &lt;%= c.input :image , as: :file %&gt;"></a>拆解 &lt;%= c.input :image , as: :file %&gt;</h2><p>在 views/admin/products/new.html.erb 中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;form-group&quot;&gt;</div><div class="line">  &lt;%= f.simple_fields_for :photo do |c| %&gt;</div><div class="line">    &lt;%= c.input :image, as: :file %&gt;</div><div class="line">  &lt;% end %&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
-<p>這是巢狀表單 view 上面的宣告。Model 那邊是要做資料的過濾把關，view 這邊則是要對巢狀表單的宣告去建立。我們在 admin/products_controller 的 “new” method 裡有一行 <code>@photo = @product.build_photo</code>，這邊 :photo 就是在宣告這個 @photo, 如此才會顯示圖片。第二個部分，<code>&lt;%= c.input :image, as: :file %&gt;</code> 代表photo model 中 image 欄位，圖上傳的資訊存入這個欄位；as: :file 的部份，現在 image 欄位是 string，如果用 simple_form 會自動幫你變成一個 string 的欄位，一個單行表格填寫的欄位，但我們現在是要傳檔案，所以用 as: :file 來把表單屬性從 string 變成可以上傳一個檔案的選項。</p>
-<p>那像在 views/admin/product/index.html.erb中，<code>product.photo.image.thumb.url</code> 能夠顯示為 url, 而不是一串 string，原因是在這個例子中，有三個尺寸的images, 所有的資訊都是存到這個 image 欄位中，只是 carrierwave 是用一整包的物件把這些資訊存到這個欄位，這一包有包含圖片資料如，圖片名稱、三種sizes、三種sizes對應的URLs……等。</p>
-<p>如果沒有 as: :file, 就根本不能傳檔案上去，因為連 “Choose File” 的按鈕都不會有。</p>
-<p>當選好檔案按 OK 要傳上去時，controller 還會再做一次把關的機制，通過 controller 把關之後，controller 會把資訊存進 model。photo.rb 有一行 mount_uploader :image, ImageUploader，ImageUploader是圖片上傳設定檔，去image_uploader.rb 可以看到</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">def store_dir</div><div class="line">  &quot;uploads/#&#123;model.class.to_s.underscore&#125;/#&#123;mounted_as&#125;/#&#123;model.id&#125;&quot;</div><div class="line">end</div></pre></td></tr></table></figure>
-<p>比如說我們有做size的的設定，它會幫我們把圖裁切成不同size, 然後把圖檔存到 public/uploads 底下的資料夾，也就是下面這行：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&quot;uploads/#&#123;model.class.to_s.underscore&#125;/#&#123;mounted_as&#125;/#&#123;model.id&#125;”</div></pre></td></tr></table></figure>
-<h2 id="photo-和-image-的關係是？三種-image-version-的-process-是寫在-image-uploader-rb-裡面，所以一張-photo-是什麼時候透過-mini-magick-產生了三種-version-的-image-在-admin-products-controller-rb-中，-photo-product-photo-這行做了什麼？在-admin-products-new-html-erb-跟-edit-html-erb-中的-image-tag-photo-image-version-url-是不是只是選擇要上傳哪種-version-的-image-而不是在此時才產生特定-version-的-image"><a href="#photo-和-image-的關係是？三種-image-version-的-process-是寫在-image-uploader-rb-裡面，所以一張-photo-是什麼時候透過-mini-magick-產生了三種-version-的-image-在-admin-products-controller-rb-中，-photo-product-photo-這行做了什麼？在-admin-products-new-html-erb-跟-edit-html-erb-中的-image-tag-photo-image-version-url-是不是只是選擇要上傳哪種-version-的-image-而不是在此時才產生特定-version-的-image" class="headerlink" title="photo 和 image 的關係是？三種 image version 的 process 是寫在 image_uploader.rb 裡面，所以一張 photo 是什麼時候透過 mini_magick 產生了三種 version 的 image? 在 admin/products_controller.rb 中，@photo = @product.photo 這行做了什麼？在 admin/products/new.html.erb 跟 edit.html.erb 中的 image_tag(@photo.image.version.url) 是不是只是選擇要上傳哪種 version 的 image, 而不是在此時才產生特定 version 的 image?"></a>photo 和 image 的關係是？三種 image version 的 process 是寫在 image_uploader.rb 裡面，所以一張 photo 是什麼時候透過 mini_magick 產生了三種 version 的 image? 在 admin/products_controller.rb 中，<code>@photo = @product.photo</code> 這行做了什麼？在 admin/products/new.html.erb 跟 edit.html.erb 中的 <code>image_tag(@photo.image.version.url)</code> 是不是只是選擇要上傳哪種 version 的 image, 而不是在此時才產生特定 version 的 image?</h2><blockquote>
-<p>tba</p>
-</blockquote>
-<h2 id="假如我現在要從上傳一張照片改成可以上傳多張照片，怎麼運用-git-flow-來做新功能？model-之間的關聯性以及-controller-的-new-create-edit-update-要怎麼改？"><a href="#假如我現在要從上傳一張照片改成可以上傳多張照片，怎麼運用-git-flow-來做新功能？model-之間的關聯性以及-controller-的-new-create-edit-update-要怎麼改？" class="headerlink" title="假如我現在要從上傳一張照片改成可以上傳多張照片，怎麼運用 git flow 來做新功能？model 之間的關聯性以及 controller 的 new, create, edit, update 要怎麼改？"></a>假如我現在要從上傳一張照片改成可以上傳多張照片，怎麼運用 git flow 來做新功能？model 之間的關聯性以及 controller 的 new, create, edit, update 要怎麼改？</h2><p>目前的想法：</p>
-<ol>
-<li><p>models 間的關聯性要改</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">product has_many :photos</div></pre></td></tr></table></figure>
-</li>
-<li><p>controller 裡的 new, create, edit, update 要改</p>
-</li>
-</ol>
-<p>目前已知：</p>
-<ol>
-<li>carrierwave 文件有寫 multiple file uploads 的改法</li>
-</ol>
-<p>踩到的雷：</p>
-<ol>
-<li>因為有用 mini_magick 在 photo 底下生成 images, 所以不知道上傳多張圖片時，到底是上傳了多張 photos 還是 images。目前的想法是，上傳時可以設定傳哪種 version 的 photo.image, 所以這個 image_uploader 就都是傳一樣 version 的 photo.image, 不能客製化。<br>[提問] 不設定就是上傳預設的 version 嗎？</li>
-<li>carrierwave 必須是 master branch 的版本才有 multiple file uploads 的功能。</li>
-</ol>
-<p>問題：</p>
-<ol>
-<li>在 admin/products/edit.html.erb 中有一個條件是是 <code>&lt;% if @photo.image.present? %&gt;</code>，說明了存的圖片是 @photo.image, 那為什麼沒有 Image model？為什麼不是 product has_one image 或是上傳多張照片後的 product has_many images?</li>
-</ol>
-<ul>
-<li><code>@photo = @product.build_photo</code> 中的 <code>build_photo</code> 來自哪裡？ build_photo 後 @product 有了 photo 就可以直接 @product.photo 召喚物件，對嗎？</li>
-</ul>
-<blockquote>
-<p><code>.build_photo</code> 的出現是因為 <code>photo belongs_to product</code>。在belongs_to的關連建立起來後，Rails 自動產生數個 methods, 其中包括 <code>build_association</code>。<a href="http://guides.rubyonrails.org/association_basics.html" target="_blank" rel="external">http://guides.rubyonrails.org/association_basics.html</a> 4.1.1</p>
-</blockquote>
-<h2 id="提問-這邊的-build-photo-跟之前一個問題-“-new-與-build-的差別”-的-build-一樣嗎？"><a href="#提問-這邊的-build-photo-跟之前一個問題-“-new-與-build-的差別”-的-build-一樣嗎？" class="headerlink" title="[提問] 這邊的 .build_photo 跟之前一個問題 “.new 與 .build 的差別” 的 .build 一樣嗎？"></a>[提問] 這邊的 .build_photo 跟之前一個問題 “.new 與 .build 的差別” 的 .build 一樣嗎？</h2><blockquote>
-<p>tba</p>
-</blockquote>
-<h2 id="photo-attributes-image-id-是什麼？各代表什麼？"><a href="#photo-attributes-image-id-是什麼？各代表什麼？" class="headerlink" title="photo_attributes: [:image, :id] 是什麼？各代表什麼？"></a>photo_attributes: [:image, :id] 是什麼？各代表什麼？</h2><p>這是 strong parameters 在這部份的寫法。</p>
-<h2 id="拆解-lt-image-tag-photo-image-thumb-url-gt"><a href="#拆解-lt-image-tag-photo-image-thumb-url-gt" class="headerlink" title="拆解 &lt;%= image_tag(@photo.image.thumb.url) %&gt;"></a>拆解 <code>&lt;%= image_tag(@photo.image.thumb.url) %&gt;</code></h2><blockquote>
-<p>tba</p>
-</blockquote>
-<h2 id="在圖片還沒儲存時，有辦法跳出縮圖而不是路徑嗎？"><a href="#在圖片還沒儲存時，有辦法跳出縮圖而不是路徑嗎？" class="headerlink" title="在圖片還沒儲存時，有辦法跳出縮圖而不是路徑嗎？"></a>在圖片還沒儲存時，有辦法跳出縮圖而不是路徑嗎？</h2><p>這是屬於前端的範疇<br><a href="http://stackoverflow.com/questions/4459379/preview-an-image-before-it-is-uploaded" target="_blank" rel="external">http://stackoverflow.com/questions/4459379/preview-an-image-before-it-is-uploaded</a></p>
-<h2 id="“rails-裡面的一個機制-spring-的-cache-卡住，導致讀取不到-carrierwave-的-uploader，輸入-bin-spring-stop-bin-spring-start-即可解決。”-為什麼-spring-的-cache-會卡住？"><a href="#“rails-裡面的一個機制-spring-的-cache-卡住，導致讀取不到-carrierwave-的-uploader，輸入-bin-spring-stop-bin-spring-start-即可解決。”-為什麼-spring-的-cache-會卡住？" class="headerlink" title="“rails 裡面的一個機制 spring 的 cache 卡住，導致讀取不到 carrierwave 的 uploader，輸入 bin/spring stop bin/spring start 即可解決。” 為什麼 spring 的 cache 會卡住？"></a>“rails 裡面的一個機制 spring 的 cache 卡住，導致讀取不到 carrierwave 的 uploader，輸入 bin/spring stop bin/spring start 即可解決。” 為什麼 spring 的 cache 會卡住？</h2><blockquote>
-<p>tba</p>
-</blockquote>
-<h1 id="前台-products-show-products-index-實作"><a href="#前台-products-show-products-index-實作" class="headerlink" title="前台 products#show, products#index 實作"></a>前台 products#show, products#index 實作</h1><h2 id="products-controller-中的-index-和-show-都不需要註明-photo-product-photo，是因為-accepts-nested-attributes-for-的關係嗎？"><a href="#products-controller-中的-index-和-show-都不需要註明-photo-product-photo，是因為-accepts-nested-attributes-for-的關係嗎？" class="headerlink" title="products controller 中的 index 和 show 都不需要註明 @photo = @product.photo，是因為 accepts_nested_attributes_for 的關係嗎？"></a>products controller 中的 index 和 show 都不需要註明 @photo = @product.photo，是因為 accepts_nested_attributes_for 的關係嗎？</h2><blockquote>
-<p>tba</p>
-</blockquote>
-<h1 id="建立後台-layout"><a href="#建立後台-layout" class="headerlink" title="建立後台 layout"></a>建立後台 layout</h1><h2 id="為什麼這裡要安插一個-layout-“admin”-的指令？"><a href="#為什麼這裡要安插一個-layout-“admin”-的指令？" class="headerlink" title="為什麼這裡要安插一個 layout “admin” 的指令？"></a>為什麼這裡要安插一個 layout “admin” 的指令？</h2><p>rails 的指令，用來 override default layout, which is application.html.erb. <code>layout &quot;admin&quot;</code> 是取 app/views/layouts/admin.html.erb 來使用，別忘了這裡是 admin::ProductsController, 我們正在做 admin 才能看到的後台。</p>
-<h1 id="建立使用者後台做權限管理"><a href="#建立使用者後台做權限管理" class="headerlink" title="建立使用者後台做權限管理"></a>建立使用者後台做權限管理</h1><h2 id="member-和-collection-是什麼？"><a href="#member-和-collection-是什麼？" class="headerlink" title="member 和 collection 是什麼？"></a>member 和 collection 是什麼？</h2><p><a href="https://ihower.tw/rails4/routing.html" target="_blank" rel="external">https://ihower.tw/rails4/routing.html</a></p>
-<h2 id="post-to-admin-及-post-to-normal-又是什麼？"><a href="#post-to-admin-及-post-to-normal-又是什麼？" class="headerlink" title="post :to_admin 及 post :to_normal 又是什麼？"></a>post :to_admin 及 post :to_normal 又是什麼？</h2><p><a href="https://ihower.tw/rails4/routing.html" target="_blank" rel="external">https://ihower.tw/rails4/routing.html</a></p>
-<h2 id="跟下方-to-normal-admin-user-path-user-method-post-又有什麼關聯？"><a href="#跟下方-to-normal-admin-user-path-user-method-post-又有什麼關聯？" class="headerlink" title="跟下方 to_normal_admin_user_path(user), method: :post 又有什麼關聯？"></a>跟下方 <code>to_normal_admin_user_path(user), method: :post</code> 又有什麼關聯？</h2><p>要先設好 routes, 才會產生 to_normal_admin_user_path(user) 這樣的 helper, 然後即使已經在 routes.rb 設定了 post :to_normal, 在 <code>&lt;%= link_to &quot;轉為一般使用者&quot;, to_normal_admin_user_path(user), method: :post %&gt;</code> 中還是需要註明 <code>method: :post</code>。</p>
-<h2 id="to-admin-和-to-normal-來自哪裡？為什麼可以用在自己的-def-中？"><a href="#to-admin-和-to-normal-來自哪裡？為什麼可以用在自己的-def-中？" class="headerlink" title=".to_admin 和 .to_normal 來自哪裡？為什麼可以用在自己的 def 中？"></a><code>.to_admin</code> 和 <code>.to_normal</code> 來自哪裡？為什麼可以用在自己的 def 中？</h2><p>admin/users_controller.rb 中，def to_admin 裡面的 .to_admin 其實來自 model 的 def to_admin, 這個 method 的功能是更改 is_admin 欄位的值。</p>
-<h2 id="self-是什麼？"><a href="#self-是什麼？" class="headerlink" title="self 是什麼？"></a>self 是什麼？</h2><p><a href="http://stackoverflow.com/questions/7520444/what-does-self-do-in-ruby-on-rails" target="_blank" rel="external">http://stackoverflow.com/questions/7520444/what-does-self-do-in-ruby-on-rails</a><br><a href="http://www.rubyfleebie.com/understanding-class-methods-in-ruby/" target="_blank" rel="external">http://www.rubyfleebie.com/understanding-class-methods-in-ruby/</a><br><a href="https://www.quora.com/With-Ruby-on-Rails-how-do-you-know-when-to-use-the-self-class-or-instance-variables" target="_blank" rel="external">https://www.quora.com/With-Ruby-on-Rails-how-do-you-know-when-to-use-the-self-class-or-instance-variables</a></p>
-<h1 id="Deploy-到-heroku"><a href="#Deploy-到-heroku" class="headerlink" title="Deploy 到 heroku"></a>Deploy 到 heroku</h1><h2 id="怎麼安排-development-test-production-階段？在-local-端必是-development-push-到-heroku端會自動切換成-development"><a href="#怎麼安排-development-test-production-階段？在-local-端必是-development-push-到-heroku端會自動切換成-development" class="headerlink" title="怎麼安排 development, test, production 階段？在 local 端必是 development? push 到 heroku端會自動切換成 development?"></a>怎麼安排 development, test, production 階段？在 local 端必是 development? push 到 heroku端會自動切換成 development?</h2><p>不需要安排。上遠端 server 就必然是 production, 在 local 就必定是 development. test 階段是寫 script 去測試 app 有沒有狀況。Rails 在開發階段預設就是吃 development mode，所以很多東西是動態產生的，比如說能看到 debug 資訊，比如說記憶體不會 cache 住，每次撈一筆資料都是重新 refresh, html 也是重新產生；但是在 production 階段就會去 cache 住像 sequel query, html……等。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/16/Rails-EC-Week-1/" itemprop="url">
-                  Rails EC Week 1
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-09-16T21:29:29+08:00" content="2016-09-16">
-              2016-09-16
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/16/Rails-EC-Week-1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/09/16/Rails-EC-Week-1/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="建立後台"><a href="#建立後台" class="headerlink" title="建立後台"></a>建立後台</h1><h2 id="列出目前所有的-routes"><a href="#列出目前所有的-routes" class="headerlink" title="列出目前所有的 routes"></a>列出目前所有的 routes</h2><p><a href="http://guides.rubyonrails.org/routing.html" target="_blank" rel="external">http://guides.rubyonrails.org/routing.html</a></p>
-<ol>
-<li>terminal: <code>$ rake routes</code></li>
-<li>瀏覽器: <code>localhost:3000/rails/info/routes</code></li>
-<li>瀏覽器: 跟路徑錯誤有關的錯誤訊息中</li>
-</ol>
-<h2 id="product-params-是某種-rails-的命名慣例嗎？"><a href="#product-params-是某種-rails-的命名慣例嗎？" class="headerlink" title="product_params 是某種 rails 的命名慣例嗎？"></a>product_params 是某種 rails 的命名慣例嗎？</h2><p>No, 這是一個method, 所以可以自由命名，而這邊是命名給 strong parameters.</p>
-<h2 id="routes-rb"><a href="#routes-rb" class="headerlink" title="routes.rb"></a><code>routes.rb</code></h2><figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">namespace <span class="symbol">:admin</span> <span class="keyword">do</span></div><div class="line">  resources <span class="symbol">:products</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<p>是什麼意思？</p>
-<p>這個的意思是，在 admin 下的 products controller 中用 rails 內建的指令<code>resources :products</code>一行設定好 products controller 內七大 CRUD actions, which are new, create, edit, update, show, index, destroy.</p>
-<h2 id="開一個新的-branch-重新練習的時候，db-並不會清空，怎麼辦？"><a href="#開一個新的-branch-重新練習的時候，db-並不會清空，怎麼辦？" class="headerlink" title="開一個新的 branch 重新練習的時候，db 並不會清空，怎麼辦？"></a>開一個新的 branch 重新練習的時候，db 並不會清空，怎麼辦？</h2><p>照下方的順序做</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">＄ rake db:drop      # 把資料庫丟掉</div><div class="line">＄ rake db:create    # 建立資料庫</div><div class="line">＄ rake db:migrate   # migrate資料庫</div><div class="line">＄ rake db:seed      # 把seed內的資料灌進db (不需要再 rake db:migrate 一次)</div></pre></td></tr></table></figure>
-<p>這樣做會把之前建立的資料清除，然後在 db/seeds.rb 裡寫種子檔，重建時將一些基本資料存進去(例如使用者資料, 基本商品資料, 基本文章…etc )。Rails101 第十章則進一步把上述四個指令簡化成一個指令 <code>rake db:rebuild</code></p>
-<h2 id="namespace-是什麼？"><a href="#namespace-是什麼？" class="headerlink" title="namespace 是什麼？"></a>namespace 是什麼？</h2><p>用來做區隔的標籤</p>
-<h2 id="在-form-中輸入資料按下-submit-把資料送出到-DB，如果沒有-throw-exception-那是不是資料成功送進-DB-的步驟就等於-save-了？"><a href="#在-form-中輸入資料按下-submit-把資料送出到-DB，如果沒有-throw-exception-那是不是資料成功送進-DB-的步驟就等於-save-了？" class="headerlink" title="在 form 中輸入資料按下 submit 把資料送出到 DB，如果沒有 throw exception, 那是不是資料成功送進 DB 的步驟就等於 save 了？"></a>在 form 中輸入資料按下 submit 把資料送出到 DB，如果沒有 throw exception, 那是不是資料成功送進 DB 的步驟就等於 save 了？</h2><p>小蟹：<br>不太對。沒有 throw exception 只能說程式沒有出錯<br>比方說 validate 失敗，並不會 throw exception，但也沒有存進 DB<br>如果你忘了寫 save，也不會 throw exception，而且沒有存進 DB</p>
-<p>我：<br>那麼比方說我們寫create action時，<br><figure class="highlight rb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">create</span></span></div><div class="line">  @xxx = Xxx.new(xxx_params)</div><div class="line">  <span class="keyword">if</span> @xxx.save</div><div class="line">    redirect_to <span class="string">"/"</span></div><div class="line">  <span class="keyword">else</span></div><div class="line">    render <span class="symbol">:new</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure></p>
-<p>是什麼步驟有 save, 我們才會去寫 <code>if @xxx.save</code> ?</p>
-<p>小蟹：<br>最常見是 validate<br>會隨著 save 執行的事件</p>
-<p>我：<br><a href="http://guides.rubyonrails.org/active_record_validations.html" target="_blank" rel="external">http://guides.rubyonrails.org/active_record_validations.html</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&quot;The following methods trigger validations, and will save the object to the database only if the object is valid.&quot;</div><div class="line">create</div><div class="line">create!</div><div class="line">save</div><div class="line">save!</div><div class="line">update</div><div class="line">update!</div></pre></td></tr></table></figure></p>
-<p>整理一下我的理解：</p>
-<ol>
-<li>因為是 create method, 所以會 “trigger validations, and will save the object to the database only if the object is valid.”</li>
-<li>因此有寫 if @xxx.save 的條件的空間</li>
-<li>也就有後續 “redirect_to” 或 “render” 的情形。</li>
-</ol>
-<h1 id="實作使用者功能"><a href="#實作使用者功能" class="headerlink" title="實作使用者功能"></a>實作使用者功能</h1><h2 id="rails-g-devise-install-這個指令是做什麼的？"><a href="#rails-g-devise-install-這個指令是做什麼的？" class="headerlink" title="rails g devise:install 這個指令是做什麼的？"></a>rails g devise:install 這個指令是做什麼的？</h2><p>devise 的一個指令。gem 只把 devise 裝進 rails, 但如果要在這個專案執行，仍然要 devise:install</p>
-<h2 id="rails-g-devise-user-後程式跑的內容代表什麼意思？它和-rails-g-model-user-生出來的-user-有什麼差別？"><a href="#rails-g-devise-user-後程式跑的內容代表什麼意思？它和-rails-g-model-user-生出來的-user-有什麼差別？" class="headerlink" title="rails g devise user 後程式跑的內容代表什麼意思？它和 rails g model user 生出來的 user 有什麼差別？"></a>rails g devise user 後程式跑的內容代表什麼意思？它和 rails g model user 生出來的 user 有什麼差別？</h2><p><code>$ rails g model pie</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">invoke    active_record</div><div class="line">create    db/migrate/20160312075723_create_pies.rb</div><div class="line">create    app/models/pie.rb</div><div class="line">invoke    test_unit</div><div class="line">create    test/models/pie_test.rb</div><div class="line">create    test/fixtures/pies.yml</div></pre></td></tr></table></figure></p>
-<p>pie model內容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">class Pie &lt; ActiveRecord::Base</div><div class="line">end</div></pre></td></tr></table></figure></p>
-<p><code>$ rails g devise cake</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">invoke    active_record</div><div class="line">create    db/migrate/20160312075647_devise_create_cakes.rb</div><div class="line">create    app/models/cake.rb</div><div class="line">invoke    test_unit</div><div class="line">create    test/models/cake_test.rb</div><div class="line">create    test/fixtures/cakes.yml</div><div class="line">insert    app/models/cake.rb</div><div class="line">route     devise_for :cakes</div></pre></td></tr></table></figure></p>
-<p>cake model內容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">class Cake &lt; ActiveRecord::Base</div><div class="line">  # Include default devise modules. Others available are:</div><div class="line">  # :confirmable, :lockable, :timeoutable and :omniauthable</div><div class="line">  devise :database_authenticatable, :registerable,</div><div class="line">         :recoverable, :rememberable, :trackable, :validatable</div><div class="line">end</div></pre></td></tr></table></figure></p>
-<p>routes.rb內容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Rails.application.routes.draw do</div><div class="line">  devise_for :cakes</div><div class="line">end</div></pre></td></tr></table></figure></p>
-<h2 id="如果不小心把-rails-g-devise-user-寫成-rails-g-devise-users，生出的檔案都一樣，不會有影響。"><a href="#如果不小心把-rails-g-devise-user-寫成-rails-g-devise-users，生出的檔案都一樣，不會有影響。" class="headerlink" title="如果不小心把 $ rails g devise user 寫成 $ rails g devise users，生出的檔案都一樣，不會有影響。"></a>如果不小心把 <code>$ rails g devise user</code> 寫成 <code>$ rails g devise users</code>，生出的檔案都一樣，不會有影響。</h2><h1 id="管理者存取後台設定"><a href="#管理者存取後台設定" class="headerlink" title="管理者存取後台設定"></a>管理者存取後台設定</h1><h2 id="current-user-是-rails-內建的嗎？"><a href="#current-user-是-rails-內建的嗎？" class="headerlink" title="current_user 是 rails 內建的嗎？"></a>current_user 是 rails 內建的嗎？</h2><p>No, 是 devise 給的。</p>
-<h2 id="怎麼規劃架構和功能建置的流程？"><a href="#怎麼規劃架構和功能建置的流程？" class="headerlink" title="怎麼規劃架構和功能建置的流程？"></a>怎麼規劃架構和功能建置的流程？</h2><p>就是用 user story 來切，切得適當就能規劃出好的功能及開發流程。這需要經驗就是了。</p>
-<h2 id="slide-3-10中，導向登入頁面是-devise-的功能嗎？那這個登入的-view-是在哪裡？"><a href="#slide-3-10中，導向登入頁面是-devise-的功能嗎？那這個登入的-view-是在哪裡？" class="headerlink" title="slide 3/10中，導向登入頁面是 devise 的功能嗎？那這個登入的 view 是在哪裡？"></a>slide 3/10中，導向登入頁面是 devise 的功能嗎？那這個登入的 view 是在哪裡？</h2><p>是 devise 的功能<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ rails g devise:views</div></pre></td></tr></table></figure></p>
-<p>devise 的 view 就會出現在 app/views/devise 資料夾了</p>
-<h2 id="用-devise-做的登錄畫面要怎麼顯示中文？"><a href="#用-devise-做的登錄畫面要怎麼顯示中文？" class="headerlink" title="用 devise 做的登錄畫面要怎麼顯示中文？"></a>用 devise 做的登錄畫面要怎麼顯示中文？</h2><p><a href="https://github.com/plataformatec/devise/wiki/I18n" target="_blank" rel="external">https://github.com/plataformatec/devise/wiki/I18n</a></p>
-<h2 id="哪些順序有影響？"><a href="#哪些順序有影響？" class="headerlink" title="哪些順序有影響？"></a>哪些順序有影響？</h2><p>gem 的順序                                 =&gt; 沒影響<br>def 的順序                                    =&gt; 沒影響<br>多個 before_action 的順序   =&gt; 有影響<br>method 中 code 順序                =&gt; 有影響<br>yml 的縮排                                    =&gt; 有影響<br>require<br>include</p>
-<h2 id="require-的順序？"><a href="#require-的順序？" class="headerlink" title="require 的順序？"></a>require 的順序？</h2><p>[這段不確定] require xxx, include xxx 一般是放最上面，因為如果有段內容要用到 require xxx, include xxx, 結果 require xxx, include xxx 不在該段內容之前，就會跳出錯誤。</p>
-<h2 id="待解-下面兩題的內容整合一下"><a href="#待解-下面兩題的內容整合一下" class="headerlink" title="[待解] 下面兩題的內容整合一下"></a>[待解] 下面兩題的內容整合一下</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Q1: slide 7/10, User model 不知道什麼是 admin, 為什麼這邊是來到 model? slide 9/10又代表什麼情況呢？</div><div class="line"></div><div class="line">A1: 以這個 MVC 架構而言，controller 跑完去 model 找 admin?, 沒找到所以要新增 def admin?, model 的部份處理好了，再往 database 去找 is_admin 欄位，沒找到所以又跳出錯誤訊息，於是要再新增 is_admin 欄位。在 rails 中，model 欄位直接對應 database 中 form 的欄位。</div><div class="line"></div><div class="line">Q2: 為什麼 User model 中，def admin? 裡的 is_admin 可以直接對應到 db 中 user table 的 is_admin 欄位？是 rails magic嗎？（問題同上一題）</div><div class="line"></div><div class="line">A2: 是rails magic沒錯。這邊rails會先去找同一個model裡面同名的method, 沒找到就再去找DB欄位。</div></pre></td></tr></table></figure>
-<h2 id="add-column-users-is-admin-boolean-default-false"><a href="#add-column-users-is-admin-boolean-default-false" class="headerlink" title="add_column :users, :is_admin, :boolean, default: false"></a><code>add_column :users, :is_admin, :boolean, default: false</code></h2><ol>
-<li>add_column    =&gt; add column</li>
-<li>:users         =&gt; table name</li>
-<li>:is_admin     =&gt; column name</li>
-<li>:boolean     =&gt; column type</li>
-</ol>
-<h1 id="在-console-建立使用者並改為-admin-權限"><a href="#在-console-建立使用者並改為-admin-權限" class="headerlink" title="在 console 建立使用者並改為 admin 權限"></a>在 console 建立使用者並改為 admin 權限</h1><h2 id="為什麼rails-console可以更改權限？"><a href="#為什麼rails-console可以更改權限？" class="headerlink" title="為什麼rails console可以更改權限？"></a>為什麼rails console可以更改權限？</h2><p>rails console有造物主般的權限，所以可以新增管理者、使用者……等，但實務上不會在console手動新增，而是寫個包裹(這邊用詞正確嗎?)自動執行。原因是手動可能會出錯，寫包裹自動執行不會出錯，因為在執行前都可以先在development環境測試包裹內容正不正確。</p>
-<h1 id="解決不能登出的問題"><a href="#解決不能登出的問題" class="headerlink" title="解決不能登出的問題"></a>解決不能登出的問題</h1><h2 id="為什麼登入／登出是寫在-navbar-html-erb-前端-而不是寫在-controller-第二週購物車商品數量更改也寫在-carts-index-html-erb-在-view-改數量，為什麼能影響到後端更動-cart-items-quantity？"><a href="#為什麼登入／登出是寫在-navbar-html-erb-前端-而不是寫在-controller-第二週購物車商品數量更改也寫在-carts-index-html-erb-在-view-改數量，為什麼能影響到後端更動-cart-items-quantity？" class="headerlink" title="為什麼登入／登出是寫在 _navbar.html.erb(前端)而不是寫在 controller? 第二週購物車商品數量更改也寫在 carts/index.html.erb, 在 view 改數量，為什麼能影響到後端更動 cart_items.quantity？"></a>為什麼登入／登出是寫在 <code>_navbar.html.erb</code>(前端)而不是寫在 controller? 第二週購物車商品數量更改也寫在 carts/index.html.erb, 在 view 改數量，為什麼能影響到後端更動 cart_items.quantity？</h2><p>以更改數量為例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;%= form_for item, url: item_path(product) do |f| %&gt;</div><div class="line">  &lt;%= f.select :quantity, 1..product.quantity %&gt;</div><div class="line">  &lt;%= f.submit &quot;更新&quot;, data: &#123;disable_with: &quot;Submitting...&quot;&#125; %&gt;</div><div class="line">&lt;% end %&gt;</div></pre></td></tr></table></figure></p>
-<p>那段內容包在 form_for 裡面，所以按鈕不只是按鈕，實際上也是 form 表單。當我們選定數字後，按下”更新”就會送出到它對應的 item_path(product)，但是在 routes.rb <code>resources :items, controller: &quot;cart_items&quot;</code>，我們已經先定義這個 item 是指向 cart_items controller, 所以前面按下更新後，實際上是對 cart_item 這個資料送出更動的 request, 這個 request 是對應到 cart_items controller 中的 update method, 所以開始跑 update method, 並進而在條件符合的情況下，跑到這一行 <code>@item.update(item_params)</code> 而更動到 cart_items 表單中的 quantity 欄位。</p>
-<h2 id="提問-為什麼這個-request-是-update-method"><a href="#提問-為什麼這個-request-是-update-method" class="headerlink" title="[提問] 為什麼這個 request 是 update method?"></a>[提問] 為什麼這個 request 是 update method?</h2><p>因為在 <code>&lt;%= form_for item, url: item_path(product) do |f| %&gt;</code> 裡面的 product 是一個 model: Product 的物件，該物件如果是空的 (e.g.: Product.new ) 就會幫你設定打到 create action 的 path，如果是有東西 就會幫你設定打到 update action 的 path。這樣的好處是，form 這邊只要判斷變數的內容，即可分辨出是要 create 還是 update, 我們只需要將物件設定好 ( 像是在 controller 裡面定義 ) 一份 view 就可以搞定。( views/admin/products/new 跟 edit 幾乎一模一樣就是這個原理 )</p>
-<h2 id="lt-f-submit-“更新”-data-disable-with-“Submitting…”-gt"><a href="#lt-f-submit-“更新”-data-disable-with-“Submitting…”-gt" class="headerlink" title="&lt;%= f.submit “更新”, data: {disable_with: “Submitting…”} %&gt;"></a>&lt;%= f.submit “更新”, data: {disable_with: “Submitting…”} %&gt;</h2><p><code>disable_with</code> 的動能是避免重複點選按鈕，”Submitting…” 則是按下按鈕觸法 disable_with 後，按鈕上顯示的內容。整個流程是，按下顯示為”更新”的 submit 按鈕後，觸法 disable_with 功能，按鈕進入無法被按(所以不會重複點擊)的狀態，並且 “更新” 字樣轉為 “Submitting…” 字樣。</p>
-<h2 id="lt-link-to-“登出”-destroy-user-session-path-method-delete-gt-拆解。"><a href="#lt-link-to-“登出”-destroy-user-session-path-method-delete-gt-拆解。" class="headerlink" title="&lt;%= link_to(“登出”, destroy_user_session_path, method: :delete) %&gt; 拆解。"></a>&lt;%= link_to(“登出”, destroy_user_session_path, method: :delete) %&gt; 拆解。</h2><p>link_to 後面依序是：</p>
-<ol>
-<li>按鈕上的文字(“登出”)</li>
-<li>路徑(destroy_user_session_path)</li>
-<li>HTTP verbs 每個動詞在 spec 中都有定義使用情況，DELETE 就是 for 刪除的行為。所有的 <code>_path</code> 都只是幫你生出網址， :method 非預設 :get 的話都要自己指定。</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">(原本部份觀念錯誤的3，留紀錄供參考對照。)</div><div class="line">一般就是以上兩種，至於第三個(method: :delete)則是指定某個method, 這是devise的功能，也可以改成:get. 但為什麼要指定DELETE呢？因為比如說，今天你收到一個電子郵件好了，有人在電郵中的一張圖片上包一段程式碼是讓你的帳號登出，一旦圖片顯示出來(which is 執行了GET), 你的帳號就被登出了。What if the code is to delete all your files? That would be a big problem. 類似的情況則是bot可以不透過按“登出”鈕就登出，或者看指令是什麼而有對應的行為。今天設定method: :delete, 則是真人按下”登出”鈕時執行登出的動作。</div></pre></td></tr></table></figure>
-<p>圖片的例子不成立，因為圖片屬於 static file，靜態檔案並不會有 GET 以外的行為。正常的網址都要點擊後才會生效，所以不會發生圖片顯示後就觸發某個動作這種事情。</p>
-<h2 id="待解"><a href="#待解" class="headerlink" title="[待解]"></a>[待解]</h2><ol>
-<li>這是devise的功能?????</li>
-</ol>
-<h2 id="設定method-delete-是真人按下”登出”鈕時，還是”確定登出”的對話框時執行登出的動作？"><a href="#設定method-delete-是真人按下”登出”鈕時，還是”確定登出”的對話框時執行登出的動作？" class="headerlink" title="設定method: :delete, 是真人按下”登出”鈕時，還是”確定登出”的對話框時執行登出的動作？"></a>設定method: :delete, 是真人按下”登出”鈕時，還是”確定登出”的對話框時執行登出的動作？</h2><p>只有在按下”確定登出”的 yes 鈕時，才會送出request.</p>
-<h2 id="比如說-lt-link-to-quot-登出-quot-destroy-user-session-path-method-delete-gt-，destroy-user-session-path不就已經代表是用DELETE了？為什麼後面還要一個method-delete-而且從rake-routes也可以得知只有一個-destroy-user-session-path，並且後面標示Verb是DELETE，不就沒有跟其他verbs共用-destroy-user-session-path-的可能嗎？那為什麼還要特別註明是用-method-delete"><a href="#比如說-lt-link-to-quot-登出-quot-destroy-user-session-path-method-delete-gt-，destroy-user-session-path不就已經代表是用DELETE了？為什麼後面還要一個method-delete-而且從rake-routes也可以得知只有一個-destroy-user-session-path，並且後面標示Verb是DELETE，不就沒有跟其他verbs共用-destroy-user-session-path-的可能嗎？那為什麼還要特別註明是用-method-delete" class="headerlink" title="比如說 &lt;%= link_to(&quot;登出&quot;, destroy_user_session_path, method: :delete ) %&gt;，destroy_user_session_path不就已經代表是用DELETE了？為什麼後面還要一個method: :delete? 而且從rake routes也可以得知只有一個 destroy_user_session_path，並且後面標示Verb是DELETE，不就沒有跟其他verbs共用 destroy_user_session_path 的可能嗎？那為什麼還要特別註明是用 method: :delete ?"></a>比如說 <code>&lt;%= link_to(&quot;登出&quot;, destroy_user_session_path, method: :delete ) %&gt;</code>，<code>destroy_user_session_path</code>不就已經代表是用<code>DELETE</code>了？為什麼後面還要一個<code>method: :delete</code>? 而且從rake routes也可以得知只有一個 <code>destroy_user_session_path</code>，並且後面標示Verb是<code>DELETE</code>，不就沒有跟其他verbs共用 <code>destroy_user_session_path</code> 的可能嗎？那為什麼還要特別註明是用 <code>method: :delete</code> ?</h2><ol>
-<li>不對，所有的 <code>_path</code> 都只是幫你生出網址， :method 非預設 :get 的話都要自己指定。</li>
-<li>後面那個問題，現在沒有verbs共用同一個路徑不代表以後沒有，所以還是要寫清楚。</li>
-</ol>
-<h2 id="全域的layout和partial有什麼關係？"><a href="#全域的layout和partial有什麼關係？" class="headerlink" title="全域的layout和partial有什麼關係？"></a>全域的layout和partial有什麼關係？</h2><p>可以把partial想成某個配件，把程式碼整理成partial有三大好處：</p>
-<ol>
-<li>全域的layout（即layout/application.html.erb）會清爽許多。</li>
-<li>每個partial可以分別去設計，利於分工。</li>
-<li>可以重複使用。</li>
-</ol>
-<h2 id="slide-2-of-3-為什麼不作成-partial？"><a href="#slide-2-of-3-為什麼不作成-partial？" class="headerlink" title="slide 2 of 3 為什麼不作成 partial？"></a>slide 2 of 3 為什麼不作成 partial？</h2><h1 id="將頁面用-bootstrap-套版"><a href="#將頁面用-bootstrap-套版" class="headerlink" title="將頁面用 bootstrap 套版"></a>將頁面用 bootstrap 套版</h1><h2 id="拆解下面的內容，bootstrap-sprockets-是做什麼的？"><a href="#拆解下面的內容，bootstrap-sprockets-是做什麼的？" class="headerlink" title="拆解下面的內容，bootstrap-sprockets 是做什麼的？"></a>拆解下面的內容，bootstrap-sprockets 是做什麼的？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">@import &quot;bootstrap-sprockets&quot;;</div><div class="line">@import &quot;bootstrap&quot;;</div></pre></td></tr></table></figure>
-<h1 id="Deploy-到-heroku-投影片"><a href="#Deploy-到-heroku-投影片" class="headerlink" title="Deploy 到 heroku (投影片)"></a>Deploy 到 heroku (投影片)</h1><h2 id="跑完下列指令後"><a href="#跑完下列指令後" class="headerlink" title="跑完下列指令後"></a>跑完下列指令後</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ git add -A</div><div class="line">$ git commit -m &quot;message&quot;</div><div class="line">$ git push heroku store-v1:master</div><div class="line">$ heroku run rake db:migrate</div></pre></td></tr></table></figure>
-<p>接著跑<code>$ heroku run rake db:seed</code>, 不需要再跑一次<code>$ heroku run rake db:migrate</code>就可以生效。</p>
-<h1 id="Misc"><a href="#Misc" class="headerlink" title="Misc."></a>Misc.</h1><h2 id="由於回家作業中，有些新功能不完全照著-user-story-來開發，比如說”解決不能登出的問題”就是-user-story-中沒有明確寫到的，請問是什麼情況？是因為開發時常會遇到-user-story-寫得不夠完整而要隨時調整-user-story-內容嗎？我們要怎麼判斷是不是把初步的功能做齊了呢？又，在-web-developing-的領域，我們是透過快速迭代來解決這樣的問題，還是找一組人對-web-app-做產品測試？還是有其他解法？"><a href="#由於回家作業中，有些新功能不完全照著-user-story-來開發，比如說”解決不能登出的問題”就是-user-story-中沒有明確寫到的，請問是什麼情況？是因為開發時常會遇到-user-story-寫得不夠完整而要隨時調整-user-story-內容嗎？我們要怎麼判斷是不是把初步的功能做齊了呢？又，在-web-developing-的領域，我們是透過快速迭代來解決這樣的問題，還是找一組人對-web-app-做產品測試？還是有其他解法？" class="headerlink" title="由於回家作業中，有些新功能不完全照著 user story 來開發，比如說”解決不能登出的問題”就是 user story 中沒有明確寫到的，請問是什麼情況？是因為開發時常會遇到 user story 寫得不夠完整而要隨時調整 user story 內容嗎？我們要怎麼判斷是不是把初步的功能做齊了呢？又，在 web developing 的領域，我們是透過快速迭代來解決這樣的問題，還是找一組人對 web app 做產品測試？還是有其他解法？"></a>由於回家作業中，有些新功能不完全照著 user story 來開發，比如說”解決不能登出的問題”就是 user story 中沒有明確寫到的，請問是什麼情況？是因為開發時常會遇到 user story 寫得不夠完整而要隨時調整 user story 內容嗎？我們要怎麼判斷是不是把初步的功能做齊了呢？又，在 web developing 的領域，我們是透過快速迭代來解決這樣的問題，還是找一組人對 web app 做產品測試？還是有其他解法？</h2><p>這種情況是user story寫得還不夠細。這份教材的user story大概到V6而已，xdite開發產品時實際上會一口氣寫到V10, 把大致上的流程、目標、要解決的問題、風險儘量抓出來。風險是指比如說要接信用卡，首先你要有公司才能去接第三方支付，第三方支付中，A付寶的審核可能只需2天，B付寶卻可能拖3個月，如果這個風險沒抓出來，就會變成開發時的bottle neck。</p>
-<p>而user story寫詳盡，開發時比較會有大局觀，不至於為了開發一個不重要的小功能，造成重要功能進度delay，因小失大。另外，每個story都可以估大概要做多久，就算估不出來，也可以去估每個小的story大概做多久，並估出這個story大概要花多少的人力。</p>
-<p>user story以專案管理的角度來說，是為了完成有價值的東西，”解決不能登出的問題”實際上是個技術bug, 雖然還是要解決，但沒那麼重要，可以先放在Agile/Scrum概念中的Epic（可以想成是待解決技術清單），等有價值的東西先做完了再解決。這類問題的確是用快速迭代的方式解決，xdite的作法是星期一到星期四focus在寫story上的東西，星期五修Epic。大部分公司不會有錢請另一組人做產品測試，所以一般是產品開發完，自己要去做測試，這也是放星期五。主要是先把大的、小的user story順好、骨架搭起來，最後再驗收。Agile的驗收很頻繁，可能每兩個禮拜一次，驗收這個sprint該完成什麼事情、沒完成的話原因是什麼？（比如小story沒補上？epic沒修好？）</p>
-<h2 id="如果app開發到一半去改Gemfile中的Rails版本然後bundle-install會發生什麼事？"><a href="#如果app開發到一半去改Gemfile中的Rails版本然後bundle-install會發生什麼事？" class="headerlink" title="如果app開發到一半去改Gemfile中的Rails版本然後bundle install會發生什麼事？"></a>如果app開發到一半去改Gemfile中的Rails版本然後bundle install會發生什麼事？</h2><p>google search “semver”（語意上的版本）主要版本、次要版本、小版本。</p>
-<p>小版本更新通常是一些fixes, 不影響專案的架構，比如3.2.1 → 3.2.5，可以放心升，但即便如此，通常還是建議不要這樣做，而是上線前大修一次；而像3.2.1 → 3.2.11，可能中間間隔10個月了，升的時候要小心；如果像是4.0.1 → 4.1.1，有些中等程度的API可能會變更／棄用，升上去Rails可能只會給警告，或是小地方壞掉，但假如是一次跳兩個版本，比如4.0.1 → 4.2.0，不做出相對的修正，app可能就直接炸掉。</p>
-<p>這是Rails的特性，或者說是維護Rails的37Signals團隊的風格，他們覺得不好的寫法就會在升級時改掉，rails developer得要一直追這些寫法、規則。以Rails而言，一個主要版本到下一個主要版本，比如說Rails 3 → Rails 4，大概是18個月。</p>
-<p>另個跟rails版本有關的是gem的支援，版本變動造成的Rails內部的API變動，可能會連帶造成有些gems不支援新版本的Rails。一是等作者更新gem, 一是專案開發者自己修，但junior developer通常不具備這個能力。</p>
-<h2 id="User-story-寫到最後會變成很可怕的量，如何限縮到MVP的範圍？（或，如何從中找出MVP？）"><a href="#User-story-寫到最後會變成很可怕的量，如何限縮到MVP的範圍？（或，如何從中找出MVP？）" class="headerlink" title="User story 寫到最後會變成很可怕的量，如何限縮到MVP的範圍？（或，如何從中找出MVP？）"></a>User story 寫到最後會變成很可怕的量，如何限縮到MVP的範圍？（或，如何從中找出MVP？）</h2><p>分兩個角度看，創業基本上是MVP → product，不會有story太多要去找出MVP的情況。（如果有，那其實創業者沒釐清自己產品的核心，或者誤解了MVP的概念。）</p>
-<p>如果加入公司，實務上老闆常會提出太不合理的要求、或者PM常常會寫出太多沒用的story，而RD確實需要聚焦在值得實作的story上，大家都有自己對要求、story的想法，但是資源有限，這時可以用5 Whys來分析值不值得實作。5 Whys其實就是一種辯證法，透過前後問題的因果關係一層一層問下去，慢慢逼近story的本質，最終讓團隊對story有清楚而一致的理解。這種方法並不局限於5，必要的話也可以問得更多（或更少）。</p>
-<h2 id="namespace能達到的目的，scope似乎也可以做到（除了path不一樣），兩者合適的用法是？"><a href="#namespace能達到的目的，scope似乎也可以做到（除了path不一樣），兩者合適的用法是？" class="headerlink" title="namespace能達到的目的，scope似乎也可以做到（除了path不一樣），兩者合適的用法是？"></a>namespace能達到的目的，scope似乎也可以做到（除了path不一樣），兩者合適的用法是？</h2><p>scope可以寫到很複雜，namespace可以想成是簡單版的scope</p>
-<h2 id="rake-db-migrate-status-可以查-migration-狀態，前面顯示-up-就代表已經-migrate-了。"><a href="#rake-db-migrate-status-可以查-migration-狀態，前面顯示-up-就代表已經-migrate-了。" class="headerlink" title="$ rake db:migrate:status 可以查 migration 狀態，前面顯示 up 就代表已經 migrate 了。"></a><code>$ rake db:migrate:status</code> 可以查 migration 狀態，前面顯示 up 就代表已經 migrate 了。</h2><h2 id="migration-有誤怎麼解？"><a href="#migration-有誤怎麼解？" class="headerlink" title="migration 有誤怎麼解？"></a>migration 有誤怎麼解？</h2><ol>
-<li><code>$ rake db:rollback</code> -&gt; 進 migration 檔更改內容 -&gt; <code>rake db:migrate</code></li>
-<li>如果 migration 已經上線(production階段)，新增一個 migration 檔(rails g migration) -&gt; 寫上要修改的內容 -&gt; <code>$ rake db:migrate</code> 的做法會比較適合。</li>
-<li>補充觀念：Rails 會記錄 migration 檔名中的 timestamps 來判斷你已經對資料庫操作過哪些 migrations, 跑過的 migrations 就不會重複跑（不考慮rake db:rollback的情況）。Rails 透過資料庫中的 schema_migrations 這張 table 來記錄已經跑過哪些 migrations。</li>
-</ol>
-<p><a href="http://edgeguides.rubyonrails.org/active_record_migrations.html" target="_blank" rel="external">http://edgeguides.rubyonrails.org/active_record_migrations.html</a><br><a href="http://guides.rubyonrails.org/v3.2.17/migrations.html" target="_blank" rel="external">http://guides.rubyonrails.org/v3.2.17/migrations.html</a><br><a href="https://gist.github.com/amejiarosario/2950888" target="_blank" rel="external">https://gist.github.com/amejiarosario/2950888</a><br><a href="https://ihower.tw/rails4/basic.html" target="_blank" rel="external">https://ihower.tw/rails4/basic.html</a></p>
-<h2 id="如何-rollback-好幾步？"><a href="#如何-rollback-好幾步？" class="headerlink" title="如何 rollback 好幾步？"></a>如何 rollback 好幾步？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ rake db:rollback STEP=n</div></pre></td></tr></table></figure>
-<p>可搭配</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ rake db:migrate:status</div></pre></td></tr></table></figure>
-<p>可以顯示目前 migrations 執行的情況，會有 Status, Migration ID(timestamp), Migration Name 三組資料。</p>
-
-          
+          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick StartCreate a new post1$ hexo new "My New Post"
+More info: Writing
+Run server1$ hexo server
+More in
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/08/16/hello-world/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1578,7 +330,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span>
   </nav>
 
 
@@ -1609,7 +361,7 @@
       
 
       <section class="site-overview sidebar-panel  sidebar-panel-active ">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
                alt="Jason Lung" />
@@ -1619,7 +371,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">50</span>
+              <span class="site-state-item-count">51</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -1629,7 +381,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -1694,7 +446,7 @@
 </div>
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
@@ -1791,7 +543,7 @@
     <script type="text/javascript">
       var disqus_shortname = 'hexo-github-pages-lionlies';
       var disqus_identifier = 'page/6/index.html';
-      var disqus_title = '';
+      var disqus_title = "";
       var disqus_url = '';
 
       function run_disqus_script(disqus_script){
@@ -1809,13 +561,18 @@
 
 
 
-  
+
   
   
 
   
 
   
+
+  
+
+  
+
 
 </body>
 </html>
